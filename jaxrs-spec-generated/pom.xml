@@ -4,7 +4,7 @@
   <artifactId>restful-ptv-spec</artifactId>
   <packaging>jar</packaging>
   <name>restful-ptv-spec</name>
-  <version>1.2.2-SNAPSHOT</version>
+  <version>1.2.2</version>
   <description>RESTful PTV Server</description>
   <url>https://github.com/otavanopisto/restful-ptv-spec</url>
 
@@ -38,7 +38,7 @@
     <developerConnection>scm:git:git@github.com:otavanopisto/restful-ptv-spec.git</developerConnection>
     <url>git@github.com:otavanopisto/restful-ptv-spec.git</url>
     <connection>scm:git:git@github.com:otavanopisto/restful-ptv-spec.git</connection>
-    <tag>HEAD</tag>
+    <tag>jaxrs-spec-1.2.2</tag>
   </scm>
 
   <organization>
