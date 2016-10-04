@@ -23,7 +23,7 @@ import java.util.List;
 @Api(description = "the services API")
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2016-10-04T07:00:17.753+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2016-10-04T07:02:03.320+03:00")
 
 public abstract class ServicesApi extends AbstractApi {
 
