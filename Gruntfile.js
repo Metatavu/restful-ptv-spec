@@ -73,7 +73,7 @@ module.exports = function(grunt) {
           '-i ./swagger.yaml ' +
           '-l jaxrs-spec ' +
           '--api-package fi.otavanopisto.restfulptv.server.rest ' +
-          '--model-package fi.otavanopisto.restfulptv.server.rest ' +
+          '--model-package fi.otavanopisto.restfulptv.server.rest.model ' +
           '--group-id fi.otavanopisto.restful-ptv ' +
           '--artifact-id restful-ptv-spec ' +
           '--artifact-version `mvn -f jaxrs-spec-generated/pom.xml.before -q -Dexec.executable=\'echo\' -Dexec.args=\'${project.version}\' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.3.1:exec` ' +
