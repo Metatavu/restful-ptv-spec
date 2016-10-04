@@ -37,7 +37,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Open API web page model.
  */
 @ApiModel(description = "Open API web page model.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-03T15:33:19.141+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-04T07:20:36.515+03:00")
 public class WebPage   {
   @JsonProperty("description")
   private String description = null;

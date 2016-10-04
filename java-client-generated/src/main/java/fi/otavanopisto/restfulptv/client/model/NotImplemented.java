@@ -28,64 +28,56 @@ package fi.otavanopisto.restfulptv.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import fi.otavanopisto.restfulptv.client.model.LanguageItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * OrganizationEmail
+ * NotImplemented
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-04T07:20:36.515+03:00")
-public class OrganizationEmail   {
-  @JsonProperty("email")
-  private String email = null;
+public class NotImplemented   {
+  @JsonProperty("code")
+  private Integer code = null;
 
-  @JsonProperty("descriptions")
-  private List<LanguageItem> descriptions = new ArrayList<LanguageItem>();
+  @JsonProperty("message")
+  private String message = null;
 
-  public OrganizationEmail email(String email) {
-    this.email = email;
+  public NotImplemented code(Integer code) {
+    this.code = code;
     return this;
   }
 
    /**
-   * Get email
-   * @return email
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public OrganizationEmail descriptions(List<LanguageItem> descriptions) {
-    this.descriptions = descriptions;
-    return this;
-  }
-
-  public OrganizationEmail addDescriptionsItem(LanguageItem descriptionsItem) {
-    this.descriptions.add(descriptionsItem);
-    return this;
-  }
-
-   /**
-   * Get descriptions
-   * @return descriptions
+   * Get code
+   * @return code
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getDescriptions() {
-    return descriptions;
+  public Integer getCode() {
+    return code;
   }
 
-  public void setDescriptions(List<LanguageItem> descriptions) {
-    this.descriptions = descriptions;
+  public void setCode(Integer code) {
+    this.code = code;
+  }
+
+  public NotImplemented message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Get message
+   * @return message
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getMessage() {
+    return message;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
   }
 
 
@@ -97,23 +89,23 @@ public class OrganizationEmail   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationEmail organizationEmail = (OrganizationEmail) o;
-    return Objects.equals(this.email, organizationEmail.email) &&
-        Objects.equals(this.descriptions, organizationEmail.descriptions);
+    NotImplemented notImplemented = (NotImplemented) o;
+    return Objects.equals(this.code, notImplemented.code) &&
+        Objects.equals(this.message, notImplemented.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, descriptions);
+    return Objects.hash(code, message);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrganizationEmail {\n");
+    sb.append("class NotImplemented {\n");
     
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }

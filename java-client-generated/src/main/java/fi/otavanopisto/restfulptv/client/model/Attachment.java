@@ -36,7 +36,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Attachment
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-03T15:33:19.141+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-04T07:20:36.515+03:00")
 public class Attachment   {
   @JsonProperty("type")
   private String type = null;

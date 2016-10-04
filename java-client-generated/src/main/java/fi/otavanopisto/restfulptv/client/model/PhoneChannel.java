@@ -43,7 +43,7 @@ import java.util.List;
 /**
  * PhoneChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-03T15:33:19.141+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-04T07:20:36.515+03:00")
 public class PhoneChannel   {
   @JsonProperty("id")
   private String id = null;
