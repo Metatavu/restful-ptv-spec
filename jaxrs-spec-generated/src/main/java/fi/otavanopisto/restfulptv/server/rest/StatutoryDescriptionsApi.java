@@ -18,7 +18,7 @@ import java.util.List;
 @Api(description = "the statutoryDescriptions API")
 
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2016-10-04T07:22:14.389+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2016-10-04T07:23:44.071+03:00")
 
 public abstract class StatutoryDescriptionsApi extends AbstractApi {
 
