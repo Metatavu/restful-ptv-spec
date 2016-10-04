@@ -7,31 +7,31 @@ module.exports = function(grunt) {
   
   grunt.initConfig({
     'clean': {
-      'clean-restful-ptv-java-client-cruft': [
-        'generated-java-client/docs', 
-        'generated-java-client/gradle', 
-        'generated-java-client/build.gradle',
-        'generated-java-client/build.sbt',
-        'generated-java-client/git_push.sh',
-        'generated-java-client/gradle.properties',
-        'generated-java-client/gradlew',
-        'generated-java-client/gradlew.bat',
-        'generated-java-client/LICENSE',
-        'generated-java-client/README.md',
-        'generated-java-client/settings.gradle',
-        'generated-java-client/src/test',
-        'generated-java-client/src/main/AndroidManifest.xml',
-        'generated-java-client/src/main/java/io',
-        'generated-java-client/src/main/java/fi/otavanopisto/restfulptv/auth',
-        'generated-java-client/src/main/java/fi/otavanopisto/restfulptv/*.java'
+      'java-client-cruft': [
+        'java-client-generated/docs', 
+        'java-client-generated/gradle', 
+        'java-client-generated/build.gradle',
+        'java-client-generated/build.sbt',
+        'java-client-generated/git_push.sh',
+        'java-client-generated/gradle.properties',
+        'java-client-generated/gradlew',
+        'java-client-generated/gradlew.bat',
+        'java-client-generated/LICENSE',
+        'java-client-generated/README.md',
+        'java-client-generated/settings.gradle',
+        'java-client-generated/src/test',
+        'java-client-generated/src/main/AndroidManifest.xml',
+        'java-client-generated/src/main/java/io',
+        'java-client-generated/src/main/java/fi/otavanopisto/restfulptv/auth',
+        'java-client-generated/src/main/java/fi/otavanopisto/restfulptv/*.java'
       ],
-      'sources': ['generated-java-client/src']
+      'java-client-sources': ['java-client-generated/src']
     },
     'copy': {
-      'copy-restful-ptv-rest-client-extras': {
+      'java-client-extras': {
         src: '**',
-        dest: 'generated-java-client',
-        cwd: 'client-extras',
+        dest: 'java-client-generated',
+        cwd: 'java-client-extras',
         expand: true
       }
     },
@@ -42,8 +42,8 @@ module.exports = function(grunt) {
       }
     },
     'shell': {
-      'generate-restful-ptv-java-client': {
-        command : 'mv generated-java-client/pom.xml generated-java-client/pom.xml.before && \
+      'java-client-generate': {
+        command : 'mv java-client-generated/pom.xml java-client-generated/pom.xml.before && \
           java -jar swagger-codegen-cli.jar generate \
           -i ./swagger.yaml \
           -l java \
@@ -51,25 +51,25 @@ module.exports = function(grunt) {
           --model-package fi.otavanopisto.restfulptv.client.model \
           --group-id fi.otavanopisto.restful-ptv.restful-ptv-rest-client \
           --artifact-id restful-ptv-rest-client\
-          --artifact-version `mvn -f generated-java-client/pom.xml.before -q -Dexec.executable=\'echo\' -Dexec.args=\'${project.version}\' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.3.1:exec` \
-          --template-dir templates \
+          --artifact-version `mvn -f java-client-generated/pom.xml.before -q -Dexec.executable=\'echo\' -Dexec.args=\'${project.version}\' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.3.1:exec` \
+          --template-dir java-client-templates \
           --library jersey2 \
           --additional-properties dateLibrary=java8 \
-          -o generated-java-client/'
+          -o java-client-generated/'
       },
-      'install-restful-ptv-java-client': {
+      'java-client-install': {
         command : 'mvn install',
         options: {
           execOptions: {
-            cwd: 'generated-java-client'
+            cwd: 'java-client-generated'
           }
         }
       },
-      'release-restful-ptv-java-client': {
+      'java-client-release': {
         command : 'git add src pom.xml && git commit -m "Generated source" && git push && mvn -B release:clean release:prepare release:perform',
         options: {
           execOptions: {
-            cwd: 'generated-java-client'
+            cwd: 'java-client-generated'
           }
         }
       }
@@ -77,6 +77,6 @@ module.exports = function(grunt) {
   });
   
   grunt.registerTask('download-dependencies', 'if-missing:curl:swagger-codegen');
-  grunt.registerTask('default', ['download-dependencies', 'clean:sources', 'shell:generate-restful-ptv-java-client', 'clean:clean-restful-ptv-java-client-cruft', 'copy:copy-restful-ptv-rest-client-extras', 'shell:install-restful-ptv-java-client', 'shell:release-restful-ptv-java-client' ]);
+  grunt.registerTask('default', ['download-dependencies', 'clean:java-client-sources', 'shell:java-client-generate', 'clean:java-client-cruft', 'copy:java-client-extras', 'shell:java-client-install', 'shell:java-client-release' ]);
   
 };
