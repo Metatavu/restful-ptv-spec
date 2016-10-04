@@ -4,7 +4,7 @@
   <artifactId>restful-ptv-spec</artifactId>
   <packaging>jar</packaging>
   <name>restful-ptv-spec</name>
-  <version>1.2.0</version>
+  <version>1.2.1-SNAPSHOT</version>
   <description>RESTful PTV Server</description>
   <url>https://github.com/otavanopisto/restful-ptv-spec</url>
 
