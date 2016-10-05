@@ -43,7 +43,7 @@ import java.util.List;
 /**
  * Organization
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-05T09:35:32.868+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-05T10:47:52.746+03:00")
 public class Organization   {
   @JsonProperty("id")
   private String id = null;
@@ -69,8 +69,8 @@ public class Organization   {
   @JsonProperty("municipality")
   private String municipality = null;
 
-  @JsonProperty("organizationType")
-  private String organizationType = null;
+  @JsonProperty("type")
+  private String type = null;
 
   @JsonProperty("businessCode")
   private String businessCode = null;
@@ -78,8 +78,8 @@ public class Organization   {
   @JsonProperty("businessName")
   private String businessName = null;
 
-  @JsonProperty("organizationNames")
-  private List<LocalizedListItem> organizationNames = new ArrayList<LocalizedListItem>();
+  @JsonProperty("names")
+  private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
 
   @JsonProperty("publishingStatus")
   private String publishingStatus = null;
@@ -262,22 +262,22 @@ public class Organization   {
     this.municipality = municipality;
   }
 
-  public Organization organizationType(String organizationType) {
-    this.organizationType = organizationType;
+  public Organization type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Get organizationType
-   * @return organizationType
+   * Get type
+   * @return type
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getOrganizationType() {
-    return organizationType;
+  public String getType() {
+    return type;
   }
 
-  public void setOrganizationType(String organizationType) {
-    this.organizationType = organizationType;
+  public void setType(String type) {
+    this.type = type;
   }
 
   public Organization businessCode(String businessCode) {
@@ -316,27 +316,27 @@ public class Organization   {
     this.businessName = businessName;
   }
 
-  public Organization organizationNames(List<LocalizedListItem> organizationNames) {
-    this.organizationNames = organizationNames;
+  public Organization names(List<LocalizedListItem> names) {
+    this.names = names;
     return this;
   }
 
-  public Organization addOrganizationNamesItem(LocalizedListItem organizationNamesItem) {
-    this.organizationNames.add(organizationNamesItem);
+  public Organization addNamesItem(LocalizedListItem namesItem) {
+    this.names.add(namesItem);
     return this;
   }
 
    /**
-   * Get organizationNames
-   * @return organizationNames
+   * Get names
+   * @return names
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getOrganizationNames() {
-    return organizationNames;
+  public List<LocalizedListItem> getNames() {
+    return names;
   }
 
-  public void setOrganizationNames(List<LocalizedListItem> organizationNames) {
-    this.organizationNames = organizationNames;
+  public void setNames(List<LocalizedListItem> names) {
+    this.names = names;
   }
 
   public Organization publishingStatus(String publishingStatus) {
@@ -429,10 +429,10 @@ public class Organization   {
         Objects.equals(this.webPages, organization.webPages) &&
         Objects.equals(this.addresses, organization.addresses) &&
         Objects.equals(this.municipality, organization.municipality) &&
-        Objects.equals(this.organizationType, organization.organizationType) &&
+        Objects.equals(this.type, organization.type) &&
         Objects.equals(this.businessCode, organization.businessCode) &&
         Objects.equals(this.businessName, organization.businessName) &&
-        Objects.equals(this.organizationNames, organization.organizationNames) &&
+        Objects.equals(this.names, organization.names) &&
         Objects.equals(this.publishingStatus, organization.publishingStatus) &&
         Objects.equals(this.displayNameType, organization.displayNameType) &&
         Objects.equals(this.oid, organization.oid) &&
@@ -441,7 +441,7 @@ public class Organization   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, descriptions, parentOrganization, emailAddresses, phoneNumbers, webPages, addresses, municipality, organizationType, businessCode, businessName, organizationNames, publishingStatus, displayNameType, oid, streetAddressAsPostalAddress);
+    return Objects.hash(id, descriptions, parentOrganization, emailAddresses, phoneNumbers, webPages, addresses, municipality, type, businessCode, businessName, names, publishingStatus, displayNameType, oid, streetAddressAsPostalAddress);
   }
 
   @Override
@@ -457,10 +457,10 @@ public class Organization   {
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
     sb.append("    municipality: ").append(toIndentedString(municipality)).append("\n");
-    sb.append("    organizationType: ").append(toIndentedString(organizationType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    businessCode: ").append(toIndentedString(businessCode)).append("\n");
     sb.append("    businessName: ").append(toIndentedString(businessName)).append("\n");
-    sb.append("    organizationNames: ").append(toIndentedString(organizationNames)).append("\n");
+    sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");
     sb.append("    displayNameType: ").append(toIndentedString(displayNameType)).append("\n");
     sb.append("    oid: ").append(toIndentedString(oid)).append("\n");

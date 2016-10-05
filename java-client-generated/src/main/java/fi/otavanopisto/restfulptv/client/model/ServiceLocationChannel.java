@@ -44,22 +44,22 @@ import java.util.List;
 /**
  * ServiceLocationChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-05T09:35:32.868+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-05T10:47:52.746+03:00")
 public class ServiceLocationChannel   {
   @JsonProperty("id")
   private String id = null;
 
-  @JsonProperty("serviceChannelType")
-  private String serviceChannelType = null;
+  @JsonProperty("type")
+  private String type = null;
 
   @JsonProperty("organizationId")
   private String organizationId = null;
 
-  @JsonProperty("serviceChannelNames")
-  private List<LocalizedListItem> serviceChannelNames = new ArrayList<LocalizedListItem>();
+  @JsonProperty("names")
+  private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
 
-  @JsonProperty("serviceChannelDescriptions")
-  private List<LocalizedListItem> serviceChannelDescriptions = new ArrayList<LocalizedListItem>();
+  @JsonProperty("descriptions")
+  private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
 
   @JsonProperty("serviceAreaRestricted")
   private Boolean serviceAreaRestricted = null;
@@ -106,8 +106,8 @@ public class ServiceLocationChannel   {
   @JsonProperty("addresses")
   private List<Address> addresses = new ArrayList<Address>();
 
-  @JsonProperty("serviceChargeTypes")
-  private List<String> serviceChargeTypes = new ArrayList<String>();
+  @JsonProperty("chargeTypes")
+  private List<String> chargeTypes = new ArrayList<String>();
 
   @JsonProperty("serviceHours")
   private List<ServiceHour> serviceHours = new ArrayList<ServiceHour>();
@@ -133,22 +133,22 @@ public class ServiceLocationChannel   {
     this.id = id;
   }
 
-  public ServiceLocationChannel serviceChannelType(String serviceChannelType) {
-    this.serviceChannelType = serviceChannelType;
+  public ServiceLocationChannel type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Get serviceChannelType
-   * @return serviceChannelType
+   * Get type
+   * @return type
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getServiceChannelType() {
-    return serviceChannelType;
+  public String getType() {
+    return type;
   }
 
-  public void setServiceChannelType(String serviceChannelType) {
-    this.serviceChannelType = serviceChannelType;
+  public void setType(String type) {
+    this.type = type;
   }
 
   public ServiceLocationChannel organizationId(String organizationId) {
@@ -169,50 +169,50 @@ public class ServiceLocationChannel   {
     this.organizationId = organizationId;
   }
 
-  public ServiceLocationChannel serviceChannelNames(List<LocalizedListItem> serviceChannelNames) {
-    this.serviceChannelNames = serviceChannelNames;
+  public ServiceLocationChannel names(List<LocalizedListItem> names) {
+    this.names = names;
     return this;
   }
 
-  public ServiceLocationChannel addServiceChannelNamesItem(LocalizedListItem serviceChannelNamesItem) {
-    this.serviceChannelNames.add(serviceChannelNamesItem);
-    return this;
-  }
-
-   /**
-   * Get serviceChannelNames
-   * @return serviceChannelNames
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceChannelNames() {
-    return serviceChannelNames;
-  }
-
-  public void setServiceChannelNames(List<LocalizedListItem> serviceChannelNames) {
-    this.serviceChannelNames = serviceChannelNames;
-  }
-
-  public ServiceLocationChannel serviceChannelDescriptions(List<LocalizedListItem> serviceChannelDescriptions) {
-    this.serviceChannelDescriptions = serviceChannelDescriptions;
-    return this;
-  }
-
-  public ServiceLocationChannel addServiceChannelDescriptionsItem(LocalizedListItem serviceChannelDescriptionsItem) {
-    this.serviceChannelDescriptions.add(serviceChannelDescriptionsItem);
+  public ServiceLocationChannel addNamesItem(LocalizedListItem namesItem) {
+    this.names.add(namesItem);
     return this;
   }
 
    /**
-   * Get serviceChannelDescriptions
-   * @return serviceChannelDescriptions
+   * Get names
+   * @return names
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceChannelDescriptions() {
-    return serviceChannelDescriptions;
+  public List<LocalizedListItem> getNames() {
+    return names;
   }
 
-  public void setServiceChannelDescriptions(List<LocalizedListItem> serviceChannelDescriptions) {
-    this.serviceChannelDescriptions = serviceChannelDescriptions;
+  public void setNames(List<LocalizedListItem> names) {
+    this.names = names;
+  }
+
+  public ServiceLocationChannel descriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
+    return this;
+  }
+
+  public ServiceLocationChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
+    this.descriptions.add(descriptionsItem);
+    return this;
+  }
+
+   /**
+   * Get descriptions
+   * @return descriptions
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<LocalizedListItem> getDescriptions() {
+    return descriptions;
+  }
+
+  public void setDescriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
   }
 
   public ServiceLocationChannel serviceAreaRestricted(Boolean serviceAreaRestricted) {
@@ -515,27 +515,27 @@ public class ServiceLocationChannel   {
     this.addresses = addresses;
   }
 
-  public ServiceLocationChannel serviceChargeTypes(List<String> serviceChargeTypes) {
-    this.serviceChargeTypes = serviceChargeTypes;
+  public ServiceLocationChannel chargeTypes(List<String> chargeTypes) {
+    this.chargeTypes = chargeTypes;
     return this;
   }
 
-  public ServiceLocationChannel addServiceChargeTypesItem(String serviceChargeTypesItem) {
-    this.serviceChargeTypes.add(serviceChargeTypesItem);
+  public ServiceLocationChannel addChargeTypesItem(String chargeTypesItem) {
+    this.chargeTypes.add(chargeTypesItem);
     return this;
   }
 
    /**
-   * Get serviceChargeTypes
-   * @return serviceChargeTypes
+   * Get chargeTypes
+   * @return chargeTypes
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getServiceChargeTypes() {
-    return serviceChargeTypes;
+  public List<String> getChargeTypes() {
+    return chargeTypes;
   }
 
-  public void setServiceChargeTypes(List<String> serviceChargeTypes) {
-    this.serviceChargeTypes = serviceChargeTypes;
+  public void setChargeTypes(List<String> chargeTypes) {
+    this.chargeTypes = chargeTypes;
   }
 
   public ServiceLocationChannel serviceHours(List<ServiceHour> serviceHours) {
@@ -590,10 +590,10 @@ public class ServiceLocationChannel   {
     }
     ServiceLocationChannel serviceLocationChannel = (ServiceLocationChannel) o;
     return Objects.equals(this.id, serviceLocationChannel.id) &&
-        Objects.equals(this.serviceChannelType, serviceLocationChannel.serviceChannelType) &&
+        Objects.equals(this.type, serviceLocationChannel.type) &&
         Objects.equals(this.organizationId, serviceLocationChannel.organizationId) &&
-        Objects.equals(this.serviceChannelNames, serviceLocationChannel.serviceChannelNames) &&
-        Objects.equals(this.serviceChannelDescriptions, serviceLocationChannel.serviceChannelDescriptions) &&
+        Objects.equals(this.names, serviceLocationChannel.names) &&
+        Objects.equals(this.descriptions, serviceLocationChannel.descriptions) &&
         Objects.equals(this.serviceAreaRestricted, serviceLocationChannel.serviceAreaRestricted) &&
         Objects.equals(this.supportContacts, serviceLocationChannel.supportContacts) &&
         Objects.equals(this.email, serviceLocationChannel.email) &&
@@ -609,14 +609,14 @@ public class ServiceLocationChannel   {
         Objects.equals(this.serviceAreas, serviceLocationChannel.serviceAreas) &&
         Objects.equals(this.phoneChargeDescriptions, serviceLocationChannel.phoneChargeDescriptions) &&
         Objects.equals(this.addresses, serviceLocationChannel.addresses) &&
-        Objects.equals(this.serviceChargeTypes, serviceLocationChannel.serviceChargeTypes) &&
+        Objects.equals(this.chargeTypes, serviceLocationChannel.chargeTypes) &&
         Objects.equals(this.serviceHours, serviceLocationChannel.serviceHours) &&
         Objects.equals(this.publishingStatus, serviceLocationChannel.publishingStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, serviceChannelType, organizationId, serviceChannelNames, serviceChannelDescriptions, serviceAreaRestricted, supportContacts, email, phone, languages, fax, latitude, longitude, coordinateSystem, coordinatesSetManually, phoneServiceCharge, webPages, serviceAreas, phoneChargeDescriptions, addresses, serviceChargeTypes, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, serviceAreaRestricted, supportContacts, email, phone, languages, fax, latitude, longitude, coordinateSystem, coordinatesSetManually, phoneServiceCharge, webPages, serviceAreas, phoneChargeDescriptions, addresses, chargeTypes, serviceHours, publishingStatus);
   }
 
   @Override
@@ -625,10 +625,10 @@ public class ServiceLocationChannel   {
     sb.append("class ServiceLocationChannel {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    serviceChannelType: ").append(toIndentedString(serviceChannelType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    serviceChannelNames: ").append(toIndentedString(serviceChannelNames)).append("\n");
-    sb.append("    serviceChannelDescriptions: ").append(toIndentedString(serviceChannelDescriptions)).append("\n");
+    sb.append("    names: ").append(toIndentedString(names)).append("\n");
+    sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    serviceAreaRestricted: ").append(toIndentedString(serviceAreaRestricted)).append("\n");
     sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
@@ -644,7 +644,7 @@ public class ServiceLocationChannel   {
     sb.append("    serviceAreas: ").append(toIndentedString(serviceAreas)).append("\n");
     sb.append("    phoneChargeDescriptions: ").append(toIndentedString(phoneChargeDescriptions)).append("\n");
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
-    sb.append("    serviceChargeTypes: ").append(toIndentedString(serviceChargeTypes)).append("\n");
+    sb.append("    chargeTypes: ").append(toIndentedString(chargeTypes)).append("\n");
     sb.append("    serviceHours: ").append(toIndentedString(serviceHours)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");
     sb.append("}");

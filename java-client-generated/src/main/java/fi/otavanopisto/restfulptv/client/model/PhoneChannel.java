@@ -43,28 +43,28 @@ import java.util.List;
 /**
  * PhoneChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-05T09:35:32.868+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-05T10:47:52.746+03:00")
 public class PhoneChannel   {
   @JsonProperty("id")
   private String id = null;
 
-  @JsonProperty("serviceChannelType")
-  private String serviceChannelType = null;
+  @JsonProperty("type")
+  private String type = null;
 
   @JsonProperty("organizationId")
   private String organizationId = null;
 
-  @JsonProperty("serviceChannelNames")
-  private List<LocalizedListItem> serviceChannelNames = new ArrayList<LocalizedListItem>();
+  @JsonProperty("names")
+  private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
 
-  @JsonProperty("serviceChannelDescriptions")
-  private List<LocalizedListItem> serviceChannelDescriptions = new ArrayList<LocalizedListItem>();
+  @JsonProperty("descriptions")
+  private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
 
   @JsonProperty("phoneType")
   private String phoneType = null;
 
-  @JsonProperty("serviceChargeTypes")
-  private List<String> serviceChargeTypes = new ArrayList<String>();
+  @JsonProperty("chargeTypes")
+  private List<String> chargeTypes = new ArrayList<String>();
 
   @JsonProperty("supportContacts")
   private List<Support> supportContacts = new ArrayList<Support>();
@@ -105,22 +105,22 @@ public class PhoneChannel   {
     this.id = id;
   }
 
-  public PhoneChannel serviceChannelType(String serviceChannelType) {
-    this.serviceChannelType = serviceChannelType;
+  public PhoneChannel type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Get serviceChannelType
-   * @return serviceChannelType
+   * Get type
+   * @return type
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getServiceChannelType() {
-    return serviceChannelType;
+  public String getType() {
+    return type;
   }
 
-  public void setServiceChannelType(String serviceChannelType) {
-    this.serviceChannelType = serviceChannelType;
+  public void setType(String type) {
+    this.type = type;
   }
 
   public PhoneChannel organizationId(String organizationId) {
@@ -141,50 +141,50 @@ public class PhoneChannel   {
     this.organizationId = organizationId;
   }
 
-  public PhoneChannel serviceChannelNames(List<LocalizedListItem> serviceChannelNames) {
-    this.serviceChannelNames = serviceChannelNames;
+  public PhoneChannel names(List<LocalizedListItem> names) {
+    this.names = names;
     return this;
   }
 
-  public PhoneChannel addServiceChannelNamesItem(LocalizedListItem serviceChannelNamesItem) {
-    this.serviceChannelNames.add(serviceChannelNamesItem);
-    return this;
-  }
-
-   /**
-   * Get serviceChannelNames
-   * @return serviceChannelNames
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceChannelNames() {
-    return serviceChannelNames;
-  }
-
-  public void setServiceChannelNames(List<LocalizedListItem> serviceChannelNames) {
-    this.serviceChannelNames = serviceChannelNames;
-  }
-
-  public PhoneChannel serviceChannelDescriptions(List<LocalizedListItem> serviceChannelDescriptions) {
-    this.serviceChannelDescriptions = serviceChannelDescriptions;
-    return this;
-  }
-
-  public PhoneChannel addServiceChannelDescriptionsItem(LocalizedListItem serviceChannelDescriptionsItem) {
-    this.serviceChannelDescriptions.add(serviceChannelDescriptionsItem);
+  public PhoneChannel addNamesItem(LocalizedListItem namesItem) {
+    this.names.add(namesItem);
     return this;
   }
 
    /**
-   * Get serviceChannelDescriptions
-   * @return serviceChannelDescriptions
+   * Get names
+   * @return names
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceChannelDescriptions() {
-    return serviceChannelDescriptions;
+  public List<LocalizedListItem> getNames() {
+    return names;
   }
 
-  public void setServiceChannelDescriptions(List<LocalizedListItem> serviceChannelDescriptions) {
-    this.serviceChannelDescriptions = serviceChannelDescriptions;
+  public void setNames(List<LocalizedListItem> names) {
+    this.names = names;
+  }
+
+  public PhoneChannel descriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
+    return this;
+  }
+
+  public PhoneChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
+    this.descriptions.add(descriptionsItem);
+    return this;
+  }
+
+   /**
+   * Get descriptions
+   * @return descriptions
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<LocalizedListItem> getDescriptions() {
+    return descriptions;
+  }
+
+  public void setDescriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
   }
 
   public PhoneChannel phoneType(String phoneType) {
@@ -205,27 +205,27 @@ public class PhoneChannel   {
     this.phoneType = phoneType;
   }
 
-  public PhoneChannel serviceChargeTypes(List<String> serviceChargeTypes) {
-    this.serviceChargeTypes = serviceChargeTypes;
+  public PhoneChannel chargeTypes(List<String> chargeTypes) {
+    this.chargeTypes = chargeTypes;
     return this;
   }
 
-  public PhoneChannel addServiceChargeTypesItem(String serviceChargeTypesItem) {
-    this.serviceChargeTypes.add(serviceChargeTypesItem);
+  public PhoneChannel addChargeTypesItem(String chargeTypesItem) {
+    this.chargeTypes.add(chargeTypesItem);
     return this;
   }
 
    /**
-   * Get serviceChargeTypes
-   * @return serviceChargeTypes
+   * Get chargeTypes
+   * @return chargeTypes
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getServiceChargeTypes() {
-    return serviceChargeTypes;
+  public List<String> getChargeTypes() {
+    return chargeTypes;
   }
 
-  public void setServiceChargeTypes(List<String> serviceChargeTypes) {
-    this.serviceChargeTypes = serviceChargeTypes;
+  public void setChargeTypes(List<String> chargeTypes) {
+    this.chargeTypes = chargeTypes;
   }
 
   public PhoneChannel supportContacts(List<Support> supportContacts) {
@@ -395,12 +395,12 @@ public class PhoneChannel   {
     }
     PhoneChannel phoneChannel = (PhoneChannel) o;
     return Objects.equals(this.id, phoneChannel.id) &&
-        Objects.equals(this.serviceChannelType, phoneChannel.serviceChannelType) &&
+        Objects.equals(this.type, phoneChannel.type) &&
         Objects.equals(this.organizationId, phoneChannel.organizationId) &&
-        Objects.equals(this.serviceChannelNames, phoneChannel.serviceChannelNames) &&
-        Objects.equals(this.serviceChannelDescriptions, phoneChannel.serviceChannelDescriptions) &&
+        Objects.equals(this.names, phoneChannel.names) &&
+        Objects.equals(this.descriptions, phoneChannel.descriptions) &&
         Objects.equals(this.phoneType, phoneChannel.phoneType) &&
-        Objects.equals(this.serviceChargeTypes, phoneChannel.serviceChargeTypes) &&
+        Objects.equals(this.chargeTypes, phoneChannel.chargeTypes) &&
         Objects.equals(this.supportContacts, phoneChannel.supportContacts) &&
         Objects.equals(this.phoneNumbers, phoneChannel.phoneNumbers) &&
         Objects.equals(this.languages, phoneChannel.languages) &&
@@ -412,7 +412,7 @@ public class PhoneChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, serviceChannelType, organizationId, serviceChannelNames, serviceChannelDescriptions, phoneType, serviceChargeTypes, supportContacts, phoneNumbers, languages, phoneChargeDescriptions, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, phoneType, chargeTypes, supportContacts, phoneNumbers, languages, phoneChargeDescriptions, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -421,12 +421,12 @@ public class PhoneChannel   {
     sb.append("class PhoneChannel {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    serviceChannelType: ").append(toIndentedString(serviceChannelType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    serviceChannelNames: ").append(toIndentedString(serviceChannelNames)).append("\n");
-    sb.append("    serviceChannelDescriptions: ").append(toIndentedString(serviceChannelDescriptions)).append("\n");
+    sb.append("    names: ").append(toIndentedString(names)).append("\n");
+    sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
-    sb.append("    serviceChargeTypes: ").append(toIndentedString(serviceChargeTypes)).append("\n");
+    sb.append("    chargeTypes: ").append(toIndentedString(chargeTypes)).append("\n");
     sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");

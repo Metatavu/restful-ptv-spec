@@ -44,22 +44,22 @@ import java.util.List;
 /**
  * WebPageChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-05T09:35:32.868+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-05T10:47:52.746+03:00")
 public class WebPageChannel   {
   @JsonProperty("id")
   private String id = null;
 
-  @JsonProperty("serviceChannelType")
-  private String serviceChannelType = null;
+  @JsonProperty("type")
+  private String type = null;
 
   @JsonProperty("organizationId")
   private String organizationId = null;
 
-  @JsonProperty("serviceChannelNames")
-  private List<LocalizedListItem> serviceChannelNames = new ArrayList<LocalizedListItem>();
+  @JsonProperty("names")
+  private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
 
-  @JsonProperty("serviceChannelDescriptions")
-  private List<LocalizedListItem> serviceChannelDescriptions = new ArrayList<LocalizedListItem>();
+  @JsonProperty("descriptions")
+  private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
 
   @JsonProperty("urls")
   private List<LanguageItem> urls = new ArrayList<LanguageItem>();
@@ -100,22 +100,22 @@ public class WebPageChannel   {
     this.id = id;
   }
 
-  public WebPageChannel serviceChannelType(String serviceChannelType) {
-    this.serviceChannelType = serviceChannelType;
+  public WebPageChannel type(String type) {
+    this.type = type;
     return this;
   }
 
    /**
-   * Get serviceChannelType
-   * @return serviceChannelType
+   * Get type
+   * @return type
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getServiceChannelType() {
-    return serviceChannelType;
+  public String getType() {
+    return type;
   }
 
-  public void setServiceChannelType(String serviceChannelType) {
-    this.serviceChannelType = serviceChannelType;
+  public void setType(String type) {
+    this.type = type;
   }
 
   public WebPageChannel organizationId(String organizationId) {
@@ -136,50 +136,50 @@ public class WebPageChannel   {
     this.organizationId = organizationId;
   }
 
-  public WebPageChannel serviceChannelNames(List<LocalizedListItem> serviceChannelNames) {
-    this.serviceChannelNames = serviceChannelNames;
+  public WebPageChannel names(List<LocalizedListItem> names) {
+    this.names = names;
     return this;
   }
 
-  public WebPageChannel addServiceChannelNamesItem(LocalizedListItem serviceChannelNamesItem) {
-    this.serviceChannelNames.add(serviceChannelNamesItem);
-    return this;
-  }
-
-   /**
-   * Get serviceChannelNames
-   * @return serviceChannelNames
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceChannelNames() {
-    return serviceChannelNames;
-  }
-
-  public void setServiceChannelNames(List<LocalizedListItem> serviceChannelNames) {
-    this.serviceChannelNames = serviceChannelNames;
-  }
-
-  public WebPageChannel serviceChannelDescriptions(List<LocalizedListItem> serviceChannelDescriptions) {
-    this.serviceChannelDescriptions = serviceChannelDescriptions;
-    return this;
-  }
-
-  public WebPageChannel addServiceChannelDescriptionsItem(LocalizedListItem serviceChannelDescriptionsItem) {
-    this.serviceChannelDescriptions.add(serviceChannelDescriptionsItem);
+  public WebPageChannel addNamesItem(LocalizedListItem namesItem) {
+    this.names.add(namesItem);
     return this;
   }
 
    /**
-   * Get serviceChannelDescriptions
-   * @return serviceChannelDescriptions
+   * Get names
+   * @return names
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceChannelDescriptions() {
-    return serviceChannelDescriptions;
+  public List<LocalizedListItem> getNames() {
+    return names;
   }
 
-  public void setServiceChannelDescriptions(List<LocalizedListItem> serviceChannelDescriptions) {
-    this.serviceChannelDescriptions = serviceChannelDescriptions;
+  public void setNames(List<LocalizedListItem> names) {
+    this.names = names;
+  }
+
+  public WebPageChannel descriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
+    return this;
+  }
+
+  public WebPageChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
+    this.descriptions.add(descriptionsItem);
+    return this;
+  }
+
+   /**
+   * Get descriptions
+   * @return descriptions
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<LocalizedListItem> getDescriptions() {
+    return descriptions;
+  }
+
+  public void setDescriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
   }
 
   public WebPageChannel urls(List<LanguageItem> urls) {
@@ -349,10 +349,10 @@ public class WebPageChannel   {
     }
     WebPageChannel webPageChannel = (WebPageChannel) o;
     return Objects.equals(this.id, webPageChannel.id) &&
-        Objects.equals(this.serviceChannelType, webPageChannel.serviceChannelType) &&
+        Objects.equals(this.type, webPageChannel.type) &&
         Objects.equals(this.organizationId, webPageChannel.organizationId) &&
-        Objects.equals(this.serviceChannelNames, webPageChannel.serviceChannelNames) &&
-        Objects.equals(this.serviceChannelDescriptions, webPageChannel.serviceChannelDescriptions) &&
+        Objects.equals(this.names, webPageChannel.names) &&
+        Objects.equals(this.descriptions, webPageChannel.descriptions) &&
         Objects.equals(this.urls, webPageChannel.urls) &&
         Objects.equals(this.attachments, webPageChannel.attachments) &&
         Objects.equals(this.supportContacts, webPageChannel.supportContacts) &&
@@ -364,7 +364,7 @@ public class WebPageChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, serviceChannelType, organizationId, serviceChannelNames, serviceChannelDescriptions, urls, attachments, supportContacts, languages, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, urls, attachments, supportContacts, languages, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -373,10 +373,10 @@ public class WebPageChannel   {
     sb.append("class WebPageChannel {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    serviceChannelType: ").append(toIndentedString(serviceChannelType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    serviceChannelNames: ").append(toIndentedString(serviceChannelNames)).append("\n");
-    sb.append("    serviceChannelDescriptions: ").append(toIndentedString(serviceChannelDescriptions)).append("\n");
+    sb.append("    names: ").append(toIndentedString(names)).append("\n");
+    sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
     sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
