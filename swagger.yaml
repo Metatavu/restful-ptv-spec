@@ -3,7 +3,13 @@ info:
   version: v1
   title: RESTful PTV
   description: Restful way to use Palvelutietovaranto.
+schemes:
+  - https
 basePath: /
+consumes:
+  - application/json;charset=utf-8
+produces:
+  - application/json;charset=utf-8
 paths:
   /statutoryDescriptions:
     get:
@@ -1510,10 +1516,6 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Address'
-      services:
-        type: array
-        items:
-          $ref: '#/definitions/OrganizationService'
       municipality:
         type: string
       organizationType:
@@ -1528,18 +1530,12 @@ definitions:
           $ref: '#/definitions/LocalizedListItem'
       publishingStatus:
         type: string
-      businessId:
-        format: uuid
-        type: string
       displayNameType:
         type: string
       oid:
         type: string
       streetAddressAsPostalAddress:
         type: boolean
-      entityId:
-        format: uuid
-        type: string
   OrganizationService:
     required:
       - roleType
