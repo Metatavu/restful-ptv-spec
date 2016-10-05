@@ -1833,7 +1833,7 @@ definitions:
           $ref: '#/definitions/LocalizedListItem'
       phoneType:
         type: string
-     chargeTypes:
+      chargeTypes:
         type: array
         items:
           type: string
