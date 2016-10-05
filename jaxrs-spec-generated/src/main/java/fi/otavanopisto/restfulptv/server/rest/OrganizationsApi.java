@@ -17,16 +17,16 @@ import java.util.List;
 @Path("/organizations")
 
 @Api(description = "the organizations API")
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2016-10-04T07:23:44.071+03:00")
+@Consumes({ "application/json;charset=utf-8" })
+@Produces({ "application/json;charset=utf-8" })
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2016-10-05T09:32:35.363+03:00")
 
 public abstract class OrganizationsApi extends AbstractApi {
 
     @POST
     
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Create organization", notes = "Create organization", response = Organization.class, tags={ "Organizations",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Created organization", response = Organization.class),
@@ -37,8 +37,8 @@ public abstract class OrganizationsApi extends AbstractApi {
 
     @POST
     @Path("/{organizationId}/organizationServices")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Create organization service", notes = "Create organization service", response = Organization.class, tags={ "Organizations", "OrganizationServices",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Created organization service", response = Organization.class),
@@ -49,8 +49,8 @@ public abstract class OrganizationsApi extends AbstractApi {
 
     @GET
     @Path("/{organizationId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Finds an organization", notes = "Finds an organization by id", response = Organization.class, tags={ "Organizations",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "An organization", response = Organization.class),
@@ -62,8 +62,8 @@ public abstract class OrganizationsApi extends AbstractApi {
 
     @GET
     @Path("/{organizationId}/organizationServices/{organizationServiceId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Finds a organization service by id", notes = "Find an organization service", response = OrganizationService.class, tags={ "Organizations", "OrganizationServices",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "An organization service", response = OrganizationService.class),
@@ -75,8 +75,8 @@ public abstract class OrganizationsApi extends AbstractApi {
 
     @GET
     @Path("/{organizationId}/organizationServices")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Organization organization service list", notes = "Lists organization's organization services", response = OrganizationService.class, responseContainer = "List", tags={ "Organizations", "OrganizationServices",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "An array of organization services", response = OrganizationService.class, responseContainer = "List"),
@@ -88,8 +88,8 @@ public abstract class OrganizationsApi extends AbstractApi {
 
     @GET
     
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "List organizations", notes = "List organizations", response = Organization.class, responseContainer = "List", tags={ "Organizations",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "An array of organizations", response = Organization.class, responseContainer = "List"),
@@ -100,8 +100,8 @@ public abstract class OrganizationsApi extends AbstractApi {
 
     @PUT
     @Path("/{organizationId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Updates an organization", notes = "Updates organization data", response = Organization.class, tags={ "Organizations",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "An organization", response = Organization.class),
@@ -113,8 +113,8 @@ public abstract class OrganizationsApi extends AbstractApi {
 
     @PUT
     @Path("/{organizationId}/organizationServices/{organizationServiceId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Updates an organization service", notes = "Updates organization service", response = OrganizationService.class, tags={ "Organizations", "OrganizationServices" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "An updated organization service", response = OrganizationService.class),

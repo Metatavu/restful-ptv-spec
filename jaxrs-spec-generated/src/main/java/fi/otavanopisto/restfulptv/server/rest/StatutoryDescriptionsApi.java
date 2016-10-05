@@ -16,16 +16,16 @@ import java.util.List;
 @Path("/statutoryDescriptions")
 
 @Api(description = "the statutoryDescriptions API")
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2016-10-04T07:23:44.071+03:00")
+@Consumes({ "application/json;charset=utf-8" })
+@Produces({ "application/json;charset=utf-8" })
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2016-10-05T09:32:35.363+03:00")
 
 public abstract class StatutoryDescriptionsApi extends AbstractApi {
 
     @GET
     @Path("/{statutoryDescriptionId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Finds a statutory description", notes = "Finds a statutory description by id", response = StatutoryDescription.class, tags={ "Statutory descriptions",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "An statutory description", response = StatutoryDescription.class),
@@ -37,8 +37,8 @@ public abstract class StatutoryDescriptionsApi extends AbstractApi {
 
     @GET
     
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "List statutory descriptions", notes = "List statutory descriptions", response = StatutoryDescription.class, responseContainer = "List", tags={ "Statutory descriptions" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "An array of statutory descriptions", response = StatutoryDescription.class, responseContainer = "List"),

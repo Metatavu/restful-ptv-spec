@@ -4,7 +4,6 @@ import fi.otavanopisto.restfulptv.server.rest.model.Address;
 import fi.otavanopisto.restfulptv.server.rest.model.LocalizedListItem;
 import fi.otavanopisto.restfulptv.server.rest.model.OrganizationEmail;
 import fi.otavanopisto.restfulptv.server.rest.model.OrganizationPhone;
-import fi.otavanopisto.restfulptv.server.rest.model.OrganizationService;
 import fi.otavanopisto.restfulptv.server.rest.model.WebPage;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,18 +23,15 @@ public class Organization   {
   private List<OrganizationPhone> phoneNumbers = new ArrayList<OrganizationPhone>();
   private List<WebPage> webPages = new ArrayList<WebPage>();
   private List<Address> addresses = new ArrayList<Address>();
-  private List<OrganizationService> services = new ArrayList<OrganizationService>();
   private String municipality = null;
   private String organizationType = null;
   private String businessCode = null;
   private String businessName = null;
   private List<LocalizedListItem> organizationNames = new ArrayList<LocalizedListItem>();
   private String publishingStatus = null;
-  private String businessId = null;
   private String displayNameType = null;
   private String oid = null;
   private Boolean streetAddressAsPostalAddress = null;
-  private String entityId = null;
 
   /**
    **/
@@ -151,22 +147,6 @@ public class Organization   {
 
   /**
    **/
-  public Organization services(List<OrganizationService> services) {
-    this.services = services;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public List<OrganizationService> getServices() {
-    return services;
-  }
-  public void setServices(List<OrganizationService> services) {
-    this.services = services;
-  }
-
-  /**
-   **/
   public Organization municipality(String municipality) {
     this.municipality = municipality;
     return this;
@@ -263,22 +243,6 @@ public class Organization   {
 
   /**
    **/
-  public Organization businessId(String businessId) {
-    this.businessId = businessId;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public String getBusinessId() {
-    return businessId;
-  }
-  public void setBusinessId(String businessId) {
-    this.businessId = businessId;
-  }
-
-  /**
-   **/
   public Organization displayNameType(String displayNameType) {
     this.displayNameType = displayNameType;
     return this;
@@ -325,22 +289,6 @@ public class Organization   {
     this.streetAddressAsPostalAddress = streetAddressAsPostalAddress;
   }
 
-  /**
-   **/
-  public Organization entityId(String entityId) {
-    this.entityId = entityId;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public String getEntityId() {
-    return entityId;
-  }
-  public void setEntityId(String entityId) {
-    this.entityId = entityId;
-  }
-
 
   @Override
   public boolean equals(Object o) {
@@ -358,23 +306,20 @@ public class Organization   {
         Objects.equals(phoneNumbers, organization.phoneNumbers) &&
         Objects.equals(webPages, organization.webPages) &&
         Objects.equals(addresses, organization.addresses) &&
-        Objects.equals(services, organization.services) &&
         Objects.equals(municipality, organization.municipality) &&
         Objects.equals(organizationType, organization.organizationType) &&
         Objects.equals(businessCode, organization.businessCode) &&
         Objects.equals(businessName, organization.businessName) &&
         Objects.equals(organizationNames, organization.organizationNames) &&
         Objects.equals(publishingStatus, organization.publishingStatus) &&
-        Objects.equals(businessId, organization.businessId) &&
         Objects.equals(displayNameType, organization.displayNameType) &&
         Objects.equals(oid, organization.oid) &&
-        Objects.equals(streetAddressAsPostalAddress, organization.streetAddressAsPostalAddress) &&
-        Objects.equals(entityId, organization.entityId);
+        Objects.equals(streetAddressAsPostalAddress, organization.streetAddressAsPostalAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, descriptions, parentOrganization, emailAddresses, phoneNumbers, webPages, addresses, services, municipality, organizationType, businessCode, businessName, organizationNames, publishingStatus, businessId, displayNameType, oid, streetAddressAsPostalAddress, entityId);
+    return Objects.hash(id, descriptions, parentOrganization, emailAddresses, phoneNumbers, webPages, addresses, municipality, organizationType, businessCode, businessName, organizationNames, publishingStatus, displayNameType, oid, streetAddressAsPostalAddress);
   }
 
   @Override
@@ -389,18 +334,15 @@ public class Organization   {
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
-    sb.append("    services: ").append(toIndentedString(services)).append("\n");
     sb.append("    municipality: ").append(toIndentedString(municipality)).append("\n");
     sb.append("    organizationType: ").append(toIndentedString(organizationType)).append("\n");
     sb.append("    businessCode: ").append(toIndentedString(businessCode)).append("\n");
     sb.append("    businessName: ").append(toIndentedString(businessName)).append("\n");
     sb.append("    organizationNames: ").append(toIndentedString(organizationNames)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");
-    sb.append("    businessId: ").append(toIndentedString(businessId)).append("\n");
     sb.append("    displayNameType: ").append(toIndentedString(displayNameType)).append("\n");
     sb.append("    oid: ").append(toIndentedString(oid)).append("\n");
     sb.append("    streetAddressAsPostalAddress: ").append(toIndentedString(streetAddressAsPostalAddress)).append("\n");
-    sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -21,16 +21,16 @@ import java.util.List;
 @Path("/services")
 
 @Api(description = "the services API")
-
-
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2016-10-04T07:23:44.071+03:00")
+@Consumes({ "application/json;charset=utf-8" })
+@Produces({ "application/json;charset=utf-8" })
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2016-10-05T09:32:35.363+03:00")
 
 public abstract class ServicesApi extends AbstractApi {
 
     @POST
     
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Create service", notes = "Creates new service", response = Service.class, tags={ "Services",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Created service", response = Service.class),
@@ -41,8 +41,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @POST
     @Path("/{serviceId}/electronicChannels")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "creates ElectronicChannel", notes = "creates ElectronicChannel", response = ElectronicChannel.class, tags={ "Services", "ElectronicChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns created ElectronicChannel", response = ElectronicChannel.class),
@@ -54,8 +54,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @POST
     @Path("/{serviceId}/phoneChannels")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "creates PhoneChannel", notes = "creates PhoneChannel", response = PhoneChannel.class, tags={ "Services", "PhoneChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns created PhoneChannel", response = PhoneChannel.class),
@@ -67,8 +67,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @POST
     @Path("/{serviceId}/printableFormChannels")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "creates PrintableFormChannel", notes = "creates PrintableFormChannel", response = PrintableFormChannel.class, tags={ "Services", "PrintableFormChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns created PrintableFormChannel", response = PrintableFormChannel.class),
@@ -80,8 +80,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @POST
     @Path("/{serviceId}/serviceLocationChannels")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "creates ServiceLocationChannel", notes = "creates ServiceLocationChannel", response = ServiceLocationChannel.class, tags={ "Services", "ServiceLocationChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns created ServiceLocationChannel", response = ServiceLocationChannel.class),
@@ -93,8 +93,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @POST
     @Path("/{serviceId}/webPageChannels")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "creates WebPageChannel", notes = "creates WebPageChannel", response = WebPageChannel.class, tags={ "Services", "WebPageChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns created WebPageChannel", response = WebPageChannel.class),
@@ -106,8 +106,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Finds a service by id", notes = "Finds service", response = Service.class, tags={ "Services",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns a service", response = Service.class),
@@ -119,8 +119,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}/electronicChannels/{electronicChannelId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "finds ElectronicChannel by electronicChannelId", notes = "finds ElectronicChannels by electronicChannelId", response = ElectronicChannel.class, tags={ "Services", "ElectronicChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns ElectronicChannel", response = ElectronicChannel.class),
@@ -132,8 +132,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}/phoneChannels/{phoneChannelId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "finds PhoneChannel by phoneChannelId", notes = "finds PhoneChannels by phoneChannelId", response = PhoneChannel.class, tags={ "Services", "PhoneChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns PhoneChannel", response = PhoneChannel.class),
@@ -145,8 +145,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}/printableFormChannels/{printableFormChannelId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "finds PrintableFormChannel by printableFormChannelId", notes = "finds PrintableFormChannels by printableFormChannelId", response = PrintableFormChannel.class, tags={ "Services", "PrintableFormChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns PrintableFormChannel", response = PrintableFormChannel.class),
@@ -158,8 +158,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}/serviceLocationChannels/{serviceLocationChannelId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "finds ServiceLocationChannel by serviceLocationChannelId", notes = "finds ServiceLocationChannels by serviceLocationChannelId", response = ServiceLocationChannel.class, tags={ "Services", "ServiceLocationChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns ServiceLocationChannel", response = ServiceLocationChannel.class),
@@ -171,8 +171,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}/webPageChannels/{webPageChannelId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "finds WebPageChannel by webPageChannelId", notes = "finds WebPageChannels by webPageChannelId", response = WebPageChannel.class, tags={ "Services", "WebPageChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns WebPageChannel", response = WebPageChannel.class),
@@ -184,8 +184,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}/electronicChannels")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Lists ElectronicChannels by serviceId", notes = "Lists ElectronicChannels by serviceId", response = ElectronicChannel.class, responseContainer = "List", tags={ "Services", "ElectronicChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns array of ElectronicChannels", response = ElectronicChannel.class, responseContainer = "List"),
@@ -197,8 +197,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}/phoneChannels")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Lists PhoneChannels by serviceId", notes = "Lists PhoneChannels by serviceId", response = PhoneChannel.class, responseContainer = "List", tags={ "Services", "PhoneChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns array of PhoneChannels", response = PhoneChannel.class, responseContainer = "List"),
@@ -210,8 +210,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}/printableFormChannels")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Lists PrintableFormChannels by serviceId", notes = "Lists PrintableFormChannels by serviceId", response = PrintableFormChannel.class, responseContainer = "List", tags={ "Services", "PrintableFormChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns array of PrintableFormChannels", response = PrintableFormChannel.class, responseContainer = "List"),
@@ -223,8 +223,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}/serviceLocationChannels")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Lists ServiceLocationChannels by serviceId", notes = "Lists ServiceLocationChannels by serviceId", response = ServiceLocationChannel.class, responseContainer = "List", tags={ "Services", "ServiceLocationChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns array of ServiceLocationChannels", response = ServiceLocationChannel.class, responseContainer = "List"),
@@ -236,8 +236,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     @Path("/{serviceId}/webPageChannels")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Lists WebPageChannels by serviceId", notes = "Lists WebPageChannels by serviceId", response = WebPageChannel.class, responseContainer = "List", tags={ "Services", "WebPageChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns array of WebPageChannels", response = WebPageChannel.class, responseContainer = "List"),
@@ -249,8 +249,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @GET
     
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Service list", notes = "Lists services", response = Service.class, responseContainer = "List", tags={ "Services",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "An array of services", response = Service.class, responseContainer = "List"),
@@ -262,8 +262,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @PUT
     @Path("/{serviceId}/phoneChannels/{phoneChannelId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Updates PhoneChannel", notes = "Updates PhoneChannel", response = PhoneChannel.class, tags={ "Services", "PhoneChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns updated PhoneChannel", response = PhoneChannel.class),
@@ -275,8 +275,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @PUT
     @Path("/{serviceId}/printableFormChannels/{printableFormChannelId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Updates PrintableFormChannel", notes = "Updates PrintableFormChannel", response = PrintableFormChannel.class, tags={ "Services", "PrintableFormChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns updated PrintableFormChannel", response = PrintableFormChannel.class),
@@ -288,8 +288,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @PUT
     @Path("/{serviceId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Updates service", notes = "Updates service", response = Service.class, tags={ "Services",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns an updated service", response = Service.class),
@@ -301,8 +301,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @PUT
     @Path("/{serviceId}/electronicChannels/{electronicChannelId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Updates ElectronicChannel", notes = "Updates ElectronicChannel", response = ElectronicChannel.class, tags={ "Services", "ElectronicChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns updated ElectronicChannel", response = ElectronicChannel.class),
@@ -314,8 +314,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @PUT
     @Path("/{serviceId}/serviceLocationChannels/{serviceLocationChannelId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Updates ServiceLocationChannel", notes = "Updates ServiceLocationChannel", response = ServiceLocationChannel.class, tags={ "Services", "ServiceLocationChannels",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns updated ServiceLocationChannel", response = ServiceLocationChannel.class),
@@ -327,8 +327,8 @@ public abstract class ServicesApi extends AbstractApi {
 
     @PUT
     @Path("/{serviceId}/webPageChannels/{webPageChannelId}")
-    
-    
+    @Consumes({ "application/json;charset=utf-8" })
+    @Produces({ "application/json;charset=utf-8" })
     @ApiOperation(value = "Updates WebPageChannel", notes = "Updates WebPageChannel", response = WebPageChannel.class, tags={ "Services", "WebPageChannels" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Returns updated WebPageChannel", response = WebPageChannel.class),
