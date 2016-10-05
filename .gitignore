@@ -1,3 +1,5 @@
 /node_modules/
 /.project
 /swagger-codegen-cli.jar
+java-client-generated/pom.xml.before
+jaxrs-spec-generated/pom.xml.before
