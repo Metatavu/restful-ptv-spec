@@ -19,10 +19,10 @@ import java.util.Objects;
 public class PrintableFormChannel   {
   
   private String id = null;
-  private String serviceChannelType = null;
+  private String type = null;
   private String organizationId = null;
-  private List<LocalizedListItem> serviceChannelNames = new ArrayList<LocalizedListItem>();
-  private List<LocalizedListItem> serviceChannelDescriptions = new ArrayList<LocalizedListItem>();
+  private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
+  private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
   private String formIdentifier = null;
   private String formReceiver = null;
   private List<Support> supportContacts = new ArrayList<Support>();
@@ -53,18 +53,18 @@ public class PrintableFormChannel   {
 
   /**
    **/
-  public PrintableFormChannel serviceChannelType(String serviceChannelType) {
-    this.serviceChannelType = serviceChannelType;
+  public PrintableFormChannel type(String type) {
+    this.type = type;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public String getServiceChannelType() {
-    return serviceChannelType;
+  public String getType() {
+    return type;
   }
-  public void setServiceChannelType(String serviceChannelType) {
-    this.serviceChannelType = serviceChannelType;
+  public void setType(String type) {
+    this.type = type;
   }
 
   /**
@@ -85,34 +85,34 @@ public class PrintableFormChannel   {
 
   /**
    **/
-  public PrintableFormChannel serviceChannelNames(List<LocalizedListItem> serviceChannelNames) {
-    this.serviceChannelNames = serviceChannelNames;
+  public PrintableFormChannel names(List<LocalizedListItem> names) {
+    this.names = names;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceChannelNames() {
-    return serviceChannelNames;
+  public List<LocalizedListItem> getNames() {
+    return names;
   }
-  public void setServiceChannelNames(List<LocalizedListItem> serviceChannelNames) {
-    this.serviceChannelNames = serviceChannelNames;
+  public void setNames(List<LocalizedListItem> names) {
+    this.names = names;
   }
 
   /**
    **/
-  public PrintableFormChannel serviceChannelDescriptions(List<LocalizedListItem> serviceChannelDescriptions) {
-    this.serviceChannelDescriptions = serviceChannelDescriptions;
+  public PrintableFormChannel descriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceChannelDescriptions() {
-    return serviceChannelDescriptions;
+  public List<LocalizedListItem> getDescriptions() {
+    return descriptions;
   }
-  public void setServiceChannelDescriptions(List<LocalizedListItem> serviceChannelDescriptions) {
-    this.serviceChannelDescriptions = serviceChannelDescriptions;
+  public void setDescriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
   }
 
   /**
@@ -302,10 +302,10 @@ public class PrintableFormChannel   {
     }
     PrintableFormChannel printableFormChannel = (PrintableFormChannel) o;
     return Objects.equals(id, printableFormChannel.id) &&
-        Objects.equals(serviceChannelType, printableFormChannel.serviceChannelType) &&
+        Objects.equals(type, printableFormChannel.type) &&
         Objects.equals(organizationId, printableFormChannel.organizationId) &&
-        Objects.equals(serviceChannelNames, printableFormChannel.serviceChannelNames) &&
-        Objects.equals(serviceChannelDescriptions, printableFormChannel.serviceChannelDescriptions) &&
+        Objects.equals(names, printableFormChannel.names) &&
+        Objects.equals(descriptions, printableFormChannel.descriptions) &&
         Objects.equals(formIdentifier, printableFormChannel.formIdentifier) &&
         Objects.equals(formReceiver, printableFormChannel.formReceiver) &&
         Objects.equals(supportContacts, printableFormChannel.supportContacts) &&
@@ -321,7 +321,7 @@ public class PrintableFormChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, serviceChannelType, organizationId, serviceChannelNames, serviceChannelDescriptions, formIdentifier, formReceiver, supportContacts, deliveryAddress, channelUrls, languages, deliveryAddressDescriptions, attachments, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, formIdentifier, formReceiver, supportContacts, deliveryAddress, channelUrls, languages, deliveryAddressDescriptions, attachments, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -330,10 +330,10 @@ public class PrintableFormChannel   {
     sb.append("class PrintableFormChannel {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    serviceChannelType: ").append(toIndentedString(serviceChannelType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    serviceChannelNames: ").append(toIndentedString(serviceChannelNames)).append("\n");
-    sb.append("    serviceChannelDescriptions: ").append(toIndentedString(serviceChannelDescriptions)).append("\n");
+    sb.append("    names: ").append(toIndentedString(names)).append("\n");
+    sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    formIdentifier: ").append(toIndentedString(formIdentifier)).append("\n");
     sb.append("    formReceiver: ").append(toIndentedString(formReceiver)).append("\n");
     sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");

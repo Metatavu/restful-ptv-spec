@@ -23,17 +23,17 @@ public class Service   {
   private List<FintoItem> targetGroups = new ArrayList<FintoItem>();
   private List<FintoItem> lifeEvents = new ArrayList<FintoItem>();
   private List<FintoItem> industrialClasses = new ArrayList<FintoItem>();
-  private List<LocalizedListItem> serviceNames = new ArrayList<LocalizedListItem>();
-  private List<LocalizedListItem> serviceDescriptions = new ArrayList<LocalizedListItem>();
+  private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
+  private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
   private List<String> languages = new ArrayList<String>();
   private List<String> keywords = new ArrayList<String>();
-  private String serviceCoverageType = null;
+  private String coverageType = null;
   private List<String> municipalities = new ArrayList<String>();
   private List<WebPage> webPages = new ArrayList<WebPage>();
   private List<LanguageItem> requirements = new ArrayList<LanguageItem>();
   private String publishingStatus = null;
-  private String serviceChargeType = null;
-  private List<LocalizedListItem> serviceAdditionalInformations = new ArrayList<LocalizedListItem>();
+  private String chargeType = null;
+  private List<LocalizedListItem> additionalInformations = new ArrayList<LocalizedListItem>();
 
   /**
    **/
@@ -165,34 +165,34 @@ public class Service   {
 
   /**
    **/
-  public Service serviceNames(List<LocalizedListItem> serviceNames) {
-    this.serviceNames = serviceNames;
+  public Service names(List<LocalizedListItem> names) {
+    this.names = names;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceNames() {
-    return serviceNames;
+  public List<LocalizedListItem> getNames() {
+    return names;
   }
-  public void setServiceNames(List<LocalizedListItem> serviceNames) {
-    this.serviceNames = serviceNames;
+  public void setNames(List<LocalizedListItem> names) {
+    this.names = names;
   }
 
   /**
    **/
-  public Service serviceDescriptions(List<LocalizedListItem> serviceDescriptions) {
-    this.serviceDescriptions = serviceDescriptions;
+  public Service descriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceDescriptions() {
-    return serviceDescriptions;
+  public List<LocalizedListItem> getDescriptions() {
+    return descriptions;
   }
-  public void setServiceDescriptions(List<LocalizedListItem> serviceDescriptions) {
-    this.serviceDescriptions = serviceDescriptions;
+  public void setDescriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
   }
 
   /**
@@ -229,18 +229,18 @@ public class Service   {
 
   /**
    **/
-  public Service serviceCoverageType(String serviceCoverageType) {
-    this.serviceCoverageType = serviceCoverageType;
+  public Service coverageType(String coverageType) {
+    this.coverageType = coverageType;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public String getServiceCoverageType() {
-    return serviceCoverageType;
+  public String getCoverageType() {
+    return coverageType;
   }
-  public void setServiceCoverageType(String serviceCoverageType) {
-    this.serviceCoverageType = serviceCoverageType;
+  public void setCoverageType(String coverageType) {
+    this.coverageType = coverageType;
   }
 
   /**
@@ -309,34 +309,34 @@ public class Service   {
 
   /**
    **/
-  public Service serviceChargeType(String serviceChargeType) {
-    this.serviceChargeType = serviceChargeType;
+  public Service chargeType(String chargeType) {
+    this.chargeType = chargeType;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public String getServiceChargeType() {
-    return serviceChargeType;
+  public String getChargeType() {
+    return chargeType;
   }
-  public void setServiceChargeType(String serviceChargeType) {
-    this.serviceChargeType = serviceChargeType;
+  public void setChargeType(String chargeType) {
+    this.chargeType = chargeType;
   }
 
   /**
    **/
-  public Service serviceAdditionalInformations(List<LocalizedListItem> serviceAdditionalInformations) {
-    this.serviceAdditionalInformations = serviceAdditionalInformations;
+  public Service additionalInformations(List<LocalizedListItem> additionalInformations) {
+    this.additionalInformations = additionalInformations;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceAdditionalInformations() {
-    return serviceAdditionalInformations;
+  public List<LocalizedListItem> getAdditionalInformations() {
+    return additionalInformations;
   }
-  public void setServiceAdditionalInformations(List<LocalizedListItem> serviceAdditionalInformations) {
-    this.serviceAdditionalInformations = serviceAdditionalInformations;
+  public void setAdditionalInformations(List<LocalizedListItem> additionalInformations) {
+    this.additionalInformations = additionalInformations;
   }
 
 
@@ -357,22 +357,22 @@ public class Service   {
         Objects.equals(targetGroups, service.targetGroups) &&
         Objects.equals(lifeEvents, service.lifeEvents) &&
         Objects.equals(industrialClasses, service.industrialClasses) &&
-        Objects.equals(serviceNames, service.serviceNames) &&
-        Objects.equals(serviceDescriptions, service.serviceDescriptions) &&
+        Objects.equals(names, service.names) &&
+        Objects.equals(descriptions, service.descriptions) &&
         Objects.equals(languages, service.languages) &&
         Objects.equals(keywords, service.keywords) &&
-        Objects.equals(serviceCoverageType, service.serviceCoverageType) &&
+        Objects.equals(coverageType, service.coverageType) &&
         Objects.equals(municipalities, service.municipalities) &&
         Objects.equals(webPages, service.webPages) &&
         Objects.equals(requirements, service.requirements) &&
         Objects.equals(publishingStatus, service.publishingStatus) &&
-        Objects.equals(serviceChargeType, service.serviceChargeType) &&
-        Objects.equals(serviceAdditionalInformations, service.serviceAdditionalInformations);
+        Objects.equals(chargeType, service.chargeType) &&
+        Objects.equals(additionalInformations, service.additionalInformations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, serviceNames, serviceDescriptions, languages, keywords, serviceCoverageType, municipalities, webPages, requirements, publishingStatus, serviceChargeType, serviceAdditionalInformations);
+    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations);
   }
 
   @Override
@@ -388,17 +388,17 @@ public class Service   {
     sb.append("    targetGroups: ").append(toIndentedString(targetGroups)).append("\n");
     sb.append("    lifeEvents: ").append(toIndentedString(lifeEvents)).append("\n");
     sb.append("    industrialClasses: ").append(toIndentedString(industrialClasses)).append("\n");
-    sb.append("    serviceNames: ").append(toIndentedString(serviceNames)).append("\n");
-    sb.append("    serviceDescriptions: ").append(toIndentedString(serviceDescriptions)).append("\n");
+    sb.append("    names: ").append(toIndentedString(names)).append("\n");
+    sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
-    sb.append("    serviceCoverageType: ").append(toIndentedString(serviceCoverageType)).append("\n");
+    sb.append("    coverageType: ").append(toIndentedString(coverageType)).append("\n");
     sb.append("    municipalities: ").append(toIndentedString(municipalities)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    requirements: ").append(toIndentedString(requirements)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");
-    sb.append("    serviceChargeType: ").append(toIndentedString(serviceChargeType)).append("\n");
-    sb.append("    serviceAdditionalInformations: ").append(toIndentedString(serviceAdditionalInformations)).append("\n");
+    sb.append("    chargeType: ").append(toIndentedString(chargeType)).append("\n");
+    sb.append("    additionalInformations: ").append(toIndentedString(additionalInformations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

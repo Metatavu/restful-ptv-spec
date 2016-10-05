@@ -18,10 +18,10 @@ import java.util.Objects;
 public class ElectronicChannel   {
   
   private String id = null;
-  private String serviceChannelType = null;
+  private String type = null;
   private String organizationId = null;
-  private List<LocalizedListItem> serviceChannelNames = new ArrayList<LocalizedListItem>();
-  private List<LocalizedListItem> serviceChannelDescriptions = new ArrayList<LocalizedListItem>();
+  private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
+  private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
   private Integer signatureQuantity = null;
   private Boolean requiresSignature = null;
   private List<Support> supportContacts = new ArrayList<Support>();
@@ -51,18 +51,18 @@ public class ElectronicChannel   {
 
   /**
    **/
-  public ElectronicChannel serviceChannelType(String serviceChannelType) {
-    this.serviceChannelType = serviceChannelType;
+  public ElectronicChannel type(String type) {
+    this.type = type;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public String getServiceChannelType() {
-    return serviceChannelType;
+  public String getType() {
+    return type;
   }
-  public void setServiceChannelType(String serviceChannelType) {
-    this.serviceChannelType = serviceChannelType;
+  public void setType(String type) {
+    this.type = type;
   }
 
   /**
@@ -83,34 +83,34 @@ public class ElectronicChannel   {
 
   /**
    **/
-  public ElectronicChannel serviceChannelNames(List<LocalizedListItem> serviceChannelNames) {
-    this.serviceChannelNames = serviceChannelNames;
+  public ElectronicChannel names(List<LocalizedListItem> names) {
+    this.names = names;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceChannelNames() {
-    return serviceChannelNames;
+  public List<LocalizedListItem> getNames() {
+    return names;
   }
-  public void setServiceChannelNames(List<LocalizedListItem> serviceChannelNames) {
-    this.serviceChannelNames = serviceChannelNames;
+  public void setNames(List<LocalizedListItem> names) {
+    this.names = names;
   }
 
   /**
    **/
-  public ElectronicChannel serviceChannelDescriptions(List<LocalizedListItem> serviceChannelDescriptions) {
-    this.serviceChannelDescriptions = serviceChannelDescriptions;
+  public ElectronicChannel descriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getServiceChannelDescriptions() {
-    return serviceChannelDescriptions;
+  public List<LocalizedListItem> getDescriptions() {
+    return descriptions;
   }
-  public void setServiceChannelDescriptions(List<LocalizedListItem> serviceChannelDescriptions) {
-    this.serviceChannelDescriptions = serviceChannelDescriptions;
+  public void setDescriptions(List<LocalizedListItem> descriptions) {
+    this.descriptions = descriptions;
   }
 
   /**
@@ -284,10 +284,10 @@ public class ElectronicChannel   {
     }
     ElectronicChannel electronicChannel = (ElectronicChannel) o;
     return Objects.equals(id, electronicChannel.id) &&
-        Objects.equals(serviceChannelType, electronicChannel.serviceChannelType) &&
+        Objects.equals(type, electronicChannel.type) &&
         Objects.equals(organizationId, electronicChannel.organizationId) &&
-        Objects.equals(serviceChannelNames, electronicChannel.serviceChannelNames) &&
-        Objects.equals(serviceChannelDescriptions, electronicChannel.serviceChannelDescriptions) &&
+        Objects.equals(names, electronicChannel.names) &&
+        Objects.equals(descriptions, electronicChannel.descriptions) &&
         Objects.equals(signatureQuantity, electronicChannel.signatureQuantity) &&
         Objects.equals(requiresSignature, electronicChannel.requiresSignature) &&
         Objects.equals(supportContacts, electronicChannel.supportContacts) &&
@@ -302,7 +302,7 @@ public class ElectronicChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, serviceChannelType, organizationId, serviceChannelNames, serviceChannelDescriptions, signatureQuantity, requiresSignature, supportContacts, requiresAuthentication, urls, languages, attachments, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, signatureQuantity, requiresSignature, supportContacts, requiresAuthentication, urls, languages, attachments, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -311,10 +311,10 @@ public class ElectronicChannel   {
     sb.append("class ElectronicChannel {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    serviceChannelType: ").append(toIndentedString(serviceChannelType)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    serviceChannelNames: ").append(toIndentedString(serviceChannelNames)).append("\n");
-    sb.append("    serviceChannelDescriptions: ").append(toIndentedString(serviceChannelDescriptions)).append("\n");
+    sb.append("    names: ").append(toIndentedString(names)).append("\n");
+    sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    signatureQuantity: ").append(toIndentedString(signatureQuantity)).append("\n");
     sb.append("    requiresSignature: ").append(toIndentedString(requiresSignature)).append("\n");
     sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");

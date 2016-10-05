@@ -2006,7 +2006,7 @@
         "municipality" : {
           "type" : "string"
         },
-        "organizationType" : {
+        "type" : {
           "type" : "string"
         },
         "businessCode" : {
@@ -2015,7 +2015,7 @@
         "businessName" : {
           "type" : "string"
         },
-        "organizationNames" : {
+        "names" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
@@ -2204,13 +2204,13 @@
             "$ref" : "#/definitions/FintoItem"
           }
         },
-        "serviceNames" : {
+        "names" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
-        "serviceDescriptions" : {
+        "descriptions" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
@@ -2229,7 +2229,7 @@
             "type" : "string"
           }
         },
-        "serviceCoverageType" : {
+        "coverageType" : {
           "type" : "string"
         },
         "municipalities" : {
@@ -2254,10 +2254,10 @@
         "publishingStatus" : {
           "type" : "string"
         },
-        "serviceChargeType" : {
+        "chargeType" : {
           "type" : "string"
         },
-        "serviceAdditionalInformations" : {
+        "additionalInformations" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
@@ -2342,20 +2342,20 @@
           "type" : "string",
           "format" : "uuid"
         },
-        "serviceChannelType" : {
+        "type" : {
           "type" : "string"
         },
         "organizationId" : {
           "type" : "string",
           "format" : "uuid"
         },
-        "serviceChannelNames" : {
+        "names" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
-        "serviceChannelDescriptions" : {
+        "descriptions" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
@@ -2419,20 +2419,20 @@
           "type" : "string",
           "format" : "uuid"
         },
-        "serviceChannelType" : {
+        "type" : {
           "type" : "string"
         },
         "organizationId" : {
           "type" : "string",
           "format" : "uuid"
         },
-        "serviceChannelNames" : {
+        "names" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
-        "serviceChannelDescriptions" : {
+        "descriptions" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
@@ -2441,7 +2441,7 @@
         "phoneType" : {
           "type" : "string"
         },
-        "serviceChargeTypes" : {
+        "chargeTypes" : {
           "type" : "array",
           "items" : {
             "type" : "string"
@@ -2495,20 +2495,20 @@
           "type" : "string",
           "format" : "uuid"
         },
-        "serviceChannelType" : {
+        "type" : {
           "type" : "string"
         },
         "organizationId" : {
           "type" : "string",
           "format" : "uuid"
         },
-        "serviceChannelNames" : {
+        "names" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
-        "serviceChannelDescriptions" : {
+        "descriptions" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
@@ -2577,20 +2577,20 @@
           "type" : "string",
           "format" : "uuid"
         },
-        "serviceChannelType" : {
+        "type" : {
           "type" : "string"
         },
         "organizationId" : {
           "type" : "string",
           "format" : "uuid"
         },
-        "serviceChannelNames" : {
+        "names" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
-        "serviceChannelDescriptions" : {
+        "descriptions" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
@@ -2659,7 +2659,7 @@
             "$ref" : "#/definitions/Address"
           }
         },
-        "serviceChargeTypes" : {
+        "chargeTypes" : {
           "type" : "array",
           "items" : {
             "type" : "string"
@@ -2683,20 +2683,20 @@
           "type" : "string",
           "format" : "uuid"
         },
-        "serviceChannelType" : {
+        "type" : {
           "type" : "string"
         },
         "organizationId" : {
           "type" : "string",
           "format" : "uuid"
         },
-        "serviceChannelNames" : {
+        "names" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
-        "serviceChannelDescriptions" : {
+        "descriptions" : {
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
