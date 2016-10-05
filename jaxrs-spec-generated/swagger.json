@@ -1,0 +1,2907 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Restful way to use Palvelutietovaranto.",
+    "version" : "v1",
+    "title" : "RESTful PTV"
+  },
+  "basePath" : "/",
+  "paths" : {
+    "/organizations" : {
+      "get" : {
+        "tags" : [ "Organizations" ],
+        "summary" : "List organizations",
+        "description" : "List organizations",
+        "operationId" : "listOrganizations",
+        "parameters" : [ {
+          "name" : "firstResult",
+          "in" : "query",
+          "description" : "First result",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "maxResults",
+          "in" : "query",
+          "description" : "Max results",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "An array of organizations",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Organization"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Organizations" ],
+        "summary" : "Create organization",
+        "description" : "Create organization",
+        "operationId" : "createOrganization",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Organization"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Created organization",
+            "schema" : {
+              "$ref" : "#/definitions/Organization"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organizationId}" : {
+      "get" : {
+        "tags" : [ "Organizations" ],
+        "summary" : "Finds an organization",
+        "description" : "Finds an organization by id",
+        "operationId" : "findOrganization",
+        "parameters" : [ {
+          "name" : "organizationId",
+          "in" : "path",
+          "description" : "Organization id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "An organization",
+            "schema" : {
+              "$ref" : "#/definitions/Organization"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Organizations" ],
+        "summary" : "Updates an organization",
+        "description" : "Updates organization data",
+        "operationId" : "updateOrganization",
+        "parameters" : [ {
+          "name" : "organizationId",
+          "in" : "path",
+          "description" : "Organization id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Organization"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "An organization",
+            "schema" : {
+              "$ref" : "#/definitions/Organization"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organizationId}/organizationServices" : {
+      "get" : {
+        "tags" : [ "Organizations", "OrganizationServices" ],
+        "summary" : "Organization organization service list",
+        "description" : "Lists organization's organization services",
+        "operationId" : "listOrganizationOrganizationServices",
+        "parameters" : [ {
+          "name" : "organizationId",
+          "in" : "path",
+          "description" : "Organization id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "firstResult",
+          "in" : "query",
+          "description" : "First result",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "maxResults",
+          "in" : "query",
+          "description" : "Max results",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "An array of organization services",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/OrganizationService"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Organizations", "OrganizationServices" ],
+        "summary" : "Create organization service",
+        "description" : "Create organization service",
+        "operationId" : "createOrganizationService",
+        "parameters" : [ {
+          "name" : "organizationId",
+          "in" : "path",
+          "description" : "Organization id",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/OrganizationService"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Created organization service",
+            "schema" : {
+              "$ref" : "#/definitions/Organization"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/organizations/{organizationId}/organizationServices/{organizationServiceId}" : {
+      "get" : {
+        "tags" : [ "Organizations", "OrganizationServices" ],
+        "summary" : "Finds a organization service by id",
+        "description" : "Find an organization service",
+        "operationId" : "findOrganizationService",
+        "parameters" : [ {
+          "name" : "organizationId",
+          "in" : "path",
+          "description" : "Organization id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "organizationServiceId",
+          "in" : "path",
+          "description" : "Organization service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "An organization service",
+            "schema" : {
+              "$ref" : "#/definitions/OrganizationService"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Organizations", "OrganizationServices" ],
+        "summary" : "Updates an organization service",
+        "description" : "Updates organization service",
+        "operationId" : "updateOrganizationService",
+        "parameters" : [ {
+          "name" : "organizationId",
+          "in" : "path",
+          "description" : "Organization id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "organizationServiceId",
+          "in" : "path",
+          "description" : "Organization service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/OrganizationService"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "An updated organization service",
+            "schema" : {
+              "$ref" : "#/definitions/OrganizationService"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services" : {
+      "get" : {
+        "tags" : [ "Services" ],
+        "summary" : "Service list",
+        "description" : "Lists services",
+        "operationId" : "listServices",
+        "parameters" : [ {
+          "name" : "firstResult",
+          "in" : "query",
+          "description" : "First result",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "maxResults",
+          "in" : "query",
+          "description" : "Max results",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "An array of services",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Service"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Services" ],
+        "summary" : "Create service",
+        "description" : "Creates new service",
+        "operationId" : "createService",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Service"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Created service",
+            "schema" : {
+              "$ref" : "#/definitions/Service"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}" : {
+      "get" : {
+        "tags" : [ "Services" ],
+        "summary" : "Finds a service by id",
+        "description" : "Finds service",
+        "operationId" : "findService",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns a service",
+            "schema" : {
+              "$ref" : "#/definitions/Service"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Services" ],
+        "summary" : "Updates service",
+        "description" : "Updates service",
+        "operationId" : "updateService",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Organization service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Service"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns an updated service",
+            "schema" : {
+              "$ref" : "#/definitions/Service"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}/electronicChannels" : {
+      "get" : {
+        "tags" : [ "Services", "ElectronicChannels" ],
+        "summary" : "Lists ElectronicChannels by serviceId",
+        "description" : "Lists ElectronicChannels by serviceId",
+        "operationId" : "listServiceElectronicChannels",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "firstResult",
+          "in" : "query",
+          "description" : "First result",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "maxResults",
+          "in" : "query",
+          "description" : "Max results",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns array of ElectronicChannels",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ElectronicChannel"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Services", "ElectronicChannels" ],
+        "summary" : "creates ElectronicChannel",
+        "description" : "creates ElectronicChannel",
+        "operationId" : "createServiceElectronicChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ElectronicChannel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns created ElectronicChannel",
+            "schema" : {
+              "$ref" : "#/definitions/ElectronicChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}/electronicChannels/{electronicChannelId}" : {
+      "get" : {
+        "tags" : [ "Services", "ElectronicChannels" ],
+        "summary" : "finds ElectronicChannel by electronicChannelId",
+        "description" : "finds ElectronicChannels by electronicChannelId",
+        "operationId" : "findServiceElectronicChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "electronicChannelId",
+          "in" : "path",
+          "description" : "electronicChannel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns ElectronicChannel",
+            "schema" : {
+              "$ref" : "#/definitions/ElectronicChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Services", "ElectronicChannels" ],
+        "summary" : "Updates ElectronicChannel",
+        "description" : "Updates ElectronicChannel",
+        "operationId" : "updateServiceElectronicChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "electronicChannelId",
+          "in" : "path",
+          "description" : "electronicChannel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ElectronicChannel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns updated ElectronicChannel",
+            "schema" : {
+              "$ref" : "#/definitions/ElectronicChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}/phoneChannels" : {
+      "get" : {
+        "tags" : [ "Services", "PhoneChannels" ],
+        "summary" : "Lists PhoneChannels by serviceId",
+        "description" : "Lists PhoneChannels by serviceId",
+        "operationId" : "listServicePhoneChannels",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "firstResult",
+          "in" : "query",
+          "description" : "First result",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "maxResults",
+          "in" : "query",
+          "description" : "Max results",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns array of PhoneChannels",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/PhoneChannel"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Services", "PhoneChannels" ],
+        "summary" : "creates PhoneChannel",
+        "description" : "creates PhoneChannel",
+        "operationId" : "createServicePhoneChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/PhoneChannel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns created PhoneChannel",
+            "schema" : {
+              "$ref" : "#/definitions/PhoneChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}/phoneChannels/{phoneChannelId}" : {
+      "get" : {
+        "tags" : [ "Services", "PhoneChannels" ],
+        "summary" : "finds PhoneChannel by phoneChannelId",
+        "description" : "finds PhoneChannels by phoneChannelId",
+        "operationId" : "findServicePhoneChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "phoneChannelId",
+          "in" : "path",
+          "description" : "phoneChannel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns PhoneChannel",
+            "schema" : {
+              "$ref" : "#/definitions/PhoneChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Services", "PhoneChannels" ],
+        "summary" : "Updates PhoneChannel",
+        "description" : "Updates PhoneChannel",
+        "operationId" : "updatePhoneChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "phoneChannelId",
+          "in" : "path",
+          "description" : "phoneChannel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/PhoneChannel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns updated PhoneChannel",
+            "schema" : {
+              "$ref" : "#/definitions/PhoneChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}/printableFormChannels" : {
+      "get" : {
+        "tags" : [ "Services", "PrintableFormChannels" ],
+        "summary" : "Lists PrintableFormChannels by serviceId",
+        "description" : "Lists PrintableFormChannels by serviceId",
+        "operationId" : "listServicePrintableFormChannels",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "firstResult",
+          "in" : "query",
+          "description" : "First result",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "maxResults",
+          "in" : "query",
+          "description" : "Max results",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns array of PrintableFormChannels",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/PrintableFormChannel"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Services", "PrintableFormChannels" ],
+        "summary" : "creates PrintableFormChannel",
+        "description" : "creates PrintableFormChannel",
+        "operationId" : "createServicePrintableFormChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/PrintableFormChannel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns created PrintableFormChannel",
+            "schema" : {
+              "$ref" : "#/definitions/PrintableFormChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}/printableFormChannels/{printableFormChannelId}" : {
+      "get" : {
+        "tags" : [ "Services", "PrintableFormChannels" ],
+        "summary" : "finds PrintableFormChannel by printableFormChannelId",
+        "description" : "finds PrintableFormChannels by printableFormChannelId",
+        "operationId" : "findServicePrintableFormChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "printableFormChannelId",
+          "in" : "path",
+          "description" : "printableFormChannel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns PrintableFormChannel",
+            "schema" : {
+              "$ref" : "#/definitions/PrintableFormChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Services", "PrintableFormChannels" ],
+        "summary" : "Updates PrintableFormChannel",
+        "description" : "Updates PrintableFormChannel",
+        "operationId" : "updatePrintableFormChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "printableFormChannelId",
+          "in" : "path",
+          "description" : "printableFormChannel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/PrintableFormChannel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns updated PrintableFormChannel",
+            "schema" : {
+              "$ref" : "#/definitions/PrintableFormChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}/serviceLocationChannels" : {
+      "get" : {
+        "tags" : [ "Services", "ServiceLocationChannels" ],
+        "summary" : "Lists ServiceLocationChannels by serviceId",
+        "description" : "Lists ServiceLocationChannels by serviceId",
+        "operationId" : "listServiceServiceLocationChannels",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "firstResult",
+          "in" : "query",
+          "description" : "First result",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "maxResults",
+          "in" : "query",
+          "description" : "Max results",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns array of ServiceLocationChannels",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ServiceLocationChannel"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Services", "ServiceLocationChannels" ],
+        "summary" : "creates ServiceLocationChannel",
+        "description" : "creates ServiceLocationChannel",
+        "operationId" : "createServiceServiceLocationChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ServiceLocationChannel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns created ServiceLocationChannel",
+            "schema" : {
+              "$ref" : "#/definitions/ServiceLocationChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}/serviceLocationChannels/{serviceLocationChannelId}" : {
+      "get" : {
+        "tags" : [ "Services", "ServiceLocationChannels" ],
+        "summary" : "finds ServiceLocationChannel by serviceLocationChannelId",
+        "description" : "finds ServiceLocationChannels by serviceLocationChannelId",
+        "operationId" : "findServiceServiceLocationChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "serviceLocationChannelId",
+          "in" : "path",
+          "description" : "serviceLocationChannel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns ServiceLocationChannel",
+            "schema" : {
+              "$ref" : "#/definitions/ServiceLocationChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Services", "ServiceLocationChannels" ],
+        "summary" : "Updates ServiceLocationChannel",
+        "description" : "Updates ServiceLocationChannel",
+        "operationId" : "updateServiceLocationChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "serviceLocationChannelId",
+          "in" : "path",
+          "description" : "serviceLocationChannel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/ServiceLocationChannel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns updated ServiceLocationChannel",
+            "schema" : {
+              "$ref" : "#/definitions/ServiceLocationChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}/webPageChannels" : {
+      "get" : {
+        "tags" : [ "Services", "WebPageChannels" ],
+        "summary" : "Lists WebPageChannels by serviceId",
+        "description" : "Lists WebPageChannels by serviceId",
+        "operationId" : "listServiceWebPageChannels",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "firstResult",
+          "in" : "query",
+          "description" : "First result",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "maxResults",
+          "in" : "query",
+          "description" : "Max results",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns array of WebPageChannels",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/WebPageChannel"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Services", "WebPageChannels" ],
+        "summary" : "creates WebPageChannel",
+        "description" : "creates WebPageChannel",
+        "operationId" : "createServiceWebPageChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/WebPageChannel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns created WebPageChannel",
+            "schema" : {
+              "$ref" : "#/definitions/WebPageChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/services/{serviceId}/webPageChannels/{webPageChannelId}" : {
+      "get" : {
+        "tags" : [ "Services", "WebPageChannels" ],
+        "summary" : "finds WebPageChannel by webPageChannelId",
+        "description" : "finds WebPageChannels by webPageChannelId",
+        "operationId" : "findServiceWebPageChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "Service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "webPageChannelId",
+          "in" : "path",
+          "description" : "webPageChannel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns WebPageChannel",
+            "schema" : {
+              "$ref" : "#/definitions/WebPageChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Services", "WebPageChannels" ],
+        "summary" : "Updates WebPageChannel",
+        "description" : "Updates WebPageChannel",
+        "operationId" : "updateWebPageChannel",
+        "parameters" : [ {
+          "name" : "serviceId",
+          "in" : "path",
+          "description" : "service id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "webPageChannelId",
+          "in" : "path",
+          "description" : "webPageChannel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Payload",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/WebPageChannel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns updated WebPageChannel",
+            "schema" : {
+              "$ref" : "#/definitions/WebPageChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/statutoryDescriptions" : {
+      "get" : {
+        "tags" : [ "Statutory descriptions" ],
+        "summary" : "List statutory descriptions",
+        "description" : "List statutory descriptions",
+        "operationId" : "listStatutoryDescriptions",
+        "parameters" : [ {
+          "name" : "firstResult",
+          "in" : "query",
+          "description" : "First result",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "maxResults",
+          "in" : "query",
+          "description" : "Max results",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "An array of statutory descriptions",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/StatutoryDescription"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/statutoryDescriptions/{statutoryDescriptionId}" : {
+      "get" : {
+        "tags" : [ "Statutory descriptions" ],
+        "summary" : "Finds a statutory description",
+        "description" : "Finds a statutory description by id",
+        "operationId" : "findStatutoryDescription",
+        "parameters" : [ {
+          "name" : "statutoryDescriptionId",
+          "in" : "path",
+          "description" : "Statutory description id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "An statutory description",
+            "schema" : {
+              "$ref" : "#/definitions/StatutoryDescription"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "StatutoryDescription" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "names" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "descriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "languages" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "serviceClasses" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        },
+        "ontologyTerms" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        },
+        "targetGroups" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        },
+        "lifeEvents" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        }
+      }
+    },
+    "Organization" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "descriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "parentOrganization" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "emailAddresses" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/OrganizationEmail"
+          }
+        },
+        "phoneNumbers" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/OrganizationPhone"
+          }
+        },
+        "webPages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/WebPage"
+          }
+        },
+        "addresses" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Address"
+          }
+        },
+        "services" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/OrganizationService"
+          }
+        },
+        "municipality" : {
+          "type" : "string"
+        },
+        "organizationType" : {
+          "type" : "string"
+        },
+        "businessCode" : {
+          "type" : "string"
+        },
+        "businessName" : {
+          "type" : "string"
+        },
+        "organizationNames" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "publishingStatus" : {
+          "type" : "string"
+        },
+        "businessId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "displayNameType" : {
+          "type" : "string"
+        },
+        "oid" : {
+          "type" : "string"
+        },
+        "streetAddressAsPostalAddress" : {
+          "type" : "boolean"
+        },
+        "entityId" : {
+          "type" : "string",
+          "format" : "uuid"
+        }
+      }
+    },
+    "OrganizationService" : {
+      "type" : "object",
+      "required" : [ "roleType" ],
+      "properties" : {
+        "serviceId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "organizationId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "roleType" : {
+          "type" : "string"
+        },
+        "provisionType" : {
+          "type" : "string"
+        },
+        "additionalInformation" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "webPages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/WebPage"
+          }
+        }
+      }
+    },
+    "WebPage" : {
+      "type" : "object",
+      "required" : [ "language", "type", "url", "value" ],
+      "properties" : {
+        "description" : {
+          "type" : "string",
+          "description" : "Web page description."
+        },
+        "url" : {
+          "type" : "string",
+          "description" : "Web page url.",
+          "maxLength" : 500
+        },
+        "language" : {
+          "type" : "string",
+          "description" : "Language code."
+        },
+        "value" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "description" : "Open API web page model."
+    },
+    "LocalizedListItem" : {
+      "type" : "object",
+      "required" : [ "language", "type", "value" ],
+      "properties" : {
+        "language" : {
+          "type" : "string",
+          "description" : "Language code."
+        },
+        "value" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      }
+    },
+    "LanguageItem" : {
+      "type" : "object",
+      "required" : [ "language", "value" ],
+      "properties" : {
+        "value" : {
+          "type" : "string"
+        },
+        "language" : {
+          "type" : "string"
+        }
+      }
+    },
+    "OrganizationEmail" : {
+      "type" : "object",
+      "required" : [ "email" ],
+      "properties" : {
+        "email" : {
+          "type" : "string"
+        },
+        "descriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        }
+      }
+    },
+    "OrganizationPhone" : {
+      "type" : "object",
+      "required" : [ "chargeType", "type" ],
+      "properties" : {
+        "prefixNumber" : {
+          "type" : "string"
+        },
+        "number" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "chargeType" : {
+          "type" : "string"
+        },
+        "descriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        }
+      }
+    },
+    "Service" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "statutoryDescriptionId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceClasses" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        },
+        "ontologyTerms" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        },
+        "targetGroups" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        },
+        "lifeEvents" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        },
+        "industrialClasses" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        },
+        "serviceNames" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "serviceDescriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "languages" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "pattern" : "^[a-z]{2}$"
+          }
+        },
+        "keywords" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "serviceCoverageType" : {
+          "type" : "string"
+        },
+        "municipalities" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "pattern" : "^[0-9]{3}$"
+          }
+        },
+        "webPages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/WebPage"
+          }
+        },
+        "requirements" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "publishingStatus" : {
+          "type" : "string"
+        },
+        "serviceChargeType" : {
+          "type" : "string"
+        },
+        "serviceAdditionalInformations" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        }
+      }
+    },
+    "FintoItem" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "ontologyType" : {
+          "type" : "string"
+        },
+        "uri" : {
+          "type" : "string"
+        },
+        "parentId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "parentUri" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Address" : {
+      "type" : "object",
+      "required" : [ "postalCode", "streetAddress" ],
+      "properties" : {
+        "type" : {
+          "type" : "string"
+        },
+        "postOfficeBox" : {
+          "type" : "string"
+        },
+        "postalCode" : {
+          "type" : "string",
+          "pattern" : "\\d{5}?"
+        },
+        "postOffice" : {
+          "type" : "string"
+        },
+        "streetAddress" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "municipality" : {
+          "type" : "string",
+          "pattern" : "^[0-9]{3}$"
+        },
+        "country" : {
+          "type" : "string",
+          "pattern" : "^[A-Z]{2}$"
+        },
+        "qualifier" : {
+          "type" : "string"
+        },
+        "additionalInformations" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        }
+      }
+    },
+    "ElectronicChannel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceChannelType" : {
+          "type" : "string"
+        },
+        "organizationId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceChannelNames" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "serviceChannelDescriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "signatureQuantity" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "requiresSignature" : {
+          "type" : "boolean"
+        },
+        "supportContacts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Support"
+          }
+        },
+        "requiresAuthentication" : {
+          "type" : "boolean"
+        },
+        "urls" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "languages" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "attachments" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Attachment"
+          }
+        },
+        "webPages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/WebPage"
+          }
+        },
+        "serviceHours" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ServiceHour"
+          }
+        },
+        "publishingStatus" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PhoneChannel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceChannelType" : {
+          "type" : "string"
+        },
+        "organizationId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceChannelNames" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "serviceChannelDescriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "phoneType" : {
+          "type" : "string"
+        },
+        "serviceChargeTypes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "supportContacts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Support"
+          }
+        },
+        "phoneNumbers" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "languages" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "phoneChargeDescriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "webPages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/WebPage"
+          }
+        },
+        "serviceHours" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ServiceHour"
+          }
+        },
+        "publishingStatus" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PrintableFormChannel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceChannelType" : {
+          "type" : "string"
+        },
+        "organizationId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceChannelNames" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "serviceChannelDescriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "formIdentifier" : {
+          "type" : "string"
+        },
+        "formReceiver" : {
+          "type" : "string"
+        },
+        "supportContacts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Support"
+          }
+        },
+        "deliveryAddress" : {
+          "$ref" : "#/definitions/Address"
+        },
+        "channelUrls" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "languages" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "deliveryAddressDescriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "attachments" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Attachment"
+          }
+        },
+        "webPages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/WebPage"
+          }
+        },
+        "serviceHours" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ServiceHour"
+          }
+        },
+        "publishingStatus" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ServiceLocationChannel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceChannelType" : {
+          "type" : "string"
+        },
+        "organizationId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceChannelNames" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "serviceChannelDescriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "serviceAreaRestricted" : {
+          "type" : "boolean"
+        },
+        "supportContacts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Support"
+          }
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "phone" : {
+          "type" : "string"
+        },
+        "languages" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "fax" : {
+          "type" : "string"
+        },
+        "latitude" : {
+          "type" : "string"
+        },
+        "longitude" : {
+          "type" : "string"
+        },
+        "coordinateSystem" : {
+          "type" : "string"
+        },
+        "coordinatesSetManually" : {
+          "type" : "boolean"
+        },
+        "phoneServiceCharge" : {
+          "type" : "boolean"
+        },
+        "webPages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/WebPage"
+          }
+        },
+        "serviceAreas" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "phoneChargeDescriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "addresses" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Address"
+          }
+        },
+        "serviceChargeTypes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "serviceHours" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ServiceHour"
+          }
+        },
+        "publishingStatus" : {
+          "type" : "string"
+        }
+      }
+    },
+    "WebPageChannel" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceChannelType" : {
+          "type" : "string"
+        },
+        "organizationId" : {
+          "type" : "string",
+          "format" : "uuid"
+        },
+        "serviceChannelNames" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "serviceChannelDescriptions" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "urls" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "attachments" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Attachment"
+          }
+        },
+        "supportContacts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Support"
+          }
+        },
+        "languages" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "webPages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/WebPage"
+          }
+        },
+        "serviceHours" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ServiceHour"
+          }
+        },
+        "publishingStatus" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Support" : {
+      "type" : "object",
+      "properties" : {
+        "email" : {
+          "type" : "string",
+          "maxLength" : 100
+        },
+        "phone" : {
+          "type" : "string",
+          "maxLength" : 100
+        },
+        "phoneChargeDescription" : {
+          "type" : "string",
+          "maxLength" : 150
+        },
+        "language" : {
+          "type" : "string"
+        },
+        "serviceChargeTypes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "Attachment" : {
+      "type" : "object",
+      "required" : [ "language", "url" ],
+      "properties" : {
+        "type" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string",
+          "maxLength" : 100
+        },
+        "description" : {
+          "type" : "string",
+          "maxLength" : 150
+        },
+        "url" : {
+          "type" : "string",
+          "maxLength" : 500
+        },
+        "language" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ServiceHour" : {
+      "properties" : {
+        "type" : {
+          "type" : "string"
+        },
+        "validFrom" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "validTo" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "opens" : {
+          "type" : "string",
+          "format" : "time"
+        },
+        "closes" : {
+          "type" : "string",
+          "format" : "time"
+        },
+        "days" : {
+          "type" : "array",
+          "items" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "additionalInformation" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        }
+      }
+    },
+    "InternalServerError" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Forbidden" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "BadRequest" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "NotFound" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "NotImplemented" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
