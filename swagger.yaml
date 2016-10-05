@@ -1518,13 +1518,13 @@ definitions:
           $ref: '#/definitions/Address'
       municipality:
         type: string
-      organizationType:
+      type:
         type: string
       businessCode:
         type: string
       businessName:
         type: string
-      organizationNames:
+      names:
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
@@ -1667,11 +1667,11 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/FintoItem'
-      serviceNames:
+      names:
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
-      serviceDescriptions:
+      descriptions:
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
@@ -1684,7 +1684,7 @@ definitions:
         type: array
         items:
           type: string
-      serviceCoverageType:
+      coverageType:
         type: string
       municipalities:
         type: array
@@ -1701,9 +1701,9 @@ definitions:
           $ref: '#/definitions/LanguageItem'
       publishingStatus:
         type: string
-      serviceChargeType:
+      chargeType:
         type: string
-      serviceAdditionalInformations:
+      additionalInformations:
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
@@ -1763,16 +1763,16 @@ definitions:
       id:
         format: uuid
         type: string
-      serviceChannelType:
+      type:
         type: string
       organizationId:
         format: uuid
         type: string
-      serviceChannelNames:
+      names:
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
-      serviceChannelDescriptions:
+      descriptions:
         maxLength: 4000
         type: array
         items:
@@ -1817,23 +1817,23 @@ definitions:
       id:
         format: uuid
         type: string
-      serviceChannelType:
+      type:
         type: string
       organizationId:
         format: uuid
         type: string
-      serviceChannelNames:
+      names:
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
-      serviceChannelDescriptions:
+      descriptions:
         maxLength: 4000
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
       phoneType:
         type: string
-      serviceChargeTypes:
+     chargeTypes:
         type: array
         items:
           type: string
@@ -1870,16 +1870,16 @@ definitions:
       id:
         format: uuid
         type: string
-      serviceChannelType:
+      type:
         type: string
       organizationId:
         format: uuid
         type: string
-      serviceChannelNames:
+      names:
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
-      serviceChannelDescriptions:
+      descriptions:
         maxLength: 4000
         type: array
         items:
@@ -1927,16 +1927,16 @@ definitions:
       id:
         format: uuid
         type: string
-      serviceChannelType:
+      type:
         type: string
       organizationId:
         format: uuid
         type: string
-      serviceChannelNames:
+      names:
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
-      serviceChannelDescriptions:
+      descriptions:
         maxLength: 4000
         type: array
         items:
@@ -1984,7 +1984,7 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Address'
-      serviceChargeTypes:
+      chargeTypes:
         type: array
         items:
           type: string
@@ -2000,16 +2000,16 @@ definitions:
       id:
         format: uuid
         type: string
-      serviceChannelType:
+      type:
         type: string
       organizationId:
         format: uuid
         type: string
-      serviceChannelNames:
+      names:
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
-      serviceChannelDescriptions:
+      descriptions:
         maxLength: 4000
         type: array
         items:
