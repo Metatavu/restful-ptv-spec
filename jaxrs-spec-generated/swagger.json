@@ -6,6 +6,9 @@
     "title" : "RESTful PTV"
   },
   "basePath" : "/",
+  "schemes" : [ "https" ],
+  "consumes" : [ "application/json;charset=utf-8" ],
+  "produces" : [ "application/json;charset=utf-8" ],
   "paths" : {
     "/organizations" : {
       "get" : {
@@ -2000,12 +2003,6 @@
             "$ref" : "#/definitions/Address"
           }
         },
-        "services" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/OrganizationService"
-          }
-        },
         "municipality" : {
           "type" : "string"
         },
@@ -2027,10 +2024,6 @@
         "publishingStatus" : {
           "type" : "string"
         },
-        "businessId" : {
-          "type" : "string",
-          "format" : "uuid"
-        },
         "displayNameType" : {
           "type" : "string"
         },
@@ -2039,10 +2032,6 @@
         },
         "streetAddressAsPostalAddress" : {
           "type" : "boolean"
-        },
-        "entityId" : {
-          "type" : "string",
-          "format" : "uuid"
         }
       }
     },
