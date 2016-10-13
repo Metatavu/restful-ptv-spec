@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         'java-client-generated/src/main/java/fi/otavanopisto/restfulptv/*.java'
       ],
       'jaxrs-spec-cruft': [
-        'jaxrs-spec-generated/src/main/java/fi/otavanopisto/kuntaapi/server/RestApplication.java'
+        'jaxrs-spec-generated/src/main/java/fi/otavanopisto/restful/server/RestApplication.java'
       ],
       'jaxrs-spec-sources': ['jaxrs-spec-generated/src'],
       'java-client-sources': ['java-client-generated/src']
@@ -120,6 +120,6 @@ module.exports = function(grunt) {
   grunt.registerTask('java-client', ['download-dependencies', 'clean:java-client-sources', 'shell:java-client-generate', 'clean:java-client-cruft', 'copy:java-client-extras', 'shell:java-client-install', 'shell:java-client-release' ]);
   grunt.registerTask('jaxrs-spec', ['download-dependencies', 'clean:jaxrs-spec-sources', 'shell:jaxrs-spec-generate', 'clean:jaxrs-spec-cruft', 'copy:jaxrs-spec-extras', 'shell:jaxrs-spec-install', 'shell:jaxrs-spec-release' ]);
   
-  grunt.registerTask('default', ['java-client', 'jaxrs-spec', 'jaxrs-spec']);
+  grunt.registerTask('default', ['java-client', 'jaxrs-spec' ]);
   
 };
