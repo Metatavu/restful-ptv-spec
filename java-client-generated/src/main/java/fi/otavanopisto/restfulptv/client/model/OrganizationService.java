@@ -40,8 +40,11 @@ import java.util.List;
 /**
  * OrganizationService
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-05T10:47:52.746+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T13:03:45.885+03:00")
 public class OrganizationService   {
+  @JsonProperty("id")
+  private String id = null;
+
   @JsonProperty("serviceId")
   private String serviceId = null;
 
@@ -59,6 +62,24 @@ public class OrganizationService   {
 
   @JsonProperty("webPages")
   private List<WebPage> webPages = new ArrayList<WebPage>();
+
+  public OrganizationService id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
 
   public OrganizationService serviceId(String serviceId) {
     this.serviceId = serviceId;
@@ -188,7 +209,8 @@ public class OrganizationService   {
       return false;
     }
     OrganizationService organizationService = (OrganizationService) o;
-    return Objects.equals(this.serviceId, organizationService.serviceId) &&
+    return Objects.equals(this.id, organizationService.id) &&
+        Objects.equals(this.serviceId, organizationService.serviceId) &&
         Objects.equals(this.organizationId, organizationService.organizationId) &&
         Objects.equals(this.roleType, organizationService.roleType) &&
         Objects.equals(this.provisionType, organizationService.provisionType) &&
@@ -198,7 +220,7 @@ public class OrganizationService   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(serviceId, organizationId, roleType, provisionType, additionalInformation, webPages);
+    return Objects.hash(id, serviceId, organizationId, roleType, provisionType, additionalInformation, webPages);
   }
 
   @Override
@@ -206,6 +228,7 @@ public class OrganizationService   {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationService {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    roleType: ").append(toIndentedString(roleType)).append("\n");

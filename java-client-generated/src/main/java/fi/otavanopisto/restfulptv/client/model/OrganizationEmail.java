@@ -39,7 +39,7 @@ import java.util.List;
 /**
  * OrganizationEmail
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-05T10:47:52.746+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T13:03:45.885+03:00")
 public class OrganizationEmail   {
   @JsonProperty("email")
   private String email = null;
