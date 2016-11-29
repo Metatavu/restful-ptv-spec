@@ -2266,6 +2266,13 @@
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
+        },
+        "organizationIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
         }
       }
     },

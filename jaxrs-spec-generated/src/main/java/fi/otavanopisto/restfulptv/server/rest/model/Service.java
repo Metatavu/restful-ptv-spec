@@ -34,6 +34,7 @@ public class Service   {
   private String publishingStatus = null;
   private String chargeType = null;
   private List<LocalizedListItem> additionalInformations = new ArrayList<LocalizedListItem>();
+  private List<String> organizationIds = new ArrayList<String>();
 
   /**
    **/
@@ -339,6 +340,22 @@ public class Service   {
     this.additionalInformations = additionalInformations;
   }
 
+  /**
+   **/
+  public Service organizationIds(List<String> organizationIds) {
+    this.organizationIds = organizationIds;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<String> getOrganizationIds() {
+    return organizationIds;
+  }
+  public void setOrganizationIds(List<String> organizationIds) {
+    this.organizationIds = organizationIds;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -367,12 +384,13 @@ public class Service   {
         Objects.equals(requirements, service.requirements) &&
         Objects.equals(publishingStatus, service.publishingStatus) &&
         Objects.equals(chargeType, service.chargeType) &&
-        Objects.equals(additionalInformations, service.additionalInformations);
+        Objects.equals(additionalInformations, service.additionalInformations) &&
+        Objects.equals(organizationIds, service.organizationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations);
+    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations, organizationIds);
   }
 
   @Override
@@ -399,6 +417,7 @@ public class Service   {
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");
     sb.append("    chargeType: ").append(toIndentedString(chargeType)).append("\n");
     sb.append("    additionalInformations: ").append(toIndentedString(additionalInformations)).append("\n");
+    sb.append("    organizationIds: ").append(toIndentedString(organizationIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
