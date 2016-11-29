@@ -42,7 +42,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-29T07:42:33.484+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-29T08:41:12.415+02:00")
 public class ServicesApi {
 
   private ApiClient client;
@@ -372,13 +372,16 @@ if (maxResults != null)
   /**
    * Service list
    * Lists services
+   * @param organizationId Filter results by organizationId (optional)
    * @param firstResult First result (optional)
    * @param maxResults Max results (optional)
    */
-  public ApiResponse<List<Service>> listServices(Long firstResult, Long maxResults) {
+  public ApiResponse<List<Service>> listServices(String organizationId, Long firstResult, Long maxResults) {
     Map<String, Object> queryParams = new HashMap<>();
     Map<String, Object> formParams = new HashMap<>();
-    if (firstResult != null)
+    if (organizationId != null)
+    queryParams.put("organizationId", organizationId);
+if (firstResult != null)
     queryParams.put("firstResult", firstResult);
 if (maxResults != null)
     queryParams.put("maxResults", maxResults);
