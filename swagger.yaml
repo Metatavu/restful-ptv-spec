@@ -412,6 +412,12 @@ paths:
       tags:
         - Services
       parameters:
+        - name: organizationId
+          in: query
+          description: Filter results by organizationId
+          required: false
+          type: string
+          format: uuid
         - name: firstResult
           in: query
           description: First result
