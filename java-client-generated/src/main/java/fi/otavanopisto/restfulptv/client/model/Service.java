@@ -42,7 +42,7 @@ import java.util.List;
 /**
  * Service
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T13:03:45.885+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-29T07:42:33.484+02:00")
 public class Service   {
   @JsonProperty("id")
   private String id = null;
@@ -100,6 +100,9 @@ public class Service   {
 
   @JsonProperty("additionalInformations")
   private List<LocalizedListItem> additionalInformations = new ArrayList<LocalizedListItem>();
+
+  @JsonProperty("organizationIds")
+  private List<String> organizationIds = new ArrayList<String>();
 
   public Service id(String id) {
     this.id = id;
@@ -508,6 +511,29 @@ public class Service   {
     this.additionalInformations = additionalInformations;
   }
 
+  public Service organizationIds(List<String> organizationIds) {
+    this.organizationIds = organizationIds;
+    return this;
+  }
+
+  public Service addOrganizationIdsItem(String organizationIdsItem) {
+    this.organizationIds.add(organizationIdsItem);
+    return this;
+  }
+
+   /**
+   * Get organizationIds
+   * @return organizationIds
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<String> getOrganizationIds() {
+    return organizationIds;
+  }
+
+  public void setOrganizationIds(List<String> organizationIds) {
+    this.organizationIds = organizationIds;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -536,12 +562,13 @@ public class Service   {
         Objects.equals(this.requirements, service.requirements) &&
         Objects.equals(this.publishingStatus, service.publishingStatus) &&
         Objects.equals(this.chargeType, service.chargeType) &&
-        Objects.equals(this.additionalInformations, service.additionalInformations);
+        Objects.equals(this.additionalInformations, service.additionalInformations) &&
+        Objects.equals(this.organizationIds, service.organizationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations);
+    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations, organizationIds);
   }
 
   @Override
@@ -568,6 +595,7 @@ public class Service   {
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");
     sb.append("    chargeType: ").append(toIndentedString(chargeType)).append("\n");
     sb.append("    additionalInformations: ").append(toIndentedString(additionalInformations)).append("\n");
+    sb.append("    organizationIds: ").append(toIndentedString(organizationIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

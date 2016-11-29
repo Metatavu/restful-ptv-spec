@@ -38,7 +38,7 @@ import java.util.List;
 /**
  * Support
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T13:03:45.885+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-29T07:42:33.484+02:00")
 public class Support   {
   @JsonProperty("email")
   private String email = null;
