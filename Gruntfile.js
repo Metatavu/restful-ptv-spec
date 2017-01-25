@@ -22,11 +22,11 @@ module.exports = function(grunt) {
         'java-client-generated/src/test',
         'java-client-generated/src/main/AndroidManifest.xml',
         'java-client-generated/src/main/java/io',
-        'java-client-generated/src/main/java/fi/otavanopisto/restfulptv/auth',
-        'java-client-generated/src/main/java/fi/otavanopisto/restfulptv/*.java'
+        'java-client-generated/src/main/java/fi/metatavu/restfulptv/auth',
+        'java-client-generated/src/main/java/fi/metatavu/restfulptv/*.java'
       ],
       'jaxrs-spec-cruft': [
-        'jaxrs-spec-generated/src/main/java/fi/otavanopisto/restful/server/RestApplication.java'
+        'jaxrs-spec-generated/src/main/java/fi/metatavu/restful/server/RestApplication.java'
       ],
       'jaxrs-spec-sources': ['jaxrs-spec-generated/src'],
       'java-client-sources': ['java-client-generated/src']
@@ -57,11 +57,11 @@ module.exports = function(grunt) {
           'java -jar swagger-codegen-cli.jar generate ' +
           '-i ./swagger.yaml ' +
           '-l java ' +
-          '--api-package fi.otavanopisto.restfulptv.client ' +
-          '--model-package fi.otavanopisto.restfulptv.client.model ' +
-          '--group-id fi.otavanopisto.restful-ptv.restful-ptv-rest-client ' +
+          '--api-package fi.metatavu.restfulptv.client ' +
+          '--model-package fi.metatavu.restfulptv.client.model ' +
+          '--group-id fi.metatavu.restful-ptv.restful-ptv-rest-client ' +
           '--artifact-id restful-ptv-rest-client ' +
-          '--artifact-version `mvn -f java-client-generated/pom.xml.before -q -Dexec.executable=\'echo\' -Dexec.args=\'${project.version}\' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.3.1:exec` ' +
+          '--artifact-version `cat java-client-generated/pom.xml.before|grep version -m 1|sed -e \'s/.*<version>//\'|sed -e \'s/<.*//\'` ' +
           '--template-dir java-client-templates ' +
           '--library jersey2 ' +
           '--additional-properties dateLibrary=java8 ' +
@@ -72,11 +72,11 @@ module.exports = function(grunt) {
           'java -jar swagger-codegen-cli.jar generate ' +
           '-i ./swagger.yaml ' +
           '-l jaxrs-spec ' +
-          '--api-package fi.otavanopisto.restfulptv.server.rest ' +
-          '--model-package fi.otavanopisto.restfulptv.server.rest.model ' +
-          '--group-id fi.otavanopisto.restful-ptv ' +
+          '--api-package fi.metatavu.restfulptv.server.rest ' +
+          '--model-package fi.metatavu.restfulptv.server.rest.model ' +
+          '--group-id fi.metatavu.restful-ptv ' +
           '--artifact-id restful-ptv-spec ' +
-          '--artifact-version `mvn -f jaxrs-spec-generated/pom.xml.before -q -Dexec.executable=\'echo\' -Dexec.args=\'${project.version}\' --non-recursive org.codehaus.mojo:exec-maven-plugin:1.3.1:exec` ' +
+          '--artifact-version `cat jaxrs-spec-generated/pom.xml.before|grep version -m 1|sed -e \'s/.*<version>//\'|sed -e \'s/<.*//\'` ' +
           '--template-dir jaxrs-spec-templates ' +
           '--additional-properties dateLibrary=java8 ' +
           '-o jaxrs-spec-generated/'
