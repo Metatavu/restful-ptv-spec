@@ -36,7 +36,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * NotImplemented
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-25T15:32:20.254+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-09T18:15:52.391+02:00")
 public class NotImplemented   {
   @JsonProperty("code")
   private Integer code = null;

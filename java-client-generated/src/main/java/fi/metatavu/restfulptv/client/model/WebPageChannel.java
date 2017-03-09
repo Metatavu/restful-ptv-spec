@@ -44,7 +44,7 @@ import java.util.List;
 /**
  * WebPageChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-25T15:32:20.254+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-09T18:15:52.391+02:00")
 public class WebPageChannel   {
   @JsonProperty("id")
   private String id = null;
