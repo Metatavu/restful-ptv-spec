@@ -116,112 +116,6 @@
         }
       }
     },
-    "/locationServiceChannels" : {
-      "get" : {
-        "tags" : [ "LocationServiceChannels", "ServiceChannels" ],
-        "summary" : "Lists location service channels",
-        "description" : "Lists location service channels",
-        "operationId" : "listLocationServiceChannels",
-        "parameters" : [ {
-          "name" : "firstResult",
-          "in" : "query",
-          "description" : "First result",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int64"
-        }, {
-          "name" : "maxResults",
-          "in" : "query",
-          "description" : "Max results",
-          "required" : false,
-          "type" : "integer",
-          "format" : "int64"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Returns array of location service channels",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/LocationServiceChannel"
-              }
-            }
-          },
-          "400" : {
-            "description" : "Invalid request was sent to the server",
-            "schema" : {
-              "$ref" : "#/definitions/BadRequest"
-            }
-          },
-          "403" : {
-            "description" : "Attempted to make a call with unauthorized client",
-            "schema" : {
-              "$ref" : "#/definitions/Forbidden"
-            }
-          },
-          "404" : {
-            "description" : "Resource was not found from the server",
-            "schema" : {
-              "$ref" : "#/definitions/NotFound"
-            }
-          },
-          "500" : {
-            "description" : "Internal server error",
-            "schema" : {
-              "$ref" : "#/definitions/InternalServerError"
-            }
-          }
-        }
-      }
-    },
-    "/locationServiceChannels/{locationServiceChannelId}" : {
-      "get" : {
-        "tags" : [ "LocationServiceChannels", "ServiceChannels" ],
-        "summary" : "Finds a location service channel by id",
-        "description" : "Finds a location service channel by id",
-        "operationId" : "findLocationServiceChannel",
-        "parameters" : [ {
-          "name" : "locationServiceChannelId",
-          "in" : "path",
-          "description" : "location service channel id",
-          "required" : true,
-          "type" : "string",
-          "format" : "uuid"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Returns a location service channel by id",
-            "schema" : {
-              "$ref" : "#/definitions/LocationServiceChannel"
-            }
-          },
-          "400" : {
-            "description" : "Invalid request was sent to the server",
-            "schema" : {
-              "$ref" : "#/definitions/BadRequest"
-            }
-          },
-          "403" : {
-            "description" : "Attempted to make a call with unauthorized client",
-            "schema" : {
-              "$ref" : "#/definitions/Forbidden"
-            }
-          },
-          "404" : {
-            "description" : "Resource was not found from the server",
-            "schema" : {
-              "$ref" : "#/definitions/NotFound"
-            }
-          },
-          "500" : {
-            "description" : "Internal server error",
-            "schema" : {
-              "$ref" : "#/definitions/InternalServerError"
-            }
-          }
-        }
-      }
-    },
     "/organizations" : {
       "get" : {
         "tags" : [ "Organizations" ],
@@ -828,6 +722,112 @@
             "description" : "Returns printable form service channel by id",
             "schema" : {
               "$ref" : "#/definitions/PrintableFormServiceChannel"
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/serviceLocationServiceChannels" : {
+      "get" : {
+        "tags" : [ "ServiceLocationServiceChannels", "ServiceChannels" ],
+        "summary" : "Lists service location service channels",
+        "description" : "Lists service location service channels",
+        "operationId" : "listServiceLocationServiceChannels",
+        "parameters" : [ {
+          "name" : "firstResult",
+          "in" : "query",
+          "description" : "First result",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        }, {
+          "name" : "maxResults",
+          "in" : "query",
+          "description" : "Max results",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns array of service location service channels",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ServiceLocationServiceChannel"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request was sent to the server",
+            "schema" : {
+              "$ref" : "#/definitions/BadRequest"
+            }
+          },
+          "403" : {
+            "description" : "Attempted to make a call with unauthorized client",
+            "schema" : {
+              "$ref" : "#/definitions/Forbidden"
+            }
+          },
+          "404" : {
+            "description" : "Resource was not found from the server",
+            "schema" : {
+              "$ref" : "#/definitions/NotFound"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error",
+            "schema" : {
+              "$ref" : "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    },
+    "/serviceLocationServiceChannels/{serviceLocationServiceChannelId}" : {
+      "get" : {
+        "tags" : [ "ServiceLocationServiceChannels", "ServiceChannels" ],
+        "summary" : "Finds a service location service channel by id",
+        "description" : "Finds a service location service channel by id",
+        "operationId" : "findServiceLocationServiceChannel",
+        "parameters" : [ {
+          "name" : "serviceLocationServiceChannelId",
+          "in" : "path",
+          "description" : "service location service channel id",
+          "required" : true,
+          "type" : "string",
+          "format" : "uuid"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns a service location service channel by id",
+            "schema" : {
+              "$ref" : "#/definitions/ServiceLocationServiceChannel"
             }
           },
           "400" : {
@@ -1657,7 +1657,7 @@
             "format" : "uuid"
           }
         },
-        "locationServiceChannelIds" : {
+        "serviceLocationServiceChannelIds" : {
           "type" : "array",
           "items" : {
             "type" : "string",
@@ -1978,7 +1978,7 @@
         }
       }
     },
-    "LocationServiceChannel" : {
+    "ServiceLocationServiceChannel" : {
       "type" : "object",
       "properties" : {
         "id" : {
