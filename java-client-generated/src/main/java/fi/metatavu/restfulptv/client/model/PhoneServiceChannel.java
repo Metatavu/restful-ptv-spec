@@ -28,7 +28,6 @@ package fi.metatavu.restfulptv.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import fi.metatavu.restfulptv.client.model.Attachment;
 import fi.metatavu.restfulptv.client.model.LanguageItem;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
 import fi.metatavu.restfulptv.client.model.ServiceHour;
@@ -42,10 +41,10 @@ import java.util.List;
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * ElectronicChannel
+ * PhoneServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-09T18:15:52.391+02:00")
-public class ElectronicChannel   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T11:09:42.173+02:00")
+public class PhoneServiceChannel   {
   @JsonProperty("id")
   private String id = null;
 
@@ -61,26 +60,23 @@ public class ElectronicChannel   {
   @JsonProperty("descriptions")
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
 
-  @JsonProperty("signatureQuantity")
-  private Integer signatureQuantity = null;
+  @JsonProperty("phoneType")
+  private String phoneType = null;
 
-  @JsonProperty("requiresSignature")
-  private Boolean requiresSignature = null;
+  @JsonProperty("chargeTypes")
+  private List<String> chargeTypes = new ArrayList<String>();
 
   @JsonProperty("supportContacts")
   private List<Support> supportContacts = new ArrayList<Support>();
 
-  @JsonProperty("requiresAuthentication")
-  private Boolean requiresAuthentication = null;
-
-  @JsonProperty("urls")
-  private List<LanguageItem> urls = new ArrayList<LanguageItem>();
+  @JsonProperty("phoneNumbers")
+  private List<LanguageItem> phoneNumbers = new ArrayList<LanguageItem>();
 
   @JsonProperty("languages")
   private List<String> languages = new ArrayList<String>();
 
-  @JsonProperty("attachments")
-  private List<Attachment> attachments = new ArrayList<Attachment>();
+  @JsonProperty("phoneChargeDescriptions")
+  private List<LanguageItem> phoneChargeDescriptions = new ArrayList<LanguageItem>();
 
   @JsonProperty("webPages")
   private List<WebPage> webPages = new ArrayList<WebPage>();
@@ -91,7 +87,7 @@ public class ElectronicChannel   {
   @JsonProperty("publishingStatus")
   private String publishingStatus = null;
 
-  public ElectronicChannel id(String id) {
+  public PhoneServiceChannel id(String id) {
     this.id = id;
     return this;
   }
@@ -109,7 +105,7 @@ public class ElectronicChannel   {
     this.id = id;
   }
 
-  public ElectronicChannel type(String type) {
+  public PhoneServiceChannel type(String type) {
     this.type = type;
     return this;
   }
@@ -127,7 +123,7 @@ public class ElectronicChannel   {
     this.type = type;
   }
 
-  public ElectronicChannel organizationId(String organizationId) {
+  public PhoneServiceChannel organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -145,12 +141,12 @@ public class ElectronicChannel   {
     this.organizationId = organizationId;
   }
 
-  public ElectronicChannel names(List<LocalizedListItem> names) {
+  public PhoneServiceChannel names(List<LocalizedListItem> names) {
     this.names = names;
     return this;
   }
 
-  public ElectronicChannel addNamesItem(LocalizedListItem namesItem) {
+  public PhoneServiceChannel addNamesItem(LocalizedListItem namesItem) {
     this.names.add(namesItem);
     return this;
   }
@@ -168,12 +164,12 @@ public class ElectronicChannel   {
     this.names = names;
   }
 
-  public ElectronicChannel descriptions(List<LocalizedListItem> descriptions) {
+  public PhoneServiceChannel descriptions(List<LocalizedListItem> descriptions) {
     this.descriptions = descriptions;
     return this;
   }
 
-  public ElectronicChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
+  public PhoneServiceChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
     this.descriptions.add(descriptionsItem);
     return this;
   }
@@ -191,48 +187,53 @@ public class ElectronicChannel   {
     this.descriptions = descriptions;
   }
 
-  public ElectronicChannel signatureQuantity(Integer signatureQuantity) {
-    this.signatureQuantity = signatureQuantity;
+  public PhoneServiceChannel phoneType(String phoneType) {
+    this.phoneType = phoneType;
     return this;
   }
 
    /**
-   * Get signatureQuantity
-   * @return signatureQuantity
+   * Get phoneType
+   * @return phoneType
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Integer getSignatureQuantity() {
-    return signatureQuantity;
+  public String getPhoneType() {
+    return phoneType;
   }
 
-  public void setSignatureQuantity(Integer signatureQuantity) {
-    this.signatureQuantity = signatureQuantity;
+  public void setPhoneType(String phoneType) {
+    this.phoneType = phoneType;
   }
 
-  public ElectronicChannel requiresSignature(Boolean requiresSignature) {
-    this.requiresSignature = requiresSignature;
+  public PhoneServiceChannel chargeTypes(List<String> chargeTypes) {
+    this.chargeTypes = chargeTypes;
+    return this;
+  }
+
+  public PhoneServiceChannel addChargeTypesItem(String chargeTypesItem) {
+    this.chargeTypes.add(chargeTypesItem);
     return this;
   }
 
    /**
-   * Get requiresSignature
-   * @return requiresSignature
+   * Get chargeTypes
+   * @return chargeTypes
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Boolean getRequiresSignature() {
-    return requiresSignature;
+  public List<String> getChargeTypes() {
+    return chargeTypes;
   }
 
-  public void setRequiresSignature(Boolean requiresSignature) {
-    this.requiresSignature = requiresSignature;
+  public void setChargeTypes(List<String> chargeTypes) {
+    this.chargeTypes = chargeTypes;
   }
 
-  public ElectronicChannel supportContacts(List<Support> supportContacts) {
+  public PhoneServiceChannel supportContacts(List<Support> supportContacts) {
     this.supportContacts = supportContacts;
     return this;
   }
 
-  public ElectronicChannel addSupportContactsItem(Support supportContactsItem) {
+  public PhoneServiceChannel addSupportContactsItem(Support supportContactsItem) {
     this.supportContacts.add(supportContactsItem);
     return this;
   }
@@ -250,53 +251,35 @@ public class ElectronicChannel   {
     this.supportContacts = supportContacts;
   }
 
-  public ElectronicChannel requiresAuthentication(Boolean requiresAuthentication) {
-    this.requiresAuthentication = requiresAuthentication;
+  public PhoneServiceChannel phoneNumbers(List<LanguageItem> phoneNumbers) {
+    this.phoneNumbers = phoneNumbers;
+    return this;
+  }
+
+  public PhoneServiceChannel addPhoneNumbersItem(LanguageItem phoneNumbersItem) {
+    this.phoneNumbers.add(phoneNumbersItem);
     return this;
   }
 
    /**
-   * Get requiresAuthentication
-   * @return requiresAuthentication
+   * Get phoneNumbers
+   * @return phoneNumbers
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Boolean getRequiresAuthentication() {
-    return requiresAuthentication;
+  public List<LanguageItem> getPhoneNumbers() {
+    return phoneNumbers;
   }
 
-  public void setRequiresAuthentication(Boolean requiresAuthentication) {
-    this.requiresAuthentication = requiresAuthentication;
+  public void setPhoneNumbers(List<LanguageItem> phoneNumbers) {
+    this.phoneNumbers = phoneNumbers;
   }
 
-  public ElectronicChannel urls(List<LanguageItem> urls) {
-    this.urls = urls;
-    return this;
-  }
-
-  public ElectronicChannel addUrlsItem(LanguageItem urlsItem) {
-    this.urls.add(urlsItem);
-    return this;
-  }
-
-   /**
-   * Get urls
-   * @return urls
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getUrls() {
-    return urls;
-  }
-
-  public void setUrls(List<LanguageItem> urls) {
-    this.urls = urls;
-  }
-
-  public ElectronicChannel languages(List<String> languages) {
+  public PhoneServiceChannel languages(List<String> languages) {
     this.languages = languages;
     return this;
   }
 
-  public ElectronicChannel addLanguagesItem(String languagesItem) {
+  public PhoneServiceChannel addLanguagesItem(String languagesItem) {
     this.languages.add(languagesItem);
     return this;
   }
@@ -314,35 +297,35 @@ public class ElectronicChannel   {
     this.languages = languages;
   }
 
-  public ElectronicChannel attachments(List<Attachment> attachments) {
-    this.attachments = attachments;
+  public PhoneServiceChannel phoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
+    this.phoneChargeDescriptions = phoneChargeDescriptions;
     return this;
   }
 
-  public ElectronicChannel addAttachmentsItem(Attachment attachmentsItem) {
-    this.attachments.add(attachmentsItem);
+  public PhoneServiceChannel addPhoneChargeDescriptionsItem(LanguageItem phoneChargeDescriptionsItem) {
+    this.phoneChargeDescriptions.add(phoneChargeDescriptionsItem);
     return this;
   }
 
    /**
-   * Get attachments
-   * @return attachments
+   * Get phoneChargeDescriptions
+   * @return phoneChargeDescriptions
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<Attachment> getAttachments() {
-    return attachments;
+  public List<LanguageItem> getPhoneChargeDescriptions() {
+    return phoneChargeDescriptions;
   }
 
-  public void setAttachments(List<Attachment> attachments) {
-    this.attachments = attachments;
+  public void setPhoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
+    this.phoneChargeDescriptions = phoneChargeDescriptions;
   }
 
-  public ElectronicChannel webPages(List<WebPage> webPages) {
+  public PhoneServiceChannel webPages(List<WebPage> webPages) {
     this.webPages = webPages;
     return this;
   }
 
-  public ElectronicChannel addWebPagesItem(WebPage webPagesItem) {
+  public PhoneServiceChannel addWebPagesItem(WebPage webPagesItem) {
     this.webPages.add(webPagesItem);
     return this;
   }
@@ -360,12 +343,12 @@ public class ElectronicChannel   {
     this.webPages = webPages;
   }
 
-  public ElectronicChannel serviceHours(List<ServiceHour> serviceHours) {
+  public PhoneServiceChannel serviceHours(List<ServiceHour> serviceHours) {
     this.serviceHours = serviceHours;
     return this;
   }
 
-  public ElectronicChannel addServiceHoursItem(ServiceHour serviceHoursItem) {
+  public PhoneServiceChannel addServiceHoursItem(ServiceHour serviceHoursItem) {
     this.serviceHours.add(serviceHoursItem);
     return this;
   }
@@ -383,7 +366,7 @@ public class ElectronicChannel   {
     this.serviceHours = serviceHours;
   }
 
-  public ElectronicChannel publishingStatus(String publishingStatus) {
+  public PhoneServiceChannel publishingStatus(String publishingStatus) {
     this.publishingStatus = publishingStatus;
     return this;
   }
@@ -410,46 +393,44 @@ public class ElectronicChannel   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ElectronicChannel electronicChannel = (ElectronicChannel) o;
-    return Objects.equals(this.id, electronicChannel.id) &&
-        Objects.equals(this.type, electronicChannel.type) &&
-        Objects.equals(this.organizationId, electronicChannel.organizationId) &&
-        Objects.equals(this.names, electronicChannel.names) &&
-        Objects.equals(this.descriptions, electronicChannel.descriptions) &&
-        Objects.equals(this.signatureQuantity, electronicChannel.signatureQuantity) &&
-        Objects.equals(this.requiresSignature, electronicChannel.requiresSignature) &&
-        Objects.equals(this.supportContacts, electronicChannel.supportContacts) &&
-        Objects.equals(this.requiresAuthentication, electronicChannel.requiresAuthentication) &&
-        Objects.equals(this.urls, electronicChannel.urls) &&
-        Objects.equals(this.languages, electronicChannel.languages) &&
-        Objects.equals(this.attachments, electronicChannel.attachments) &&
-        Objects.equals(this.webPages, electronicChannel.webPages) &&
-        Objects.equals(this.serviceHours, electronicChannel.serviceHours) &&
-        Objects.equals(this.publishingStatus, electronicChannel.publishingStatus);
+    PhoneServiceChannel phoneServiceChannel = (PhoneServiceChannel) o;
+    return Objects.equals(this.id, phoneServiceChannel.id) &&
+        Objects.equals(this.type, phoneServiceChannel.type) &&
+        Objects.equals(this.organizationId, phoneServiceChannel.organizationId) &&
+        Objects.equals(this.names, phoneServiceChannel.names) &&
+        Objects.equals(this.descriptions, phoneServiceChannel.descriptions) &&
+        Objects.equals(this.phoneType, phoneServiceChannel.phoneType) &&
+        Objects.equals(this.chargeTypes, phoneServiceChannel.chargeTypes) &&
+        Objects.equals(this.supportContacts, phoneServiceChannel.supportContacts) &&
+        Objects.equals(this.phoneNumbers, phoneServiceChannel.phoneNumbers) &&
+        Objects.equals(this.languages, phoneServiceChannel.languages) &&
+        Objects.equals(this.phoneChargeDescriptions, phoneServiceChannel.phoneChargeDescriptions) &&
+        Objects.equals(this.webPages, phoneServiceChannel.webPages) &&
+        Objects.equals(this.serviceHours, phoneServiceChannel.serviceHours) &&
+        Objects.equals(this.publishingStatus, phoneServiceChannel.publishingStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, signatureQuantity, requiresSignature, supportContacts, requiresAuthentication, urls, languages, attachments, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, phoneType, chargeTypes, supportContacts, phoneNumbers, languages, phoneChargeDescriptions, webPages, serviceHours, publishingStatus);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ElectronicChannel {\n");
+    sb.append("class PhoneServiceChannel {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
-    sb.append("    signatureQuantity: ").append(toIndentedString(signatureQuantity)).append("\n");
-    sb.append("    requiresSignature: ").append(toIndentedString(requiresSignature)).append("\n");
+    sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
+    sb.append("    chargeTypes: ").append(toIndentedString(chargeTypes)).append("\n");
     sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
-    sb.append("    requiresAuthentication: ").append(toIndentedString(requiresAuthentication)).append("\n");
-    sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
+    sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
-    sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
+    sb.append("    phoneChargeDescriptions: ").append(toIndentedString(phoneChargeDescriptions)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    serviceHours: ").append(toIndentedString(serviceHours)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");

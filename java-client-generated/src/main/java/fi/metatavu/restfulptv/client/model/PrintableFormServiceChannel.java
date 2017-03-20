@@ -43,10 +43,10 @@ import java.util.List;
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * PrintableFormChannel
+ * PrintableFormServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-09T18:15:52.391+02:00")
-public class PrintableFormChannel   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T11:09:42.173+02:00")
+public class PrintableFormServiceChannel   {
   @JsonProperty("id")
   private String id = null;
 
@@ -95,7 +95,7 @@ public class PrintableFormChannel   {
   @JsonProperty("publishingStatus")
   private String publishingStatus = null;
 
-  public PrintableFormChannel id(String id) {
+  public PrintableFormServiceChannel id(String id) {
     this.id = id;
     return this;
   }
@@ -113,7 +113,7 @@ public class PrintableFormChannel   {
     this.id = id;
   }
 
-  public PrintableFormChannel type(String type) {
+  public PrintableFormServiceChannel type(String type) {
     this.type = type;
     return this;
   }
@@ -131,7 +131,7 @@ public class PrintableFormChannel   {
     this.type = type;
   }
 
-  public PrintableFormChannel organizationId(String organizationId) {
+  public PrintableFormServiceChannel organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -149,12 +149,12 @@ public class PrintableFormChannel   {
     this.organizationId = organizationId;
   }
 
-  public PrintableFormChannel names(List<LocalizedListItem> names) {
+  public PrintableFormServiceChannel names(List<LocalizedListItem> names) {
     this.names = names;
     return this;
   }
 
-  public PrintableFormChannel addNamesItem(LocalizedListItem namesItem) {
+  public PrintableFormServiceChannel addNamesItem(LocalizedListItem namesItem) {
     this.names.add(namesItem);
     return this;
   }
@@ -172,12 +172,12 @@ public class PrintableFormChannel   {
     this.names = names;
   }
 
-  public PrintableFormChannel descriptions(List<LocalizedListItem> descriptions) {
+  public PrintableFormServiceChannel descriptions(List<LocalizedListItem> descriptions) {
     this.descriptions = descriptions;
     return this;
   }
 
-  public PrintableFormChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
+  public PrintableFormServiceChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
     this.descriptions.add(descriptionsItem);
     return this;
   }
@@ -195,7 +195,7 @@ public class PrintableFormChannel   {
     this.descriptions = descriptions;
   }
 
-  public PrintableFormChannel formIdentifier(String formIdentifier) {
+  public PrintableFormServiceChannel formIdentifier(String formIdentifier) {
     this.formIdentifier = formIdentifier;
     return this;
   }
@@ -213,7 +213,7 @@ public class PrintableFormChannel   {
     this.formIdentifier = formIdentifier;
   }
 
-  public PrintableFormChannel formReceiver(String formReceiver) {
+  public PrintableFormServiceChannel formReceiver(String formReceiver) {
     this.formReceiver = formReceiver;
     return this;
   }
@@ -231,12 +231,12 @@ public class PrintableFormChannel   {
     this.formReceiver = formReceiver;
   }
 
-  public PrintableFormChannel supportContacts(List<Support> supportContacts) {
+  public PrintableFormServiceChannel supportContacts(List<Support> supportContacts) {
     this.supportContacts = supportContacts;
     return this;
   }
 
-  public PrintableFormChannel addSupportContactsItem(Support supportContactsItem) {
+  public PrintableFormServiceChannel addSupportContactsItem(Support supportContactsItem) {
     this.supportContacts.add(supportContactsItem);
     return this;
   }
@@ -254,7 +254,7 @@ public class PrintableFormChannel   {
     this.supportContacts = supportContacts;
   }
 
-  public PrintableFormChannel deliveryAddress(Address deliveryAddress) {
+  public PrintableFormServiceChannel deliveryAddress(Address deliveryAddress) {
     this.deliveryAddress = deliveryAddress;
     return this;
   }
@@ -272,12 +272,12 @@ public class PrintableFormChannel   {
     this.deliveryAddress = deliveryAddress;
   }
 
-  public PrintableFormChannel channelUrls(List<LocalizedListItem> channelUrls) {
+  public PrintableFormServiceChannel channelUrls(List<LocalizedListItem> channelUrls) {
     this.channelUrls = channelUrls;
     return this;
   }
 
-  public PrintableFormChannel addChannelUrlsItem(LocalizedListItem channelUrlsItem) {
+  public PrintableFormServiceChannel addChannelUrlsItem(LocalizedListItem channelUrlsItem) {
     this.channelUrls.add(channelUrlsItem);
     return this;
   }
@@ -295,12 +295,12 @@ public class PrintableFormChannel   {
     this.channelUrls = channelUrls;
   }
 
-  public PrintableFormChannel languages(List<String> languages) {
+  public PrintableFormServiceChannel languages(List<String> languages) {
     this.languages = languages;
     return this;
   }
 
-  public PrintableFormChannel addLanguagesItem(String languagesItem) {
+  public PrintableFormServiceChannel addLanguagesItem(String languagesItem) {
     this.languages.add(languagesItem);
     return this;
   }
@@ -318,12 +318,12 @@ public class PrintableFormChannel   {
     this.languages = languages;
   }
 
-  public PrintableFormChannel deliveryAddressDescriptions(List<LanguageItem> deliveryAddressDescriptions) {
+  public PrintableFormServiceChannel deliveryAddressDescriptions(List<LanguageItem> deliveryAddressDescriptions) {
     this.deliveryAddressDescriptions = deliveryAddressDescriptions;
     return this;
   }
 
-  public PrintableFormChannel addDeliveryAddressDescriptionsItem(LanguageItem deliveryAddressDescriptionsItem) {
+  public PrintableFormServiceChannel addDeliveryAddressDescriptionsItem(LanguageItem deliveryAddressDescriptionsItem) {
     this.deliveryAddressDescriptions.add(deliveryAddressDescriptionsItem);
     return this;
   }
@@ -341,12 +341,12 @@ public class PrintableFormChannel   {
     this.deliveryAddressDescriptions = deliveryAddressDescriptions;
   }
 
-  public PrintableFormChannel attachments(List<Attachment> attachments) {
+  public PrintableFormServiceChannel attachments(List<Attachment> attachments) {
     this.attachments = attachments;
     return this;
   }
 
-  public PrintableFormChannel addAttachmentsItem(Attachment attachmentsItem) {
+  public PrintableFormServiceChannel addAttachmentsItem(Attachment attachmentsItem) {
     this.attachments.add(attachmentsItem);
     return this;
   }
@@ -364,12 +364,12 @@ public class PrintableFormChannel   {
     this.attachments = attachments;
   }
 
-  public PrintableFormChannel webPages(List<WebPage> webPages) {
+  public PrintableFormServiceChannel webPages(List<WebPage> webPages) {
     this.webPages = webPages;
     return this;
   }
 
-  public PrintableFormChannel addWebPagesItem(WebPage webPagesItem) {
+  public PrintableFormServiceChannel addWebPagesItem(WebPage webPagesItem) {
     this.webPages.add(webPagesItem);
     return this;
   }
@@ -387,12 +387,12 @@ public class PrintableFormChannel   {
     this.webPages = webPages;
   }
 
-  public PrintableFormChannel serviceHours(List<ServiceHour> serviceHours) {
+  public PrintableFormServiceChannel serviceHours(List<ServiceHour> serviceHours) {
     this.serviceHours = serviceHours;
     return this;
   }
 
-  public PrintableFormChannel addServiceHoursItem(ServiceHour serviceHoursItem) {
+  public PrintableFormServiceChannel addServiceHoursItem(ServiceHour serviceHoursItem) {
     this.serviceHours.add(serviceHoursItem);
     return this;
   }
@@ -410,7 +410,7 @@ public class PrintableFormChannel   {
     this.serviceHours = serviceHours;
   }
 
-  public PrintableFormChannel publishingStatus(String publishingStatus) {
+  public PrintableFormServiceChannel publishingStatus(String publishingStatus) {
     this.publishingStatus = publishingStatus;
     return this;
   }
@@ -437,23 +437,23 @@ public class PrintableFormChannel   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PrintableFormChannel printableFormChannel = (PrintableFormChannel) o;
-    return Objects.equals(this.id, printableFormChannel.id) &&
-        Objects.equals(this.type, printableFormChannel.type) &&
-        Objects.equals(this.organizationId, printableFormChannel.organizationId) &&
-        Objects.equals(this.names, printableFormChannel.names) &&
-        Objects.equals(this.descriptions, printableFormChannel.descriptions) &&
-        Objects.equals(this.formIdentifier, printableFormChannel.formIdentifier) &&
-        Objects.equals(this.formReceiver, printableFormChannel.formReceiver) &&
-        Objects.equals(this.supportContacts, printableFormChannel.supportContacts) &&
-        Objects.equals(this.deliveryAddress, printableFormChannel.deliveryAddress) &&
-        Objects.equals(this.channelUrls, printableFormChannel.channelUrls) &&
-        Objects.equals(this.languages, printableFormChannel.languages) &&
-        Objects.equals(this.deliveryAddressDescriptions, printableFormChannel.deliveryAddressDescriptions) &&
-        Objects.equals(this.attachments, printableFormChannel.attachments) &&
-        Objects.equals(this.webPages, printableFormChannel.webPages) &&
-        Objects.equals(this.serviceHours, printableFormChannel.serviceHours) &&
-        Objects.equals(this.publishingStatus, printableFormChannel.publishingStatus);
+    PrintableFormServiceChannel printableFormServiceChannel = (PrintableFormServiceChannel) o;
+    return Objects.equals(this.id, printableFormServiceChannel.id) &&
+        Objects.equals(this.type, printableFormServiceChannel.type) &&
+        Objects.equals(this.organizationId, printableFormServiceChannel.organizationId) &&
+        Objects.equals(this.names, printableFormServiceChannel.names) &&
+        Objects.equals(this.descriptions, printableFormServiceChannel.descriptions) &&
+        Objects.equals(this.formIdentifier, printableFormServiceChannel.formIdentifier) &&
+        Objects.equals(this.formReceiver, printableFormServiceChannel.formReceiver) &&
+        Objects.equals(this.supportContacts, printableFormServiceChannel.supportContacts) &&
+        Objects.equals(this.deliveryAddress, printableFormServiceChannel.deliveryAddress) &&
+        Objects.equals(this.channelUrls, printableFormServiceChannel.channelUrls) &&
+        Objects.equals(this.languages, printableFormServiceChannel.languages) &&
+        Objects.equals(this.deliveryAddressDescriptions, printableFormServiceChannel.deliveryAddressDescriptions) &&
+        Objects.equals(this.attachments, printableFormServiceChannel.attachments) &&
+        Objects.equals(this.webPages, printableFormServiceChannel.webPages) &&
+        Objects.equals(this.serviceHours, printableFormServiceChannel.serviceHours) &&
+        Objects.equals(this.publishingStatus, printableFormServiceChannel.publishingStatus);
   }
 
   @Override
@@ -464,7 +464,7 @@ public class PrintableFormChannel   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PrintableFormChannel {\n");
+    sb.append("class PrintableFormServiceChannel {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

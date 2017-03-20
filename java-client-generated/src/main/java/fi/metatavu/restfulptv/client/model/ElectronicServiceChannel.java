@@ -42,10 +42,10 @@ import java.util.List;
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * WebPageChannel
+ * ElectronicServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-09T18:15:52.391+02:00")
-public class WebPageChannel   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T11:09:42.173+02:00")
+public class ElectronicServiceChannel   {
   @JsonProperty("id")
   private String id = null;
 
@@ -61,17 +61,26 @@ public class WebPageChannel   {
   @JsonProperty("descriptions")
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
 
-  @JsonProperty("urls")
-  private List<LanguageItem> urls = new ArrayList<LanguageItem>();
+  @JsonProperty("signatureQuantity")
+  private Integer signatureQuantity = null;
 
-  @JsonProperty("attachments")
-  private List<Attachment> attachments = new ArrayList<Attachment>();
+  @JsonProperty("requiresSignature")
+  private Boolean requiresSignature = null;
 
   @JsonProperty("supportContacts")
   private List<Support> supportContacts = new ArrayList<Support>();
 
+  @JsonProperty("requiresAuthentication")
+  private Boolean requiresAuthentication = null;
+
+  @JsonProperty("urls")
+  private List<LanguageItem> urls = new ArrayList<LanguageItem>();
+
   @JsonProperty("languages")
   private List<String> languages = new ArrayList<String>();
+
+  @JsonProperty("attachments")
+  private List<Attachment> attachments = new ArrayList<Attachment>();
 
   @JsonProperty("webPages")
   private List<WebPage> webPages = new ArrayList<WebPage>();
@@ -82,7 +91,7 @@ public class WebPageChannel   {
   @JsonProperty("publishingStatus")
   private String publishingStatus = null;
 
-  public WebPageChannel id(String id) {
+  public ElectronicServiceChannel id(String id) {
     this.id = id;
     return this;
   }
@@ -100,7 +109,7 @@ public class WebPageChannel   {
     this.id = id;
   }
 
-  public WebPageChannel type(String type) {
+  public ElectronicServiceChannel type(String type) {
     this.type = type;
     return this;
   }
@@ -118,7 +127,7 @@ public class WebPageChannel   {
     this.type = type;
   }
 
-  public WebPageChannel organizationId(String organizationId) {
+  public ElectronicServiceChannel organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -136,12 +145,12 @@ public class WebPageChannel   {
     this.organizationId = organizationId;
   }
 
-  public WebPageChannel names(List<LocalizedListItem> names) {
+  public ElectronicServiceChannel names(List<LocalizedListItem> names) {
     this.names = names;
     return this;
   }
 
-  public WebPageChannel addNamesItem(LocalizedListItem namesItem) {
+  public ElectronicServiceChannel addNamesItem(LocalizedListItem namesItem) {
     this.names.add(namesItem);
     return this;
   }
@@ -159,12 +168,12 @@ public class WebPageChannel   {
     this.names = names;
   }
 
-  public WebPageChannel descriptions(List<LocalizedListItem> descriptions) {
+  public ElectronicServiceChannel descriptions(List<LocalizedListItem> descriptions) {
     this.descriptions = descriptions;
     return this;
   }
 
-  public WebPageChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
+  public ElectronicServiceChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
     this.descriptions.add(descriptionsItem);
     return this;
   }
@@ -182,58 +191,48 @@ public class WebPageChannel   {
     this.descriptions = descriptions;
   }
 
-  public WebPageChannel urls(List<LanguageItem> urls) {
-    this.urls = urls;
-    return this;
-  }
-
-  public WebPageChannel addUrlsItem(LanguageItem urlsItem) {
-    this.urls.add(urlsItem);
+  public ElectronicServiceChannel signatureQuantity(Integer signatureQuantity) {
+    this.signatureQuantity = signatureQuantity;
     return this;
   }
 
    /**
-   * Get urls
-   * @return urls
+   * Get signatureQuantity
+   * @return signatureQuantity
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getUrls() {
-    return urls;
+  public Integer getSignatureQuantity() {
+    return signatureQuantity;
   }
 
-  public void setUrls(List<LanguageItem> urls) {
-    this.urls = urls;
+  public void setSignatureQuantity(Integer signatureQuantity) {
+    this.signatureQuantity = signatureQuantity;
   }
 
-  public WebPageChannel attachments(List<Attachment> attachments) {
-    this.attachments = attachments;
-    return this;
-  }
-
-  public WebPageChannel addAttachmentsItem(Attachment attachmentsItem) {
-    this.attachments.add(attachmentsItem);
+  public ElectronicServiceChannel requiresSignature(Boolean requiresSignature) {
+    this.requiresSignature = requiresSignature;
     return this;
   }
 
    /**
-   * Get attachments
-   * @return attachments
+   * Get requiresSignature
+   * @return requiresSignature
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<Attachment> getAttachments() {
-    return attachments;
+  public Boolean getRequiresSignature() {
+    return requiresSignature;
   }
 
-  public void setAttachments(List<Attachment> attachments) {
-    this.attachments = attachments;
+  public void setRequiresSignature(Boolean requiresSignature) {
+    this.requiresSignature = requiresSignature;
   }
 
-  public WebPageChannel supportContacts(List<Support> supportContacts) {
+  public ElectronicServiceChannel supportContacts(List<Support> supportContacts) {
     this.supportContacts = supportContacts;
     return this;
   }
 
-  public WebPageChannel addSupportContactsItem(Support supportContactsItem) {
+  public ElectronicServiceChannel addSupportContactsItem(Support supportContactsItem) {
     this.supportContacts.add(supportContactsItem);
     return this;
   }
@@ -251,12 +250,53 @@ public class WebPageChannel   {
     this.supportContacts = supportContacts;
   }
 
-  public WebPageChannel languages(List<String> languages) {
+  public ElectronicServiceChannel requiresAuthentication(Boolean requiresAuthentication) {
+    this.requiresAuthentication = requiresAuthentication;
+    return this;
+  }
+
+   /**
+   * Get requiresAuthentication
+   * @return requiresAuthentication
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Boolean getRequiresAuthentication() {
+    return requiresAuthentication;
+  }
+
+  public void setRequiresAuthentication(Boolean requiresAuthentication) {
+    this.requiresAuthentication = requiresAuthentication;
+  }
+
+  public ElectronicServiceChannel urls(List<LanguageItem> urls) {
+    this.urls = urls;
+    return this;
+  }
+
+  public ElectronicServiceChannel addUrlsItem(LanguageItem urlsItem) {
+    this.urls.add(urlsItem);
+    return this;
+  }
+
+   /**
+   * Get urls
+   * @return urls
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<LanguageItem> getUrls() {
+    return urls;
+  }
+
+  public void setUrls(List<LanguageItem> urls) {
+    this.urls = urls;
+  }
+
+  public ElectronicServiceChannel languages(List<String> languages) {
     this.languages = languages;
     return this;
   }
 
-  public WebPageChannel addLanguagesItem(String languagesItem) {
+  public ElectronicServiceChannel addLanguagesItem(String languagesItem) {
     this.languages.add(languagesItem);
     return this;
   }
@@ -274,12 +314,35 @@ public class WebPageChannel   {
     this.languages = languages;
   }
 
-  public WebPageChannel webPages(List<WebPage> webPages) {
+  public ElectronicServiceChannel attachments(List<Attachment> attachments) {
+    this.attachments = attachments;
+    return this;
+  }
+
+  public ElectronicServiceChannel addAttachmentsItem(Attachment attachmentsItem) {
+    this.attachments.add(attachmentsItem);
+    return this;
+  }
+
+   /**
+   * Get attachments
+   * @return attachments
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<Attachment> getAttachments() {
+    return attachments;
+  }
+
+  public void setAttachments(List<Attachment> attachments) {
+    this.attachments = attachments;
+  }
+
+  public ElectronicServiceChannel webPages(List<WebPage> webPages) {
     this.webPages = webPages;
     return this;
   }
 
-  public WebPageChannel addWebPagesItem(WebPage webPagesItem) {
+  public ElectronicServiceChannel addWebPagesItem(WebPage webPagesItem) {
     this.webPages.add(webPagesItem);
     return this;
   }
@@ -297,12 +360,12 @@ public class WebPageChannel   {
     this.webPages = webPages;
   }
 
-  public WebPageChannel serviceHours(List<ServiceHour> serviceHours) {
+  public ElectronicServiceChannel serviceHours(List<ServiceHour> serviceHours) {
     this.serviceHours = serviceHours;
     return this;
   }
 
-  public WebPageChannel addServiceHoursItem(ServiceHour serviceHoursItem) {
+  public ElectronicServiceChannel addServiceHoursItem(ServiceHour serviceHoursItem) {
     this.serviceHours.add(serviceHoursItem);
     return this;
   }
@@ -320,7 +383,7 @@ public class WebPageChannel   {
     this.serviceHours = serviceHours;
   }
 
-  public WebPageChannel publishingStatus(String publishingStatus) {
+  public ElectronicServiceChannel publishingStatus(String publishingStatus) {
     this.publishingStatus = publishingStatus;
     return this;
   }
@@ -347,40 +410,46 @@ public class WebPageChannel   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WebPageChannel webPageChannel = (WebPageChannel) o;
-    return Objects.equals(this.id, webPageChannel.id) &&
-        Objects.equals(this.type, webPageChannel.type) &&
-        Objects.equals(this.organizationId, webPageChannel.organizationId) &&
-        Objects.equals(this.names, webPageChannel.names) &&
-        Objects.equals(this.descriptions, webPageChannel.descriptions) &&
-        Objects.equals(this.urls, webPageChannel.urls) &&
-        Objects.equals(this.attachments, webPageChannel.attachments) &&
-        Objects.equals(this.supportContacts, webPageChannel.supportContacts) &&
-        Objects.equals(this.languages, webPageChannel.languages) &&
-        Objects.equals(this.webPages, webPageChannel.webPages) &&
-        Objects.equals(this.serviceHours, webPageChannel.serviceHours) &&
-        Objects.equals(this.publishingStatus, webPageChannel.publishingStatus);
+    ElectronicServiceChannel electronicServiceChannel = (ElectronicServiceChannel) o;
+    return Objects.equals(this.id, electronicServiceChannel.id) &&
+        Objects.equals(this.type, electronicServiceChannel.type) &&
+        Objects.equals(this.organizationId, electronicServiceChannel.organizationId) &&
+        Objects.equals(this.names, electronicServiceChannel.names) &&
+        Objects.equals(this.descriptions, electronicServiceChannel.descriptions) &&
+        Objects.equals(this.signatureQuantity, electronicServiceChannel.signatureQuantity) &&
+        Objects.equals(this.requiresSignature, electronicServiceChannel.requiresSignature) &&
+        Objects.equals(this.supportContacts, electronicServiceChannel.supportContacts) &&
+        Objects.equals(this.requiresAuthentication, electronicServiceChannel.requiresAuthentication) &&
+        Objects.equals(this.urls, electronicServiceChannel.urls) &&
+        Objects.equals(this.languages, electronicServiceChannel.languages) &&
+        Objects.equals(this.attachments, electronicServiceChannel.attachments) &&
+        Objects.equals(this.webPages, electronicServiceChannel.webPages) &&
+        Objects.equals(this.serviceHours, electronicServiceChannel.serviceHours) &&
+        Objects.equals(this.publishingStatus, electronicServiceChannel.publishingStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, urls, attachments, supportContacts, languages, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, signatureQuantity, requiresSignature, supportContacts, requiresAuthentication, urls, languages, attachments, webPages, serviceHours, publishingStatus);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WebPageChannel {\n");
+    sb.append("class ElectronicServiceChannel {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
-    sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
-    sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
+    sb.append("    signatureQuantity: ").append(toIndentedString(signatureQuantity)).append("\n");
+    sb.append("    requiresSignature: ").append(toIndentedString(requiresSignature)).append("\n");
     sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    requiresAuthentication: ").append(toIndentedString(requiresAuthentication)).append("\n");
+    sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
+    sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    serviceHours: ").append(toIndentedString(serviceHours)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");

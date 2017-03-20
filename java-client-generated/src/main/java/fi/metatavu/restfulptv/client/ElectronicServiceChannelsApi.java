@@ -27,8 +27,8 @@ package fi.metatavu.restfulptv.client;
 import fi.metatavu.restfulptv.client.model.*;
 
 import fi.metatavu.restfulptv.client.model.BadRequest;
-import fi.metatavu.restfulptv.client.model.StatutoryDescription;
 import fi.metatavu.restfulptv.client.model.Forbidden;
+import fi.metatavu.restfulptv.client.model.ElectronicServiceChannel;
 import fi.metatavu.restfulptv.client.model.InternalServerError;
 import fi.metatavu.restfulptv.client.model.NotFound;
 
@@ -38,39 +38,39 @@ import java.util.List;
 import java.util.Map;
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T11:09:42.173+02:00")
-public class StatutoryDescriptionsApi {
+public class ElectronicServiceChannelsApi {
 
   private ApiClient client;
   private String baseUrl;
 
-  public StatutoryDescriptionsApi(String baseUrl, ApiClient client) {
+  public ElectronicServiceChannelsApi(String baseUrl, ApiClient client) {
     this.client = client;
     this.baseUrl = baseUrl;
   }
   
   /**
-   * Finds a statutory description
-   * Finds a statutory description by id
-   * @param statutoryDescriptionId Statutory description id (required)
+   * finds an electronic service channel by id
+   * finds an electronic service channel by id
+   * @param electronicServiceChannelId electronic service channel id (required)
    */
-  public ApiResponse<StatutoryDescription> findStatutoryDescription(String statutoryDescriptionId) {
+  public ApiResponse<ElectronicServiceChannel> findElectronicServiceChannel(String electronicServiceChannelId) {
     Map<String, Object> queryParams = new HashMap<>();
     Map<String, Object> formParams = new HashMap<>();
         
         
-    String path = String.format("%s/statutoryDescriptions/{statutoryDescriptionId}"
-      .replaceAll("\\{" + "statutoryDescriptionId" + "\\}", String.valueOf(statutoryDescriptionId)), baseUrl);
+    String path = String.format("%s/electronicServiceChannels/{electronicServiceChannelId}"
+      .replaceAll("\\{" + "electronicServiceChannelId" + "\\}", String.valueOf(electronicServiceChannelId)), baseUrl);
       
-    ResultType<StatutoryDescription> resultType = new ResultType<StatutoryDescription>() {};
+    ResultType<ElectronicServiceChannel> resultType = new ResultType<ElectronicServiceChannel>() {};
     return client.doGETRequest(path, resultType, queryParams, formParams);
   }
   /**
-   * List statutory descriptions
-   * List statutory descriptions
+   * Lists electronic service channels
+   * Lists electronic service channels
    * @param firstResult First result (optional)
    * @param maxResults Max results (optional)
    */
-  public ApiResponse<List<StatutoryDescription>> listStatutoryDescriptions(Long firstResult, Long maxResults) {
+  public ApiResponse<List<ElectronicServiceChannel>> listElectronicServiceChannels(Long firstResult, Long maxResults) {
     Map<String, Object> queryParams = new HashMap<>();
     Map<String, Object> formParams = new HashMap<>();
     if (firstResult != null)
@@ -79,9 +79,9 @@ if (maxResults != null)
     queryParams.put("maxResults", maxResults);
     
         
-    String path = String.format("%s/statutoryDescriptions", baseUrl);
+    String path = String.format("%s/electronicServiceChannels", baseUrl);
       
-    ResultType<List<StatutoryDescription>> resultType = new ResultType<List<StatutoryDescription>>() {};
+    ResultType<List<ElectronicServiceChannel>> resultType = new ResultType<List<ElectronicServiceChannel>>() {};
     return client.doGETRequest(path, resultType, queryParams, formParams);
   }
   
