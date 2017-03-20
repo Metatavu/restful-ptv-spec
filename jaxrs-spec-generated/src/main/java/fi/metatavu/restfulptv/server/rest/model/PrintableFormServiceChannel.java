@@ -1,5 +1,7 @@
 package fi.metatavu.restfulptv.server.rest.model;
 
+import fi.metatavu.restfulptv.server.rest.model.Address;
+import fi.metatavu.restfulptv.server.rest.model.Attachment;
 import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
 import fi.metatavu.restfulptv.server.rest.model.ServiceHour;
@@ -14,26 +16,28 @@ import io.swagger.annotations.*;
 import java.util.Objects;
 
 
-public class PhoneChannel   {
+public class PrintableFormServiceChannel   {
   
   private String id = null;
   private String type = null;
   private String organizationId = null;
   private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
-  private String phoneType = null;
-  private List<String> chargeTypes = new ArrayList<String>();
+  private String formIdentifier = null;
+  private String formReceiver = null;
   private List<Support> supportContacts = new ArrayList<Support>();
-  private List<LanguageItem> phoneNumbers = new ArrayList<LanguageItem>();
+  private Address deliveryAddress = null;
+  private List<LocalizedListItem> channelUrls = new ArrayList<LocalizedListItem>();
   private List<String> languages = new ArrayList<String>();
-  private List<LanguageItem> phoneChargeDescriptions = new ArrayList<LanguageItem>();
+  private List<LanguageItem> deliveryAddressDescriptions = new ArrayList<LanguageItem>();
+  private List<Attachment> attachments = new ArrayList<Attachment>();
   private List<WebPage> webPages = new ArrayList<WebPage>();
   private List<ServiceHour> serviceHours = new ArrayList<ServiceHour>();
   private String publishingStatus = null;
 
   /**
    **/
-  public PhoneChannel id(String id) {
+  public PrintableFormServiceChannel id(String id) {
     this.id = id;
     return this;
   }
@@ -49,7 +53,7 @@ public class PhoneChannel   {
 
   /**
    **/
-  public PhoneChannel type(String type) {
+  public PrintableFormServiceChannel type(String type) {
     this.type = type;
     return this;
   }
@@ -65,7 +69,7 @@ public class PhoneChannel   {
 
   /**
    **/
-  public PhoneChannel organizationId(String organizationId) {
+  public PrintableFormServiceChannel organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -81,7 +85,7 @@ public class PhoneChannel   {
 
   /**
    **/
-  public PhoneChannel names(List<LocalizedListItem> names) {
+  public PrintableFormServiceChannel names(List<LocalizedListItem> names) {
     this.names = names;
     return this;
   }
@@ -97,7 +101,7 @@ public class PhoneChannel   {
 
   /**
    **/
-  public PhoneChannel descriptions(List<LocalizedListItem> descriptions) {
+  public PrintableFormServiceChannel descriptions(List<LocalizedListItem> descriptions) {
     this.descriptions = descriptions;
     return this;
   }
@@ -113,39 +117,39 @@ public class PhoneChannel   {
 
   /**
    **/
-  public PhoneChannel phoneType(String phoneType) {
-    this.phoneType = phoneType;
+  public PrintableFormServiceChannel formIdentifier(String formIdentifier) {
+    this.formIdentifier = formIdentifier;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public String getPhoneType() {
-    return phoneType;
+  public String getFormIdentifier() {
+    return formIdentifier;
   }
-  public void setPhoneType(String phoneType) {
-    this.phoneType = phoneType;
+  public void setFormIdentifier(String formIdentifier) {
+    this.formIdentifier = formIdentifier;
   }
 
   /**
    **/
-  public PhoneChannel chargeTypes(List<String> chargeTypes) {
-    this.chargeTypes = chargeTypes;
+  public PrintableFormServiceChannel formReceiver(String formReceiver) {
+    this.formReceiver = formReceiver;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getChargeTypes() {
-    return chargeTypes;
+  public String getFormReceiver() {
+    return formReceiver;
   }
-  public void setChargeTypes(List<String> chargeTypes) {
-    this.chargeTypes = chargeTypes;
+  public void setFormReceiver(String formReceiver) {
+    this.formReceiver = formReceiver;
   }
 
   /**
    **/
-  public PhoneChannel supportContacts(List<Support> supportContacts) {
+  public PrintableFormServiceChannel supportContacts(List<Support> supportContacts) {
     this.supportContacts = supportContacts;
     return this;
   }
@@ -161,23 +165,39 @@ public class PhoneChannel   {
 
   /**
    **/
-  public PhoneChannel phoneNumbers(List<LanguageItem> phoneNumbers) {
-    this.phoneNumbers = phoneNumbers;
+  public PrintableFormServiceChannel deliveryAddress(Address deliveryAddress) {
+    this.deliveryAddress = deliveryAddress;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getPhoneNumbers() {
-    return phoneNumbers;
+  public Address getDeliveryAddress() {
+    return deliveryAddress;
   }
-  public void setPhoneNumbers(List<LanguageItem> phoneNumbers) {
-    this.phoneNumbers = phoneNumbers;
+  public void setDeliveryAddress(Address deliveryAddress) {
+    this.deliveryAddress = deliveryAddress;
   }
 
   /**
    **/
-  public PhoneChannel languages(List<String> languages) {
+  public PrintableFormServiceChannel channelUrls(List<LocalizedListItem> channelUrls) {
+    this.channelUrls = channelUrls;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<LocalizedListItem> getChannelUrls() {
+    return channelUrls;
+  }
+  public void setChannelUrls(List<LocalizedListItem> channelUrls) {
+    this.channelUrls = channelUrls;
+  }
+
+  /**
+   **/
+  public PrintableFormServiceChannel languages(List<String> languages) {
     this.languages = languages;
     return this;
   }
@@ -193,23 +213,39 @@ public class PhoneChannel   {
 
   /**
    **/
-  public PhoneChannel phoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
-    this.phoneChargeDescriptions = phoneChargeDescriptions;
+  public PrintableFormServiceChannel deliveryAddressDescriptions(List<LanguageItem> deliveryAddressDescriptions) {
+    this.deliveryAddressDescriptions = deliveryAddressDescriptions;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getPhoneChargeDescriptions() {
-    return phoneChargeDescriptions;
+  public List<LanguageItem> getDeliveryAddressDescriptions() {
+    return deliveryAddressDescriptions;
   }
-  public void setPhoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
-    this.phoneChargeDescriptions = phoneChargeDescriptions;
+  public void setDeliveryAddressDescriptions(List<LanguageItem> deliveryAddressDescriptions) {
+    this.deliveryAddressDescriptions = deliveryAddressDescriptions;
   }
 
   /**
    **/
-  public PhoneChannel webPages(List<WebPage> webPages) {
+  public PrintableFormServiceChannel attachments(List<Attachment> attachments) {
+    this.attachments = attachments;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<Attachment> getAttachments() {
+    return attachments;
+  }
+  public void setAttachments(List<Attachment> attachments) {
+    this.attachments = attachments;
+  }
+
+  /**
+   **/
+  public PrintableFormServiceChannel webPages(List<WebPage> webPages) {
     this.webPages = webPages;
     return this;
   }
@@ -225,7 +261,7 @@ public class PhoneChannel   {
 
   /**
    **/
-  public PhoneChannel serviceHours(List<ServiceHour> serviceHours) {
+  public PrintableFormServiceChannel serviceHours(List<ServiceHour> serviceHours) {
     this.serviceHours = serviceHours;
     return this;
   }
@@ -241,7 +277,7 @@ public class PhoneChannel   {
 
   /**
    **/
-  public PhoneChannel publishingStatus(String publishingStatus) {
+  public PrintableFormServiceChannel publishingStatus(String publishingStatus) {
     this.publishingStatus = publishingStatus;
     return this;
   }
@@ -264,44 +300,48 @@ public class PhoneChannel   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PhoneChannel phoneChannel = (PhoneChannel) o;
-    return Objects.equals(id, phoneChannel.id) &&
-        Objects.equals(type, phoneChannel.type) &&
-        Objects.equals(organizationId, phoneChannel.organizationId) &&
-        Objects.equals(names, phoneChannel.names) &&
-        Objects.equals(descriptions, phoneChannel.descriptions) &&
-        Objects.equals(phoneType, phoneChannel.phoneType) &&
-        Objects.equals(chargeTypes, phoneChannel.chargeTypes) &&
-        Objects.equals(supportContacts, phoneChannel.supportContacts) &&
-        Objects.equals(phoneNumbers, phoneChannel.phoneNumbers) &&
-        Objects.equals(languages, phoneChannel.languages) &&
-        Objects.equals(phoneChargeDescriptions, phoneChannel.phoneChargeDescriptions) &&
-        Objects.equals(webPages, phoneChannel.webPages) &&
-        Objects.equals(serviceHours, phoneChannel.serviceHours) &&
-        Objects.equals(publishingStatus, phoneChannel.publishingStatus);
+    PrintableFormServiceChannel printableFormServiceChannel = (PrintableFormServiceChannel) o;
+    return Objects.equals(id, printableFormServiceChannel.id) &&
+        Objects.equals(type, printableFormServiceChannel.type) &&
+        Objects.equals(organizationId, printableFormServiceChannel.organizationId) &&
+        Objects.equals(names, printableFormServiceChannel.names) &&
+        Objects.equals(descriptions, printableFormServiceChannel.descriptions) &&
+        Objects.equals(formIdentifier, printableFormServiceChannel.formIdentifier) &&
+        Objects.equals(formReceiver, printableFormServiceChannel.formReceiver) &&
+        Objects.equals(supportContacts, printableFormServiceChannel.supportContacts) &&
+        Objects.equals(deliveryAddress, printableFormServiceChannel.deliveryAddress) &&
+        Objects.equals(channelUrls, printableFormServiceChannel.channelUrls) &&
+        Objects.equals(languages, printableFormServiceChannel.languages) &&
+        Objects.equals(deliveryAddressDescriptions, printableFormServiceChannel.deliveryAddressDescriptions) &&
+        Objects.equals(attachments, printableFormServiceChannel.attachments) &&
+        Objects.equals(webPages, printableFormServiceChannel.webPages) &&
+        Objects.equals(serviceHours, printableFormServiceChannel.serviceHours) &&
+        Objects.equals(publishingStatus, printableFormServiceChannel.publishingStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, phoneType, chargeTypes, supportContacts, phoneNumbers, languages, phoneChargeDescriptions, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, formIdentifier, formReceiver, supportContacts, deliveryAddress, channelUrls, languages, deliveryAddressDescriptions, attachments, webPages, serviceHours, publishingStatus);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PhoneChannel {\n");
+    sb.append("class PrintableFormServiceChannel {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
-    sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
-    sb.append("    chargeTypes: ").append(toIndentedString(chargeTypes)).append("\n");
+    sb.append("    formIdentifier: ").append(toIndentedString(formIdentifier)).append("\n");
+    sb.append("    formReceiver: ").append(toIndentedString(formReceiver)).append("\n");
     sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
-    sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
+    sb.append("    deliveryAddress: ").append(toIndentedString(deliveryAddress)).append("\n");
+    sb.append("    channelUrls: ").append(toIndentedString(channelUrls)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
-    sb.append("    phoneChargeDescriptions: ").append(toIndentedString(phoneChargeDescriptions)).append("\n");
+    sb.append("    deliveryAddressDescriptions: ").append(toIndentedString(deliveryAddressDescriptions)).append("\n");
+    sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    serviceHours: ").append(toIndentedString(serviceHours)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");

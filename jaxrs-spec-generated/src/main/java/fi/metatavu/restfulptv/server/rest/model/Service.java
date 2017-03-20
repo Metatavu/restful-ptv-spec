@@ -35,6 +35,11 @@ public class Service   {
   private String chargeType = null;
   private List<LocalizedListItem> additionalInformations = new ArrayList<LocalizedListItem>();
   private List<String> organizationIds = new ArrayList<String>();
+  private List<String> electronicServiceChannelIds = new ArrayList<String>();
+  private List<String> phoneServiceChannelIds = new ArrayList<String>();
+  private List<String> printableFormServiceChannelIds = new ArrayList<String>();
+  private List<String> locationServiceChannelIds = new ArrayList<String>();
+  private List<String> webPageServiceChannelIds = new ArrayList<String>();
 
   /**
    **/
@@ -356,6 +361,86 @@ public class Service   {
     this.organizationIds = organizationIds;
   }
 
+  /**
+   **/
+  public Service electronicServiceChannelIds(List<String> electronicServiceChannelIds) {
+    this.electronicServiceChannelIds = electronicServiceChannelIds;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<String> getElectronicServiceChannelIds() {
+    return electronicServiceChannelIds;
+  }
+  public void setElectronicServiceChannelIds(List<String> electronicServiceChannelIds) {
+    this.electronicServiceChannelIds = electronicServiceChannelIds;
+  }
+
+  /**
+   **/
+  public Service phoneServiceChannelIds(List<String> phoneServiceChannelIds) {
+    this.phoneServiceChannelIds = phoneServiceChannelIds;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<String> getPhoneServiceChannelIds() {
+    return phoneServiceChannelIds;
+  }
+  public void setPhoneServiceChannelIds(List<String> phoneServiceChannelIds) {
+    this.phoneServiceChannelIds = phoneServiceChannelIds;
+  }
+
+  /**
+   **/
+  public Service printableFormServiceChannelIds(List<String> printableFormServiceChannelIds) {
+    this.printableFormServiceChannelIds = printableFormServiceChannelIds;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<String> getPrintableFormServiceChannelIds() {
+    return printableFormServiceChannelIds;
+  }
+  public void setPrintableFormServiceChannelIds(List<String> printableFormServiceChannelIds) {
+    this.printableFormServiceChannelIds = printableFormServiceChannelIds;
+  }
+
+  /**
+   **/
+  public Service locationServiceChannelIds(List<String> locationServiceChannelIds) {
+    this.locationServiceChannelIds = locationServiceChannelIds;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<String> getLocationServiceChannelIds() {
+    return locationServiceChannelIds;
+  }
+  public void setLocationServiceChannelIds(List<String> locationServiceChannelIds) {
+    this.locationServiceChannelIds = locationServiceChannelIds;
+  }
+
+  /**
+   **/
+  public Service webPageServiceChannelIds(List<String> webPageServiceChannelIds) {
+    this.webPageServiceChannelIds = webPageServiceChannelIds;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<String> getWebPageServiceChannelIds() {
+    return webPageServiceChannelIds;
+  }
+  public void setWebPageServiceChannelIds(List<String> webPageServiceChannelIds) {
+    this.webPageServiceChannelIds = webPageServiceChannelIds;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -385,12 +470,17 @@ public class Service   {
         Objects.equals(publishingStatus, service.publishingStatus) &&
         Objects.equals(chargeType, service.chargeType) &&
         Objects.equals(additionalInformations, service.additionalInformations) &&
-        Objects.equals(organizationIds, service.organizationIds);
+        Objects.equals(organizationIds, service.organizationIds) &&
+        Objects.equals(electronicServiceChannelIds, service.electronicServiceChannelIds) &&
+        Objects.equals(phoneServiceChannelIds, service.phoneServiceChannelIds) &&
+        Objects.equals(printableFormServiceChannelIds, service.printableFormServiceChannelIds) &&
+        Objects.equals(locationServiceChannelIds, service.locationServiceChannelIds) &&
+        Objects.equals(webPageServiceChannelIds, service.webPageServiceChannelIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations, organizationIds);
+    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations, organizationIds, electronicServiceChannelIds, phoneServiceChannelIds, printableFormServiceChannelIds, locationServiceChannelIds, webPageServiceChannelIds);
   }
 
   @Override
@@ -418,6 +508,11 @@ public class Service   {
     sb.append("    chargeType: ").append(toIndentedString(chargeType)).append("\n");
     sb.append("    additionalInformations: ").append(toIndentedString(additionalInformations)).append("\n");
     sb.append("    organizationIds: ").append(toIndentedString(organizationIds)).append("\n");
+    sb.append("    electronicServiceChannelIds: ").append(toIndentedString(electronicServiceChannelIds)).append("\n");
+    sb.append("    phoneServiceChannelIds: ").append(toIndentedString(phoneServiceChannelIds)).append("\n");
+    sb.append("    printableFormServiceChannelIds: ").append(toIndentedString(printableFormServiceChannelIds)).append("\n");
+    sb.append("    locationServiceChannelIds: ").append(toIndentedString(locationServiceChannelIds)).append("\n");
+    sb.append("    webPageServiceChannelIds: ").append(toIndentedString(webPageServiceChannelIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
