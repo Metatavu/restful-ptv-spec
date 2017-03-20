@@ -42,7 +42,7 @@ import java.util.List;
 /**
  * Service
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T11:09:42.173+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T12:57:50.320+02:00")
 public class Service   {
   @JsonProperty("id")
   private String id = null;
@@ -113,8 +113,8 @@ public class Service   {
   @JsonProperty("printableFormServiceChannelIds")
   private List<String> printableFormServiceChannelIds = new ArrayList<String>();
 
-  @JsonProperty("locationServiceChannelIds")
-  private List<String> locationServiceChannelIds = new ArrayList<String>();
+  @JsonProperty("serviceLocationServiceChannelIds")
+  private List<String> serviceLocationServiceChannelIds = new ArrayList<String>();
 
   @JsonProperty("webPageServiceChannelIds")
   private List<String> webPageServiceChannelIds = new ArrayList<String>();
@@ -618,27 +618,27 @@ public class Service   {
     this.printableFormServiceChannelIds = printableFormServiceChannelIds;
   }
 
-  public Service locationServiceChannelIds(List<String> locationServiceChannelIds) {
-    this.locationServiceChannelIds = locationServiceChannelIds;
+  public Service serviceLocationServiceChannelIds(List<String> serviceLocationServiceChannelIds) {
+    this.serviceLocationServiceChannelIds = serviceLocationServiceChannelIds;
     return this;
   }
 
-  public Service addLocationServiceChannelIdsItem(String locationServiceChannelIdsItem) {
-    this.locationServiceChannelIds.add(locationServiceChannelIdsItem);
+  public Service addServiceLocationServiceChannelIdsItem(String serviceLocationServiceChannelIdsItem) {
+    this.serviceLocationServiceChannelIds.add(serviceLocationServiceChannelIdsItem);
     return this;
   }
 
    /**
-   * Get locationServiceChannelIds
-   * @return locationServiceChannelIds
+   * Get serviceLocationServiceChannelIds
+   * @return serviceLocationServiceChannelIds
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getLocationServiceChannelIds() {
-    return locationServiceChannelIds;
+  public List<String> getServiceLocationServiceChannelIds() {
+    return serviceLocationServiceChannelIds;
   }
 
-  public void setLocationServiceChannelIds(List<String> locationServiceChannelIds) {
-    this.locationServiceChannelIds = locationServiceChannelIds;
+  public void setServiceLocationServiceChannelIds(List<String> serviceLocationServiceChannelIds) {
+    this.serviceLocationServiceChannelIds = serviceLocationServiceChannelIds;
   }
 
   public Service webPageServiceChannelIds(List<String> webPageServiceChannelIds) {
@@ -697,13 +697,13 @@ public class Service   {
         Objects.equals(this.electronicServiceChannelIds, service.electronicServiceChannelIds) &&
         Objects.equals(this.phoneServiceChannelIds, service.phoneServiceChannelIds) &&
         Objects.equals(this.printableFormServiceChannelIds, service.printableFormServiceChannelIds) &&
-        Objects.equals(this.locationServiceChannelIds, service.locationServiceChannelIds) &&
+        Objects.equals(this.serviceLocationServiceChannelIds, service.serviceLocationServiceChannelIds) &&
         Objects.equals(this.webPageServiceChannelIds, service.webPageServiceChannelIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations, organizationIds, electronicServiceChannelIds, phoneServiceChannelIds, printableFormServiceChannelIds, locationServiceChannelIds, webPageServiceChannelIds);
+    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations, organizationIds, electronicServiceChannelIds, phoneServiceChannelIds, printableFormServiceChannelIds, serviceLocationServiceChannelIds, webPageServiceChannelIds);
   }
 
   @Override
@@ -734,7 +734,7 @@ public class Service   {
     sb.append("    electronicServiceChannelIds: ").append(toIndentedString(electronicServiceChannelIds)).append("\n");
     sb.append("    phoneServiceChannelIds: ").append(toIndentedString(phoneServiceChannelIds)).append("\n");
     sb.append("    printableFormServiceChannelIds: ").append(toIndentedString(printableFormServiceChannelIds)).append("\n");
-    sb.append("    locationServiceChannelIds: ").append(toIndentedString(locationServiceChannelIds)).append("\n");
+    sb.append("    serviceLocationServiceChannelIds: ").append(toIndentedString(serviceLocationServiceChannelIds)).append("\n");
     sb.append("    webPageServiceChannelIds: ").append(toIndentedString(webPageServiceChannelIds)).append("\n");
     sb.append("}");
     return sb.toString();

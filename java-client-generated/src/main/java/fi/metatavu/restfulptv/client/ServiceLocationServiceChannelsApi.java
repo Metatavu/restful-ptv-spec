@@ -27,8 +27,8 @@ package fi.metatavu.restfulptv.client;
 import fi.metatavu.restfulptv.client.model.*;
 
 import fi.metatavu.restfulptv.client.model.BadRequest;
+import fi.metatavu.restfulptv.client.model.ServiceLocationServiceChannel;
 import fi.metatavu.restfulptv.client.model.Forbidden;
-import fi.metatavu.restfulptv.client.model.LocationServiceChannel;
 import fi.metatavu.restfulptv.client.model.InternalServerError;
 import fi.metatavu.restfulptv.client.model.NotFound;
 
@@ -37,40 +37,40 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T11:09:42.173+02:00")
-public class LocationServiceChannelsApi {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T12:57:50.320+02:00")
+public class ServiceLocationServiceChannelsApi {
 
   private ApiClient client;
   private String baseUrl;
 
-  public LocationServiceChannelsApi(String baseUrl, ApiClient client) {
+  public ServiceLocationServiceChannelsApi(String baseUrl, ApiClient client) {
     this.client = client;
     this.baseUrl = baseUrl;
   }
   
   /**
-   * Finds a location service channel by id
-   * Finds a location service channel by id
-   * @param locationServiceChannelId location service channel id (required)
+   * Finds a service location service channel by id
+   * Finds a service location service channel by id
+   * @param serviceLocationServiceChannelId service location service channel id (required)
    */
-  public ApiResponse<LocationServiceChannel> findLocationServiceChannel(String locationServiceChannelId) {
+  public ApiResponse<ServiceLocationServiceChannel> findServiceLocationServiceChannel(String serviceLocationServiceChannelId) {
     Map<String, Object> queryParams = new HashMap<>();
     Map<String, Object> formParams = new HashMap<>();
         
         
-    String path = String.format("%s/locationServiceChannels/{locationServiceChannelId}"
-      .replaceAll("\\{" + "locationServiceChannelId" + "\\}", String.valueOf(locationServiceChannelId)), baseUrl);
+    String path = String.format("%s/serviceLocationServiceChannels/{serviceLocationServiceChannelId}"
+      .replaceAll("\\{" + "serviceLocationServiceChannelId" + "\\}", String.valueOf(serviceLocationServiceChannelId)), baseUrl);
       
-    ResultType<LocationServiceChannel> resultType = new ResultType<LocationServiceChannel>() {};
+    ResultType<ServiceLocationServiceChannel> resultType = new ResultType<ServiceLocationServiceChannel>() {};
     return client.doGETRequest(path, resultType, queryParams, formParams);
   }
   /**
-   * Lists location service channels
-   * Lists location service channels
+   * Lists service location service channels
+   * Lists service location service channels
    * @param firstResult First result (optional)
    * @param maxResults Max results (optional)
    */
-  public ApiResponse<List<LocationServiceChannel>> listLocationServiceChannels(Long firstResult, Long maxResults) {
+  public ApiResponse<List<ServiceLocationServiceChannel>> listServiceLocationServiceChannels(Long firstResult, Long maxResults) {
     Map<String, Object> queryParams = new HashMap<>();
     Map<String, Object> formParams = new HashMap<>();
     if (firstResult != null)
@@ -79,9 +79,9 @@ if (maxResults != null)
     queryParams.put("maxResults", maxResults);
     
         
-    String path = String.format("%s/locationServiceChannels", baseUrl);
+    String path = String.format("%s/serviceLocationServiceChannels", baseUrl);
       
-    ResultType<List<LocationServiceChannel>> resultType = new ResultType<List<LocationServiceChannel>>() {};
+    ResultType<List<ServiceLocationServiceChannel>> resultType = new ResultType<List<ServiceLocationServiceChannel>>() {};
     return client.doGETRequest(path, resultType, queryParams, formParams);
   }
   

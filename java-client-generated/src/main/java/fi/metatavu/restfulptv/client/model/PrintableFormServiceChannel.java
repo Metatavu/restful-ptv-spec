@@ -45,7 +45,7 @@ import java.util.List;
 /**
  * PrintableFormServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T11:09:42.173+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T12:57:50.320+02:00")
 public class PrintableFormServiceChannel   {
   @JsonProperty("id")
   private String id = null;

@@ -42,10 +42,10 @@ import java.util.List;
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * LocationServiceChannel
+ * ServiceLocationServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T11:09:42.173+02:00")
-public class LocationServiceChannel   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T12:57:50.320+02:00")
+public class ServiceLocationServiceChannel   {
   @JsonProperty("id")
   private String id = null;
 
@@ -115,7 +115,7 @@ public class LocationServiceChannel   {
   @JsonProperty("publishingStatus")
   private String publishingStatus = null;
 
-  public LocationServiceChannel id(String id) {
+  public ServiceLocationServiceChannel id(String id) {
     this.id = id;
     return this;
   }
@@ -133,7 +133,7 @@ public class LocationServiceChannel   {
     this.id = id;
   }
 
-  public LocationServiceChannel type(String type) {
+  public ServiceLocationServiceChannel type(String type) {
     this.type = type;
     return this;
   }
@@ -151,7 +151,7 @@ public class LocationServiceChannel   {
     this.type = type;
   }
 
-  public LocationServiceChannel organizationId(String organizationId) {
+  public ServiceLocationServiceChannel organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
@@ -169,12 +169,12 @@ public class LocationServiceChannel   {
     this.organizationId = organizationId;
   }
 
-  public LocationServiceChannel names(List<LocalizedListItem> names) {
+  public ServiceLocationServiceChannel names(List<LocalizedListItem> names) {
     this.names = names;
     return this;
   }
 
-  public LocationServiceChannel addNamesItem(LocalizedListItem namesItem) {
+  public ServiceLocationServiceChannel addNamesItem(LocalizedListItem namesItem) {
     this.names.add(namesItem);
     return this;
   }
@@ -192,12 +192,12 @@ public class LocationServiceChannel   {
     this.names = names;
   }
 
-  public LocationServiceChannel descriptions(List<LocalizedListItem> descriptions) {
+  public ServiceLocationServiceChannel descriptions(List<LocalizedListItem> descriptions) {
     this.descriptions = descriptions;
     return this;
   }
 
-  public LocationServiceChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
+  public ServiceLocationServiceChannel addDescriptionsItem(LocalizedListItem descriptionsItem) {
     this.descriptions.add(descriptionsItem);
     return this;
   }
@@ -215,7 +215,7 @@ public class LocationServiceChannel   {
     this.descriptions = descriptions;
   }
 
-  public LocationServiceChannel serviceAreaRestricted(Boolean serviceAreaRestricted) {
+  public ServiceLocationServiceChannel serviceAreaRestricted(Boolean serviceAreaRestricted) {
     this.serviceAreaRestricted = serviceAreaRestricted;
     return this;
   }
@@ -233,12 +233,12 @@ public class LocationServiceChannel   {
     this.serviceAreaRestricted = serviceAreaRestricted;
   }
 
-  public LocationServiceChannel supportContacts(List<Support> supportContacts) {
+  public ServiceLocationServiceChannel supportContacts(List<Support> supportContacts) {
     this.supportContacts = supportContacts;
     return this;
   }
 
-  public LocationServiceChannel addSupportContactsItem(Support supportContactsItem) {
+  public ServiceLocationServiceChannel addSupportContactsItem(Support supportContactsItem) {
     this.supportContacts.add(supportContactsItem);
     return this;
   }
@@ -256,7 +256,7 @@ public class LocationServiceChannel   {
     this.supportContacts = supportContacts;
   }
 
-  public LocationServiceChannel email(String email) {
+  public ServiceLocationServiceChannel email(String email) {
     this.email = email;
     return this;
   }
@@ -274,7 +274,7 @@ public class LocationServiceChannel   {
     this.email = email;
   }
 
-  public LocationServiceChannel phone(String phone) {
+  public ServiceLocationServiceChannel phone(String phone) {
     this.phone = phone;
     return this;
   }
@@ -292,12 +292,12 @@ public class LocationServiceChannel   {
     this.phone = phone;
   }
 
-  public LocationServiceChannel languages(List<String> languages) {
+  public ServiceLocationServiceChannel languages(List<String> languages) {
     this.languages = languages;
     return this;
   }
 
-  public LocationServiceChannel addLanguagesItem(String languagesItem) {
+  public ServiceLocationServiceChannel addLanguagesItem(String languagesItem) {
     this.languages.add(languagesItem);
     return this;
   }
@@ -315,7 +315,7 @@ public class LocationServiceChannel   {
     this.languages = languages;
   }
 
-  public LocationServiceChannel fax(String fax) {
+  public ServiceLocationServiceChannel fax(String fax) {
     this.fax = fax;
     return this;
   }
@@ -333,7 +333,7 @@ public class LocationServiceChannel   {
     this.fax = fax;
   }
 
-  public LocationServiceChannel latitude(String latitude) {
+  public ServiceLocationServiceChannel latitude(String latitude) {
     this.latitude = latitude;
     return this;
   }
@@ -351,7 +351,7 @@ public class LocationServiceChannel   {
     this.latitude = latitude;
   }
 
-  public LocationServiceChannel longitude(String longitude) {
+  public ServiceLocationServiceChannel longitude(String longitude) {
     this.longitude = longitude;
     return this;
   }
@@ -369,7 +369,7 @@ public class LocationServiceChannel   {
     this.longitude = longitude;
   }
 
-  public LocationServiceChannel coordinateSystem(String coordinateSystem) {
+  public ServiceLocationServiceChannel coordinateSystem(String coordinateSystem) {
     this.coordinateSystem = coordinateSystem;
     return this;
   }
@@ -387,7 +387,7 @@ public class LocationServiceChannel   {
     this.coordinateSystem = coordinateSystem;
   }
 
-  public LocationServiceChannel coordinatesSetManually(Boolean coordinatesSetManually) {
+  public ServiceLocationServiceChannel coordinatesSetManually(Boolean coordinatesSetManually) {
     this.coordinatesSetManually = coordinatesSetManually;
     return this;
   }
@@ -405,7 +405,7 @@ public class LocationServiceChannel   {
     this.coordinatesSetManually = coordinatesSetManually;
   }
 
-  public LocationServiceChannel phoneServiceCharge(Boolean phoneServiceCharge) {
+  public ServiceLocationServiceChannel phoneServiceCharge(Boolean phoneServiceCharge) {
     this.phoneServiceCharge = phoneServiceCharge;
     return this;
   }
@@ -423,12 +423,12 @@ public class LocationServiceChannel   {
     this.phoneServiceCharge = phoneServiceCharge;
   }
 
-  public LocationServiceChannel webPages(List<WebPage> webPages) {
+  public ServiceLocationServiceChannel webPages(List<WebPage> webPages) {
     this.webPages = webPages;
     return this;
   }
 
-  public LocationServiceChannel addWebPagesItem(WebPage webPagesItem) {
+  public ServiceLocationServiceChannel addWebPagesItem(WebPage webPagesItem) {
     this.webPages.add(webPagesItem);
     return this;
   }
@@ -446,12 +446,12 @@ public class LocationServiceChannel   {
     this.webPages = webPages;
   }
 
-  public LocationServiceChannel serviceAreas(List<String> serviceAreas) {
+  public ServiceLocationServiceChannel serviceAreas(List<String> serviceAreas) {
     this.serviceAreas = serviceAreas;
     return this;
   }
 
-  public LocationServiceChannel addServiceAreasItem(String serviceAreasItem) {
+  public ServiceLocationServiceChannel addServiceAreasItem(String serviceAreasItem) {
     this.serviceAreas.add(serviceAreasItem);
     return this;
   }
@@ -469,12 +469,12 @@ public class LocationServiceChannel   {
     this.serviceAreas = serviceAreas;
   }
 
-  public LocationServiceChannel phoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
+  public ServiceLocationServiceChannel phoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
     this.phoneChargeDescriptions = phoneChargeDescriptions;
     return this;
   }
 
-  public LocationServiceChannel addPhoneChargeDescriptionsItem(LanguageItem phoneChargeDescriptionsItem) {
+  public ServiceLocationServiceChannel addPhoneChargeDescriptionsItem(LanguageItem phoneChargeDescriptionsItem) {
     this.phoneChargeDescriptions.add(phoneChargeDescriptionsItem);
     return this;
   }
@@ -492,12 +492,12 @@ public class LocationServiceChannel   {
     this.phoneChargeDescriptions = phoneChargeDescriptions;
   }
 
-  public LocationServiceChannel addresses(List<Address> addresses) {
+  public ServiceLocationServiceChannel addresses(List<Address> addresses) {
     this.addresses = addresses;
     return this;
   }
 
-  public LocationServiceChannel addAddressesItem(Address addressesItem) {
+  public ServiceLocationServiceChannel addAddressesItem(Address addressesItem) {
     this.addresses.add(addressesItem);
     return this;
   }
@@ -515,12 +515,12 @@ public class LocationServiceChannel   {
     this.addresses = addresses;
   }
 
-  public LocationServiceChannel chargeTypes(List<String> chargeTypes) {
+  public ServiceLocationServiceChannel chargeTypes(List<String> chargeTypes) {
     this.chargeTypes = chargeTypes;
     return this;
   }
 
-  public LocationServiceChannel addChargeTypesItem(String chargeTypesItem) {
+  public ServiceLocationServiceChannel addChargeTypesItem(String chargeTypesItem) {
     this.chargeTypes.add(chargeTypesItem);
     return this;
   }
@@ -538,12 +538,12 @@ public class LocationServiceChannel   {
     this.chargeTypes = chargeTypes;
   }
 
-  public LocationServiceChannel serviceHours(List<ServiceHour> serviceHours) {
+  public ServiceLocationServiceChannel serviceHours(List<ServiceHour> serviceHours) {
     this.serviceHours = serviceHours;
     return this;
   }
 
-  public LocationServiceChannel addServiceHoursItem(ServiceHour serviceHoursItem) {
+  public ServiceLocationServiceChannel addServiceHoursItem(ServiceHour serviceHoursItem) {
     this.serviceHours.add(serviceHoursItem);
     return this;
   }
@@ -561,7 +561,7 @@ public class LocationServiceChannel   {
     this.serviceHours = serviceHours;
   }
 
-  public LocationServiceChannel publishingStatus(String publishingStatus) {
+  public ServiceLocationServiceChannel publishingStatus(String publishingStatus) {
     this.publishingStatus = publishingStatus;
     return this;
   }
@@ -588,30 +588,30 @@ public class LocationServiceChannel   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LocationServiceChannel locationServiceChannel = (LocationServiceChannel) o;
-    return Objects.equals(this.id, locationServiceChannel.id) &&
-        Objects.equals(this.type, locationServiceChannel.type) &&
-        Objects.equals(this.organizationId, locationServiceChannel.organizationId) &&
-        Objects.equals(this.names, locationServiceChannel.names) &&
-        Objects.equals(this.descriptions, locationServiceChannel.descriptions) &&
-        Objects.equals(this.serviceAreaRestricted, locationServiceChannel.serviceAreaRestricted) &&
-        Objects.equals(this.supportContacts, locationServiceChannel.supportContacts) &&
-        Objects.equals(this.email, locationServiceChannel.email) &&
-        Objects.equals(this.phone, locationServiceChannel.phone) &&
-        Objects.equals(this.languages, locationServiceChannel.languages) &&
-        Objects.equals(this.fax, locationServiceChannel.fax) &&
-        Objects.equals(this.latitude, locationServiceChannel.latitude) &&
-        Objects.equals(this.longitude, locationServiceChannel.longitude) &&
-        Objects.equals(this.coordinateSystem, locationServiceChannel.coordinateSystem) &&
-        Objects.equals(this.coordinatesSetManually, locationServiceChannel.coordinatesSetManually) &&
-        Objects.equals(this.phoneServiceCharge, locationServiceChannel.phoneServiceCharge) &&
-        Objects.equals(this.webPages, locationServiceChannel.webPages) &&
-        Objects.equals(this.serviceAreas, locationServiceChannel.serviceAreas) &&
-        Objects.equals(this.phoneChargeDescriptions, locationServiceChannel.phoneChargeDescriptions) &&
-        Objects.equals(this.addresses, locationServiceChannel.addresses) &&
-        Objects.equals(this.chargeTypes, locationServiceChannel.chargeTypes) &&
-        Objects.equals(this.serviceHours, locationServiceChannel.serviceHours) &&
-        Objects.equals(this.publishingStatus, locationServiceChannel.publishingStatus);
+    ServiceLocationServiceChannel serviceLocationServiceChannel = (ServiceLocationServiceChannel) o;
+    return Objects.equals(this.id, serviceLocationServiceChannel.id) &&
+        Objects.equals(this.type, serviceLocationServiceChannel.type) &&
+        Objects.equals(this.organizationId, serviceLocationServiceChannel.organizationId) &&
+        Objects.equals(this.names, serviceLocationServiceChannel.names) &&
+        Objects.equals(this.descriptions, serviceLocationServiceChannel.descriptions) &&
+        Objects.equals(this.serviceAreaRestricted, serviceLocationServiceChannel.serviceAreaRestricted) &&
+        Objects.equals(this.supportContacts, serviceLocationServiceChannel.supportContacts) &&
+        Objects.equals(this.email, serviceLocationServiceChannel.email) &&
+        Objects.equals(this.phone, serviceLocationServiceChannel.phone) &&
+        Objects.equals(this.languages, serviceLocationServiceChannel.languages) &&
+        Objects.equals(this.fax, serviceLocationServiceChannel.fax) &&
+        Objects.equals(this.latitude, serviceLocationServiceChannel.latitude) &&
+        Objects.equals(this.longitude, serviceLocationServiceChannel.longitude) &&
+        Objects.equals(this.coordinateSystem, serviceLocationServiceChannel.coordinateSystem) &&
+        Objects.equals(this.coordinatesSetManually, serviceLocationServiceChannel.coordinatesSetManually) &&
+        Objects.equals(this.phoneServiceCharge, serviceLocationServiceChannel.phoneServiceCharge) &&
+        Objects.equals(this.webPages, serviceLocationServiceChannel.webPages) &&
+        Objects.equals(this.serviceAreas, serviceLocationServiceChannel.serviceAreas) &&
+        Objects.equals(this.phoneChargeDescriptions, serviceLocationServiceChannel.phoneChargeDescriptions) &&
+        Objects.equals(this.addresses, serviceLocationServiceChannel.addresses) &&
+        Objects.equals(this.chargeTypes, serviceLocationServiceChannel.chargeTypes) &&
+        Objects.equals(this.serviceHours, serviceLocationServiceChannel.serviceHours) &&
+        Objects.equals(this.publishingStatus, serviceLocationServiceChannel.publishingStatus);
   }
 
   @Override
@@ -622,7 +622,7 @@ public class LocationServiceChannel   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LocationServiceChannel {\n");
+    sb.append("class ServiceLocationServiceChannel {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
