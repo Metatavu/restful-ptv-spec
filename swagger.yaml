@@ -558,21 +558,15 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-  /services/{serviceId}/electronicChannels:
+  /electronicServiceChannels:
     get:
-      operationId: listServiceElectronicChannels
-      summary: Lists ElectronicChannels by serviceId
-      description: Lists ElectronicChannels by serviceId
+      operationId: listElectronicServiceChannels
+      summary: Lists electronic service channels
+      description: Lists electronic service channels
       tags:
-        - Services
-        - ElectronicChannels
+        - ElectronicServiceChannels
+        - ServiceChannels
       parameters:
-        - name: serviceId
-          in: path
-          description: Service id
-          required: true
-          type: string
-          format: uuid
         - name: firstResult
           in: query
           description: First result
@@ -587,11 +581,11 @@ paths:
           format: int64       
       responses:
         200:
-          description: Returns array of ElectronicChannels
+          description: Returns array of electronic service channels
           schema:
             type: array
             items:
-              $ref: '#/definitions/ElectronicChannel'
+              $ref: '#/definitions/ElectronicServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -608,73 +602,26 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-    post: 
-      operationId: createServiceElectronicChannel
-      summary: creates ElectronicChannel
-      description: creates ElectronicChannel
-      tags:
-        - Services
-        - ElectronicChannels
-      parameters:
-        - name: serviceId
-          in: path
-          description: service id
-          required: true
-          type: string
-          format: uuid
-        - name: body
-          in: body
-          description: Payload
-          required: true
-          schema:
-            $ref: '#/definitions/ElectronicChannel'
-      responses:
-        200:
-          description: Returns created ElectronicChannel
-          schema:
-            $ref: '#/definitions/ElectronicChannel'
-        400:
-          description: Invalid request was sent to the server
-          schema:
-            $ref: '#/definitions/BadRequest'
-        403:
-          description: Attempted to make a call with unauthorized client
-          schema:
-            $ref: '#/definitions/Forbidden'
-        404:
-          description: Resource was not found from the server
-          schema:
-            $ref: '#/definitions/NotFound'
-        500:
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/InternalServerError'
-  /services/{serviceId}/electronicChannels/{electronicChannelId}:
+  /electronicServiceChannels/{electronicServiceChannelId}:
     get:
-      operationId: findServiceElectronicChannel
-      summary: finds ElectronicChannel by electronicChannelId
-      description: finds ElectronicChannels by electronicChannelId
+      operationId: findElectronicServiceChannel
+      summary: finds an electronic service channel by id
+      description: finds an electronic service channel by id
       tags:
-        - Services
-        - ElectronicChannels
+        - ElectronicServiceChannels
+        - ServiceChannels
       parameters:
-        - name: serviceId
+        - name: electronicServiceChannelId
           in: path
-          description: Service id
-          required: true
-          type: string
-          format: uuid
-        - name: electronicChannelId
-          in: path
-          description: electronicChannel id
+          description: electronic service channel id
           required: true
           type: string
           format: uuid
       responses:
         200:
-          description: Returns ElectronicChannel
+          description: Returns an electronic service channel
           schema:
-            $ref: '#/definitions/ElectronicChannel'
+            $ref: '#/definitions/ElectronicServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -691,68 +638,15 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-    put: 
-      operationId: updateServiceElectronicChannel
-      summary: Updates ElectronicChannel
-      description: Updates ElectronicChannel
-      tags:
-        - Services
-        - ElectronicChannels
-      parameters:
-        - name: serviceId
-          in: path
-          description: service id
-          required: true
-          type: string
-          format: uuid
-        - name: electronicChannelId
-          in: path
-          description: electronicChannel id
-          required: true
-          type: string
-          format: uuid
-        - name: body
-          in: body
-          description: Payload
-          required: true
-          schema:
-            $ref: '#/definitions/ElectronicChannel'
-      responses:
-        200:
-          description: Returns updated ElectronicChannel
-          schema:
-            $ref: '#/definitions/ElectronicChannel'
-        400:
-          description: Invalid request was sent to the server
-          schema:
-            $ref: '#/definitions/BadRequest'
-        403:
-          description: Attempted to make a call with unauthorized client
-          schema:
-            $ref: '#/definitions/Forbidden'
-        404:
-          description: Resource was not found from the server
-          schema:
-            $ref: '#/definitions/NotFound'
-        500:
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/InternalServerError'
-  /services/{serviceId}/phoneChannels:
+  /phoneServiceChannels:
     get:
-      operationId: listServicePhoneChannels
-      summary: Lists PhoneChannels by serviceId
-      description: Lists PhoneChannels by serviceId
+      operationId: listPhoneServiceChannels
+      summary: Lists phone service channels
+      description: Lists phone service channels
       tags:
-        - Services
-        - PhoneChannels
+        - PhoneServiceChannels
+        - ServiceChannels
       parameters:
-        - name: serviceId
-          in: path
-          description: Service id
-          required: true
-          type: string
-          format: uuid
         - name: firstResult
           in: query
           description: First result
@@ -767,11 +661,11 @@ paths:
           format: int64            
       responses:
         200:
-          description: Returns array of PhoneChannels
+          description: Returns array of phone service channels
           schema:
             type: array
             items:
-              $ref: '#/definitions/PhoneChannel'
+              $ref: '#/definitions/PhoneServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -788,73 +682,26 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-    post: 
-      operationId: createServicePhoneChannel
-      summary: creates PhoneChannel
-      description: creates PhoneChannel
-      tags:
-        - Services
-        - PhoneChannels
-      parameters:
-        - name: serviceId
-          in: path
-          description: service id
-          required: true
-          type: string
-          format: uuid
-        - name: body
-          in: body
-          description: Payload
-          required: true
-          schema:
-            $ref: '#/definitions/PhoneChannel'
-      responses:
-        200:
-          description: Returns created PhoneChannel
-          schema:
-            $ref: '#/definitions/PhoneChannel'
-        400:
-          description: Invalid request was sent to the server
-          schema:
-            $ref: '#/definitions/BadRequest'
-        403:
-          description: Attempted to make a call with unauthorized client
-          schema:
-            $ref: '#/definitions/Forbidden'
-        404:
-          description: Resource was not found from the server
-          schema:
-            $ref: '#/definitions/NotFound'
-        500:
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/InternalServerError'
-  /services/{serviceId}/phoneChannels/{phoneChannelId}:
+  /phoneServiceChannels/{phoneServiceChannelId}:
     get:
-      operationId: findServicePhoneChannel
-      summary: finds PhoneChannel by phoneChannelId
-      description: finds PhoneChannels by phoneChannelId
+      operationId: findPhoneServiceChannel
+      summary: finds a phone service channel by id
+      description: finds a phone service channel by id
       tags:
-        - Services
-        - PhoneChannels
+        - PhoneServiceChannels
+        - ServiceChannels
       parameters:
-        - name: serviceId
+        - name: phoneServiceChannelId
           in: path
-          description: Service id
-          required: true
-          type: string
-          format: uuid
-        - name: phoneChannelId
-          in: path
-          description: phoneChannel id
+          description: phone service channel id
           required: true
           type: string
           format: uuid
       responses:
         200:
-          description: Returns PhoneChannel
+          description: Returns a phone service channel
           schema:
-            $ref: '#/definitions/PhoneChannel'
+            $ref: '#/definitions/PhoneServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -871,68 +718,15 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-    put: 
-      operationId: updatePhoneChannel
-      summary: Updates PhoneChannel
-      description: Updates PhoneChannel
-      tags:
-        - Services
-        - PhoneChannels
-      parameters:
-        - name: serviceId
-          in: path
-          description: service id
-          required: true
-          type: string
-          format: uuid
-        - name: phoneChannelId
-          in: path
-          description: phoneChannel id
-          required: true
-          type: string
-          format: uuid
-        - name: body
-          in: body
-          description: Payload
-          required: true
-          schema:
-            $ref: '#/definitions/PhoneChannel'
-      responses:
-        200:
-          description: Returns updated PhoneChannel
-          schema:
-            $ref: '#/definitions/PhoneChannel'
-        400:
-          description: Invalid request was sent to the server
-          schema:
-            $ref: '#/definitions/BadRequest'
-        403:
-          description: Attempted to make a call with unauthorized client
-          schema:
-            $ref: '#/definitions/Forbidden'
-        404:
-          description: Resource was not found from the server
-          schema:
-            $ref: '#/definitions/NotFound'
-        500:
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/InternalServerError'
-  /services/{serviceId}/printableFormChannels:
+  /printableFormServiceChannels:
     get:
-      operationId: listServicePrintableFormChannels
-      summary: Lists PrintableFormChannels by serviceId
-      description: Lists PrintableFormChannels by serviceId
+      operationId: listPrintableFormServiceChannels
+      summary: Lists printable form service channels
+      description: Lists printable form service channels
       tags:
-        - Services
-        - PrintableFormChannels
+        - PrintableFormServiceChannels
+        - ServiceChannels
       parameters:
-        - name: serviceId
-          in: path
-          description: Service id
-          required: true
-          type: string
-          format: uuid
         - name: firstResult
           in: query
           description: First result
@@ -947,11 +741,11 @@ paths:
           format: int64             
       responses:
         200:
-          description: Returns array of PrintableFormChannels
+          description: Returns array of printable form service channels
           schema:
             type: array
             items:
-              $ref: '#/definitions/PrintableFormChannel'
+              $ref: '#/definitions/PrintableFormServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -968,73 +762,26 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-    post: 
-      operationId: createServicePrintableFormChannel
-      summary: creates PrintableFormChannel
-      description: creates PrintableFormChannel
-      tags:
-        - Services
-        - PrintableFormChannels
-      parameters:
-        - name: serviceId
-          in: path
-          description: service id
-          required: true
-          type: string
-          format: uuid
-        - name: body
-          in: body
-          description: Payload
-          required: true
-          schema:
-            $ref: '#/definitions/PrintableFormChannel'
-      responses:
-        200:
-          description: Returns created PrintableFormChannel
-          schema:
-            $ref: '#/definitions/PrintableFormChannel'
-        400:
-          description: Invalid request was sent to the server
-          schema:
-            $ref: '#/definitions/BadRequest'
-        403:
-          description: Attempted to make a call with unauthorized client
-          schema:
-            $ref: '#/definitions/Forbidden'
-        404:
-          description: Resource was not found from the server
-          schema:
-            $ref: '#/definitions/NotFound'
-        500:
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/InternalServerError'
-  /services/{serviceId}/printableFormChannels/{printableFormChannelId}:
+  /printableFormServiceChannels/{printableFormServiceChannelId}:
     get:
-      operationId: findServicePrintableFormChannel
-      summary: finds PrintableFormChannel by printableFormChannelId
-      description: finds PrintableFormChannels by printableFormChannelId
+      operationId: findPrintableFormServiceChannel
+      summary: finds a printable for service channel by id
+      description: finds a printable for service channel by id
       tags:
-        - Services
-        - PrintableFormChannels
+        - PrintableFormServiceChannels
+        - ServiceChannels
       parameters:
-        - name: serviceId
+        - name: printableFormServiceChannelId
           in: path
-          description: Service id
-          required: true
-          type: string
-          format: uuid
-        - name: printableFormChannelId
-          in: path
-          description: printableFormChannel id
+          description: Printable form service channel id
           required: true
           type: string
           format: uuid
       responses:
         200:
-          description: Returns PrintableFormChannel
+          description: Returns printable form service channel by id
           schema:
-            $ref: '#/definitions/PrintableFormChannel'
+            $ref: '#/definitions/PrintableFormServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -1051,68 +798,15 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-    put: 
-      operationId: updatePrintableFormChannel
-      summary: Updates PrintableFormChannel
-      description: Updates PrintableFormChannel
-      tags:
-        - Services
-        - PrintableFormChannels
-      parameters:
-        - name: serviceId
-          in: path
-          description: service id
-          required: true
-          type: string
-          format: uuid
-        - name: printableFormChannelId
-          in: path
-          description: printableFormChannel id
-          required: true
-          type: string
-          format: uuid
-        - name: body
-          in: body
-          description: Payload
-          required: true
-          schema:
-            $ref: '#/definitions/PrintableFormChannel'
-      responses:
-        200:
-          description: Returns updated PrintableFormChannel
-          schema:
-            $ref: '#/definitions/PrintableFormChannel'
-        400:
-          description: Invalid request was sent to the server
-          schema:
-            $ref: '#/definitions/BadRequest'
-        403:
-          description: Attempted to make a call with unauthorized client
-          schema:
-            $ref: '#/definitions/Forbidden'
-        404:
-          description: Resource was not found from the server
-          schema:
-            $ref: '#/definitions/NotFound'
-        500:
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/InternalServerError'
-  /services/{serviceId}/serviceLocationChannels:
+  /locationServiceChannels:
     get:
-      operationId: listServiceServiceLocationChannels
-      summary: Lists ServiceLocationChannels by serviceId
-      description: Lists ServiceLocationChannels by serviceId
+      operationId: listLocationServiceChannels
+      summary: Lists location service channels
+      description: Lists location service channels
       tags:
-        - Services
-        - ServiceLocationChannels
+        - LocationServiceChannels
+        - ServiceChannels
       parameters:
-        - name: serviceId
-          in: path
-          description: Service id
-          required: true
-          type: string
-          format: uuid
         - name: firstResult
           in: query
           description: First result
@@ -1127,11 +821,11 @@ paths:
           format: int64             
       responses:
         200:
-          description: Returns array of ServiceLocationChannels
+          description: Returns array of location service channels
           schema:
             type: array
             items:
-              $ref: '#/definitions/ServiceLocationChannel'
+              $ref: '#/definitions/LocationServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -1148,73 +842,26 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-    post: 
-      operationId: createServiceServiceLocationChannel
-      summary: creates ServiceLocationChannel
-      description: creates ServiceLocationChannel
-      tags:
-        - Services
-        - ServiceLocationChannels
-      parameters:
-        - name: serviceId
-          in: path
-          description: service id
-          required: true
-          type: string
-          format: uuid
-        - name: body
-          in: body
-          description: Payload
-          required: true
-          schema:
-            $ref: '#/definitions/ServiceLocationChannel'
-      responses:
-        200:
-          description: Returns created ServiceLocationChannel
-          schema:
-            $ref: '#/definitions/ServiceLocationChannel'
-        400:
-          description: Invalid request was sent to the server
-          schema:
-            $ref: '#/definitions/BadRequest'
-        403:
-          description: Attempted to make a call with unauthorized client
-          schema:
-            $ref: '#/definitions/Forbidden'
-        404:
-          description: Resource was not found from the server
-          schema:
-            $ref: '#/definitions/NotFound'
-        500:
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/InternalServerError'
-  /services/{serviceId}/serviceLocationChannels/{serviceLocationChannelId}:
+  /locationServiceChannels/{locationServiceChannelId}:
     get:
-      operationId: findServiceServiceLocationChannel
-      summary: finds ServiceLocationChannel by serviceLocationChannelId
-      description: finds ServiceLocationChannels by serviceLocationChannelId
+      operationId: findLocationServiceChannel
+      summary: Finds a location service channel by id
+      description: Finds a location service channel by id
       tags:
-        - Services
-        - ServiceLocationChannels
+        - LocationServiceChannels
+        - ServiceChannels
       parameters:
-        - name: serviceId
+        - name: locationServiceChannelId
           in: path
-          description: Service id
-          required: true
-          type: string
-          format: uuid
-        - name: serviceLocationChannelId
-          in: path
-          description: serviceLocationChannel id
+          description: location service channel id
           required: true
           type: string
           format: uuid
       responses:
         200:
-          description: Returns ServiceLocationChannel
+          description: Returns a location service channel by id
           schema:
-            $ref: '#/definitions/ServiceLocationChannel'
+            $ref: '#/definitions/LocationServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -1231,68 +878,15 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-    put: 
-      operationId: updateServiceLocationChannel
-      summary: Updates ServiceLocationChannel
-      description: Updates ServiceLocationChannel
-      tags:
-        - Services
-        - ServiceLocationChannels
-      parameters:
-        - name: serviceId
-          in: path
-          description: service id
-          required: true
-          type: string
-          format: uuid
-        - name: serviceLocationChannelId
-          in: path
-          description: serviceLocationChannel id
-          required: true
-          type: string
-          format: uuid
-        - name: body
-          in: body
-          description: Payload
-          required: true
-          schema:
-            $ref: '#/definitions/ServiceLocationChannel'
-      responses:
-        200:
-          description: Returns updated ServiceLocationChannel
-          schema:
-            $ref: '#/definitions/ServiceLocationChannel'
-        400:
-          description: Invalid request was sent to the server
-          schema:
-            $ref: '#/definitions/BadRequest'
-        403:
-          description: Attempted to make a call with unauthorized client
-          schema:
-            $ref: '#/definitions/Forbidden'
-        404:
-          description: Resource was not found from the server
-          schema:
-            $ref: '#/definitions/NotFound'
-        500:
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/InternalServerError'
-  /services/{serviceId}/webPageChannels:
+  /webPageServiceChannels:
     get:
-      operationId: listServiceWebPageChannels
-      summary: Lists WebPageChannels by serviceId
-      description: Lists WebPageChannels by serviceId
+      operationId: listWebPageServiceChannels
+      summary: Lists web page service channels
+      description: Lists web page service channels
       tags:
-        - Services
-        - WebPageChannels
+        - WebPageServiceChannels
+        - ServiceChannels
       parameters:
-        - name: serviceId
-          in: path
-          description: Service id
-          required: true
-          type: string
-          format: uuid
         - name: firstResult
           in: query
           description: First result
@@ -1307,11 +901,11 @@ paths:
           format: int64             
       responses:
         200:
-          description: Returns array of WebPageChannels
+          description: Returns array of web page service channels
           schema:
             type: array
             items:
-              $ref: '#/definitions/WebPageChannel'
+              $ref: '#/definitions/WebPageServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -1328,120 +922,26 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-    post: 
-      operationId: createServiceWebPageChannel
-      summary: creates WebPageChannel
-      description: creates WebPageChannel
-      tags:
-        - Services
-        - WebPageChannels
-      parameters:
-        - name: serviceId
-          in: path
-          description: service id
-          required: true
-          type: string
-          format: uuid
-        - name: body
-          in: body
-          description: Payload
-          required: true
-          schema:
-            $ref: '#/definitions/WebPageChannel'
-      responses:
-        200:
-          description: Returns created WebPageChannel
-          schema:
-            $ref: '#/definitions/WebPageChannel'
-        400:
-          description: Invalid request was sent to the server
-          schema:
-            $ref: '#/definitions/BadRequest'
-        403:
-          description: Attempted to make a call with unauthorized client
-          schema:
-            $ref: '#/definitions/Forbidden'
-        404:
-          description: Resource was not found from the server
-          schema:
-            $ref: '#/definitions/NotFound'
-        500:
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/InternalServerError'
-  /services/{serviceId}/webPageChannels/{webPageChannelId}:
+  /webPageServiceChannels/{webPageServiceChannelId}:
     get:
-      operationId: findServiceWebPageChannel
-      summary: finds WebPageChannel by webPageChannelId
-      description: finds WebPageChannels by webPageChannelId
+      operationId: findWebPageServiceChannel
+      summary: Finds a web page service channel by id
+      description: Finds a web page service channel by id
       tags:
-        - Services
-        - WebPageChannels
+        - WebPageServiceChannels
+        - ServiceChannels
       parameters:
-        - name: serviceId
+        - name: webPageServiceChannelId
           in: path
-          description: Service id
-          required: true
-          type: string
-          format: uuid
-        - name: webPageChannelId
-          in: path
-          description: webPageChannel id
+          description: web page service channel id
           required: true
           type: string
           format: uuid
       responses:
         200:
-          description: Returns WebPageChannel
+          description: Returns a web page service channel
           schema:
-            $ref: '#/definitions/WebPageChannel'
-        400:
-          description: Invalid request was sent to the server
-          schema:
-            $ref: '#/definitions/BadRequest'
-        403:
-          description: Attempted to make a call with unauthorized client
-          schema:
-            $ref: '#/definitions/Forbidden'
-        404:
-          description: Resource was not found from the server
-          schema:
-            $ref: '#/definitions/NotFound'
-        500:
-          description: Internal server error
-          schema:
-            $ref: '#/definitions/InternalServerError'
-    put: 
-      operationId: updateWebPageChannel
-      summary: Updates WebPageChannel
-      description: Updates WebPageChannel
-      tags:
-        - Services
-        - WebPageChannels
-      parameters:
-        - name: serviceId
-          in: path
-          description: service id
-          required: true
-          type: string
-          format: uuid
-        - name: webPageChannelId
-          in: path
-          description: webPageChannel id
-          required: true
-          type: string
-          format: uuid
-        - name: body
-          in: body
-          description: Payload
-          required: true
-          schema:
-            $ref: '#/definitions/WebPageChannel'
-      responses:
-        200:
-          description: Returns updated WebPageChannel
-          schema:
-            $ref: '#/definitions/WebPageChannel'
+            $ref: '#/definitions/WebPageServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -1721,6 +1221,31 @@ definitions:
         items:
           type: string
           format: uuid
+      electronicServiceChannelIds:
+        type: array
+        items:
+          type: string
+          format: uuid
+      phoneServiceChannelIds:
+        type: array
+        items:
+          type: string
+          format: uuid
+      printableFormServiceChannelIds:
+        type: array
+        items:
+          type: string
+          format: uuid
+      locationServiceChannelIds:
+        type: array
+        items:
+          type: string
+          format: uuid
+      webPageServiceChannelIds:
+        type: array
+        items:
+          type: string
+          format: uuid
   FintoItem:
     type: object
     properties:
@@ -1771,7 +1296,7 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/LanguageItem'
-  ElectronicChannel:
+  ElectronicServiceChannel:
     type: object
     properties:
       id:
@@ -1825,7 +1350,7 @@ definitions:
           $ref: '#/definitions/ServiceHour'
       publishingStatus:
         type: string
-  PhoneChannel:
+  PhoneServiceChannel:
     type: object
     properties:
       id:
@@ -1878,7 +1403,7 @@ definitions:
           $ref: '#/definitions/ServiceHour'
       publishingStatus:
         type: string
-  PrintableFormChannel:
+  PrintableFormServiceChannel:
     type: object
     properties:
       id:
@@ -1935,7 +1460,7 @@ definitions:
           $ref: '#/definitions/ServiceHour'
       publishingStatus:
         type: string
-  ServiceLocationChannel:
+  LocationServiceChannel:
     type: object
     properties:
       id:
@@ -2008,7 +1533,7 @@ definitions:
           $ref: '#/definitions/ServiceHour'
       publishingStatus:
         type: string
-  WebPageChannel:
+  WebPageServiceChannel:
     type: object
     properties:
       id:
