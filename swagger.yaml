@@ -798,13 +798,13 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-  /locationServiceChannels:
+  /serviceLocationServiceChannels:
     get:
-      operationId: listLocationServiceChannels
-      summary: Lists location service channels
-      description: Lists location service channels
+      operationId: listServiceLocationServiceChannels
+      summary: Lists service location service channels
+      description: Lists service location service channels
       tags:
-        - LocationServiceChannels
+        - ServiceLocationServiceChannels
         - ServiceChannels
       parameters:
         - name: firstResult
@@ -821,11 +821,11 @@ paths:
           format: int64             
       responses:
         200:
-          description: Returns array of location service channels
+          description: Returns array of service location service channels
           schema:
             type: array
             items:
-              $ref: '#/definitions/LocationServiceChannel'
+              $ref: '#/definitions/ServiceLocationServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -842,26 +842,26 @@ paths:
           description: Internal server error
           schema:
             $ref: '#/definitions/InternalServerError'
-  /locationServiceChannels/{locationServiceChannelId}:
+  /serviceLocationServiceChannels/{serviceLocationServiceChannelId}:
     get:
-      operationId: findLocationServiceChannel
-      summary: Finds a location service channel by id
-      description: Finds a location service channel by id
+      operationId: findServiceLocationServiceChannel
+      summary: Finds a service location service channel by id
+      description: Finds a service location service channel by id
       tags:
-        - LocationServiceChannels
+        - ServiceLocationServiceChannels
         - ServiceChannels
       parameters:
-        - name: locationServiceChannelId
+        - name: serviceLocationServiceChannelId
           in: path
-          description: location service channel id
+          description: service location service channel id
           required: true
           type: string
           format: uuid
       responses:
         200:
-          description: Returns a location service channel by id
+          description: Returns a service location service channel by id
           schema:
-            $ref: '#/definitions/LocationServiceChannel'
+            $ref: '#/definitions/ServiceLocationServiceChannel'
         400:
           description: Invalid request was sent to the server
           schema:
@@ -1236,7 +1236,7 @@ definitions:
         items:
           type: string
           format: uuid
-      locationServiceChannelIds:
+      serviceLocationServiceChannelIds:
         type: array
         items:
           type: string
@@ -1460,7 +1460,7 @@ definitions:
           $ref: '#/definitions/ServiceHour'
       publishingStatus:
         type: string
-  LocationServiceChannel:
+  ServiceLocationServiceChannel:
     type: object
     properties:
       id:
