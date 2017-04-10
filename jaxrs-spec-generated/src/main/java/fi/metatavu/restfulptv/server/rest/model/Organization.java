@@ -4,7 +4,7 @@ import fi.metatavu.restfulptv.server.rest.model.Address;
 import fi.metatavu.restfulptv.server.rest.model.Email;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
 import fi.metatavu.restfulptv.server.rest.model.Municipality;
-import fi.metatavu.restfulptv.server.rest.model.OrganizationPhone;
+import fi.metatavu.restfulptv.server.rest.model.Phone;
 import fi.metatavu.restfulptv.server.rest.model.WebPage;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public class Organization   {
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
   private String parentOrganization = null;
   private List<Email> emailAddresses = new ArrayList<Email>();
-  private List<OrganizationPhone> phoneNumbers = new ArrayList<OrganizationPhone>();
+  private List<Phone> phoneNumbers = new ArrayList<Phone>();
   private List<WebPage> webPages = new ArrayList<WebPage>();
   private List<Address> addresses = new ArrayList<Address>();
   private Municipality municipality = null;
@@ -100,17 +100,17 @@ public class Organization   {
 
   /**
    **/
-  public Organization phoneNumbers(List<OrganizationPhone> phoneNumbers) {
+  public Organization phoneNumbers(List<Phone> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<OrganizationPhone> getPhoneNumbers() {
+  public List<Phone> getPhoneNumbers() {
     return phoneNumbers;
   }
-  public void setPhoneNumbers(List<OrganizationPhone> phoneNumbers) {
+  public void setPhoneNumbers(List<Phone> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
   }
 

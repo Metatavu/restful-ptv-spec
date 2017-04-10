@@ -1,10 +1,11 @@
 package fi.metatavu.restfulptv.server.rest.model;
 
 import fi.metatavu.restfulptv.server.rest.model.Attachment;
+import fi.metatavu.restfulptv.server.rest.model.Email;
 import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
+import fi.metatavu.restfulptv.server.rest.model.Phone;
 import fi.metatavu.restfulptv.server.rest.model.ServiceHour;
-import fi.metatavu.restfulptv.server.rest.model.Support;
 import fi.metatavu.restfulptv.server.rest.model.WebPage;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,8 @@ public class WebPageServiceChannel   {
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
   private List<LanguageItem> urls = new ArrayList<LanguageItem>();
   private List<Attachment> attachments = new ArrayList<Attachment>();
-  private List<Support> supportContacts = new ArrayList<Support>();
+  private List<Phone> supportPhones = new ArrayList<Phone>();
+  private List<Email> supportEmails = new ArrayList<Email>();
   private List<String> languages = new ArrayList<String>();
   private List<WebPage> webPages = new ArrayList<WebPage>();
   private List<ServiceHour> serviceHours = new ArrayList<ServiceHour>();
@@ -144,18 +146,34 @@ public class WebPageServiceChannel   {
 
   /**
    **/
-  public WebPageServiceChannel supportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public WebPageServiceChannel supportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<Support> getSupportContacts() {
-    return supportContacts;
+  public List<Phone> getSupportPhones() {
+    return supportPhones;
   }
-  public void setSupportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public void setSupportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
+  }
+
+  /**
+   **/
+  public WebPageServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<Email> getSupportEmails() {
+    return supportEmails;
+  }
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
   }
 
   /**
@@ -239,7 +257,8 @@ public class WebPageServiceChannel   {
         Objects.equals(descriptions, webPageServiceChannel.descriptions) &&
         Objects.equals(urls, webPageServiceChannel.urls) &&
         Objects.equals(attachments, webPageServiceChannel.attachments) &&
-        Objects.equals(supportContacts, webPageServiceChannel.supportContacts) &&
+        Objects.equals(supportPhones, webPageServiceChannel.supportPhones) &&
+        Objects.equals(supportEmails, webPageServiceChannel.supportEmails) &&
         Objects.equals(languages, webPageServiceChannel.languages) &&
         Objects.equals(webPages, webPageServiceChannel.webPages) &&
         Objects.equals(serviceHours, webPageServiceChannel.serviceHours) &&
@@ -248,7 +267,7 @@ public class WebPageServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, urls, attachments, supportContacts, languages, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, urls, attachments, supportPhones, supportEmails, languages, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -263,7 +282,8 @@ public class WebPageServiceChannel   {
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
-    sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    serviceHours: ").append(toIndentedString(serviceHours)).append("\n");

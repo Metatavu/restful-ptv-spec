@@ -1350,7 +1350,7 @@
         "phoneNumbers" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/OrganizationPhone"
+            "$ref" : "#/definitions/Phone"
           }
         },
         "webPages" : {
@@ -1501,27 +1501,29 @@
         }
       }
     },
-    "OrganizationPhone" : {
+    "Phone" : {
       "type" : "object",
-      "required" : [ "chargeType", "type" ],
       "properties" : {
+        "additionalInformation" : {
+          "type" : "string"
+        },
+        "serviceChargeType" : {
+          "type" : "string"
+        },
+        "chargeDescription" : {
+          "type" : "string"
+        },
         "prefixNumber" : {
           "type" : "string"
+        },
+        "isFinnishServiceNumber" : {
+          "type" : "boolean"
         },
         "number" : {
           "type" : "string"
         },
-        "type" : {
+        "language" : {
           "type" : "string"
-        },
-        "chargeType" : {
-          "type" : "string"
-        },
-        "descriptions" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/LocalizedListItem"
-          }
         }
       }
     },
@@ -1773,10 +1775,16 @@
         "requiresSignature" : {
           "type" : "boolean"
         },
-        "supportContacts" : {
+        "supportPhones" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/Support"
+            "$ref" : "#/definitions/Phone"
+          }
+        },
+        "supportEmails" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Email"
           }
         },
         "requiresAuthentication" : {
@@ -1852,10 +1860,10 @@
             "type" : "string"
           }
         },
-        "supportContacts" : {
+        "supportEmails" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/Support"
+            "$ref" : "#/definitions/Email"
           }
         },
         "phoneNumbers" : {
@@ -1925,10 +1933,16 @@
         "formReceiver" : {
           "type" : "string"
         },
-        "supportContacts" : {
+        "supportPhones" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/Support"
+            "$ref" : "#/definitions/Phone"
+          }
+        },
+        "supportEmails" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Email"
           }
         },
         "deliveryAddress" : {
@@ -2004,10 +2018,16 @@
         "serviceAreaRestricted" : {
           "type" : "boolean"
         },
-        "supportContacts" : {
+        "supportPhones" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/Support"
+            "$ref" : "#/definitions/Phone"
+          }
+        },
+        "supportEmails" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Email"
           }
         },
         "email" : {
@@ -2119,10 +2139,16 @@
             "$ref" : "#/definitions/Attachment"
           }
         },
-        "supportContacts" : {
+        "supportPhones" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/Support"
+            "$ref" : "#/definitions/Phone"
+          }
+        },
+        "supportEmails" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Email"
           }
         },
         "languages" : {
@@ -2145,32 +2171,6 @@
         },
         "publishingStatus" : {
           "type" : "string"
-        }
-      }
-    },
-    "Support" : {
-      "type" : "object",
-      "properties" : {
-        "email" : {
-          "type" : "string",
-          "maxLength" : 100
-        },
-        "phone" : {
-          "type" : "string",
-          "maxLength" : 100
-        },
-        "phoneChargeDescription" : {
-          "type" : "string",
-          "maxLength" : 150
-        },
-        "language" : {
-          "type" : "string"
-        },
-        "serviceChargeTypes" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
         }
       }
     },

@@ -1,10 +1,11 @@
 package fi.metatavu.restfulptv.server.rest.model;
 
 import fi.metatavu.restfulptv.server.rest.model.Address;
+import fi.metatavu.restfulptv.server.rest.model.Email;
 import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
+import fi.metatavu.restfulptv.server.rest.model.Phone;
 import fi.metatavu.restfulptv.server.rest.model.ServiceHour;
-import fi.metatavu.restfulptv.server.rest.model.Support;
 import fi.metatavu.restfulptv.server.rest.model.WebPage;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,8 @@ public class ServiceLocationServiceChannel   {
   private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
   private Boolean serviceAreaRestricted = null;
-  private List<Support> supportContacts = new ArrayList<Support>();
+  private List<Phone> supportPhones = new ArrayList<Phone>();
+  private List<Email> supportEmails = new ArrayList<Email>();
   private String email = null;
   private String phone = null;
   private List<String> languages = new ArrayList<String>();
@@ -139,18 +141,34 @@ public class ServiceLocationServiceChannel   {
 
   /**
    **/
-  public ServiceLocationServiceChannel supportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public ServiceLocationServiceChannel supportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<Support> getSupportContacts() {
-    return supportContacts;
+  public List<Phone> getSupportPhones() {
+    return supportPhones;
   }
-  public void setSupportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public void setSupportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
+  }
+
+  /**
+   **/
+  public ServiceLocationServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<Email> getSupportEmails() {
+    return supportEmails;
+  }
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
   }
 
   /**
@@ -425,7 +443,8 @@ public class ServiceLocationServiceChannel   {
         Objects.equals(names, serviceLocationServiceChannel.names) &&
         Objects.equals(descriptions, serviceLocationServiceChannel.descriptions) &&
         Objects.equals(serviceAreaRestricted, serviceLocationServiceChannel.serviceAreaRestricted) &&
-        Objects.equals(supportContacts, serviceLocationServiceChannel.supportContacts) &&
+        Objects.equals(supportPhones, serviceLocationServiceChannel.supportPhones) &&
+        Objects.equals(supportEmails, serviceLocationServiceChannel.supportEmails) &&
         Objects.equals(email, serviceLocationServiceChannel.email) &&
         Objects.equals(phone, serviceLocationServiceChannel.phone) &&
         Objects.equals(languages, serviceLocationServiceChannel.languages) &&
@@ -446,7 +465,7 @@ public class ServiceLocationServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, serviceAreaRestricted, supportContacts, email, phone, languages, fax, latitude, longitude, coordinateSystem, coordinatesSetManually, phoneServiceCharge, webPages, serviceAreas, phoneChargeDescriptions, addresses, chargeTypes, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, serviceAreaRestricted, supportPhones, supportEmails, email, phone, languages, fax, latitude, longitude, coordinateSystem, coordinatesSetManually, phoneServiceCharge, webPages, serviceAreas, phoneChargeDescriptions, addresses, chargeTypes, serviceHours, publishingStatus);
   }
 
   @Override
@@ -460,7 +479,8 @@ public class ServiceLocationServiceChannel   {
     sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    serviceAreaRestricted: ").append(toIndentedString(serviceAreaRestricted)).append("\n");
-    sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");

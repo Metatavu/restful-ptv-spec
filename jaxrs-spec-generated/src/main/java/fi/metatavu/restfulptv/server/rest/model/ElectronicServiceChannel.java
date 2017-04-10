@@ -1,10 +1,11 @@
 package fi.metatavu.restfulptv.server.rest.model;
 
 import fi.metatavu.restfulptv.server.rest.model.Attachment;
+import fi.metatavu.restfulptv.server.rest.model.Email;
 import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
+import fi.metatavu.restfulptv.server.rest.model.Phone;
 import fi.metatavu.restfulptv.server.rest.model.ServiceHour;
-import fi.metatavu.restfulptv.server.rest.model.Support;
 import fi.metatavu.restfulptv.server.rest.model.WebPage;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,8 @@ public class ElectronicServiceChannel   {
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
   private Integer signatureQuantity = null;
   private Boolean requiresSignature = null;
-  private List<Support> supportContacts = new ArrayList<Support>();
+  private List<Phone> supportPhones = new ArrayList<Phone>();
+  private List<Email> supportEmails = new ArrayList<Email>();
   private Boolean requiresAuthentication = null;
   private List<LanguageItem> urls = new ArrayList<LanguageItem>();
   private List<String> languages = new ArrayList<String>();
@@ -147,18 +149,34 @@ public class ElectronicServiceChannel   {
 
   /**
    **/
-  public ElectronicServiceChannel supportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public ElectronicServiceChannel supportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<Support> getSupportContacts() {
-    return supportContacts;
+  public List<Phone> getSupportPhones() {
+    return supportPhones;
   }
-  public void setSupportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public void setSupportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
+  }
+
+  /**
+   **/
+  public ElectronicServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<Email> getSupportEmails() {
+    return supportEmails;
+  }
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
   }
 
   /**
@@ -290,7 +308,8 @@ public class ElectronicServiceChannel   {
         Objects.equals(descriptions, electronicServiceChannel.descriptions) &&
         Objects.equals(signatureQuantity, electronicServiceChannel.signatureQuantity) &&
         Objects.equals(requiresSignature, electronicServiceChannel.requiresSignature) &&
-        Objects.equals(supportContacts, electronicServiceChannel.supportContacts) &&
+        Objects.equals(supportPhones, electronicServiceChannel.supportPhones) &&
+        Objects.equals(supportEmails, electronicServiceChannel.supportEmails) &&
         Objects.equals(requiresAuthentication, electronicServiceChannel.requiresAuthentication) &&
         Objects.equals(urls, electronicServiceChannel.urls) &&
         Objects.equals(languages, electronicServiceChannel.languages) &&
@@ -302,7 +321,7 @@ public class ElectronicServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, signatureQuantity, requiresSignature, supportContacts, requiresAuthentication, urls, languages, attachments, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, signatureQuantity, requiresSignature, supportPhones, supportEmails, requiresAuthentication, urls, languages, attachments, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -317,7 +336,8 @@ public class ElectronicServiceChannel   {
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    signatureQuantity: ").append(toIndentedString(signatureQuantity)).append("\n");
     sb.append("    requiresSignature: ").append(toIndentedString(requiresSignature)).append("\n");
-    sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    requiresAuthentication: ").append(toIndentedString(requiresAuthentication)).append("\n");
     sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");

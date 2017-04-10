@@ -1,9 +1,9 @@
 package fi.metatavu.restfulptv.server.rest.model;
 
+import fi.metatavu.restfulptv.server.rest.model.Email;
 import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
 import fi.metatavu.restfulptv.server.rest.model.ServiceHour;
-import fi.metatavu.restfulptv.server.rest.model.Support;
 import fi.metatavu.restfulptv.server.rest.model.WebPage;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class PhoneServiceChannel   {
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
   private String phoneType = null;
   private List<String> chargeTypes = new ArrayList<String>();
-  private List<Support> supportContacts = new ArrayList<Support>();
+  private List<Email> supportEmails = new ArrayList<Email>();
   private List<LanguageItem> phoneNumbers = new ArrayList<LanguageItem>();
   private List<String> languages = new ArrayList<String>();
   private List<LanguageItem> phoneChargeDescriptions = new ArrayList<LanguageItem>();
@@ -145,18 +145,18 @@ public class PhoneServiceChannel   {
 
   /**
    **/
-  public PhoneServiceChannel supportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public PhoneServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<Support> getSupportContacts() {
-    return supportContacts;
+  public List<Email> getSupportEmails() {
+    return supportEmails;
   }
-  public void setSupportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
   }
 
   /**
@@ -272,7 +272,7 @@ public class PhoneServiceChannel   {
         Objects.equals(descriptions, phoneServiceChannel.descriptions) &&
         Objects.equals(phoneType, phoneServiceChannel.phoneType) &&
         Objects.equals(chargeTypes, phoneServiceChannel.chargeTypes) &&
-        Objects.equals(supportContacts, phoneServiceChannel.supportContacts) &&
+        Objects.equals(supportEmails, phoneServiceChannel.supportEmails) &&
         Objects.equals(phoneNumbers, phoneServiceChannel.phoneNumbers) &&
         Objects.equals(languages, phoneServiceChannel.languages) &&
         Objects.equals(phoneChargeDescriptions, phoneServiceChannel.phoneChargeDescriptions) &&
@@ -283,7 +283,7 @@ public class PhoneServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, phoneType, chargeTypes, supportContacts, phoneNumbers, languages, phoneChargeDescriptions, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, phoneType, chargeTypes, supportEmails, phoneNumbers, languages, phoneChargeDescriptions, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -298,7 +298,7 @@ public class PhoneServiceChannel   {
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
     sb.append("    chargeTypes: ").append(toIndentedString(chargeTypes)).append("\n");
-    sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    phoneChargeDescriptions: ").append(toIndentedString(phoneChargeDescriptions)).append("\n");

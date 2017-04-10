@@ -2,10 +2,11 @@ package fi.metatavu.restfulptv.server.rest.model;
 
 import fi.metatavu.restfulptv.server.rest.model.Address;
 import fi.metatavu.restfulptv.server.rest.model.Attachment;
+import fi.metatavu.restfulptv.server.rest.model.Email;
 import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
+import fi.metatavu.restfulptv.server.rest.model.Phone;
 import fi.metatavu.restfulptv.server.rest.model.ServiceHour;
-import fi.metatavu.restfulptv.server.rest.model.Support;
 import fi.metatavu.restfulptv.server.rest.model.WebPage;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,8 @@ public class PrintableFormServiceChannel   {
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
   private String formIdentifier = null;
   private String formReceiver = null;
-  private List<Support> supportContacts = new ArrayList<Support>();
+  private List<Phone> supportPhones = new ArrayList<Phone>();
+  private List<Email> supportEmails = new ArrayList<Email>();
   private Address deliveryAddress = null;
   private List<LocalizedListItem> channelUrls = new ArrayList<LocalizedListItem>();
   private List<String> languages = new ArrayList<String>();
@@ -149,18 +151,34 @@ public class PrintableFormServiceChannel   {
 
   /**
    **/
-  public PrintableFormServiceChannel supportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public PrintableFormServiceChannel supportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<Support> getSupportContacts() {
-    return supportContacts;
+  public List<Phone> getSupportPhones() {
+    return supportPhones;
   }
-  public void setSupportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public void setSupportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
+  }
+
+  /**
+   **/
+  public PrintableFormServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public List<Email> getSupportEmails() {
+    return supportEmails;
+  }
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
   }
 
   /**
@@ -308,7 +326,8 @@ public class PrintableFormServiceChannel   {
         Objects.equals(descriptions, printableFormServiceChannel.descriptions) &&
         Objects.equals(formIdentifier, printableFormServiceChannel.formIdentifier) &&
         Objects.equals(formReceiver, printableFormServiceChannel.formReceiver) &&
-        Objects.equals(supportContacts, printableFormServiceChannel.supportContacts) &&
+        Objects.equals(supportPhones, printableFormServiceChannel.supportPhones) &&
+        Objects.equals(supportEmails, printableFormServiceChannel.supportEmails) &&
         Objects.equals(deliveryAddress, printableFormServiceChannel.deliveryAddress) &&
         Objects.equals(channelUrls, printableFormServiceChannel.channelUrls) &&
         Objects.equals(languages, printableFormServiceChannel.languages) &&
@@ -321,7 +340,7 @@ public class PrintableFormServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, formIdentifier, formReceiver, supportContacts, deliveryAddress, channelUrls, languages, deliveryAddressDescriptions, attachments, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, formIdentifier, formReceiver, supportPhones, supportEmails, deliveryAddress, channelUrls, languages, deliveryAddressDescriptions, attachments, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -336,7 +355,8 @@ public class PrintableFormServiceChannel   {
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    formIdentifier: ").append(toIndentedString(formIdentifier)).append("\n");
     sb.append("    formReceiver: ").append(toIndentedString(formReceiver)).append("\n");
-    sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    deliveryAddress: ").append(toIndentedString(deliveryAddress)).append("\n");
     sb.append("    channelUrls: ").append(toIndentedString(channelUrls)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
