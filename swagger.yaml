@@ -1200,10 +1200,6 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Municipality'
-      webPages:
-        type: array
-        items:
-          $ref: '#/definitions/WebPage'
       requirements:
         type: array
         items:
@@ -1215,10 +1211,6 @@ definitions:
         type: string
       chargeType:
         type: string
-      additionalInformations:
-        type: array
-        items:
-          $ref: '#/definitions/LocalizedListItem'
       organizations:
         type: array
         items:
