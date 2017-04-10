@@ -1,6 +1,6 @@
 package fi.metatavu.restfulptv.server.rest.model;
 
-import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
+import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Municipality   {
   
   private String code = null;
-  private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
+  private List<LanguageItem> names = new ArrayList<LanguageItem>();
 
   /**
    * Municipality code (like 491 or 091).
@@ -34,17 +34,17 @@ public class Municipality   {
 
   /**
    **/
-  public Municipality names(List<LocalizedListItem> names) {
+  public Municipality names(List<LanguageItem> names) {
     this.names = names;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getNames() {
+  public List<LanguageItem> getNames() {
     return names;
   }
-  public void setNames(List<LocalizedListItem> names) {
+  public void setNames(List<LanguageItem> names) {
     this.names = names;
   }
 
