@@ -1702,39 +1702,60 @@
     },
     "Address" : {
       "type" : "object",
-      "required" : [ "postalCode", "streetAddress" ],
       "properties" : {
+        "latitude" : {
+          "type" : "string",
+          "description" : "Service location latitude coordinate."
+        },
+        "longitude" : {
+          "type" : "string",
+          "description" : "Service location longitude coordinate."
+        },
+        "coordinateState" : {
+          "type" : "string",
+          "description" : "State of coordinates. Coordinates are fetched from a service provided by Maanmittauslaitos (WFS).\r\nPossible values are: Loading, Ok, Failed, NotReceived, EmptyInputReceived, MultipleResultsReceived or WrongFormatReceived."
+        },
         "type" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Address type, Visiting or Postal."
         },
         "postOfficeBox" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Post office box like PL 310"
         },
         "postalCode" : {
           "type" : "string",
-          "pattern" : "\\d{5}?"
+          "description" : "Postal code, for example 00010."
         },
         "postOffice" : {
-          "type" : "string"
-        },
-        "streetAddress" : {
           "type" : "array",
+          "description" : "List of localized Post offices, for example Helsinki, Helsingfors.",
           "items" : {
             "$ref" : "#/definitions/LanguageItem"
           }
+        },
+        "streetAddress" : {
+          "type" : "array",
+          "description" : "List of localized street addresses.",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "streetNumber" : {
+          "type" : "string",
+          "description" : "Street number for street address."
         },
         "municipality" : {
           "$ref" : "#/definitions/Municipality"
         },
         "country" : {
           "type" : "string",
+          "description" : "Country code (ISO 3166-1 alpha-2), for example FI.",
           "pattern" : "^[A-Z]{2}$"
-        },
-        "qualifier" : {
-          "type" : "string"
         },
         "additionalInformations" : {
           "type" : "array",
+          "description" : "Localized list of additional information about the address.",
           "items" : {
             "$ref" : "#/definitions/LanguageItem"
           }
