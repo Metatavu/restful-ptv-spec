@@ -37,7 +37,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Open API web page model.
  */
 @ApiModel(description = "Open API web page model.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T20:36:31.976+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
 public class WebPage   {
   @JsonProperty("description")
   private String description = null;
@@ -50,9 +50,6 @@ public class WebPage   {
 
   @JsonProperty("value")
   private String value = null;
-
-  @JsonProperty("type")
-  private String type = null;
 
   public WebPage description(String description) {
     this.description = description;
@@ -126,24 +123,6 @@ public class WebPage   {
     this.value = value;
   }
 
-  public WebPage type(String type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -157,13 +136,12 @@ public class WebPage   {
     return Objects.equals(this.description, webPage.description) &&
         Objects.equals(this.url, webPage.url) &&
         Objects.equals(this.language, webPage.language) &&
-        Objects.equals(this.value, webPage.value) &&
-        Objects.equals(this.type, webPage.type);
+        Objects.equals(this.value, webPage.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, url, language, value, type);
+    return Objects.hash(description, url, language, value);
   }
 
   @Override
@@ -175,7 +153,6 @@ public class WebPage   {
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

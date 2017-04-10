@@ -28,56 +28,71 @@ package fi.metatavu.restfulptv.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import fi.metatavu.restfulptv.client.model.LanguageItem;
+import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * InternalServerError
+ * a Law
  */
+@ApiModel(description = "a Law")
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
-public class InternalServerError   {
-  @JsonProperty("code")
-  private Integer code = null;
+public class Law   {
+  @JsonProperty("names")
+  private List<LanguageItem> names = new ArrayList<LanguageItem>();
 
-  @JsonProperty("message")
-  private String message = null;
+  @JsonProperty("webPages")
+  private List<WebPage> webPages = new ArrayList<WebPage>();
 
-  public InternalServerError code(Integer code) {
-    this.code = code;
+  public Law names(List<LanguageItem> names) {
+    this.names = names;
+    return this;
+  }
+
+  public Law addNamesItem(LanguageItem namesItem) {
+    this.names.add(namesItem);
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * Get names
+   * @return names
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Integer getCode() {
-    return code;
+  public List<LanguageItem> getNames() {
+    return names;
   }
 
-  public void setCode(Integer code) {
-    this.code = code;
+  public void setNames(List<LanguageItem> names) {
+    this.names = names;
   }
 
-  public InternalServerError message(String message) {
-    this.message = message;
+  public Law webPages(List<WebPage> webPages) {
+    this.webPages = webPages;
+    return this;
+  }
+
+  public Law addWebPagesItem(WebPage webPagesItem) {
+    this.webPages.add(webPagesItem);
     return this;
   }
 
    /**
-   * Get message
-   * @return message
+   * List of localized web page urls.
+   * @return webPages
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getMessage() {
-    return message;
+  @ApiModelProperty(example = "null", value = "List of localized web page urls.")
+  public List<WebPage> getWebPages() {
+    return webPages;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
+  public void setWebPages(List<WebPage> webPages) {
+    this.webPages = webPages;
   }
 
 
@@ -89,23 +104,23 @@ public class InternalServerError   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    InternalServerError internalServerError = (InternalServerError) o;
-    return Objects.equals(this.code, internalServerError.code) &&
-        Objects.equals(this.message, internalServerError.message);
+    Law law = (Law) o;
+    return Objects.equals(this.names, law.names) &&
+        Objects.equals(this.webPages, law.webPages);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, message);
+    return Objects.hash(names, webPages);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class InternalServerError {\n");
+    sb.append("class Law {\n");
     
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    names: ").append(toIndentedString(names)).append("\n");
+    sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("}");
     return sb.toString();
   }

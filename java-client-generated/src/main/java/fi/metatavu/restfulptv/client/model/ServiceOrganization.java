@@ -38,15 +38,13 @@ import java.util.List;
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * OrganizationService
+ * Service organization
  */
+@ApiModel(description = "Service organization")
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
-public class OrganizationService   {
-  @JsonProperty("id")
-  private String id = null;
-
-  @JsonProperty("serviceId")
-  private String serviceId = null;
+public class ServiceOrganization   {
+  @JsonProperty("additionalInformation")
+  private List<LanguageItem> additionalInformation = new ArrayList<LanguageItem>();
 
   @JsonProperty("organizationId")
   private String organizationId = null;
@@ -57,117 +55,24 @@ public class OrganizationService   {
   @JsonProperty("provisionType")
   private String provisionType = null;
 
-  @JsonProperty("additionalInformation")
-  private List<LanguageItem> additionalInformation = new ArrayList<LanguageItem>();
-
   @JsonProperty("webPages")
   private List<WebPage> webPages = new ArrayList<WebPage>();
 
-  public OrganizationService id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public OrganizationService serviceId(String serviceId) {
-    this.serviceId = serviceId;
-    return this;
-  }
-
-   /**
-   * Get serviceId
-   * @return serviceId
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getServiceId() {
-    return serviceId;
-  }
-
-  public void setServiceId(String serviceId) {
-    this.serviceId = serviceId;
-  }
-
-  public OrganizationService organizationId(String organizationId) {
-    this.organizationId = organizationId;
-    return this;
-  }
-
-   /**
-   * Get organizationId
-   * @return organizationId
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getOrganizationId() {
-    return organizationId;
-  }
-
-  public void setOrganizationId(String organizationId) {
-    this.organizationId = organizationId;
-  }
-
-  public OrganizationService roleType(String roleType) {
-    this.roleType = roleType;
-    return this;
-  }
-
-   /**
-   * Get roleType
-   * @return roleType
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getRoleType() {
-    return roleType;
-  }
-
-  public void setRoleType(String roleType) {
-    this.roleType = roleType;
-  }
-
-  public OrganizationService provisionType(String provisionType) {
-    this.provisionType = provisionType;
-    return this;
-  }
-
-   /**
-   * Get provisionType
-   * @return provisionType
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getProvisionType() {
-    return provisionType;
-  }
-
-  public void setProvisionType(String provisionType) {
-    this.provisionType = provisionType;
-  }
-
-  public OrganizationService additionalInformation(List<LanguageItem> additionalInformation) {
+  public ServiceOrganization additionalInformation(List<LanguageItem> additionalInformation) {
     this.additionalInformation = additionalInformation;
     return this;
   }
 
-  public OrganizationService addAdditionalInformationItem(LanguageItem additionalInformationItem) {
+  public ServiceOrganization addAdditionalInformationItem(LanguageItem additionalInformationItem) {
     this.additionalInformation.add(additionalInformationItem);
     return this;
   }
 
    /**
-   * Get additionalInformation
+   * Localized list of additional information.
    * @return additionalInformation
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of additional information.")
   public List<LanguageItem> getAdditionalInformation() {
     return additionalInformation;
   }
@@ -176,21 +81,75 @@ public class OrganizationService   {
     this.additionalInformation = additionalInformation;
   }
 
-  public OrganizationService webPages(List<WebPage> webPages) {
+  public ServiceOrganization organizationId(String organizationId) {
+    this.organizationId = organizationId;
+    return this;
+  }
+
+   /**
+   * PTV organization identifier (organization related to the service). Required if role type is Responsible or if ProvisionType is SelfProduced.
+   * @return organizationId
+  **/
+  @ApiModelProperty(example = "null", value = "PTV organization identifier (organization related to the service). Required if role type is Responsible or if ProvisionType is SelfProduced.")
+  public String getOrganizationId() {
+    return organizationId;
+  }
+
+  public void setOrganizationId(String organizationId) {
+    this.organizationId = organizationId;
+  }
+
+  public ServiceOrganization roleType(String roleType) {
+    this.roleType = roleType;
+    return this;
+  }
+
+   /**
+   * Role type, valid values Responsible or Producer.
+   * @return roleType
+  **/
+  @ApiModelProperty(example = "null", value = "Role type, valid values Responsible or Producer.")
+  public String getRoleType() {
+    return roleType;
+  }
+
+  public void setRoleType(String roleType) {
+    this.roleType = roleType;
+  }
+
+  public ServiceOrganization provisionType(String provisionType) {
+    this.provisionType = provisionType;
+    return this;
+  }
+
+   /**
+   * Provision type, valid values SelfProduced, VoucherServices, PurchaseServices or Other. Required if RoleType value is Producer.
+   * @return provisionType
+  **/
+  @ApiModelProperty(example = "null", value = "Provision type, valid values SelfProduced, VoucherServices, PurchaseServices or Other. Required if RoleType value is Producer.")
+  public String getProvisionType() {
+    return provisionType;
+  }
+
+  public void setProvisionType(String provisionType) {
+    this.provisionType = provisionType;
+  }
+
+  public ServiceOrganization webPages(List<WebPage> webPages) {
     this.webPages = webPages;
     return this;
   }
 
-  public OrganizationService addWebPagesItem(WebPage webPagesItem) {
+  public ServiceOrganization addWebPagesItem(WebPage webPagesItem) {
     this.webPages.add(webPagesItem);
     return this;
   }
 
    /**
-   * Get webPages
+   * List of web pages.
    * @return webPages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of web pages.")
   public List<WebPage> getWebPages() {
     return webPages;
   }
@@ -208,32 +167,28 @@ public class OrganizationService   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationService organizationService = (OrganizationService) o;
-    return Objects.equals(this.id, organizationService.id) &&
-        Objects.equals(this.serviceId, organizationService.serviceId) &&
-        Objects.equals(this.organizationId, organizationService.organizationId) &&
-        Objects.equals(this.roleType, organizationService.roleType) &&
-        Objects.equals(this.provisionType, organizationService.provisionType) &&
-        Objects.equals(this.additionalInformation, organizationService.additionalInformation) &&
-        Objects.equals(this.webPages, organizationService.webPages);
+    ServiceOrganization serviceOrganization = (ServiceOrganization) o;
+    return Objects.equals(this.additionalInformation, serviceOrganization.additionalInformation) &&
+        Objects.equals(this.organizationId, serviceOrganization.organizationId) &&
+        Objects.equals(this.roleType, serviceOrganization.roleType) &&
+        Objects.equals(this.provisionType, serviceOrganization.provisionType) &&
+        Objects.equals(this.webPages, serviceOrganization.webPages);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, serviceId, organizationId, roleType, provisionType, additionalInformation, webPages);
+    return Objects.hash(additionalInformation, organizationId, roleType, provisionType, webPages);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrganizationService {\n");
+    sb.append("class ServiceOrganization {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
+    sb.append("    additionalInformation: ").append(toIndentedString(additionalInformation)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    roleType: ").append(toIndentedString(roleType)).append("\n");
     sb.append("    provisionType: ").append(toIndentedString(provisionType)).append("\n");
-    sb.append("    additionalInformation: ").append(toIndentedString(additionalInformation)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -30,8 +30,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.metatavu.restfulptv.client.model.FintoItem;
 import fi.metatavu.restfulptv.client.model.LanguageItem;
+import fi.metatavu.restfulptv.client.model.Law;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
 import fi.metatavu.restfulptv.client.model.Municipality;
+import fi.metatavu.restfulptv.client.model.ServiceOrganization;
+import fi.metatavu.restfulptv.client.model.ServiceServiceChannel;
 import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -43,7 +46,7 @@ import java.util.List;
 /**
  * Service
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T20:36:31.976+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
 public class Service   {
   @JsonProperty("id")
   private String id = null;
@@ -79,7 +82,10 @@ public class Service   {
   private List<String> languages = new ArrayList<String>();
 
   @JsonProperty("keywords")
-  private List<String> keywords = new ArrayList<String>();
+  private List<LanguageItem> keywords = new ArrayList<LanguageItem>();
+
+  @JsonProperty("legislation")
+  private List<Law> legislation = new ArrayList<Law>();
 
   @JsonProperty("coverageType")
   private String coverageType = null;
@@ -102,23 +108,23 @@ public class Service   {
   @JsonProperty("additionalInformations")
   private List<LocalizedListItem> additionalInformations = new ArrayList<LocalizedListItem>();
 
-  @JsonProperty("organizationIds")
-  private List<String> organizationIds = new ArrayList<String>();
+  @JsonProperty("organizations")
+  private List<ServiceOrganization> organizations = new ArrayList<ServiceOrganization>();
 
-  @JsonProperty("electronicServiceChannelIds")
-  private List<String> electronicServiceChannelIds = new ArrayList<String>();
+  @JsonProperty("electronicServiceChannels")
+  private List<ServiceServiceChannel> electronicServiceChannels = new ArrayList<ServiceServiceChannel>();
 
-  @JsonProperty("phoneServiceChannelIds")
-  private List<String> phoneServiceChannelIds = new ArrayList<String>();
+  @JsonProperty("phoneServiceChannels")
+  private List<ServiceServiceChannel> phoneServiceChannels = new ArrayList<ServiceServiceChannel>();
 
-  @JsonProperty("printableFormServiceChannelIds")
-  private List<String> printableFormServiceChannelIds = new ArrayList<String>();
+  @JsonProperty("printableFormServiceChannels")
+  private List<ServiceServiceChannel> printableFormServiceChannels = new ArrayList<ServiceServiceChannel>();
 
-  @JsonProperty("serviceLocationServiceChannelIds")
-  private List<String> serviceLocationServiceChannelIds = new ArrayList<String>();
+  @JsonProperty("serviceLocationServiceChannels")
+  private List<ServiceServiceChannel> serviceLocationServiceChannels = new ArrayList<ServiceServiceChannel>();
 
-  @JsonProperty("webPageServiceChannelIds")
-  private List<String> webPageServiceChannelIds = new ArrayList<String>();
+  @JsonProperty("webPageServiceChannels")
+  private List<ServiceServiceChannel> webPageServiceChannels = new ArrayList<ServiceServiceChannel>();
 
   public Service id(String id) {
     this.id = id;
@@ -144,10 +150,10 @@ public class Service   {
   }
 
    /**
-   * Get type
+   * Service type. Possible values are: Service or PermissionAndObligation.  NOTE! Current PTV database does not anymore support for types Notice, Registration or Permission - they are automatically mapped into PermissionAndObligation type when possible.  POST and PUT methods accepts old types but GET method only can return Service or PermissionAndObligation types.
    * @return type
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Service type. Possible values are: Service or PermissionAndObligation.  NOTE! Current PTV database does not anymore support for types Notice, Registration or Permission - they are automatically mapped into PermissionAndObligation type when possible.  POST and PUT methods accepts old types but GET method only can return Service or PermissionAndObligation types.")
   public String getType() {
     return type;
   }
@@ -358,27 +364,50 @@ public class Service   {
     this.languages = languages;
   }
 
-  public Service keywords(List<String> keywords) {
+  public Service keywords(List<LanguageItem> keywords) {
     this.keywords = keywords;
     return this;
   }
 
-  public Service addKeywordsItem(String keywordsItem) {
+  public Service addKeywordsItem(LanguageItem keywordsItem) {
     this.keywords.add(keywordsItem);
     return this;
   }
 
    /**
-   * Get keywords
+   * List of localized service keywords.
    * @return keywords
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<String> getKeywords() {
+  @ApiModelProperty(example = "null", value = "List of localized service keywords.")
+  public List<LanguageItem> getKeywords() {
     return keywords;
   }
 
-  public void setKeywords(List<String> keywords) {
+  public void setKeywords(List<LanguageItem> keywords) {
     this.keywords = keywords;
+  }
+
+  public Service legislation(List<Law> legislation) {
+    this.legislation = legislation;
+    return this;
+  }
+
+  public Service addLegislationItem(Law legislationItem) {
+    this.legislation.add(legislationItem);
+    return this;
+  }
+
+   /**
+   * List of laws related to the service.
+   * @return legislation
+  **/
+  @ApiModelProperty(example = "null", value = "List of laws related to the service.")
+  public List<Law> getLegislation() {
+    return legislation;
+  }
+
+  public void setLegislation(List<Law> legislation) {
+    this.legislation = legislation;
   }
 
   public Service coverageType(String coverageType) {
@@ -387,10 +416,10 @@ public class Service   {
   }
 
    /**
-   * Get coverageType
+   * Service coverage type. Valid values are: Local or Nationwide.
    * @return coverageType
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Service coverage type. Valid values are: Local or Nationwide.")
   public String getCoverageType() {
     return coverageType;
   }
@@ -474,10 +503,10 @@ public class Service   {
   }
 
    /**
-   * Get publishingStatus
+   * Publishing status. Possible values are: Draft, Published, Deleted, Modified or OldPublished.
    * @return publishingStatus
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Publishing status. Possible values are: Draft, Published, Deleted, Modified or OldPublished.")
   public String getPublishingStatus() {
     return publishingStatus;
   }
@@ -527,142 +556,142 @@ public class Service   {
     this.additionalInformations = additionalInformations;
   }
 
-  public Service organizationIds(List<String> organizationIds) {
-    this.organizationIds = organizationIds;
+  public Service organizations(List<ServiceOrganization> organizations) {
+    this.organizations = organizations;
     return this;
   }
 
-  public Service addOrganizationIdsItem(String organizationIdsItem) {
-    this.organizationIds.add(organizationIdsItem);
-    return this;
-  }
-
-   /**
-   * Get organizationIds
-   * @return organizationIds
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<String> getOrganizationIds() {
-    return organizationIds;
-  }
-
-  public void setOrganizationIds(List<String> organizationIds) {
-    this.organizationIds = organizationIds;
-  }
-
-  public Service electronicServiceChannelIds(List<String> electronicServiceChannelIds) {
-    this.electronicServiceChannelIds = electronicServiceChannelIds;
-    return this;
-  }
-
-  public Service addElectronicServiceChannelIdsItem(String electronicServiceChannelIdsItem) {
-    this.electronicServiceChannelIds.add(electronicServiceChannelIdsItem);
+  public Service addOrganizationsItem(ServiceOrganization organizationsItem) {
+    this.organizations.add(organizationsItem);
     return this;
   }
 
    /**
-   * Get electronicServiceChannelIds
-   * @return electronicServiceChannelIds
+   * Get organizations
+   * @return organizations
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getElectronicServiceChannelIds() {
-    return electronicServiceChannelIds;
+  public List<ServiceOrganization> getOrganizations() {
+    return organizations;
   }
 
-  public void setElectronicServiceChannelIds(List<String> electronicServiceChannelIds) {
-    this.electronicServiceChannelIds = electronicServiceChannelIds;
+  public void setOrganizations(List<ServiceOrganization> organizations) {
+    this.organizations = organizations;
   }
 
-  public Service phoneServiceChannelIds(List<String> phoneServiceChannelIds) {
-    this.phoneServiceChannelIds = phoneServiceChannelIds;
+  public Service electronicServiceChannels(List<ServiceServiceChannel> electronicServiceChannels) {
+    this.electronicServiceChannels = electronicServiceChannels;
     return this;
   }
 
-  public Service addPhoneServiceChannelIdsItem(String phoneServiceChannelIdsItem) {
-    this.phoneServiceChannelIds.add(phoneServiceChannelIdsItem);
+  public Service addElectronicServiceChannelsItem(ServiceServiceChannel electronicServiceChannelsItem) {
+    this.electronicServiceChannels.add(electronicServiceChannelsItem);
     return this;
   }
 
    /**
-   * Get phoneServiceChannelIds
-   * @return phoneServiceChannelIds
+   * Get electronicServiceChannels
+   * @return electronicServiceChannels
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getPhoneServiceChannelIds() {
-    return phoneServiceChannelIds;
+  public List<ServiceServiceChannel> getElectronicServiceChannels() {
+    return electronicServiceChannels;
   }
 
-  public void setPhoneServiceChannelIds(List<String> phoneServiceChannelIds) {
-    this.phoneServiceChannelIds = phoneServiceChannelIds;
+  public void setElectronicServiceChannels(List<ServiceServiceChannel> electronicServiceChannels) {
+    this.electronicServiceChannels = electronicServiceChannels;
   }
 
-  public Service printableFormServiceChannelIds(List<String> printableFormServiceChannelIds) {
-    this.printableFormServiceChannelIds = printableFormServiceChannelIds;
+  public Service phoneServiceChannels(List<ServiceServiceChannel> phoneServiceChannels) {
+    this.phoneServiceChannels = phoneServiceChannels;
     return this;
   }
 
-  public Service addPrintableFormServiceChannelIdsItem(String printableFormServiceChannelIdsItem) {
-    this.printableFormServiceChannelIds.add(printableFormServiceChannelIdsItem);
+  public Service addPhoneServiceChannelsItem(ServiceServiceChannel phoneServiceChannelsItem) {
+    this.phoneServiceChannels.add(phoneServiceChannelsItem);
     return this;
   }
 
    /**
-   * Get printableFormServiceChannelIds
-   * @return printableFormServiceChannelIds
+   * Get phoneServiceChannels
+   * @return phoneServiceChannels
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getPrintableFormServiceChannelIds() {
-    return printableFormServiceChannelIds;
+  public List<ServiceServiceChannel> getPhoneServiceChannels() {
+    return phoneServiceChannels;
   }
 
-  public void setPrintableFormServiceChannelIds(List<String> printableFormServiceChannelIds) {
-    this.printableFormServiceChannelIds = printableFormServiceChannelIds;
+  public void setPhoneServiceChannels(List<ServiceServiceChannel> phoneServiceChannels) {
+    this.phoneServiceChannels = phoneServiceChannels;
   }
 
-  public Service serviceLocationServiceChannelIds(List<String> serviceLocationServiceChannelIds) {
-    this.serviceLocationServiceChannelIds = serviceLocationServiceChannelIds;
+  public Service printableFormServiceChannels(List<ServiceServiceChannel> printableFormServiceChannels) {
+    this.printableFormServiceChannels = printableFormServiceChannels;
     return this;
   }
 
-  public Service addServiceLocationServiceChannelIdsItem(String serviceLocationServiceChannelIdsItem) {
-    this.serviceLocationServiceChannelIds.add(serviceLocationServiceChannelIdsItem);
+  public Service addPrintableFormServiceChannelsItem(ServiceServiceChannel printableFormServiceChannelsItem) {
+    this.printableFormServiceChannels.add(printableFormServiceChannelsItem);
     return this;
   }
 
    /**
-   * Get serviceLocationServiceChannelIds
-   * @return serviceLocationServiceChannelIds
+   * Get printableFormServiceChannels
+   * @return printableFormServiceChannels
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getServiceLocationServiceChannelIds() {
-    return serviceLocationServiceChannelIds;
+  public List<ServiceServiceChannel> getPrintableFormServiceChannels() {
+    return printableFormServiceChannels;
   }
 
-  public void setServiceLocationServiceChannelIds(List<String> serviceLocationServiceChannelIds) {
-    this.serviceLocationServiceChannelIds = serviceLocationServiceChannelIds;
+  public void setPrintableFormServiceChannels(List<ServiceServiceChannel> printableFormServiceChannels) {
+    this.printableFormServiceChannels = printableFormServiceChannels;
   }
 
-  public Service webPageServiceChannelIds(List<String> webPageServiceChannelIds) {
-    this.webPageServiceChannelIds = webPageServiceChannelIds;
+  public Service serviceLocationServiceChannels(List<ServiceServiceChannel> serviceLocationServiceChannels) {
+    this.serviceLocationServiceChannels = serviceLocationServiceChannels;
     return this;
   }
 
-  public Service addWebPageServiceChannelIdsItem(String webPageServiceChannelIdsItem) {
-    this.webPageServiceChannelIds.add(webPageServiceChannelIdsItem);
+  public Service addServiceLocationServiceChannelsItem(ServiceServiceChannel serviceLocationServiceChannelsItem) {
+    this.serviceLocationServiceChannels.add(serviceLocationServiceChannelsItem);
     return this;
   }
 
    /**
-   * Get webPageServiceChannelIds
-   * @return webPageServiceChannelIds
+   * Get serviceLocationServiceChannels
+   * @return serviceLocationServiceChannels
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getWebPageServiceChannelIds() {
-    return webPageServiceChannelIds;
+  public List<ServiceServiceChannel> getServiceLocationServiceChannels() {
+    return serviceLocationServiceChannels;
   }
 
-  public void setWebPageServiceChannelIds(List<String> webPageServiceChannelIds) {
-    this.webPageServiceChannelIds = webPageServiceChannelIds;
+  public void setServiceLocationServiceChannels(List<ServiceServiceChannel> serviceLocationServiceChannels) {
+    this.serviceLocationServiceChannels = serviceLocationServiceChannels;
+  }
+
+  public Service webPageServiceChannels(List<ServiceServiceChannel> webPageServiceChannels) {
+    this.webPageServiceChannels = webPageServiceChannels;
+    return this;
+  }
+
+  public Service addWebPageServiceChannelsItem(ServiceServiceChannel webPageServiceChannelsItem) {
+    this.webPageServiceChannels.add(webPageServiceChannelsItem);
+    return this;
+  }
+
+   /**
+   * Get webPageServiceChannels
+   * @return webPageServiceChannels
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<ServiceServiceChannel> getWebPageServiceChannels() {
+    return webPageServiceChannels;
+  }
+
+  public void setWebPageServiceChannels(List<ServiceServiceChannel> webPageServiceChannels) {
+    this.webPageServiceChannels = webPageServiceChannels;
   }
 
 
@@ -687,6 +716,7 @@ public class Service   {
         Objects.equals(this.descriptions, service.descriptions) &&
         Objects.equals(this.languages, service.languages) &&
         Objects.equals(this.keywords, service.keywords) &&
+        Objects.equals(this.legislation, service.legislation) &&
         Objects.equals(this.coverageType, service.coverageType) &&
         Objects.equals(this.municipalities, service.municipalities) &&
         Objects.equals(this.webPages, service.webPages) &&
@@ -694,17 +724,17 @@ public class Service   {
         Objects.equals(this.publishingStatus, service.publishingStatus) &&
         Objects.equals(this.chargeType, service.chargeType) &&
         Objects.equals(this.additionalInformations, service.additionalInformations) &&
-        Objects.equals(this.organizationIds, service.organizationIds) &&
-        Objects.equals(this.electronicServiceChannelIds, service.electronicServiceChannelIds) &&
-        Objects.equals(this.phoneServiceChannelIds, service.phoneServiceChannelIds) &&
-        Objects.equals(this.printableFormServiceChannelIds, service.printableFormServiceChannelIds) &&
-        Objects.equals(this.serviceLocationServiceChannelIds, service.serviceLocationServiceChannelIds) &&
-        Objects.equals(this.webPageServiceChannelIds, service.webPageServiceChannelIds);
+        Objects.equals(this.organizations, service.organizations) &&
+        Objects.equals(this.electronicServiceChannels, service.electronicServiceChannels) &&
+        Objects.equals(this.phoneServiceChannels, service.phoneServiceChannels) &&
+        Objects.equals(this.printableFormServiceChannels, service.printableFormServiceChannels) &&
+        Objects.equals(this.serviceLocationServiceChannels, service.serviceLocationServiceChannels) &&
+        Objects.equals(this.webPageServiceChannels, service.webPageServiceChannels);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations, organizationIds, electronicServiceChannelIds, phoneServiceChannelIds, printableFormServiceChannelIds, serviceLocationServiceChannelIds, webPageServiceChannelIds);
+    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, legislation, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations, organizations, electronicServiceChannels, phoneServiceChannels, printableFormServiceChannels, serviceLocationServiceChannels, webPageServiceChannels);
   }
 
   @Override
@@ -724,6 +754,7 @@ public class Service   {
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
+    sb.append("    legislation: ").append(toIndentedString(legislation)).append("\n");
     sb.append("    coverageType: ").append(toIndentedString(coverageType)).append("\n");
     sb.append("    municipalities: ").append(toIndentedString(municipalities)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
@@ -731,12 +762,12 @@ public class Service   {
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");
     sb.append("    chargeType: ").append(toIndentedString(chargeType)).append("\n");
     sb.append("    additionalInformations: ").append(toIndentedString(additionalInformations)).append("\n");
-    sb.append("    organizationIds: ").append(toIndentedString(organizationIds)).append("\n");
-    sb.append("    electronicServiceChannelIds: ").append(toIndentedString(electronicServiceChannelIds)).append("\n");
-    sb.append("    phoneServiceChannelIds: ").append(toIndentedString(phoneServiceChannelIds)).append("\n");
-    sb.append("    printableFormServiceChannelIds: ").append(toIndentedString(printableFormServiceChannelIds)).append("\n");
-    sb.append("    serviceLocationServiceChannelIds: ").append(toIndentedString(serviceLocationServiceChannelIds)).append("\n");
-    sb.append("    webPageServiceChannelIds: ").append(toIndentedString(webPageServiceChannelIds)).append("\n");
+    sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
+    sb.append("    electronicServiceChannels: ").append(toIndentedString(electronicServiceChannels)).append("\n");
+    sb.append("    phoneServiceChannels: ").append(toIndentedString(phoneServiceChannels)).append("\n");
+    sb.append("    printableFormServiceChannels: ").append(toIndentedString(printableFormServiceChannels)).append("\n");
+    sb.append("    serviceLocationServiceChannels: ").append(toIndentedString(serviceLocationServiceChannels)).append("\n");
+    sb.append("    webPageServiceChannels: ").append(toIndentedString(webPageServiceChannels)).append("\n");
     sb.append("}");
     return sb.toString();
   }

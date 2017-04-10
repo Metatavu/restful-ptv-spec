@@ -39,7 +39,7 @@ import java.util.List;
 /**
  * FintoItem
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T20:36:31.976+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
 public class FintoItem   {
   @JsonProperty("names")
   private List<LanguageItem> names = new ArrayList<LanguageItem>();
