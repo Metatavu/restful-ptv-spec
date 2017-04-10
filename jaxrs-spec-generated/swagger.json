@@ -1344,7 +1344,7 @@
         "emailAddresses" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/OrganizationEmail"
+            "$ref" : "#/definitions/Email"
           }
         },
         "phoneNumbers" : {
@@ -1487,18 +1487,17 @@
         }
       }
     },
-    "OrganizationEmail" : {
+    "Email" : {
       "type" : "object",
-      "required" : [ "email" ],
       "properties" : {
-        "email" : {
+        "value" : {
           "type" : "string"
         },
-        "descriptions" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/LanguageItem"
-          }
+        "description" : {
+          "type" : "string"
+        },
+        "language" : {
+          "type" : "string"
         }
       }
     },
