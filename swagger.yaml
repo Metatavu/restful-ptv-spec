@@ -1023,7 +1023,7 @@ definitions:
         items:
           $ref: '#/definitions/Address'
       municipality:
-        type: string
+        $ref: '#/definitions/Municipality'
       type:
         type: string
       businessCode:
@@ -1198,8 +1198,7 @@ definitions:
       municipalities:
         type: array
         items:
-          type: string
-          pattern: '^[0-9]{3}$'
+          $ref: '#/definitions/Municipality'
       webPages:
         type: array
         items:
@@ -1285,8 +1284,7 @@ definitions:
         items:
           $ref: '#/definitions/LanguageItem'
       municipality:
-        pattern: '^[0-9]{3}$'
-        type: string
+        $ref: '#/definitions/Municipality'
       country:
         pattern: '^[A-Z]{2}$'
         type: string
@@ -1665,6 +1663,16 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/LanguageItem'
+  Municipality:
+    type: object
+    properties:
+      code:
+        description: Municipality code (like 491 or 091).
+        type: string
+      names:
+        type: array
+        items:
+          $ref: '#/definitions/LocalizedListItem'
   InternalServerError:
     type: object
     properties:
