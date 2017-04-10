@@ -1676,12 +1676,11 @@
     "FintoItem" : {
       "type" : "object",
       "properties" : {
-        "id" : {
-          "type" : "string",
-          "format" : "uuid"
-        },
-        "name" : {
-          "type" : "string"
+        "names" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
         },
         "code" : {
           "type" : "string"
