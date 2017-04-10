@@ -1074,7 +1074,6 @@ definitions:
       - url
       - language
       - value
-      - type
     type: object
     properties:
       description:
@@ -1088,8 +1087,6 @@ definitions:
         description: Language code.
         type: string
       value:
-        type: string
-      type:
         type: string
   LocalizedListItem:
     required:
