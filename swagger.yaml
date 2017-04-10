@@ -1672,7 +1672,7 @@ definitions:
       names:
         type: array
         items:
-          $ref: '#/definitions/LocalizedListItem'
+          $ref: '#/definitions/LanguageItem'
   InternalServerError:
     type: object
     properties:

@@ -6,7 +6,7 @@
   <packaging>jar</packaging>
   <name>restful-ptv-rest-client</name>
   <description>Restful way to use Palvelutietovaranto.</description>
-  <version>1.2.13-SNAPSHOT</version>
+  <version>1.4.0-SNAPSHOT</version>
   <url>https://github.com/Metatavu/restful-ptv-spec</url>
   
   <licenses>
