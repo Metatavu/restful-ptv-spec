@@ -2201,13 +2201,8 @@
     "ServiceHour" : {
       "type" : "object",
       "properties" : {
-        "type" : {
-          "type" : "string",
-          "description" : "Type of service hour (Standard, Exception or Special)."
-        },
-        "exceptionHourType" : {
-          "type" : "string",
-          "description" : "Type of service hour exception type. Valid values are: Open or Closed."
+        "serviceHourType" : {
+          "type" : "string"
         },
         "validFrom" : {
           "type" : "string",
@@ -2219,47 +2214,52 @@
           "format" : "date-time",
           "description" : "Date time to this entry is valid."
         },
-        "monday" : {
+        "isClosed" : {
           "type" : "boolean",
-          "description" : "Is this service hour effective on monday."
+          "description" : "Set to true to present a time between the valid from and to times as closed."
         },
-        "tuesday" : {
+        "validForNow" : {
           "type" : "boolean",
-          "description" : "Is this service hour effective on tuesday."
-        },
-        "wednesday" : {
-          "type" : "boolean",
-          "description" : "Is this service hour effective on wednesday."
-        },
-        "thursday" : {
-          "type" : "boolean",
-          "description" : "Is this service hour effective on thursday."
-        },
-        "friday" : {
-          "type" : "boolean",
-          "description" : "Is this service hour effective on friday."
-        },
-        "saturday" : {
-          "type" : "boolean",
-          "description" : "Is this service hour effective on saturday."
-        },
-        "sunday" : {
-          "type" : "boolean",
-          "description" : "Is this service hour effective on sunday."
-        },
-        "opens" : {
-          "type" : "string",
-          "description" : "Opening time in format HH:mm for example 08:00."
-        },
-        "closes" : {
-          "type" : "string",
-          "description" : "Closing time in format HH:mm for example 19:00"
+          "description" : "Set to true to present that this entry is valid for now."
         },
         "additionalInformation" : {
           "type" : "array",
+          "description" : "Localized list of additional information.",
           "items" : {
             "$ref" : "#/definitions/LanguageItem"
           }
+        },
+        "openingHour" : {
+          "type" : "array",
+          "description" : "List of servicing hours (open and closes times).",
+          "items" : {
+            "$ref" : "#/definitions/DailyOpeningTime"
+          }
+        }
+      }
+    },
+    "DailyOpeningTime" : {
+      "type" : "object",
+      "properties" : {
+        "dayFrom" : {
+          "type" : "string",
+          "description" : "Starts from weekday (e.g. Monday)."
+        },
+        "dayTo" : {
+          "type" : "string",
+          "description" : "Ends to weekday (e.g. Monday)."
+        },
+        "from" : {
+          "type" : "string",
+          "description" : "Start time for example 10:00."
+        },
+        "to" : {
+          "type" : "string",
+          "description" : "End time for example 20:00."
+        },
+        "isExtra" : {
+          "type" : "boolean",
+          "description" : "Set to true to have extra time for a day. Enables to have open times like 10:00-14:00 and also on the same day 16:00-20:00. So the latter time is extra time."
         }
       }
     },
