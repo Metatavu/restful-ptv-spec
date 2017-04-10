@@ -1013,7 +1013,7 @@ definitions:
       phoneNumbers:
         type: array
         items:
-          $ref: '#/definitions/OrganizationPhone'
+          $ref: '#/definitions/Phone'
       webPages:
         type: array
         items:
@@ -1124,24 +1124,23 @@ definitions:
         type: string
       language:
         type: string
-  OrganizationPhone:
-    required:
-      - type
-      - chargeType
+  Phone:
     type: object
     properties:
+      additionalInformation:
+        type: string
+      serviceChargeType:
+        type: string
+      chargeDescription:
+        type: string
       prefixNumber:
         type: string
+      isFinnishServiceNumber:
+        type: boolean
       number:
         type: string
-      type:
+      language:
         type: string
-      chargeType:
-        type: string
-      descriptions:
-        type: array
-        items:
-          $ref: '#/definitions/LocalizedListItem'
   Service:
     type: object
     properties:
@@ -1316,10 +1315,14 @@ definitions:
         type: integer
       requiresSignature:
         type: boolean
-      supportContacts:
+      supportPhones:
         type: array
         items:
-          $ref: '#/definitions/Support'
+          $ref: '#/definitions/Phone'
+      supportEmails:
+        type: array
+        items:
+          $ref: '#/definitions/Email'
       requiresAuthentication:
         type: boolean
       urls:
@@ -1371,10 +1374,10 @@ definitions:
         type: array
         items:
           type: string
-      supportContacts:
+      supportEmails:
         type: array
         items:
-          $ref: '#/definitions/Support'
+          $ref: '#/definitions/Email'
       phoneNumbers:
         type: array
         items:
@@ -1422,10 +1425,14 @@ definitions:
         type: string
       formReceiver:
         type: string
-      supportContacts:
+      supportPhones:
         type: array
         items:
-          $ref: '#/definitions/Support'
+          $ref: '#/definitions/Phone'
+      supportEmails:
+        type: array
+        items:
+          $ref: '#/definitions/Email'
       deliveryAddress:
         $ref: '#/definitions/Address'
       channelUrls:
@@ -1477,10 +1484,14 @@ definitions:
           $ref: '#/definitions/LocalizedListItem'
       serviceAreaRestricted:
         type: boolean
-      supportContacts:
+      supportPhones:
         type: array
         items:
-          $ref: '#/definitions/Support'
+          $ref: '#/definitions/Phone'
+      supportEmails:
+        type: array
+        items:
+          $ref: '#/definitions/Email'
       email:
         type: string
       phone:
@@ -1556,10 +1567,14 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/Attachment'
-      supportContacts:
+      supportPhones:
         type: array
         items:
-          $ref: '#/definitions/Support'
+          $ref: '#/definitions/Phone'
+      supportEmails:
+        type: array
+        items:
+          $ref: '#/definitions/Email'
       languages:
         pattern: '^[a-z]{2}$'
         type: array
@@ -1574,25 +1589,7 @@ definitions:
         items:
           $ref: '#/definitions/ServiceHour'
       publishingStatus:
-        type: string   
-  Support:
-    type: object
-    properties:
-      email:
-        maxLength: 100
         type: string
-      phone:
-        maxLength: 100
-        type: string
-      phoneChargeDescription:
-        maxLength: 150
-        type: string
-      language:
-        type: string
-      serviceChargeTypes:
-        type: array
-        items:
-          type: string
   Attachment:
     required:
       - url
