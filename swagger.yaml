@@ -1145,7 +1145,8 @@ definitions:
         format: uuid
         type: string
       type:
-        type: string
+        description: "Service type. Possible values are: Service or PermissionAndObligation.\r\nNOTE! Current PTV database does not anymore support for types Notice, Registration or Permission - they are automatically mapped into PermissionAndObligation type when possible.\r\nPOST and PUT methods accepts old types but GET method only can return Service or PermissionAndObligation types."
+        type: string        
       statutoryDescriptionId:
         format: uuid
         type: string
@@ -1183,11 +1184,18 @@ definitions:
           type: string
           pattern: '^[a-z]{2}$'
       keywords:
+        description: List of localized service keywords.
         type: array
         items:
-          type: string
+          $ref: '#/definitions/LanguageItem'
+      legislation:
+        description: List of laws related to the service.
+        type: array
+        items:
+          $ref: '#/definitions/Law'
       coverageType:
         type: string
+        description: 'Service coverage type. Valid values are: Local or Nationwide.'
       municipalities:
         type: array
         items:
@@ -1201,6 +1209,9 @@ definitions:
         items:
           $ref: '#/definitions/LanguageItem'
       publishingStatus:
+        description: >-
+          Publishing status. Possible values are: Draft, Published, Deleted,
+          Modified or OldPublished.
         type: string
       chargeType:
         type: string
@@ -1208,36 +1219,91 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
-      organizationIds:
+      organizations:
         type: array
         items:
-          type: string
-          format: uuid
-      electronicServiceChannelIds:
+          $ref: '#/definitions/ServiceOrganization'
+      electronicServiceChannels:
         type: array
         items:
-          type: string
-          format: uuid
-      phoneServiceChannelIds:
+          $ref: '#/definitions/ServiceServiceChannel'
+      phoneServiceChannels:
         type: array
         items:
-          type: string
-          format: uuid
-      printableFormServiceChannelIds:
+          $ref: '#/definitions/ServiceServiceChannel'
+      printableFormServiceChannels:
         type: array
         items:
-          type: string
-          format: uuid
-      serviceLocationServiceChannelIds:
+          $ref: '#/definitions/ServiceServiceChannel'
+      serviceLocationServiceChannels:
         type: array
         items:
-          type: string
-          format: uuid
-      webPageServiceChannelIds:
+          $ref: '#/definitions/ServiceServiceChannel'
+      webPageServiceChannels:
         type: array
         items:
-          type: string
-          format: uuid
+          $ref: '#/definitions/ServiceServiceChannel'
+  ServiceServiceChannel:
+    description: Service service channel
+    type: object
+    properties:
+      serviceChannelId:
+        description: PTV service channel identifier.
+        type: string
+      description:
+        description: List of localized service channel relationship descriptions.
+        type: array
+        items:
+          $ref: '#/definitions/LocalizedListItem'
+      serviceChargeType:
+        description: 'Service charge type. Possible values are: Charged, Free or Other'
+        type: string
+      digitalAuthorizations:
+        description: List of digital authorizations related to the service.
+        type: array
+        items:
+          $ref: '#/definitions/FintoItem'
+  ServiceOrganization:
+    description: Service organization
+    type: object
+    properties:
+      additionalInformation:
+        description: Localized list of additional information.
+        type: array
+        items:
+          $ref: '#/definitions/LanguageItem'
+      organizationId:
+        description: >-
+          PTV organization identifier (organization related to the service).
+          Required if role type is Responsible or if ProvisionType is
+          SelfProduced.
+        type: string
+      roleType:
+        description: 'Role type, valid values Responsible or Producer.'
+        type: string
+      provisionType:
+        description: >-
+          Provision type, valid values SelfProduced, VoucherServices,
+          PurchaseServices or Other. Required if RoleType value is Producer.
+        type: string
+      webPages:
+        description: List of web pages.
+        type: array
+        items:
+          $ref: '#/definitions/WebPage'
+  Law:
+    description: a Law
+    type: object
+    properties:
+      names:
+        type: array
+        items:
+          $ref: '#/definitions/LanguageItem'
+      webPages:
+        description: List of localized web page urls.
+        type: array
+        items:
+          $ref: '#/definitions/WebPage'
   FintoItem:
     type: object
     properties:
