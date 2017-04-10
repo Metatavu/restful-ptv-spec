@@ -1009,7 +1009,7 @@ definitions:
       emailAddresses:
         type: array
         items:
-          $ref: '#/definitions/OrganizationEmail'
+          $ref: '#/definitions/Email'
       phoneNumbers:
         type: array
         items:
@@ -1115,18 +1115,15 @@ definitions:
         type: string
       language:
         type: string
-  OrganizationEmail:
-    required:
-      - email
+  Email:
     type: object
     properties:
-      email:
+      value:
         type: string
-      descriptions:
-        maxLength: 100
-        type: array
-        items:
-          $ref: '#/definitions/LanguageItem'
+      description:
+        type: string
+      language:
+        type: string
   OrganizationPhone:
     required:
       - type
