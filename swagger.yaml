@@ -1612,11 +1612,7 @@ definitions:
   ServiceHour:
     type: object
     properties:
-      type: 
-        description: Type of service hour (Standard, Exception or Special).
-        type: string
-      exceptionHourType:
-        description: 'Type of service hour exception type. Valid values are: Open or Closed.'
+      serviceHourType:
         type: string
       validFrom:
         format: date-time
@@ -1626,37 +1622,45 @@ definitions:
         format: date-time
         description: Date time to this entry is valid.
         type: string
-      monday:
-        description: Is this service hour effective on monday.
+      isClosed:
+        description: >-
+          Set to true to present a time between the valid from and to times as
+          closed.
         type: boolean
-      tuesday:
-        description: Is this service hour effective on tuesday.
+      validForNow:
+        description: Set to true to present that this entry is valid for now.
         type: boolean
-      wednesday:
-        description: Is this service hour effective on wednesday.
-        type: boolean
-      thursday:
-        description: Is this service hour effective on thursday.
-        type: boolean
-      friday:
-        description: Is this service hour effective on friday.
-        type: boolean
-      saturday:
-        description: Is this service hour effective on saturday.
-        type: boolean
-      sunday:
-        description: Is this service hour effective on sunday.
-        type: boolean
-      opens:
-        description: 'Opening time in format HH:mm for example 08:00.'
-        type: string
-      closes:
-        description: 'Closing time in format HH:mm for example 19:00'
-        type: string
       additionalInformation:
+        description: Localized list of additional information.
         type: array
         items:
           $ref: '#/definitions/LanguageItem'
+      openingHour:
+        description: List of servicing hours (open and closes times).
+        type: array
+        items:
+          $ref: '#/definitions/DailyOpeningTime'
+  DailyOpeningTime:
+    type: object
+    properties:
+      dayFrom:
+        description: Starts from weekday (e.g. Monday).
+        type: string
+      dayTo:
+        description: Ends to weekday (e.g. Monday).
+        type: string
+      from:
+        description: 'Start time for example 10:00.'
+        type: string
+      to:
+        description: 'End time for example 20:00.'
+        type: string
+      isExtra:
+        description: >-
+          Set to true to have extra time for a day. Enables to have open times
+          like 10:00-14:00 and also on the same day 16:00-20:00. So the latter
+          time is extra time.
+        type: boolean        
   Municipality:
     type: object
     properties:
