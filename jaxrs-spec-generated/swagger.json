@@ -1366,7 +1366,7 @@
           }
         },
         "municipality" : {
-          "type" : "string"
+          "$ref" : "#/definitions/Municipality"
         },
         "type" : {
           "type" : "string"
@@ -1601,8 +1601,7 @@
         "municipalities" : {
           "type" : "array",
           "items" : {
-            "type" : "string",
-            "pattern" : "^[0-9]{3}$"
+            "$ref" : "#/definitions/Municipality"
           }
         },
         "webPages" : {
@@ -1725,8 +1724,7 @@
           }
         },
         "municipality" : {
-          "type" : "string",
-          "pattern" : "^[0-9]{3}$"
+          "$ref" : "#/definitions/Municipality"
         },
         "country" : {
           "type" : "string",
@@ -2262,6 +2260,21 @@
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/LanguageItem"
+          }
+        }
+      }
+    },
+    "Municipality" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string",
+          "description" : "Municipality code (like 491 or 091)."
+        },
+        "names" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
           }
         }
       }

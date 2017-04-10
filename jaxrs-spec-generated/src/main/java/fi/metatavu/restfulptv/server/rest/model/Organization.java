@@ -2,6 +2,7 @@ package fi.metatavu.restfulptv.server.rest.model;
 
 import fi.metatavu.restfulptv.server.rest.model.Address;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
+import fi.metatavu.restfulptv.server.rest.model.Municipality;
 import fi.metatavu.restfulptv.server.rest.model.OrganizationEmail;
 import fi.metatavu.restfulptv.server.rest.model.OrganizationPhone;
 import fi.metatavu.restfulptv.server.rest.model.WebPage;
@@ -23,7 +24,7 @@ public class Organization   {
   private List<OrganizationPhone> phoneNumbers = new ArrayList<OrganizationPhone>();
   private List<WebPage> webPages = new ArrayList<WebPage>();
   private List<Address> addresses = new ArrayList<Address>();
-  private String municipality = null;
+  private Municipality municipality = null;
   private String type = null;
   private String businessCode = null;
   private String businessName = null;
@@ -147,17 +148,17 @@ public class Organization   {
 
   /**
    **/
-  public Organization municipality(String municipality) {
+  public Organization municipality(Municipality municipality) {
     this.municipality = municipality;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public String getMunicipality() {
+  public Municipality getMunicipality() {
     return municipality;
   }
-  public void setMunicipality(String municipality) {
+  public void setMunicipality(Municipality municipality) {
     this.municipality = municipality;
   }
 

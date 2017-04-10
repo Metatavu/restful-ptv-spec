@@ -1,6 +1,7 @@
 package fi.metatavu.restfulptv.server.rest.model;
 
 import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
+import fi.metatavu.restfulptv.server.rest.model.Municipality;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class Address   {
   private String postalCode = null;
   private String postOffice = null;
   private List<LanguageItem> streetAddress = new ArrayList<LanguageItem>();
-  private String municipality = null;
+  private Municipality municipality = null;
   private String country = null;
   private String qualifier = null;
   private List<LanguageItem> additionalInformations = new ArrayList<LanguageItem>();
@@ -104,17 +105,17 @@ public class Address   {
 
   /**
    **/
-  public Address municipality(String municipality) {
+  public Address municipality(Municipality municipality) {
     this.municipality = municipality;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public String getMunicipality() {
+  public Municipality getMunicipality() {
     return municipality;
   }
-  public void setMunicipality(String municipality) {
+  public void setMunicipality(Municipality municipality) {
     this.municipality = municipality;
   }
 

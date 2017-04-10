@@ -3,6 +3,7 @@ package fi.metatavu.restfulptv.server.rest.model;
 import fi.metatavu.restfulptv.server.rest.model.FintoItem;
 import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
+import fi.metatavu.restfulptv.server.rest.model.Municipality;
 import fi.metatavu.restfulptv.server.rest.model.WebPage;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class Service   {
   private List<String> languages = new ArrayList<String>();
   private List<String> keywords = new ArrayList<String>();
   private String coverageType = null;
-  private List<String> municipalities = new ArrayList<String>();
+  private List<Municipality> municipalities = new ArrayList<Municipality>();
   private List<WebPage> webPages = new ArrayList<WebPage>();
   private List<LanguageItem> requirements = new ArrayList<LanguageItem>();
   private String publishingStatus = null;
@@ -251,17 +252,17 @@ public class Service   {
 
   /**
    **/
-  public Service municipalities(List<String> municipalities) {
+  public Service municipalities(List<Municipality> municipalities) {
     this.municipalities = municipalities;
     return this;
   }
 
   
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getMunicipalities() {
+  public List<Municipality> getMunicipalities() {
     return municipalities;
   }
-  public void setMunicipalities(List<String> municipalities) {
+  public void setMunicipalities(List<Municipality> municipalities) {
     this.municipalities = municipalities;
   }
 
