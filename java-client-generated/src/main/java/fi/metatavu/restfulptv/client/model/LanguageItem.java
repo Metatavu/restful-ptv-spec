@@ -36,7 +36,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LanguageItem
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T20:09:19.647+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T20:24:26.046+03:00")
 public class LanguageItem   {
   @JsonProperty("value")
   private String value = null;

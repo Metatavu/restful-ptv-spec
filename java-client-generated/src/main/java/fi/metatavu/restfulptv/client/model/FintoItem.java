@@ -28,21 +28,21 @@ package fi.metatavu.restfulptv.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import fi.metatavu.restfulptv.client.model.LanguageItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
  * FintoItem
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T20:09:19.647+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T20:24:26.046+03:00")
 public class FintoItem   {
-  @JsonProperty("id")
-  private String id = null;
-
-  @JsonProperty("name")
-  private String name = null;
+  @JsonProperty("names")
+  private List<LanguageItem> names = new ArrayList<LanguageItem>();
 
   @JsonProperty("code")
   private String code = null;
@@ -59,40 +59,27 @@ public class FintoItem   {
   @JsonProperty("parentUri")
   private String parentUri = null;
 
-  public FintoItem id(String id) {
-    this.id = id;
+  public FintoItem names(List<LanguageItem> names) {
+    this.names = names;
+    return this;
+  }
+
+  public FintoItem addNamesItem(LanguageItem namesItem) {
+    this.names.add(namesItem);
     return this;
   }
 
    /**
-   * Get id
-   * @return id
+   * Get names
+   * @return names
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getId() {
-    return id;
+  public List<LanguageItem> getNames() {
+    return names;
   }
 
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public FintoItem name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
+  public void setNames(List<LanguageItem> names) {
+    this.names = names;
   }
 
   public FintoItem code(String code) {
@@ -195,8 +182,7 @@ public class FintoItem   {
       return false;
     }
     FintoItem fintoItem = (FintoItem) o;
-    return Objects.equals(this.id, fintoItem.id) &&
-        Objects.equals(this.name, fintoItem.name) &&
+    return Objects.equals(this.names, fintoItem.names) &&
         Objects.equals(this.code, fintoItem.code) &&
         Objects.equals(this.ontologyType, fintoItem.ontologyType) &&
         Objects.equals(this.uri, fintoItem.uri) &&
@@ -206,7 +192,7 @@ public class FintoItem   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, code, ontologyType, uri, parentId, parentUri);
+    return Objects.hash(names, code, ontologyType, uri, parentId, parentUri);
   }
 
   @Override
@@ -214,8 +200,7 @@ public class FintoItem   {
     StringBuilder sb = new StringBuilder();
     sb.append("class FintoItem {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    ontologyType: ").append(toIndentedString(ontologyType)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
