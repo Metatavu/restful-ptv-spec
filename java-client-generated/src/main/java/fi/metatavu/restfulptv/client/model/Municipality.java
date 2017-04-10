@@ -28,7 +28,7 @@ package fi.metatavu.restfulptv.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import fi.metatavu.restfulptv.client.model.LanguageItem;
+import fi.metatavu.restfulptv.client.model.LocalizedListItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -37,55 +37,55 @@ import java.util.List;
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * OrganizationEmail
+ * Municipality
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T18:16:31.735+03:00")
-public class OrganizationEmail   {
-  @JsonProperty("email")
-  private String email = null;
+public class Municipality   {
+  @JsonProperty("code")
+  private String code = null;
 
-  @JsonProperty("descriptions")
-  private List<LanguageItem> descriptions = new ArrayList<LanguageItem>();
+  @JsonProperty("names")
+  private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
 
-  public OrganizationEmail email(String email) {
-    this.email = email;
+  public Municipality code(String code) {
+    this.code = code;
     return this;
   }
 
    /**
-   * Get email
-   * @return email
+   * Municipality code (like 491 or 091).
+   * @return code
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getEmail() {
-    return email;
+  @ApiModelProperty(example = "null", value = "Municipality code (like 491 or 091).")
+  public String getCode() {
+    return code;
   }
 
-  public void setEmail(String email) {
-    this.email = email;
+  public void setCode(String code) {
+    this.code = code;
   }
 
-  public OrganizationEmail descriptions(List<LanguageItem> descriptions) {
-    this.descriptions = descriptions;
+  public Municipality names(List<LocalizedListItem> names) {
+    this.names = names;
     return this;
   }
 
-  public OrganizationEmail addDescriptionsItem(LanguageItem descriptionsItem) {
-    this.descriptions.add(descriptionsItem);
+  public Municipality addNamesItem(LocalizedListItem namesItem) {
+    this.names.add(namesItem);
     return this;
   }
 
    /**
-   * Get descriptions
-   * @return descriptions
+   * Get names
+   * @return names
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getDescriptions() {
-    return descriptions;
+  public List<LocalizedListItem> getNames() {
+    return names;
   }
 
-  public void setDescriptions(List<LanguageItem> descriptions) {
-    this.descriptions = descriptions;
+  public void setNames(List<LocalizedListItem> names) {
+    this.names = names;
   }
 
 
@@ -97,23 +97,23 @@ public class OrganizationEmail   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationEmail organizationEmail = (OrganizationEmail) o;
-    return Objects.equals(this.email, organizationEmail.email) &&
-        Objects.equals(this.descriptions, organizationEmail.descriptions);
+    Municipality municipality = (Municipality) o;
+    return Objects.equals(this.code, municipality.code) &&
+        Objects.equals(this.names, municipality.names);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, descriptions);
+    return Objects.hash(code, names);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrganizationEmail {\n");
+    sb.append("class Municipality {\n");
     
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("}");
     return sb.toString();
   }

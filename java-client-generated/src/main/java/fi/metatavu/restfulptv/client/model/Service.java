@@ -31,6 +31,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.metatavu.restfulptv.client.model.FintoItem;
 import fi.metatavu.restfulptv.client.model.LanguageItem;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
+import fi.metatavu.restfulptv.client.model.Municipality;
 import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -42,7 +43,7 @@ import java.util.List;
 /**
  * Service
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T12:57:50.320+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T18:16:31.735+03:00")
 public class Service   {
   @JsonProperty("id")
   private String id = null;
@@ -84,7 +85,7 @@ public class Service   {
   private String coverageType = null;
 
   @JsonProperty("municipalities")
-  private List<String> municipalities = new ArrayList<String>();
+  private List<Municipality> municipalities = new ArrayList<Municipality>();
 
   @JsonProperty("webPages")
   private List<WebPage> webPages = new ArrayList<WebPage>();
@@ -398,12 +399,12 @@ public class Service   {
     this.coverageType = coverageType;
   }
 
-  public Service municipalities(List<String> municipalities) {
+  public Service municipalities(List<Municipality> municipalities) {
     this.municipalities = municipalities;
     return this;
   }
 
-  public Service addMunicipalitiesItem(String municipalitiesItem) {
+  public Service addMunicipalitiesItem(Municipality municipalitiesItem) {
     this.municipalities.add(municipalitiesItem);
     return this;
   }
@@ -413,11 +414,11 @@ public class Service   {
    * @return municipalities
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<String> getMunicipalities() {
+  public List<Municipality> getMunicipalities() {
     return municipalities;
   }
 
-  public void setMunicipalities(List<String> municipalities) {
+  public void setMunicipalities(List<Municipality> municipalities) {
     this.municipalities = municipalities;
   }
 

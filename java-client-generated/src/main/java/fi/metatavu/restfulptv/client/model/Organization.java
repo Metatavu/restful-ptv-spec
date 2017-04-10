@@ -30,6 +30,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.metatavu.restfulptv.client.model.Address;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
+import fi.metatavu.restfulptv.client.model.Municipality;
 import fi.metatavu.restfulptv.client.model.OrganizationEmail;
 import fi.metatavu.restfulptv.client.model.OrganizationPhone;
 import fi.metatavu.restfulptv.client.model.WebPage;
@@ -43,7 +44,7 @@ import java.util.List;
 /**
  * Organization
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T12:57:50.320+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T18:16:31.735+03:00")
 public class Organization   {
   @JsonProperty("id")
   private String id = null;
@@ -67,7 +68,7 @@ public class Organization   {
   private List<Address> addresses = new ArrayList<Address>();
 
   @JsonProperty("municipality")
-  private String municipality = null;
+  private Municipality municipality = null;
 
   @JsonProperty("type")
   private String type = null;
@@ -244,7 +245,7 @@ public class Organization   {
     this.addresses = addresses;
   }
 
-  public Organization municipality(String municipality) {
+  public Organization municipality(Municipality municipality) {
     this.municipality = municipality;
     return this;
   }
@@ -254,11 +255,11 @@ public class Organization   {
    * @return municipality
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getMunicipality() {
+  public Municipality getMunicipality() {
     return municipality;
   }
 
-  public void setMunicipality(String municipality) {
+  public void setMunicipality(Municipality municipality) {
     this.municipality = municipality;
   }
 

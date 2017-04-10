@@ -36,7 +36,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Forbidden
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-20T12:57:50.320+02:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T18:16:31.735+03:00")
 public class Forbidden   {
   @JsonProperty("code")
   private Integer code = null;
