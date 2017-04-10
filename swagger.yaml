@@ -1260,32 +1260,47 @@ definitions:
       parentUri:
         type: string
   Address:
-    required:
-      - postalCode
-      - streetAddress
     type: object
     properties:
+      latitude:
+        description: Service location latitude coordinate.
+        type: string
+      longitude:
+        description: Service location longitude coordinate.
+        type: string
+      coordinateState:
+        description: "State of coordinates. Coordinates are fetched from a service provided by Maanmittauslaitos (WFS).\r\nPossible values are: Loading, Ok, Failed, NotReceived, EmptyInputReceived, MultipleResultsReceived or WrongFormatReceived."
+        type: string
       type:
+        description: 'Address type, Visiting or Postal.'
         type: string
       postOfficeBox:
+        description: Post office box like PL 310
         type: string
       postalCode:
-        pattern: '\d{5}?'
+        description: 'Postal code, for example 00010.'
         type: string
       postOffice:
-        type: string
-      streetAddress:
+        description: 'List of localized Post offices, for example Helsinki, Helsingfors.'
         type: array
         items:
           $ref: '#/definitions/LanguageItem'
+      streetAddress:
+        description: List of localized street addresses.
+        type: array
+        items:
+          $ref: '#/definitions/LanguageItem'
+      streetNumber:
+        description: Street number for street address.
+        type: string
       municipality:
         $ref: '#/definitions/Municipality'
       country:
+        description: 'Country code (ISO 3166-1 alpha-2), for example FI.'
         pattern: '^[A-Z]{2}$'
         type: string
-      qualifier:
-        type: string
       additionalInformations:
+        description: Localized list of additional information about the address.
         type: array
         items:
           $ref: '#/definitions/LanguageItem'
