@@ -40,8 +40,17 @@ import java.util.List;
 /**
  * Address
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T20:24:26.046+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T20:36:31.976+03:00")
 public class Address   {
+  @JsonProperty("latitude")
+  private String latitude = null;
+
+  @JsonProperty("longitude")
+  private String longitude = null;
+
+  @JsonProperty("coordinateState")
+  private String coordinateState = null;
+
   @JsonProperty("type")
   private String type = null;
 
@@ -52,10 +61,13 @@ public class Address   {
   private String postalCode = null;
 
   @JsonProperty("postOffice")
-  private String postOffice = null;
+  private List<LanguageItem> postOffice = new ArrayList<LanguageItem>();
 
   @JsonProperty("streetAddress")
   private List<LanguageItem> streetAddress = new ArrayList<LanguageItem>();
+
+  @JsonProperty("streetNumber")
+  private String streetNumber = null;
 
   @JsonProperty("municipality")
   private Municipality municipality = null;
@@ -63,11 +75,62 @@ public class Address   {
   @JsonProperty("country")
   private String country = null;
 
-  @JsonProperty("qualifier")
-  private String qualifier = null;
-
   @JsonProperty("additionalInformations")
   private List<LanguageItem> additionalInformations = new ArrayList<LanguageItem>();
+
+  public Address latitude(String latitude) {
+    this.latitude = latitude;
+    return this;
+  }
+
+   /**
+   * Service location latitude coordinate.
+   * @return latitude
+  **/
+  @ApiModelProperty(example = "null", value = "Service location latitude coordinate.")
+  public String getLatitude() {
+    return latitude;
+  }
+
+  public void setLatitude(String latitude) {
+    this.latitude = latitude;
+  }
+
+  public Address longitude(String longitude) {
+    this.longitude = longitude;
+    return this;
+  }
+
+   /**
+   * Service location longitude coordinate.
+   * @return longitude
+  **/
+  @ApiModelProperty(example = "null", value = "Service location longitude coordinate.")
+  public String getLongitude() {
+    return longitude;
+  }
+
+  public void setLongitude(String longitude) {
+    this.longitude = longitude;
+  }
+
+  public Address coordinateState(String coordinateState) {
+    this.coordinateState = coordinateState;
+    return this;
+  }
+
+   /**
+   * State of coordinates. Coordinates are fetched from a service provided by Maanmittauslaitos (WFS).  Possible values are: Loading, Ok, Failed, NotReceived, EmptyInputReceived, MultipleResultsReceived or WrongFormatReceived.
+   * @return coordinateState
+  **/
+  @ApiModelProperty(example = "null", value = "State of coordinates. Coordinates are fetched from a service provided by Maanmittauslaitos (WFS).  Possible values are: Loading, Ok, Failed, NotReceived, EmptyInputReceived, MultipleResultsReceived or WrongFormatReceived.")
+  public String getCoordinateState() {
+    return coordinateState;
+  }
+
+  public void setCoordinateState(String coordinateState) {
+    this.coordinateState = coordinateState;
+  }
 
   public Address type(String type) {
     this.type = type;
@@ -75,10 +138,10 @@ public class Address   {
   }
 
    /**
-   * Get type
+   * Address type, Visiting or Postal.
    * @return type
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Address type, Visiting or Postal.")
   public String getType() {
     return type;
   }
@@ -93,10 +156,10 @@ public class Address   {
   }
 
    /**
-   * Get postOfficeBox
+   * Post office box like PL 310
    * @return postOfficeBox
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Post office box like PL 310")
   public String getPostOfficeBox() {
     return postOfficeBox;
   }
@@ -111,10 +174,10 @@ public class Address   {
   }
 
    /**
-   * Get postalCode
+   * Postal code, for example 00010.
    * @return postalCode
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", value = "Postal code, for example 00010.")
   public String getPostalCode() {
     return postalCode;
   }
@@ -123,21 +186,26 @@ public class Address   {
     this.postalCode = postalCode;
   }
 
-  public Address postOffice(String postOffice) {
+  public Address postOffice(List<LanguageItem> postOffice) {
     this.postOffice = postOffice;
     return this;
   }
 
+  public Address addPostOfficeItem(LanguageItem postOfficeItem) {
+    this.postOffice.add(postOfficeItem);
+    return this;
+  }
+
    /**
-   * Get postOffice
+   * List of localized Post offices, for example Helsinki, Helsingfors.
    * @return postOffice
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getPostOffice() {
+  @ApiModelProperty(example = "null", value = "List of localized Post offices, for example Helsinki, Helsingfors.")
+  public List<LanguageItem> getPostOffice() {
     return postOffice;
   }
 
-  public void setPostOffice(String postOffice) {
+  public void setPostOffice(List<LanguageItem> postOffice) {
     this.postOffice = postOffice;
   }
 
@@ -152,16 +220,34 @@ public class Address   {
   }
 
    /**
-   * Get streetAddress
+   * List of localized street addresses.
    * @return streetAddress
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", value = "List of localized street addresses.")
   public List<LanguageItem> getStreetAddress() {
     return streetAddress;
   }
 
   public void setStreetAddress(List<LanguageItem> streetAddress) {
     this.streetAddress = streetAddress;
+  }
+
+  public Address streetNumber(String streetNumber) {
+    this.streetNumber = streetNumber;
+    return this;
+  }
+
+   /**
+   * Street number for street address.
+   * @return streetNumber
+  **/
+  @ApiModelProperty(example = "null", value = "Street number for street address.")
+  public String getStreetNumber() {
+    return streetNumber;
+  }
+
+  public void setStreetNumber(String streetNumber) {
+    this.streetNumber = streetNumber;
   }
 
   public Address municipality(Municipality municipality) {
@@ -188,34 +274,16 @@ public class Address   {
   }
 
    /**
-   * Get country
+   * Country code (ISO 3166-1 alpha-2), for example FI.
    * @return country
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Country code (ISO 3166-1 alpha-2), for example FI.")
   public String getCountry() {
     return country;
   }
 
   public void setCountry(String country) {
     this.country = country;
-  }
-
-  public Address qualifier(String qualifier) {
-    this.qualifier = qualifier;
-    return this;
-  }
-
-   /**
-   * Get qualifier
-   * @return qualifier
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getQualifier() {
-    return qualifier;
-  }
-
-  public void setQualifier(String qualifier) {
-    this.qualifier = qualifier;
   }
 
   public Address additionalInformations(List<LanguageItem> additionalInformations) {
@@ -229,10 +297,10 @@ public class Address   {
   }
 
    /**
-   * Get additionalInformations
+   * Localized list of additional information about the address.
    * @return additionalInformations
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of additional information about the address.")
   public List<LanguageItem> getAdditionalInformations() {
     return additionalInformations;
   }
@@ -251,20 +319,23 @@ public class Address   {
       return false;
     }
     Address address = (Address) o;
-    return Objects.equals(this.type, address.type) &&
+    return Objects.equals(this.latitude, address.latitude) &&
+        Objects.equals(this.longitude, address.longitude) &&
+        Objects.equals(this.coordinateState, address.coordinateState) &&
+        Objects.equals(this.type, address.type) &&
         Objects.equals(this.postOfficeBox, address.postOfficeBox) &&
         Objects.equals(this.postalCode, address.postalCode) &&
         Objects.equals(this.postOffice, address.postOffice) &&
         Objects.equals(this.streetAddress, address.streetAddress) &&
+        Objects.equals(this.streetNumber, address.streetNumber) &&
         Objects.equals(this.municipality, address.municipality) &&
         Objects.equals(this.country, address.country) &&
-        Objects.equals(this.qualifier, address.qualifier) &&
         Objects.equals(this.additionalInformations, address.additionalInformations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, postOfficeBox, postalCode, postOffice, streetAddress, municipality, country, qualifier, additionalInformations);
+    return Objects.hash(latitude, longitude, coordinateState, type, postOfficeBox, postalCode, postOffice, streetAddress, streetNumber, municipality, country, additionalInformations);
   }
 
   @Override
@@ -272,14 +343,17 @@ public class Address   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Address {\n");
     
+    sb.append("    latitude: ").append(toIndentedString(latitude)).append("\n");
+    sb.append("    longitude: ").append(toIndentedString(longitude)).append("\n");
+    sb.append("    coordinateState: ").append(toIndentedString(coordinateState)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    postOfficeBox: ").append(toIndentedString(postOfficeBox)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    postOffice: ").append(toIndentedString(postOffice)).append("\n");
     sb.append("    streetAddress: ").append(toIndentedString(streetAddress)).append("\n");
+    sb.append("    streetNumber: ").append(toIndentedString(streetNumber)).append("\n");
     sb.append("    municipality: ").append(toIndentedString(municipality)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    qualifier: ").append(toIndentedString(qualifier)).append("\n");
     sb.append("    additionalInformations: ").append(toIndentedString(additionalInformations)).append("\n");
     sb.append("}");
     return sb.toString();
