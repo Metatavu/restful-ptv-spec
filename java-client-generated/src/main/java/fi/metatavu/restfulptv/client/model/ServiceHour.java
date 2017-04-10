@@ -28,6 +28,7 @@ package fi.metatavu.restfulptv.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import fi.metatavu.restfulptv.client.model.DailyOpeningTime;
 import fi.metatavu.restfulptv.client.model.LanguageItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -40,13 +41,10 @@ import java.util.List;
 /**
  * ServiceHour
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:53:15.245+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T20:09:19.647+03:00")
 public class ServiceHour   {
-  @JsonProperty("type")
-  private String type = null;
-
-  @JsonProperty("exceptionHourType")
-  private String exceptionHourType = null;
+  @JsonProperty("serviceHourType")
+  private String serviceHourType = null;
 
   @JsonProperty("validFrom")
   private OffsetDateTime validFrom = null;
@@ -54,70 +52,34 @@ public class ServiceHour   {
   @JsonProperty("validTo")
   private OffsetDateTime validTo = null;
 
-  @JsonProperty("monday")
-  private Boolean monday = null;
+  @JsonProperty("isClosed")
+  private Boolean isClosed = null;
 
-  @JsonProperty("tuesday")
-  private Boolean tuesday = null;
-
-  @JsonProperty("wednesday")
-  private Boolean wednesday = null;
-
-  @JsonProperty("thursday")
-  private Boolean thursday = null;
-
-  @JsonProperty("friday")
-  private Boolean friday = null;
-
-  @JsonProperty("saturday")
-  private Boolean saturday = null;
-
-  @JsonProperty("sunday")
-  private Boolean sunday = null;
-
-  @JsonProperty("opens")
-  private String opens = null;
-
-  @JsonProperty("closes")
-  private String closes = null;
+  @JsonProperty("validForNow")
+  private Boolean validForNow = null;
 
   @JsonProperty("additionalInformation")
   private List<LanguageItem> additionalInformation = new ArrayList<LanguageItem>();
 
-  public ServiceHour type(String type) {
-    this.type = type;
+  @JsonProperty("openingHour")
+  private List<DailyOpeningTime> openingHour = new ArrayList<DailyOpeningTime>();
+
+  public ServiceHour serviceHourType(String serviceHourType) {
+    this.serviceHourType = serviceHourType;
     return this;
   }
 
    /**
-   * Type of service hour (Standard, Exception or Special).
-   * @return type
+   * Get serviceHourType
+   * @return serviceHourType
   **/
-  @ApiModelProperty(example = "null", value = "Type of service hour (Standard, Exception or Special).")
-  public String getType() {
-    return type;
+  @ApiModelProperty(example = "null", value = "")
+  public String getServiceHourType() {
+    return serviceHourType;
   }
 
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public ServiceHour exceptionHourType(String exceptionHourType) {
-    this.exceptionHourType = exceptionHourType;
-    return this;
-  }
-
-   /**
-   * Type of service hour exception type. Valid values are: Open or Closed.
-   * @return exceptionHourType
-  **/
-  @ApiModelProperty(example = "null", value = "Type of service hour exception type. Valid values are: Open or Closed.")
-  public String getExceptionHourType() {
-    return exceptionHourType;
-  }
-
-  public void setExceptionHourType(String exceptionHourType) {
-    this.exceptionHourType = exceptionHourType;
+  public void setServiceHourType(String serviceHourType) {
+    this.serviceHourType = serviceHourType;
   }
 
   public ServiceHour validFrom(OffsetDateTime validFrom) {
@@ -156,166 +118,40 @@ public class ServiceHour   {
     this.validTo = validTo;
   }
 
-  public ServiceHour monday(Boolean monday) {
-    this.monday = monday;
+  public ServiceHour isClosed(Boolean isClosed) {
+    this.isClosed = isClosed;
     return this;
   }
 
    /**
-   * Is this service hour effective on monday.
-   * @return monday
+   * Set to true to present a time between the valid from and to times as closed.
+   * @return isClosed
   **/
-  @ApiModelProperty(example = "null", value = "Is this service hour effective on monday.")
-  public Boolean getMonday() {
-    return monday;
+  @ApiModelProperty(example = "null", value = "Set to true to present a time between the valid from and to times as closed.")
+  public Boolean getIsClosed() {
+    return isClosed;
   }
 
-  public void setMonday(Boolean monday) {
-    this.monday = monday;
+  public void setIsClosed(Boolean isClosed) {
+    this.isClosed = isClosed;
   }
 
-  public ServiceHour tuesday(Boolean tuesday) {
-    this.tuesday = tuesday;
+  public ServiceHour validForNow(Boolean validForNow) {
+    this.validForNow = validForNow;
     return this;
   }
 
    /**
-   * Is this service hour effective on tuesday.
-   * @return tuesday
+   * Set to true to present that this entry is valid for now.
+   * @return validForNow
   **/
-  @ApiModelProperty(example = "null", value = "Is this service hour effective on tuesday.")
-  public Boolean getTuesday() {
-    return tuesday;
+  @ApiModelProperty(example = "null", value = "Set to true to present that this entry is valid for now.")
+  public Boolean getValidForNow() {
+    return validForNow;
   }
 
-  public void setTuesday(Boolean tuesday) {
-    this.tuesday = tuesday;
-  }
-
-  public ServiceHour wednesday(Boolean wednesday) {
-    this.wednesday = wednesday;
-    return this;
-  }
-
-   /**
-   * Is this service hour effective on wednesday.
-   * @return wednesday
-  **/
-  @ApiModelProperty(example = "null", value = "Is this service hour effective on wednesday.")
-  public Boolean getWednesday() {
-    return wednesday;
-  }
-
-  public void setWednesday(Boolean wednesday) {
-    this.wednesday = wednesday;
-  }
-
-  public ServiceHour thursday(Boolean thursday) {
-    this.thursday = thursday;
-    return this;
-  }
-
-   /**
-   * Is this service hour effective on thursday.
-   * @return thursday
-  **/
-  @ApiModelProperty(example = "null", value = "Is this service hour effective on thursday.")
-  public Boolean getThursday() {
-    return thursday;
-  }
-
-  public void setThursday(Boolean thursday) {
-    this.thursday = thursday;
-  }
-
-  public ServiceHour friday(Boolean friday) {
-    this.friday = friday;
-    return this;
-  }
-
-   /**
-   * Is this service hour effective on friday.
-   * @return friday
-  **/
-  @ApiModelProperty(example = "null", value = "Is this service hour effective on friday.")
-  public Boolean getFriday() {
-    return friday;
-  }
-
-  public void setFriday(Boolean friday) {
-    this.friday = friday;
-  }
-
-  public ServiceHour saturday(Boolean saturday) {
-    this.saturday = saturday;
-    return this;
-  }
-
-   /**
-   * Is this service hour effective on saturday.
-   * @return saturday
-  **/
-  @ApiModelProperty(example = "null", value = "Is this service hour effective on saturday.")
-  public Boolean getSaturday() {
-    return saturday;
-  }
-
-  public void setSaturday(Boolean saturday) {
-    this.saturday = saturday;
-  }
-
-  public ServiceHour sunday(Boolean sunday) {
-    this.sunday = sunday;
-    return this;
-  }
-
-   /**
-   * Is this service hour effective on sunday.
-   * @return sunday
-  **/
-  @ApiModelProperty(example = "null", value = "Is this service hour effective on sunday.")
-  public Boolean getSunday() {
-    return sunday;
-  }
-
-  public void setSunday(Boolean sunday) {
-    this.sunday = sunday;
-  }
-
-  public ServiceHour opens(String opens) {
-    this.opens = opens;
-    return this;
-  }
-
-   /**
-   * Opening time in format HH:mm for example 08:00.
-   * @return opens
-  **/
-  @ApiModelProperty(example = "null", value = "Opening time in format HH:mm for example 08:00.")
-  public String getOpens() {
-    return opens;
-  }
-
-  public void setOpens(String opens) {
-    this.opens = opens;
-  }
-
-  public ServiceHour closes(String closes) {
-    this.closes = closes;
-    return this;
-  }
-
-   /**
-   * Closing time in format HH:mm for example 19:00
-   * @return closes
-  **/
-  @ApiModelProperty(example = "null", value = "Closing time in format HH:mm for example 19:00")
-  public String getCloses() {
-    return closes;
-  }
-
-  public void setCloses(String closes) {
-    this.closes = closes;
+  public void setValidForNow(Boolean validForNow) {
+    this.validForNow = validForNow;
   }
 
   public ServiceHour additionalInformation(List<LanguageItem> additionalInformation) {
@@ -329,16 +165,39 @@ public class ServiceHour   {
   }
 
    /**
-   * Get additionalInformation
+   * Localized list of additional information.
    * @return additionalInformation
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of additional information.")
   public List<LanguageItem> getAdditionalInformation() {
     return additionalInformation;
   }
 
   public void setAdditionalInformation(List<LanguageItem> additionalInformation) {
     this.additionalInformation = additionalInformation;
+  }
+
+  public ServiceHour openingHour(List<DailyOpeningTime> openingHour) {
+    this.openingHour = openingHour;
+    return this;
+  }
+
+  public ServiceHour addOpeningHourItem(DailyOpeningTime openingHourItem) {
+    this.openingHour.add(openingHourItem);
+    return this;
+  }
+
+   /**
+   * List of servicing hours (open and closes times).
+   * @return openingHour
+  **/
+  @ApiModelProperty(example = "null", value = "List of servicing hours (open and closes times).")
+  public List<DailyOpeningTime> getOpeningHour() {
+    return openingHour;
+  }
+
+  public void setOpeningHour(List<DailyOpeningTime> openingHour) {
+    this.openingHour = openingHour;
   }
 
 
@@ -351,25 +210,18 @@ public class ServiceHour   {
       return false;
     }
     ServiceHour serviceHour = (ServiceHour) o;
-    return Objects.equals(this.type, serviceHour.type) &&
-        Objects.equals(this.exceptionHourType, serviceHour.exceptionHourType) &&
+    return Objects.equals(this.serviceHourType, serviceHour.serviceHourType) &&
         Objects.equals(this.validFrom, serviceHour.validFrom) &&
         Objects.equals(this.validTo, serviceHour.validTo) &&
-        Objects.equals(this.monday, serviceHour.monday) &&
-        Objects.equals(this.tuesday, serviceHour.tuesday) &&
-        Objects.equals(this.wednesday, serviceHour.wednesday) &&
-        Objects.equals(this.thursday, serviceHour.thursday) &&
-        Objects.equals(this.friday, serviceHour.friday) &&
-        Objects.equals(this.saturday, serviceHour.saturday) &&
-        Objects.equals(this.sunday, serviceHour.sunday) &&
-        Objects.equals(this.opens, serviceHour.opens) &&
-        Objects.equals(this.closes, serviceHour.closes) &&
-        Objects.equals(this.additionalInformation, serviceHour.additionalInformation);
+        Objects.equals(this.isClosed, serviceHour.isClosed) &&
+        Objects.equals(this.validForNow, serviceHour.validForNow) &&
+        Objects.equals(this.additionalInformation, serviceHour.additionalInformation) &&
+        Objects.equals(this.openingHour, serviceHour.openingHour);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, exceptionHourType, validFrom, validTo, monday, tuesday, wednesday, thursday, friday, saturday, sunday, opens, closes, additionalInformation);
+    return Objects.hash(serviceHourType, validFrom, validTo, isClosed, validForNow, additionalInformation, openingHour);
   }
 
   @Override
@@ -377,20 +229,13 @@ public class ServiceHour   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ServiceHour {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    exceptionHourType: ").append(toIndentedString(exceptionHourType)).append("\n");
+    sb.append("    serviceHourType: ").append(toIndentedString(serviceHourType)).append("\n");
     sb.append("    validFrom: ").append(toIndentedString(validFrom)).append("\n");
     sb.append("    validTo: ").append(toIndentedString(validTo)).append("\n");
-    sb.append("    monday: ").append(toIndentedString(monday)).append("\n");
-    sb.append("    tuesday: ").append(toIndentedString(tuesday)).append("\n");
-    sb.append("    wednesday: ").append(toIndentedString(wednesday)).append("\n");
-    sb.append("    thursday: ").append(toIndentedString(thursday)).append("\n");
-    sb.append("    friday: ").append(toIndentedString(friday)).append("\n");
-    sb.append("    saturday: ").append(toIndentedString(saturday)).append("\n");
-    sb.append("    sunday: ").append(toIndentedString(sunday)).append("\n");
-    sb.append("    opens: ").append(toIndentedString(opens)).append("\n");
-    sb.append("    closes: ").append(toIndentedString(closes)).append("\n");
+    sb.append("    isClosed: ").append(toIndentedString(isClosed)).append("\n");
+    sb.append("    validForNow: ").append(toIndentedString(validForNow)).append("\n");
     sb.append("    additionalInformation: ").append(toIndentedString(additionalInformation)).append("\n");
+    sb.append("    openingHour: ").append(toIndentedString(openingHour)).append("\n");
     sb.append("}");
     return sb.toString();
   }
