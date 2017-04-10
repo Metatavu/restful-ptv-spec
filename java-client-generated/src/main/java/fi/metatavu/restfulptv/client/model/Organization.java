@@ -29,9 +29,9 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.metatavu.restfulptv.client.model.Address;
+import fi.metatavu.restfulptv.client.model.Email;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
 import fi.metatavu.restfulptv.client.model.Municipality;
-import fi.metatavu.restfulptv.client.model.OrganizationEmail;
 import fi.metatavu.restfulptv.client.model.OrganizationPhone;
 import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
@@ -44,7 +44,7 @@ import java.util.List;
 /**
  * Organization
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T18:42:33.706+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:00:37.540+03:00")
 public class Organization   {
   @JsonProperty("id")
   private String id = null;
@@ -56,7 +56,7 @@ public class Organization   {
   private String parentOrganization = null;
 
   @JsonProperty("emailAddresses")
-  private List<OrganizationEmail> emailAddresses = new ArrayList<OrganizationEmail>();
+  private List<Email> emailAddresses = new ArrayList<Email>();
 
   @JsonProperty("phoneNumbers")
   private List<OrganizationPhone> phoneNumbers = new ArrayList<OrganizationPhone>();
@@ -153,12 +153,12 @@ public class Organization   {
     this.parentOrganization = parentOrganization;
   }
 
-  public Organization emailAddresses(List<OrganizationEmail> emailAddresses) {
+  public Organization emailAddresses(List<Email> emailAddresses) {
     this.emailAddresses = emailAddresses;
     return this;
   }
 
-  public Organization addEmailAddressesItem(OrganizationEmail emailAddressesItem) {
+  public Organization addEmailAddressesItem(Email emailAddressesItem) {
     this.emailAddresses.add(emailAddressesItem);
     return this;
   }
@@ -168,11 +168,11 @@ public class Organization   {
    * @return emailAddresses
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<OrganizationEmail> getEmailAddresses() {
+  public List<Email> getEmailAddresses() {
     return emailAddresses;
   }
 
-  public void setEmailAddresses(List<OrganizationEmail> emailAddresses) {
+  public void setEmailAddresses(List<Email> emailAddresses) {
     this.emailAddresses = emailAddresses;
   }
 

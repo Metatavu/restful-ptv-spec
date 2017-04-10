@@ -28,64 +28,77 @@ package fi.metatavu.restfulptv.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import fi.metatavu.restfulptv.client.model.LanguageItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @com.fasterxml.jackson.annotation.JsonIgnoreProperties(ignoreUnknown = true)
 /**
- * OrganizationEmail
+ * Email
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T18:42:33.706+03:00")
-public class OrganizationEmail   {
-  @JsonProperty("email")
-  private String email = null;
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:00:37.540+03:00")
+public class Email   {
+  @JsonProperty("value")
+  private String value = null;
 
-  @JsonProperty("descriptions")
-  private List<LanguageItem> descriptions = new ArrayList<LanguageItem>();
+  @JsonProperty("description")
+  private String description = null;
 
-  public OrganizationEmail email(String email) {
-    this.email = email;
+  @JsonProperty("language")
+  private String language = null;
+
+  public Email value(String value) {
+    this.value = value;
     return this;
   }
 
    /**
-   * Get email
-   * @return email
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public OrganizationEmail descriptions(List<LanguageItem> descriptions) {
-    this.descriptions = descriptions;
-    return this;
-  }
-
-  public OrganizationEmail addDescriptionsItem(LanguageItem descriptionsItem) {
-    this.descriptions.add(descriptionsItem);
-    return this;
-  }
-
-   /**
-   * Get descriptions
-   * @return descriptions
+   * Get value
+   * @return value
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getDescriptions() {
-    return descriptions;
+  public String getValue() {
+    return value;
   }
 
-  public void setDescriptions(List<LanguageItem> descriptions) {
-    this.descriptions = descriptions;
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+  public Email description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Get description
+   * @return description
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public Email language(String language) {
+    this.language = language;
+    return this;
+  }
+
+   /**
+   * Get language
+   * @return language
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getLanguage() {
+    return language;
+  }
+
+  public void setLanguage(String language) {
+    this.language = language;
   }
 
 
@@ -97,23 +110,25 @@ public class OrganizationEmail   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationEmail organizationEmail = (OrganizationEmail) o;
-    return Objects.equals(this.email, organizationEmail.email) &&
-        Objects.equals(this.descriptions, organizationEmail.descriptions);
+    Email email = (Email) o;
+    return Objects.equals(this.value, email.value) &&
+        Objects.equals(this.description, email.description) &&
+        Objects.equals(this.language, email.language);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, descriptions);
+    return Objects.hash(value, description, language);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrganizationEmail {\n");
+    sb.append("class Email {\n");
     
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("}");
     return sb.toString();
   }
