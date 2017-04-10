@@ -28,10 +28,10 @@ package fi.metatavu.restfulptv.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import fi.metatavu.restfulptv.client.model.Email;
 import fi.metatavu.restfulptv.client.model.LanguageItem;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
 import fi.metatavu.restfulptv.client.model.ServiceHour;
-import fi.metatavu.restfulptv.client.model.Support;
 import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -43,7 +43,7 @@ import java.util.List;
 /**
  * PhoneServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:00:37.540+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:53:15.245+03:00")
 public class PhoneServiceChannel   {
   @JsonProperty("id")
   private String id = null;
@@ -66,8 +66,8 @@ public class PhoneServiceChannel   {
   @JsonProperty("chargeTypes")
   private List<String> chargeTypes = new ArrayList<String>();
 
-  @JsonProperty("supportContacts")
-  private List<Support> supportContacts = new ArrayList<Support>();
+  @JsonProperty("supportEmails")
+  private List<Email> supportEmails = new ArrayList<Email>();
 
   @JsonProperty("phoneNumbers")
   private List<LanguageItem> phoneNumbers = new ArrayList<LanguageItem>();
@@ -228,27 +228,27 @@ public class PhoneServiceChannel   {
     this.chargeTypes = chargeTypes;
   }
 
-  public PhoneServiceChannel supportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public PhoneServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
     return this;
   }
 
-  public PhoneServiceChannel addSupportContactsItem(Support supportContactsItem) {
-    this.supportContacts.add(supportContactsItem);
+  public PhoneServiceChannel addSupportEmailsItem(Email supportEmailsItem) {
+    this.supportEmails.add(supportEmailsItem);
     return this;
   }
 
    /**
-   * Get supportContacts
-   * @return supportContacts
+   * Get supportEmails
+   * @return supportEmails
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<Support> getSupportContacts() {
-    return supportContacts;
+  public List<Email> getSupportEmails() {
+    return supportEmails;
   }
 
-  public void setSupportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
   }
 
   public PhoneServiceChannel phoneNumbers(List<LanguageItem> phoneNumbers) {
@@ -401,7 +401,7 @@ public class PhoneServiceChannel   {
         Objects.equals(this.descriptions, phoneServiceChannel.descriptions) &&
         Objects.equals(this.phoneType, phoneServiceChannel.phoneType) &&
         Objects.equals(this.chargeTypes, phoneServiceChannel.chargeTypes) &&
-        Objects.equals(this.supportContacts, phoneServiceChannel.supportContacts) &&
+        Objects.equals(this.supportEmails, phoneServiceChannel.supportEmails) &&
         Objects.equals(this.phoneNumbers, phoneServiceChannel.phoneNumbers) &&
         Objects.equals(this.languages, phoneServiceChannel.languages) &&
         Objects.equals(this.phoneChargeDescriptions, phoneServiceChannel.phoneChargeDescriptions) &&
@@ -412,7 +412,7 @@ public class PhoneServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, phoneType, chargeTypes, supportContacts, phoneNumbers, languages, phoneChargeDescriptions, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, phoneType, chargeTypes, supportEmails, phoneNumbers, languages, phoneChargeDescriptions, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -427,7 +427,7 @@ public class PhoneServiceChannel   {
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
     sb.append("    chargeTypes: ").append(toIndentedString(chargeTypes)).append("\n");
-    sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    phoneChargeDescriptions: ").append(toIndentedString(phoneChargeDescriptions)).append("\n");

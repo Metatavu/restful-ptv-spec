@@ -32,7 +32,7 @@ import fi.metatavu.restfulptv.client.model.Address;
 import fi.metatavu.restfulptv.client.model.Email;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
 import fi.metatavu.restfulptv.client.model.Municipality;
-import fi.metatavu.restfulptv.client.model.OrganizationPhone;
+import fi.metatavu.restfulptv.client.model.Phone;
 import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -44,7 +44,7 @@ import java.util.List;
 /**
  * Organization
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:00:37.540+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:53:15.245+03:00")
 public class Organization   {
   @JsonProperty("id")
   private String id = null;
@@ -59,7 +59,7 @@ public class Organization   {
   private List<Email> emailAddresses = new ArrayList<Email>();
 
   @JsonProperty("phoneNumbers")
-  private List<OrganizationPhone> phoneNumbers = new ArrayList<OrganizationPhone>();
+  private List<Phone> phoneNumbers = new ArrayList<Phone>();
 
   @JsonProperty("webPages")
   private List<WebPage> webPages = new ArrayList<WebPage>();
@@ -176,12 +176,12 @@ public class Organization   {
     this.emailAddresses = emailAddresses;
   }
 
-  public Organization phoneNumbers(List<OrganizationPhone> phoneNumbers) {
+  public Organization phoneNumbers(List<Phone> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
     return this;
   }
 
-  public Organization addPhoneNumbersItem(OrganizationPhone phoneNumbersItem) {
+  public Organization addPhoneNumbersItem(Phone phoneNumbersItem) {
     this.phoneNumbers.add(phoneNumbersItem);
     return this;
   }
@@ -191,11 +191,11 @@ public class Organization   {
    * @return phoneNumbers
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<OrganizationPhone> getPhoneNumbers() {
+  public List<Phone> getPhoneNumbers() {
     return phoneNumbers;
   }
 
-  public void setPhoneNumbers(List<OrganizationPhone> phoneNumbers) {
+  public void setPhoneNumbers(List<Phone> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
   }
 

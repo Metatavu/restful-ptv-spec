@@ -29,10 +29,11 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.metatavu.restfulptv.client.model.Attachment;
+import fi.metatavu.restfulptv.client.model.Email;
 import fi.metatavu.restfulptv.client.model.LanguageItem;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
+import fi.metatavu.restfulptv.client.model.Phone;
 import fi.metatavu.restfulptv.client.model.ServiceHour;
-import fi.metatavu.restfulptv.client.model.Support;
 import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -44,7 +45,7 @@ import java.util.List;
 /**
  * ElectronicServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:00:37.540+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:53:15.245+03:00")
 public class ElectronicServiceChannel   {
   @JsonProperty("id")
   private String id = null;
@@ -67,8 +68,11 @@ public class ElectronicServiceChannel   {
   @JsonProperty("requiresSignature")
   private Boolean requiresSignature = null;
 
-  @JsonProperty("supportContacts")
-  private List<Support> supportContacts = new ArrayList<Support>();
+  @JsonProperty("supportPhones")
+  private List<Phone> supportPhones = new ArrayList<Phone>();
+
+  @JsonProperty("supportEmails")
+  private List<Email> supportEmails = new ArrayList<Email>();
 
   @JsonProperty("requiresAuthentication")
   private Boolean requiresAuthentication = null;
@@ -227,27 +231,50 @@ public class ElectronicServiceChannel   {
     this.requiresSignature = requiresSignature;
   }
 
-  public ElectronicServiceChannel supportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public ElectronicServiceChannel supportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
     return this;
   }
 
-  public ElectronicServiceChannel addSupportContactsItem(Support supportContactsItem) {
-    this.supportContacts.add(supportContactsItem);
+  public ElectronicServiceChannel addSupportPhonesItem(Phone supportPhonesItem) {
+    this.supportPhones.add(supportPhonesItem);
     return this;
   }
 
    /**
-   * Get supportContacts
-   * @return supportContacts
+   * Get supportPhones
+   * @return supportPhones
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<Support> getSupportContacts() {
-    return supportContacts;
+  public List<Phone> getSupportPhones() {
+    return supportPhones;
   }
 
-  public void setSupportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public void setSupportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
+  }
+
+  public ElectronicServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
+    return this;
+  }
+
+  public ElectronicServiceChannel addSupportEmailsItem(Email supportEmailsItem) {
+    this.supportEmails.add(supportEmailsItem);
+    return this;
+  }
+
+   /**
+   * Get supportEmails
+   * @return supportEmails
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<Email> getSupportEmails() {
+    return supportEmails;
+  }
+
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
   }
 
   public ElectronicServiceChannel requiresAuthentication(Boolean requiresAuthentication) {
@@ -418,7 +445,8 @@ public class ElectronicServiceChannel   {
         Objects.equals(this.descriptions, electronicServiceChannel.descriptions) &&
         Objects.equals(this.signatureQuantity, electronicServiceChannel.signatureQuantity) &&
         Objects.equals(this.requiresSignature, electronicServiceChannel.requiresSignature) &&
-        Objects.equals(this.supportContacts, electronicServiceChannel.supportContacts) &&
+        Objects.equals(this.supportPhones, electronicServiceChannel.supportPhones) &&
+        Objects.equals(this.supportEmails, electronicServiceChannel.supportEmails) &&
         Objects.equals(this.requiresAuthentication, electronicServiceChannel.requiresAuthentication) &&
         Objects.equals(this.urls, electronicServiceChannel.urls) &&
         Objects.equals(this.languages, electronicServiceChannel.languages) &&
@@ -430,7 +458,7 @@ public class ElectronicServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, signatureQuantity, requiresSignature, supportContacts, requiresAuthentication, urls, languages, attachments, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, signatureQuantity, requiresSignature, supportPhones, supportEmails, requiresAuthentication, urls, languages, attachments, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -445,7 +473,8 @@ public class ElectronicServiceChannel   {
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    signatureQuantity: ").append(toIndentedString(signatureQuantity)).append("\n");
     sb.append("    requiresSignature: ").append(toIndentedString(requiresSignature)).append("\n");
-    sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    requiresAuthentication: ").append(toIndentedString(requiresAuthentication)).append("\n");
     sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");

@@ -30,10 +30,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.metatavu.restfulptv.client.model.Address;
 import fi.metatavu.restfulptv.client.model.Attachment;
+import fi.metatavu.restfulptv.client.model.Email;
 import fi.metatavu.restfulptv.client.model.LanguageItem;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
+import fi.metatavu.restfulptv.client.model.Phone;
 import fi.metatavu.restfulptv.client.model.ServiceHour;
-import fi.metatavu.restfulptv.client.model.Support;
 import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -45,7 +46,7 @@ import java.util.List;
 /**
  * PrintableFormServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:00:37.540+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:53:15.245+03:00")
 public class PrintableFormServiceChannel   {
   @JsonProperty("id")
   private String id = null;
@@ -68,8 +69,11 @@ public class PrintableFormServiceChannel   {
   @JsonProperty("formReceiver")
   private String formReceiver = null;
 
-  @JsonProperty("supportContacts")
-  private List<Support> supportContacts = new ArrayList<Support>();
+  @JsonProperty("supportPhones")
+  private List<Phone> supportPhones = new ArrayList<Phone>();
+
+  @JsonProperty("supportEmails")
+  private List<Email> supportEmails = new ArrayList<Email>();
 
   @JsonProperty("deliveryAddress")
   private Address deliveryAddress = null;
@@ -231,27 +235,50 @@ public class PrintableFormServiceChannel   {
     this.formReceiver = formReceiver;
   }
 
-  public PrintableFormServiceChannel supportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public PrintableFormServiceChannel supportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
     return this;
   }
 
-  public PrintableFormServiceChannel addSupportContactsItem(Support supportContactsItem) {
-    this.supportContacts.add(supportContactsItem);
+  public PrintableFormServiceChannel addSupportPhonesItem(Phone supportPhonesItem) {
+    this.supportPhones.add(supportPhonesItem);
     return this;
   }
 
    /**
-   * Get supportContacts
-   * @return supportContacts
+   * Get supportPhones
+   * @return supportPhones
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<Support> getSupportContacts() {
-    return supportContacts;
+  public List<Phone> getSupportPhones() {
+    return supportPhones;
   }
 
-  public void setSupportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public void setSupportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
+  }
+
+  public PrintableFormServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
+    return this;
+  }
+
+  public PrintableFormServiceChannel addSupportEmailsItem(Email supportEmailsItem) {
+    this.supportEmails.add(supportEmailsItem);
+    return this;
+  }
+
+   /**
+   * Get supportEmails
+   * @return supportEmails
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<Email> getSupportEmails() {
+    return supportEmails;
+  }
+
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
   }
 
   public PrintableFormServiceChannel deliveryAddress(Address deliveryAddress) {
@@ -445,7 +472,8 @@ public class PrintableFormServiceChannel   {
         Objects.equals(this.descriptions, printableFormServiceChannel.descriptions) &&
         Objects.equals(this.formIdentifier, printableFormServiceChannel.formIdentifier) &&
         Objects.equals(this.formReceiver, printableFormServiceChannel.formReceiver) &&
-        Objects.equals(this.supportContacts, printableFormServiceChannel.supportContacts) &&
+        Objects.equals(this.supportPhones, printableFormServiceChannel.supportPhones) &&
+        Objects.equals(this.supportEmails, printableFormServiceChannel.supportEmails) &&
         Objects.equals(this.deliveryAddress, printableFormServiceChannel.deliveryAddress) &&
         Objects.equals(this.channelUrls, printableFormServiceChannel.channelUrls) &&
         Objects.equals(this.languages, printableFormServiceChannel.languages) &&
@@ -458,7 +486,7 @@ public class PrintableFormServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, formIdentifier, formReceiver, supportContacts, deliveryAddress, channelUrls, languages, deliveryAddressDescriptions, attachments, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, formIdentifier, formReceiver, supportPhones, supportEmails, deliveryAddress, channelUrls, languages, deliveryAddressDescriptions, attachments, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -473,7 +501,8 @@ public class PrintableFormServiceChannel   {
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    formIdentifier: ").append(toIndentedString(formIdentifier)).append("\n");
     sb.append("    formReceiver: ").append(toIndentedString(formReceiver)).append("\n");
-    sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    deliveryAddress: ").append(toIndentedString(deliveryAddress)).append("\n");
     sb.append("    channelUrls: ").append(toIndentedString(channelUrls)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");

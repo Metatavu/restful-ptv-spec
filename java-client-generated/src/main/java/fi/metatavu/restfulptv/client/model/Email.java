@@ -36,7 +36,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Email
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:00:37.540+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:53:15.245+03:00")
 public class Email   {
   @JsonProperty("value")
   private String value = null;

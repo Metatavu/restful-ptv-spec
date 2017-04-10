@@ -29,10 +29,11 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.metatavu.restfulptv.client.model.Attachment;
+import fi.metatavu.restfulptv.client.model.Email;
 import fi.metatavu.restfulptv.client.model.LanguageItem;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
+import fi.metatavu.restfulptv.client.model.Phone;
 import fi.metatavu.restfulptv.client.model.ServiceHour;
-import fi.metatavu.restfulptv.client.model.Support;
 import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -44,7 +45,7 @@ import java.util.List;
 /**
  * WebPageServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:00:37.540+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:53:15.245+03:00")
 public class WebPageServiceChannel   {
   @JsonProperty("id")
   private String id = null;
@@ -67,8 +68,11 @@ public class WebPageServiceChannel   {
   @JsonProperty("attachments")
   private List<Attachment> attachments = new ArrayList<Attachment>();
 
-  @JsonProperty("supportContacts")
-  private List<Support> supportContacts = new ArrayList<Support>();
+  @JsonProperty("supportPhones")
+  private List<Phone> supportPhones = new ArrayList<Phone>();
+
+  @JsonProperty("supportEmails")
+  private List<Email> supportEmails = new ArrayList<Email>();
 
   @JsonProperty("languages")
   private List<String> languages = new ArrayList<String>();
@@ -228,27 +232,50 @@ public class WebPageServiceChannel   {
     this.attachments = attachments;
   }
 
-  public WebPageServiceChannel supportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public WebPageServiceChannel supportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
     return this;
   }
 
-  public WebPageServiceChannel addSupportContactsItem(Support supportContactsItem) {
-    this.supportContacts.add(supportContactsItem);
+  public WebPageServiceChannel addSupportPhonesItem(Phone supportPhonesItem) {
+    this.supportPhones.add(supportPhonesItem);
     return this;
   }
 
    /**
-   * Get supportContacts
-   * @return supportContacts
+   * Get supportPhones
+   * @return supportPhones
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<Support> getSupportContacts() {
-    return supportContacts;
+  public List<Phone> getSupportPhones() {
+    return supportPhones;
   }
 
-  public void setSupportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public void setSupportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
+  }
+
+  public WebPageServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
+    return this;
+  }
+
+  public WebPageServiceChannel addSupportEmailsItem(Email supportEmailsItem) {
+    this.supportEmails.add(supportEmailsItem);
+    return this;
+  }
+
+   /**
+   * Get supportEmails
+   * @return supportEmails
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<Email> getSupportEmails() {
+    return supportEmails;
+  }
+
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
   }
 
   public WebPageServiceChannel languages(List<String> languages) {
@@ -355,7 +382,8 @@ public class WebPageServiceChannel   {
         Objects.equals(this.descriptions, webPageServiceChannel.descriptions) &&
         Objects.equals(this.urls, webPageServiceChannel.urls) &&
         Objects.equals(this.attachments, webPageServiceChannel.attachments) &&
-        Objects.equals(this.supportContacts, webPageServiceChannel.supportContacts) &&
+        Objects.equals(this.supportPhones, webPageServiceChannel.supportPhones) &&
+        Objects.equals(this.supportEmails, webPageServiceChannel.supportEmails) &&
         Objects.equals(this.languages, webPageServiceChannel.languages) &&
         Objects.equals(this.webPages, webPageServiceChannel.webPages) &&
         Objects.equals(this.serviceHours, webPageServiceChannel.serviceHours) &&
@@ -364,7 +392,7 @@ public class WebPageServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, urls, attachments, supportContacts, languages, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, urls, attachments, supportPhones, supportEmails, languages, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -379,7 +407,8 @@ public class WebPageServiceChannel   {
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
     sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
-    sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    serviceHours: ").append(toIndentedString(serviceHours)).append("\n");

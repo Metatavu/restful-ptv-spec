@@ -29,10 +29,11 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.metatavu.restfulptv.client.model.Address;
+import fi.metatavu.restfulptv.client.model.Email;
 import fi.metatavu.restfulptv.client.model.LanguageItem;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
+import fi.metatavu.restfulptv.client.model.Phone;
 import fi.metatavu.restfulptv.client.model.ServiceHour;
-import fi.metatavu.restfulptv.client.model.Support;
 import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -44,7 +45,7 @@ import java.util.List;
 /**
  * ServiceLocationServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:00:37.540+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T19:53:15.245+03:00")
 public class ServiceLocationServiceChannel   {
   @JsonProperty("id")
   private String id = null;
@@ -64,8 +65,11 @@ public class ServiceLocationServiceChannel   {
   @JsonProperty("serviceAreaRestricted")
   private Boolean serviceAreaRestricted = null;
 
-  @JsonProperty("supportContacts")
-  private List<Support> supportContacts = new ArrayList<Support>();
+  @JsonProperty("supportPhones")
+  private List<Phone> supportPhones = new ArrayList<Phone>();
+
+  @JsonProperty("supportEmails")
+  private List<Email> supportEmails = new ArrayList<Email>();
 
   @JsonProperty("email")
   private String email = null;
@@ -233,27 +237,50 @@ public class ServiceLocationServiceChannel   {
     this.serviceAreaRestricted = serviceAreaRestricted;
   }
 
-  public ServiceLocationServiceChannel supportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public ServiceLocationServiceChannel supportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
     return this;
   }
 
-  public ServiceLocationServiceChannel addSupportContactsItem(Support supportContactsItem) {
-    this.supportContacts.add(supportContactsItem);
+  public ServiceLocationServiceChannel addSupportPhonesItem(Phone supportPhonesItem) {
+    this.supportPhones.add(supportPhonesItem);
     return this;
   }
 
    /**
-   * Get supportContacts
-   * @return supportContacts
+   * Get supportPhones
+   * @return supportPhones
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<Support> getSupportContacts() {
-    return supportContacts;
+  public List<Phone> getSupportPhones() {
+    return supportPhones;
   }
 
-  public void setSupportContacts(List<Support> supportContacts) {
-    this.supportContacts = supportContacts;
+  public void setSupportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
+  }
+
+  public ServiceLocationServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
+    return this;
+  }
+
+  public ServiceLocationServiceChannel addSupportEmailsItem(Email supportEmailsItem) {
+    this.supportEmails.add(supportEmailsItem);
+    return this;
+  }
+
+   /**
+   * Get supportEmails
+   * @return supportEmails
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public List<Email> getSupportEmails() {
+    return supportEmails;
+  }
+
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
   }
 
   public ServiceLocationServiceChannel email(String email) {
@@ -595,7 +622,8 @@ public class ServiceLocationServiceChannel   {
         Objects.equals(this.names, serviceLocationServiceChannel.names) &&
         Objects.equals(this.descriptions, serviceLocationServiceChannel.descriptions) &&
         Objects.equals(this.serviceAreaRestricted, serviceLocationServiceChannel.serviceAreaRestricted) &&
-        Objects.equals(this.supportContacts, serviceLocationServiceChannel.supportContacts) &&
+        Objects.equals(this.supportPhones, serviceLocationServiceChannel.supportPhones) &&
+        Objects.equals(this.supportEmails, serviceLocationServiceChannel.supportEmails) &&
         Objects.equals(this.email, serviceLocationServiceChannel.email) &&
         Objects.equals(this.phone, serviceLocationServiceChannel.phone) &&
         Objects.equals(this.languages, serviceLocationServiceChannel.languages) &&
@@ -616,7 +644,7 @@ public class ServiceLocationServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, serviceAreaRestricted, supportContacts, email, phone, languages, fax, latitude, longitude, coordinateSystem, coordinatesSetManually, phoneServiceCharge, webPages, serviceAreas, phoneChargeDescriptions, addresses, chargeTypes, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, serviceAreaRestricted, supportPhones, supportEmails, email, phone, languages, fax, latitude, longitude, coordinateSystem, coordinatesSetManually, phoneServiceCharge, webPages, serviceAreas, phoneChargeDescriptions, addresses, chargeTypes, serviceHours, publishingStatus);
   }
 
   @Override
@@ -630,7 +658,8 @@ public class ServiceLocationServiceChannel   {
     sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    serviceAreaRestricted: ").append(toIndentedString(serviceAreaRestricted)).append("\n");
-    sb.append("    supportContacts: ").append(toIndentedString(supportContacts)).append("\n");
+    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
