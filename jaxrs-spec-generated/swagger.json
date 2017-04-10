@@ -1435,7 +1435,7 @@
     },
     "WebPage" : {
       "type" : "object",
-      "required" : [ "language", "type", "url", "value" ],
+      "required" : [ "language", "url", "value" ],
       "properties" : {
         "description" : {
           "type" : "string",
@@ -1451,9 +1451,6 @@
           "description" : "Language code."
         },
         "value" : {
-          "type" : "string"
-        },
-        "type" : {
           "type" : "string"
         }
       },
@@ -1535,7 +1532,8 @@
           "format" : "uuid"
         },
         "type" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Service type. Possible values are: Service or PermissionAndObligation.\r\nNOTE! Current PTV database does not anymore support for types Notice, Registration or Permission - they are automatically mapped into PermissionAndObligation type when possible.\r\nPOST and PUT methods accepts old types but GET method only can return Service or PermissionAndObligation types."
         },
         "statutoryDescriptionId" : {
           "type" : "string",
@@ -1592,12 +1590,21 @@
         },
         "keywords" : {
           "type" : "array",
+          "description" : "List of localized service keywords.",
           "items" : {
-            "type" : "string"
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "legislation" : {
+          "type" : "array",
+          "description" : "List of laws related to the service.",
+          "items" : {
+            "$ref" : "#/definitions/Law"
           }
         },
         "coverageType" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Service coverage type. Valid values are: Local or Nationwide."
         },
         "municipalities" : {
           "type" : "array",
@@ -1618,7 +1625,8 @@
           }
         },
         "publishingStatus" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Publishing status. Possible values are: Draft, Published, Deleted, Modified or OldPublished."
         },
         "chargeType" : {
           "type" : "string"
@@ -1629,49 +1637,122 @@
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
-        "organizationIds" : {
+        "organizations" : {
           "type" : "array",
           "items" : {
-            "type" : "string",
-            "format" : "uuid"
+            "$ref" : "#/definitions/ServiceOrganization"
           }
         },
-        "electronicServiceChannelIds" : {
+        "electronicServiceChannels" : {
           "type" : "array",
           "items" : {
-            "type" : "string",
-            "format" : "uuid"
+            "$ref" : "#/definitions/ServiceServiceChannel"
           }
         },
-        "phoneServiceChannelIds" : {
+        "phoneServiceChannels" : {
           "type" : "array",
           "items" : {
-            "type" : "string",
-            "format" : "uuid"
+            "$ref" : "#/definitions/ServiceServiceChannel"
           }
         },
-        "printableFormServiceChannelIds" : {
+        "printableFormServiceChannels" : {
           "type" : "array",
           "items" : {
-            "type" : "string",
-            "format" : "uuid"
+            "$ref" : "#/definitions/ServiceServiceChannel"
           }
         },
-        "serviceLocationServiceChannelIds" : {
+        "serviceLocationServiceChannels" : {
           "type" : "array",
           "items" : {
-            "type" : "string",
-            "format" : "uuid"
+            "$ref" : "#/definitions/ServiceServiceChannel"
           }
         },
-        "webPageServiceChannelIds" : {
+        "webPageServiceChannels" : {
           "type" : "array",
           "items" : {
-            "type" : "string",
-            "format" : "uuid"
+            "$ref" : "#/definitions/ServiceServiceChannel"
           }
         }
       }
+    },
+    "ServiceServiceChannel" : {
+      "type" : "object",
+      "properties" : {
+        "serviceChannelId" : {
+          "type" : "string",
+          "description" : "PTV service channel identifier."
+        },
+        "description" : {
+          "type" : "array",
+          "description" : "List of localized service channel relationship descriptions.",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "serviceChargeType" : {
+          "type" : "string",
+          "description" : "Service charge type. Possible values are: Charged, Free or Other"
+        },
+        "digitalAuthorizations" : {
+          "type" : "array",
+          "description" : "List of digital authorizations related to the service.",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        }
+      },
+      "description" : "Service service channel"
+    },
+    "ServiceOrganization" : {
+      "type" : "object",
+      "properties" : {
+        "additionalInformation" : {
+          "type" : "array",
+          "description" : "Localized list of additional information.",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "organizationId" : {
+          "type" : "string",
+          "description" : "PTV organization identifier (organization related to the service). Required if role type is Responsible or if ProvisionType is SelfProduced."
+        },
+        "roleType" : {
+          "type" : "string",
+          "description" : "Role type, valid values Responsible or Producer."
+        },
+        "provisionType" : {
+          "type" : "string",
+          "description" : "Provision type, valid values SelfProduced, VoucherServices, PurchaseServices or Other. Required if RoleType value is Producer."
+        },
+        "webPages" : {
+          "type" : "array",
+          "description" : "List of web pages.",
+          "items" : {
+            "$ref" : "#/definitions/WebPage"
+          }
+        }
+      },
+      "description" : "Service organization"
+    },
+    "Law" : {
+      "type" : "object",
+      "properties" : {
+        "names" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "webPages" : {
+          "type" : "array",
+          "description" : "List of localized web page urls.",
+          "items" : {
+            "$ref" : "#/definitions/WebPage"
+          }
+        }
+      },
+      "description" : "a Law"
     },
     "FintoItem" : {
       "type" : "object",

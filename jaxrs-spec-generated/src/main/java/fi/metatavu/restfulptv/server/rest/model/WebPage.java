@@ -17,7 +17,6 @@ public class WebPage   {
   private String url = null;
   private String language = null;
   private String value = null;
-  private String type = null;
 
   /**
    * Web page description.
@@ -86,22 +85,6 @@ public class WebPage   {
     this.value = value;
   }
 
-  /**
-   **/
-  public WebPage type(String type) {
-    this.type = type;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getType() {
-    return type;
-  }
-  public void setType(String type) {
-    this.type = type;
-  }
-
 
   @Override
   public boolean equals(Object o) {
@@ -115,13 +98,12 @@ public class WebPage   {
     return Objects.equals(description, webPage.description) &&
         Objects.equals(url, webPage.url) &&
         Objects.equals(language, webPage.language) &&
-        Objects.equals(value, webPage.value) &&
-        Objects.equals(type, webPage.type);
+        Objects.equals(value, webPage.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, url, language, value, type);
+    return Objects.hash(description, url, language, value);
   }
 
   @Override
@@ -133,7 +115,6 @@ public class WebPage   {
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
