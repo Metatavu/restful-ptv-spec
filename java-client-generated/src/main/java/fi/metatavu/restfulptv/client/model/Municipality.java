@@ -28,7 +28,7 @@ package fi.metatavu.restfulptv.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import fi.metatavu.restfulptv.client.model.LocalizedListItem;
+import fi.metatavu.restfulptv.client.model.LanguageItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -39,13 +39,13 @@ import java.util.List;
 /**
  * Municipality
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T18:16:31.735+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T18:42:33.706+03:00")
 public class Municipality   {
   @JsonProperty("code")
   private String code = null;
 
   @JsonProperty("names")
-  private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
+  private List<LanguageItem> names = new ArrayList<LanguageItem>();
 
   public Municipality code(String code) {
     this.code = code;
@@ -65,12 +65,12 @@ public class Municipality   {
     this.code = code;
   }
 
-  public Municipality names(List<LocalizedListItem> names) {
+  public Municipality names(List<LanguageItem> names) {
     this.names = names;
     return this;
   }
 
-  public Municipality addNamesItem(LocalizedListItem namesItem) {
+  public Municipality addNamesItem(LanguageItem namesItem) {
     this.names.add(namesItem);
     return this;
   }
@@ -80,11 +80,11 @@ public class Municipality   {
    * @return names
   **/
   @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getNames() {
+  public List<LanguageItem> getNames() {
     return names;
   }
 
-  public void setNames(List<LocalizedListItem> names) {
+  public void setNames(List<LanguageItem> names) {
     this.names = names;
   }
 
