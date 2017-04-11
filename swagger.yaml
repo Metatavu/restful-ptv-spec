@@ -1078,7 +1078,7 @@ definitions:
     type: object
     properties:
       id:
-        format: uuid
+        type: string
       additionalInformation:
         description: Localized list of additional information.
         maxLength: 150
