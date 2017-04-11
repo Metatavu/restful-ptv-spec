@@ -1583,77 +1583,78 @@ definitions:
     properties:
       id:
         format: uuid
+        description: PTV identifier for the service channel.
         type: string
       type:
+        description: >-
+          Type of the service channel. Channel types: EChannel, WebPage,
+          PrintableForm, Phone or ServiceLocation.
         type: string
       organizationId:
         format: uuid
+        description: PTV organization identifier responsible for the channel.
         type: string
       names:
+        description: Localized list of service channel names.
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
       descriptions:
-        maxLength: 4000
+        description: List of localized service channel descriptions.
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
       serviceAreaRestricted:
+        description: Is the service location channel restricted by service area.
         type: boolean
-      supportPhones:
+      phoneNumbers:
+        description: >-
+          List of phone numbers for the service channel. Includes also fax
+          numbers.
         type: array
         items:
           $ref: '#/definitions/Phone'
-      supportEmails:
+      emails:
+        description: List email addresses for the service channel.
         type: array
         items:
-          $ref: '#/definitions/Email'
-      email:
-        type: string
-      phone:
-        type: string
+          $ref: '#/definitions/LanguageItem'
       languages:
-        pattern: '^[a-z]{2}$'
+        description: >-
+          List of languages the service channel is available in (two letter
+          language code).
         type: array
         items:
           type: string
-      fax:
-        type: string
-      latitude:
-        type: string
-      longitude:
-        type: string
-      coordinateSystem:
-        type: string
-      coordinatesSetManually:
-        type: boolean
       phoneServiceCharge:
+        description: Is the phone service charged for.
         type: boolean
       webPages:
+        description: List of service channel web pages.
         type: array
         items:
           $ref: '#/definitions/WebPage'
       serviceAreas:
+        description: >-
+          List of serviceareas. Used when location service channel is restricted
+          by service area (ServiceAreaRestricted=true).
         type: array
         items:
-          type: string
-      phoneChargeDescriptions:
-        type: array
-        items:
-          $ref: '#/definitions/LanguageItem'
+          $ref: '#/definitions/Municipality'
       addresses:
+        description: List of service location addresses.
         type: array
         items:
           $ref: '#/definitions/Address'
-      chargeTypes:
-        type: array
-        items:
-          type: string
       serviceHours:
+        description: List of service channel service hours.
         type: array
         items:
           $ref: '#/definitions/ServiceHour'
       publishingStatus:
+        description: >-
+          Service channel publishing status. Values: Draft, Published, Deleted,
+          Modified or OldPublished.
         type: string
   WebPageServiceChannel:
     type: object
