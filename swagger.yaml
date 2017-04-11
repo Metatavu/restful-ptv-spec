@@ -1076,9 +1076,6 @@ definitions:
       - value
     type: object
     properties:
-      description:
-        description: Web page description.
-        type: string
       url:
         description: Web page url.
         maxLength: 500
