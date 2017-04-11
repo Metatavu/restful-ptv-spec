@@ -40,8 +40,11 @@ import java.util.List;
 /**
  * OrganizationService
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T07:17:18.637+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T07:23:02.844+03:00")
 public class OrganizationService   {
+  @JsonProperty("id")
+  private String id = null;
+
   @JsonProperty("additionalInformation")
   private List<LanguageItem> additionalInformation = new ArrayList<LanguageItem>();
 
@@ -59,6 +62,24 @@ public class OrganizationService   {
 
   @JsonProperty("webPages")
   private List<WebPage> webPages = new ArrayList<WebPage>();
+
+  public OrganizationService id(String id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
 
   public OrganizationService additionalInformation(List<LanguageItem> additionalInformation) {
     this.additionalInformation = additionalInformation;
@@ -188,7 +209,8 @@ public class OrganizationService   {
       return false;
     }
     OrganizationService organizationService = (OrganizationService) o;
-    return Objects.equals(this.additionalInformation, organizationService.additionalInformation) &&
+    return Objects.equals(this.id, organizationService.id) &&
+        Objects.equals(this.additionalInformation, organizationService.additionalInformation) &&
         Objects.equals(this.serviceId, organizationService.serviceId) &&
         Objects.equals(this.organizationId, organizationService.organizationId) &&
         Objects.equals(this.roleType, organizationService.roleType) &&
@@ -198,7 +220,7 @@ public class OrganizationService   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalInformation, serviceId, organizationId, roleType, provisionType, webPages);
+    return Objects.hash(id, additionalInformation, serviceId, organizationId, roleType, provisionType, webPages);
   }
 
   @Override
@@ -206,6 +228,7 @@ public class OrganizationService   {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationService {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    additionalInformation: ").append(toIndentedString(additionalInformation)).append("\n");
     sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
