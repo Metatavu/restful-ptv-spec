@@ -964,35 +964,67 @@ definitions:
     properties:
       id:
         format: uuid
+        description: Entity Guid identifier.
         type: string
       names:
+        description: List of localized names.
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
       descriptions:
+        description: List of localized descriptions.
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
       languages:
+        description: List of statutory service general description languages.
         type: array
         items:
           type: string
       serviceClasses:
+        description: List of service classes.
         type: array
         items:
           $ref: '#/definitions/FintoItem'
       ontologyTerms:
+        description: List of ontology terms.
         type: array
         items:
           $ref: '#/definitions/FintoItem'
       targetGroups:
+        description: List of target groups.
         type: array
         items:
           $ref: '#/definitions/FintoItem'
       lifeEvents:
+        description: List of life events.
         type: array
         items:
           $ref: '#/definitions/FintoItem'
+      industrialClasses:
+        description: List of industrial classes.
+        type: array
+        items:
+          $ref: '#/definitions/FintoItem'
+      requirements:
+        description: Localized service usage requirements (description of requirement).
+        maxLength: 4000
+        type: array
+        items:
+          $ref: '#/definitions/LanguageItem'
+      type:
+        description: >-
+          Service type. Possible values are: Service, Notice, Registration or
+          Permission.
+        type: string
+      serviceChargeType:
+        description: 'Service charge type. Possible values are: Charged, Free or Other'
+        type: string
+      legislation:
+        description: Laws that a general description is based on.
+        type: array
+        items:
+          $ref: '#/definitions/Law'
   Organization:
     type: object
     properties:
@@ -1043,31 +1075,39 @@ definitions:
       streetAddressAsPostalAddress:
         type: boolean
   OrganizationService:
-    required:
-      - roleType
     type: object
     properties:
       id:
-        type: string
         format: uuid
-      serviceId:
-        type: string
-        format: uuid
-      organizationId:
-        type: string
-        format: uuid
-      roleType:
-        type: string
-      provisionType:
-        type: string
       additionalInformation:
+        description: Localized list of additional information.
+        maxLength: 150
         type: array
         items:
           $ref: '#/definitions/LanguageItem'
+      serviceId:
+        description: PTV service identifier.
+        type: string
+      organizationId:
+        description: >-
+          PTV organization identifier (organization related to the service).
+          Required if role type is Responsible or if ProvisionType is
+          SelfProduced.
+        type: string
+      roleType:
+        description: 'Role type, valid values Responsible or Producer.'
+        type: string
+      provisionType:
+        description: >-
+          Provision type, valid values SelfProduced, VoucherServices,
+          PurchaseServices or Other. Required if RoleType value is Producer.
+        type: string
       webPages:
+        description: List of web pages.
         type: array
         items:
           $ref: '#/definitions/WebPage'
+          
   WebPage:
     description: Open API web page model.
     required:
