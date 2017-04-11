@@ -1437,6 +1437,9 @@
     "OrganizationService" : {
       "type" : "object",
       "properties" : {
+        "id" : {
+          "type" : "string"
+        },
         "additionalInformation" : {
           "type" : "array",
           "description" : "Localized list of additional information.",

@@ -13,12 +13,29 @@ import java.util.Objects;
 
 public class OrganizationService   {
   
+  private String id = null;
   private List<LanguageItem> additionalInformation = new ArrayList<LanguageItem>();
   private String serviceId = null;
   private String organizationId = null;
   private String roleType = null;
   private String provisionType = null;
   private List<WebPage> webPages = new ArrayList<WebPage>();
+
+  /**
+   **/
+  public OrganizationService id(String id) {
+    this.id = id;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
 
   /**
    * Localized list of additional information.
@@ -132,7 +149,8 @@ public class OrganizationService   {
       return false;
     }
     OrganizationService organizationService = (OrganizationService) o;
-    return Objects.equals(additionalInformation, organizationService.additionalInformation) &&
+    return Objects.equals(id, organizationService.id) &&
+        Objects.equals(additionalInformation, organizationService.additionalInformation) &&
         Objects.equals(serviceId, organizationService.serviceId) &&
         Objects.equals(organizationId, organizationService.organizationId) &&
         Objects.equals(roleType, organizationService.roleType) &&
@@ -142,7 +160,7 @@ public class OrganizationService   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalInformation, serviceId, organizationId, roleType, provisionType, webPages);
+    return Objects.hash(id, additionalInformation, serviceId, organizationId, roleType, provisionType, webPages);
   }
 
   @Override
@@ -150,6 +168,7 @@ public class OrganizationService   {
     StringBuilder sb = new StringBuilder();
     sb.append("class OrganizationService {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    additionalInformation: ").append(toIndentedString(additionalInformation)).append("\n");
     sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
