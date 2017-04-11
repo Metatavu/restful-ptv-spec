@@ -13,27 +13,9 @@ import java.util.Objects;
 
 public class WebPage   {
   
-  private String description = null;
   private String url = null;
   private String language = null;
   private String value = null;
-
-  /**
-   * Web page description.
-   **/
-  public WebPage description(String description) {
-    this.description = description;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "Web page description.")
-  public String getDescription() {
-    return description;
-  }
-  public void setDescription(String description) {
-    this.description = description;
-  }
 
   /**
    * Web page url.
@@ -95,15 +77,14 @@ public class WebPage   {
       return false;
     }
     WebPage webPage = (WebPage) o;
-    return Objects.equals(description, webPage.description) &&
-        Objects.equals(url, webPage.url) &&
+    return Objects.equals(url, webPage.url) &&
         Objects.equals(language, webPage.language) &&
         Objects.equals(value, webPage.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, url, language, value);
+    return Objects.hash(url, language, value);
   }
 
   @Override
@@ -111,7 +92,6 @@ public class WebPage   {
     StringBuilder sb = new StringBuilder();
     sb.append("class WebPage {\n");
     
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");

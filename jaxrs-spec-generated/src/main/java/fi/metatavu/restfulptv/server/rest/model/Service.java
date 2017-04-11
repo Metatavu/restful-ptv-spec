@@ -7,7 +7,6 @@ import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
 import fi.metatavu.restfulptv.server.rest.model.Municipality;
 import fi.metatavu.restfulptv.server.rest.model.ServiceOrganization;
 import fi.metatavu.restfulptv.server.rest.model.ServiceServiceChannel;
-import fi.metatavu.restfulptv.server.rest.model.WebPage;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,11 +33,9 @@ public class Service   {
   private List<Law> legislation = new ArrayList<Law>();
   private String coverageType = null;
   private List<Municipality> municipalities = new ArrayList<Municipality>();
-  private List<WebPage> webPages = new ArrayList<WebPage>();
   private List<LanguageItem> requirements = new ArrayList<LanguageItem>();
   private String publishingStatus = null;
   private String chargeType = null;
-  private List<LocalizedListItem> additionalInformations = new ArrayList<LocalizedListItem>();
   private List<ServiceOrganization> organizations = new ArrayList<ServiceOrganization>();
   private List<ServiceServiceChannel> electronicServiceChannels = new ArrayList<ServiceServiceChannel>();
   private List<ServiceServiceChannel> phoneServiceChannels = new ArrayList<ServiceServiceChannel>();
@@ -292,22 +289,6 @@ public class Service   {
 
   /**
    **/
-  public Service webPages(List<WebPage> webPages) {
-    this.webPages = webPages;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public List<WebPage> getWebPages() {
-    return webPages;
-  }
-  public void setWebPages(List<WebPage> webPages) {
-    this.webPages = webPages;
-  }
-
-  /**
-   **/
   public Service requirements(List<LanguageItem> requirements) {
     this.requirements = requirements;
     return this;
@@ -353,22 +334,6 @@ public class Service   {
   }
   public void setChargeType(String chargeType) {
     this.chargeType = chargeType;
-  }
-
-  /**
-   **/
-  public Service additionalInformations(List<LocalizedListItem> additionalInformations) {
-    this.additionalInformations = additionalInformations;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getAdditionalInformations() {
-    return additionalInformations;
-  }
-  public void setAdditionalInformations(List<LocalizedListItem> additionalInformations) {
-    this.additionalInformations = additionalInformations;
   }
 
   /**
@@ -492,11 +457,9 @@ public class Service   {
         Objects.equals(legislation, service.legislation) &&
         Objects.equals(coverageType, service.coverageType) &&
         Objects.equals(municipalities, service.municipalities) &&
-        Objects.equals(webPages, service.webPages) &&
         Objects.equals(requirements, service.requirements) &&
         Objects.equals(publishingStatus, service.publishingStatus) &&
         Objects.equals(chargeType, service.chargeType) &&
-        Objects.equals(additionalInformations, service.additionalInformations) &&
         Objects.equals(organizations, service.organizations) &&
         Objects.equals(electronicServiceChannels, service.electronicServiceChannels) &&
         Objects.equals(phoneServiceChannels, service.phoneServiceChannels) &&
@@ -507,7 +470,7 @@ public class Service   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, legislation, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations, organizations, electronicServiceChannels, phoneServiceChannels, printableFormServiceChannels, serviceLocationServiceChannels, webPageServiceChannels);
+    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, legislation, coverageType, municipalities, requirements, publishingStatus, chargeType, organizations, electronicServiceChannels, phoneServiceChannels, printableFormServiceChannels, serviceLocationServiceChannels, webPageServiceChannels);
   }
 
   @Override
@@ -530,11 +493,9 @@ public class Service   {
     sb.append("    legislation: ").append(toIndentedString(legislation)).append("\n");
     sb.append("    coverageType: ").append(toIndentedString(coverageType)).append("\n");
     sb.append("    municipalities: ").append(toIndentedString(municipalities)).append("\n");
-    sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    requirements: ").append(toIndentedString(requirements)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");
     sb.append("    chargeType: ").append(toIndentedString(chargeType)).append("\n");
-    sb.append("    additionalInformations: ").append(toIndentedString(additionalInformations)).append("\n");
     sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
     sb.append("    electronicServiceChannels: ").append(toIndentedString(electronicServiceChannels)).append("\n");
     sb.append("    phoneServiceChannels: ").append(toIndentedString(phoneServiceChannels)).append("\n");

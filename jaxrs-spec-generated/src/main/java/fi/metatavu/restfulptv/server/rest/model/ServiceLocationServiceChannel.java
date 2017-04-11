@@ -1,9 +1,9 @@
 package fi.metatavu.restfulptv.server.rest.model;
 
 import fi.metatavu.restfulptv.server.rest.model.Address;
-import fi.metatavu.restfulptv.server.rest.model.Email;
 import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
+import fi.metatavu.restfulptv.server.rest.model.Municipality;
 import fi.metatavu.restfulptv.server.rest.model.Phone;
 import fi.metatavu.restfulptv.server.rest.model.ServiceHour;
 import fi.metatavu.restfulptv.server.rest.model.WebPage;
@@ -24,26 +24,18 @@ public class ServiceLocationServiceChannel   {
   private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
   private Boolean serviceAreaRestricted = null;
-  private List<Phone> supportPhones = new ArrayList<Phone>();
-  private List<Email> supportEmails = new ArrayList<Email>();
-  private String email = null;
-  private String phone = null;
+  private List<Phone> phoneNumbers = new ArrayList<Phone>();
+  private List<LanguageItem> emails = new ArrayList<LanguageItem>();
   private List<String> languages = new ArrayList<String>();
-  private String fax = null;
-  private String latitude = null;
-  private String longitude = null;
-  private String coordinateSystem = null;
-  private Boolean coordinatesSetManually = null;
   private Boolean phoneServiceCharge = null;
   private List<WebPage> webPages = new ArrayList<WebPage>();
-  private List<String> serviceAreas = new ArrayList<String>();
-  private List<LanguageItem> phoneChargeDescriptions = new ArrayList<LanguageItem>();
+  private List<Municipality> serviceAreas = new ArrayList<Municipality>();
   private List<Address> addresses = new ArrayList<Address>();
-  private List<String> chargeTypes = new ArrayList<String>();
   private List<ServiceHour> serviceHours = new ArrayList<ServiceHour>();
   private String publishingStatus = null;
 
   /**
+   * PTV identifier for the service channel.
    **/
   public ServiceLocationServiceChannel id(String id) {
     this.id = id;
@@ -51,7 +43,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV identifier for the service channel.")
   public String getId() {
     return id;
   }
@@ -60,6 +52,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
+   * Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.
    **/
   public ServiceLocationServiceChannel type(String type) {
     this.type = type;
@@ -67,7 +60,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.")
   public String getType() {
     return type;
   }
@@ -76,6 +69,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
+   * PTV organization identifier responsible for the channel.
    **/
   public ServiceLocationServiceChannel organizationId(String organizationId) {
     this.organizationId = organizationId;
@@ -83,7 +77,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV organization identifier responsible for the channel.")
   public String getOrganizationId() {
     return organizationId;
   }
@@ -92,6 +86,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
+   * Localized list of service channel names.
    **/
   public ServiceLocationServiceChannel names(List<LocalizedListItem> names) {
     this.names = names;
@@ -99,7 +94,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of service channel names.")
   public List<LocalizedListItem> getNames() {
     return names;
   }
@@ -108,6 +103,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
+   * List of localized service channel descriptions.
    **/
   public ServiceLocationServiceChannel descriptions(List<LocalizedListItem> descriptions) {
     this.descriptions = descriptions;
@@ -115,7 +111,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized service channel descriptions.")
   public List<LocalizedListItem> getDescriptions() {
     return descriptions;
   }
@@ -124,6 +120,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
+   * Is the service location channel restricted by service area.
    **/
   public ServiceLocationServiceChannel serviceAreaRestricted(Boolean serviceAreaRestricted) {
     this.serviceAreaRestricted = serviceAreaRestricted;
@@ -131,7 +128,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Is the service location channel restricted by service area.")
   public Boolean getServiceAreaRestricted() {
     return serviceAreaRestricted;
   }
@@ -140,70 +137,41 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
+   * List of phone numbers for the service channel. Includes also fax numbers.
    **/
-  public ServiceLocationServiceChannel supportPhones(List<Phone> supportPhones) {
-    this.supportPhones = supportPhones;
+  public ServiceLocationServiceChannel phoneNumbers(List<Phone> phoneNumbers) {
+    this.phoneNumbers = phoneNumbers;
     return this;
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
-  public List<Phone> getSupportPhones() {
-    return supportPhones;
+  @ApiModelProperty(example = "null", value = "List of phone numbers for the service channel. Includes also fax numbers.")
+  public List<Phone> getPhoneNumbers() {
+    return phoneNumbers;
   }
-  public void setSupportPhones(List<Phone> supportPhones) {
-    this.supportPhones = supportPhones;
+  public void setPhoneNumbers(List<Phone> phoneNumbers) {
+    this.phoneNumbers = phoneNumbers;
   }
 
   /**
+   * List email addresses for the service channel.
    **/
-  public ServiceLocationServiceChannel supportEmails(List<Email> supportEmails) {
-    this.supportEmails = supportEmails;
+  public ServiceLocationServiceChannel emails(List<LanguageItem> emails) {
+    this.emails = emails;
     return this;
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
-  public List<Email> getSupportEmails() {
-    return supportEmails;
+  @ApiModelProperty(example = "null", value = "List email addresses for the service channel.")
+  public List<LanguageItem> getEmails() {
+    return emails;
   }
-  public void setSupportEmails(List<Email> supportEmails) {
-    this.supportEmails = supportEmails;
-  }
-
-  /**
-   **/
-  public ServiceLocationServiceChannel email(String email) {
-    this.email = email;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public String getEmail() {
-    return email;
-  }
-  public void setEmail(String email) {
-    this.email = email;
+  public void setEmails(List<LanguageItem> emails) {
+    this.emails = emails;
   }
 
   /**
-   **/
-  public ServiceLocationServiceChannel phone(String phone) {
-    this.phone = phone;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public String getPhone() {
-    return phone;
-  }
-  public void setPhone(String phone) {
-    this.phone = phone;
-  }
-
-  /**
+   * List of languages the service channel is available in (two letter language code).
    **/
   public ServiceLocationServiceChannel languages(List<String> languages) {
     this.languages = languages;
@@ -211,7 +179,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of languages the service channel is available in (two letter language code).")
   public List<String> getLanguages() {
     return languages;
   }
@@ -220,86 +188,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
-   **/
-  public ServiceLocationServiceChannel fax(String fax) {
-    this.fax = fax;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public String getFax() {
-    return fax;
-  }
-  public void setFax(String fax) {
-    this.fax = fax;
-  }
-
-  /**
-   **/
-  public ServiceLocationServiceChannel latitude(String latitude) {
-    this.latitude = latitude;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public String getLatitude() {
-    return latitude;
-  }
-  public void setLatitude(String latitude) {
-    this.latitude = latitude;
-  }
-
-  /**
-   **/
-  public ServiceLocationServiceChannel longitude(String longitude) {
-    this.longitude = longitude;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public String getLongitude() {
-    return longitude;
-  }
-  public void setLongitude(String longitude) {
-    this.longitude = longitude;
-  }
-
-  /**
-   **/
-  public ServiceLocationServiceChannel coordinateSystem(String coordinateSystem) {
-    this.coordinateSystem = coordinateSystem;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public String getCoordinateSystem() {
-    return coordinateSystem;
-  }
-  public void setCoordinateSystem(String coordinateSystem) {
-    this.coordinateSystem = coordinateSystem;
-  }
-
-  /**
-   **/
-  public ServiceLocationServiceChannel coordinatesSetManually(Boolean coordinatesSetManually) {
-    this.coordinatesSetManually = coordinatesSetManually;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public Boolean getCoordinatesSetManually() {
-    return coordinatesSetManually;
-  }
-  public void setCoordinatesSetManually(Boolean coordinatesSetManually) {
-    this.coordinatesSetManually = coordinatesSetManually;
-  }
-
-  /**
+   * Is the phone service charged for.
    **/
   public ServiceLocationServiceChannel phoneServiceCharge(Boolean phoneServiceCharge) {
     this.phoneServiceCharge = phoneServiceCharge;
@@ -307,7 +196,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Is the phone service charged for.")
   public Boolean getPhoneServiceCharge() {
     return phoneServiceCharge;
   }
@@ -316,6 +205,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
+   * List of service channel web pages.
    **/
   public ServiceLocationServiceChannel webPages(List<WebPage> webPages) {
     this.webPages = webPages;
@@ -323,7 +213,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel web pages.")
   public List<WebPage> getWebPages() {
     return webPages;
   }
@@ -332,38 +222,24 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
+   * List of serviceareas. Used when location service channel is restricted by service area (ServiceAreaRestricted=true).
    **/
-  public ServiceLocationServiceChannel serviceAreas(List<String> serviceAreas) {
+  public ServiceLocationServiceChannel serviceAreas(List<Municipality> serviceAreas) {
     this.serviceAreas = serviceAreas;
     return this;
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
-  public List<String> getServiceAreas() {
+  @ApiModelProperty(example = "null", value = "List of serviceareas. Used when location service channel is restricted by service area (ServiceAreaRestricted=true).")
+  public List<Municipality> getServiceAreas() {
     return serviceAreas;
   }
-  public void setServiceAreas(List<String> serviceAreas) {
+  public void setServiceAreas(List<Municipality> serviceAreas) {
     this.serviceAreas = serviceAreas;
   }
 
   /**
-   **/
-  public ServiceLocationServiceChannel phoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
-    this.phoneChargeDescriptions = phoneChargeDescriptions;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getPhoneChargeDescriptions() {
-    return phoneChargeDescriptions;
-  }
-  public void setPhoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
-    this.phoneChargeDescriptions = phoneChargeDescriptions;
-  }
-
-  /**
+   * List of service location addresses.
    **/
   public ServiceLocationServiceChannel addresses(List<Address> addresses) {
     this.addresses = addresses;
@@ -371,7 +247,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service location addresses.")
   public List<Address> getAddresses() {
     return addresses;
   }
@@ -380,22 +256,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
-   **/
-  public ServiceLocationServiceChannel chargeTypes(List<String> chargeTypes) {
-    this.chargeTypes = chargeTypes;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public List<String> getChargeTypes() {
-    return chargeTypes;
-  }
-  public void setChargeTypes(List<String> chargeTypes) {
-    this.chargeTypes = chargeTypes;
-  }
-
-  /**
+   * List of service channel service hours.
    **/
   public ServiceLocationServiceChannel serviceHours(List<ServiceHour> serviceHours) {
     this.serviceHours = serviceHours;
@@ -403,7 +264,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel service hours.")
   public List<ServiceHour> getServiceHours() {
     return serviceHours;
   }
@@ -412,6 +273,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   /**
+   * Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.
    **/
   public ServiceLocationServiceChannel publishingStatus(String publishingStatus) {
     this.publishingStatus = publishingStatus;
@@ -419,7 +281,7 @@ public class ServiceLocationServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.")
   public String getPublishingStatus() {
     return publishingStatus;
   }
@@ -443,29 +305,20 @@ public class ServiceLocationServiceChannel   {
         Objects.equals(names, serviceLocationServiceChannel.names) &&
         Objects.equals(descriptions, serviceLocationServiceChannel.descriptions) &&
         Objects.equals(serviceAreaRestricted, serviceLocationServiceChannel.serviceAreaRestricted) &&
-        Objects.equals(supportPhones, serviceLocationServiceChannel.supportPhones) &&
-        Objects.equals(supportEmails, serviceLocationServiceChannel.supportEmails) &&
-        Objects.equals(email, serviceLocationServiceChannel.email) &&
-        Objects.equals(phone, serviceLocationServiceChannel.phone) &&
+        Objects.equals(phoneNumbers, serviceLocationServiceChannel.phoneNumbers) &&
+        Objects.equals(emails, serviceLocationServiceChannel.emails) &&
         Objects.equals(languages, serviceLocationServiceChannel.languages) &&
-        Objects.equals(fax, serviceLocationServiceChannel.fax) &&
-        Objects.equals(latitude, serviceLocationServiceChannel.latitude) &&
-        Objects.equals(longitude, serviceLocationServiceChannel.longitude) &&
-        Objects.equals(coordinateSystem, serviceLocationServiceChannel.coordinateSystem) &&
-        Objects.equals(coordinatesSetManually, serviceLocationServiceChannel.coordinatesSetManually) &&
         Objects.equals(phoneServiceCharge, serviceLocationServiceChannel.phoneServiceCharge) &&
         Objects.equals(webPages, serviceLocationServiceChannel.webPages) &&
         Objects.equals(serviceAreas, serviceLocationServiceChannel.serviceAreas) &&
-        Objects.equals(phoneChargeDescriptions, serviceLocationServiceChannel.phoneChargeDescriptions) &&
         Objects.equals(addresses, serviceLocationServiceChannel.addresses) &&
-        Objects.equals(chargeTypes, serviceLocationServiceChannel.chargeTypes) &&
         Objects.equals(serviceHours, serviceLocationServiceChannel.serviceHours) &&
         Objects.equals(publishingStatus, serviceLocationServiceChannel.publishingStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, serviceAreaRestricted, supportPhones, supportEmails, email, phone, languages, fax, latitude, longitude, coordinateSystem, coordinatesSetManually, phoneServiceCharge, webPages, serviceAreas, phoneChargeDescriptions, addresses, chargeTypes, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, serviceAreaRestricted, phoneNumbers, emails, languages, phoneServiceCharge, webPages, serviceAreas, addresses, serviceHours, publishingStatus);
   }
 
   @Override
@@ -479,22 +332,13 @@ public class ServiceLocationServiceChannel   {
     sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    serviceAreaRestricted: ").append(toIndentedString(serviceAreaRestricted)).append("\n");
-    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
-    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
+    sb.append("    emails: ").append(toIndentedString(emails)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
-    sb.append("    fax: ").append(toIndentedString(fax)).append("\n");
-    sb.append("    latitude: ").append(toIndentedString(latitude)).append("\n");
-    sb.append("    longitude: ").append(toIndentedString(longitude)).append("\n");
-    sb.append("    coordinateSystem: ").append(toIndentedString(coordinateSystem)).append("\n");
-    sb.append("    coordinatesSetManually: ").append(toIndentedString(coordinatesSetManually)).append("\n");
     sb.append("    phoneServiceCharge: ").append(toIndentedString(phoneServiceCharge)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    serviceAreas: ").append(toIndentedString(serviceAreas)).append("\n");
-    sb.append("    phoneChargeDescriptions: ").append(toIndentedString(phoneChargeDescriptions)).append("\n");
     sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
-    sb.append("    chargeTypes: ").append(toIndentedString(chargeTypes)).append("\n");
     sb.append("    serviceHours: ").append(toIndentedString(serviceHours)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");
     sb.append("}");

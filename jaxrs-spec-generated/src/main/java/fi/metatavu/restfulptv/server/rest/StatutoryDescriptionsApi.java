@@ -18,7 +18,7 @@ import java.util.List;
 @Api(description = "the statutoryDescriptions API")
 @Consumes({ "application/json;charset=utf-8" })
 @Produces({ "application/json;charset=utf-8" })
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2017-04-10T22:04:43.461+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2017-04-11T06:17:04.210+03:00")
 
 public abstract class StatutoryDescriptionsApi extends AbstractApi {
 

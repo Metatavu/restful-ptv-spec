@@ -1,8 +1,8 @@
 package fi.metatavu.restfulptv.server.rest.model;
 
 import fi.metatavu.restfulptv.server.rest.model.Email;
-import fi.metatavu.restfulptv.server.rest.model.LanguageItem;
 import fi.metatavu.restfulptv.server.rest.model.LocalizedListItem;
+import fi.metatavu.restfulptv.server.rest.model.Phone;
 import fi.metatavu.restfulptv.server.rest.model.ServiceHour;
 import fi.metatavu.restfulptv.server.rest.model.WebPage;
 import java.util.ArrayList;
@@ -21,17 +21,15 @@ public class PhoneServiceChannel   {
   private String organizationId = null;
   private List<LocalizedListItem> names = new ArrayList<LocalizedListItem>();
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
-  private String phoneType = null;
-  private List<String> chargeTypes = new ArrayList<String>();
+  private List<Phone> phoneNumbers = new ArrayList<Phone>();
   private List<Email> supportEmails = new ArrayList<Email>();
-  private List<LanguageItem> phoneNumbers = new ArrayList<LanguageItem>();
   private List<String> languages = new ArrayList<String>();
-  private List<LanguageItem> phoneChargeDescriptions = new ArrayList<LanguageItem>();
   private List<WebPage> webPages = new ArrayList<WebPage>();
   private List<ServiceHour> serviceHours = new ArrayList<ServiceHour>();
   private String publishingStatus = null;
 
   /**
+   * PTV identifier for the service channel.
    **/
   public PhoneServiceChannel id(String id) {
     this.id = id;
@@ -39,7 +37,7 @@ public class PhoneServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV identifier for the service channel.")
   public String getId() {
     return id;
   }
@@ -48,6 +46,7 @@ public class PhoneServiceChannel   {
   }
 
   /**
+   * Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.
    **/
   public PhoneServiceChannel type(String type) {
     this.type = type;
@@ -55,7 +54,7 @@ public class PhoneServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.")
   public String getType() {
     return type;
   }
@@ -64,6 +63,7 @@ public class PhoneServiceChannel   {
   }
 
   /**
+   * PTV organization identifier responsible for the channel.
    **/
   public PhoneServiceChannel organizationId(String organizationId) {
     this.organizationId = organizationId;
@@ -71,7 +71,7 @@ public class PhoneServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV organization identifier responsible for the channel.")
   public String getOrganizationId() {
     return organizationId;
   }
@@ -80,6 +80,7 @@ public class PhoneServiceChannel   {
   }
 
   /**
+   * Localized list of service channel names.
    **/
   public PhoneServiceChannel names(List<LocalizedListItem> names) {
     this.names = names;
@@ -87,7 +88,7 @@ public class PhoneServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of service channel names.")
   public List<LocalizedListItem> getNames() {
     return names;
   }
@@ -96,6 +97,7 @@ public class PhoneServiceChannel   {
   }
 
   /**
+   * List of localized service channel descriptions.
    **/
   public PhoneServiceChannel descriptions(List<LocalizedListItem> descriptions) {
     this.descriptions = descriptions;
@@ -103,7 +105,7 @@ public class PhoneServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized service channel descriptions.")
   public List<LocalizedListItem> getDescriptions() {
     return descriptions;
   }
@@ -112,38 +114,24 @@ public class PhoneServiceChannel   {
   }
 
   /**
+   * List of phone numbers for the service channel.
    **/
-  public PhoneServiceChannel phoneType(String phoneType) {
-    this.phoneType = phoneType;
+  public PhoneServiceChannel phoneNumbers(List<Phone> phoneNumbers) {
+    this.phoneNumbers = phoneNumbers;
     return this;
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
-  public String getPhoneType() {
-    return phoneType;
+  @ApiModelProperty(example = "null", value = "List of phone numbers for the service channel.")
+  public List<Phone> getPhoneNumbers() {
+    return phoneNumbers;
   }
-  public void setPhoneType(String phoneType) {
-    this.phoneType = phoneType;
-  }
-
-  /**
-   **/
-  public PhoneServiceChannel chargeTypes(List<String> chargeTypes) {
-    this.chargeTypes = chargeTypes;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public List<String> getChargeTypes() {
-    return chargeTypes;
-  }
-  public void setChargeTypes(List<String> chargeTypes) {
-    this.chargeTypes = chargeTypes;
+  public void setPhoneNumbers(List<Phone> phoneNumbers) {
+    this.phoneNumbers = phoneNumbers;
   }
 
   /**
+   * List of support email addresses for the service channel.
    **/
   public PhoneServiceChannel supportEmails(List<Email> supportEmails) {
     this.supportEmails = supportEmails;
@@ -151,7 +139,7 @@ public class PhoneServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of support email addresses for the service channel.")
   public List<Email> getSupportEmails() {
     return supportEmails;
   }
@@ -160,22 +148,7 @@ public class PhoneServiceChannel   {
   }
 
   /**
-   **/
-  public PhoneServiceChannel phoneNumbers(List<LanguageItem> phoneNumbers) {
-    this.phoneNumbers = phoneNumbers;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getPhoneNumbers() {
-    return phoneNumbers;
-  }
-  public void setPhoneNumbers(List<LanguageItem> phoneNumbers) {
-    this.phoneNumbers = phoneNumbers;
-  }
-
-  /**
+   * List of languages the service channel is available in (two letter language code).
    **/
   public PhoneServiceChannel languages(List<String> languages) {
     this.languages = languages;
@@ -183,7 +156,7 @@ public class PhoneServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of languages the service channel is available in (two letter language code).")
   public List<String> getLanguages() {
     return languages;
   }
@@ -192,22 +165,7 @@ public class PhoneServiceChannel   {
   }
 
   /**
-   **/
-  public PhoneServiceChannel phoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
-    this.phoneChargeDescriptions = phoneChargeDescriptions;
-    return this;
-  }
-
-  
-  @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getPhoneChargeDescriptions() {
-    return phoneChargeDescriptions;
-  }
-  public void setPhoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
-    this.phoneChargeDescriptions = phoneChargeDescriptions;
-  }
-
-  /**
+   * List of service channel web pages.
    **/
   public PhoneServiceChannel webPages(List<WebPage> webPages) {
     this.webPages = webPages;
@@ -215,7 +173,7 @@ public class PhoneServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel web pages.")
   public List<WebPage> getWebPages() {
     return webPages;
   }
@@ -224,6 +182,7 @@ public class PhoneServiceChannel   {
   }
 
   /**
+   * List of service channel service hours.
    **/
   public PhoneServiceChannel serviceHours(List<ServiceHour> serviceHours) {
     this.serviceHours = serviceHours;
@@ -231,7 +190,7 @@ public class PhoneServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel service hours.")
   public List<ServiceHour> getServiceHours() {
     return serviceHours;
   }
@@ -240,6 +199,7 @@ public class PhoneServiceChannel   {
   }
 
   /**
+   * Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.
    **/
   public PhoneServiceChannel publishingStatus(String publishingStatus) {
     this.publishingStatus = publishingStatus;
@@ -247,7 +207,7 @@ public class PhoneServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.")
   public String getPublishingStatus() {
     return publishingStatus;
   }
@@ -270,12 +230,9 @@ public class PhoneServiceChannel   {
         Objects.equals(organizationId, phoneServiceChannel.organizationId) &&
         Objects.equals(names, phoneServiceChannel.names) &&
         Objects.equals(descriptions, phoneServiceChannel.descriptions) &&
-        Objects.equals(phoneType, phoneServiceChannel.phoneType) &&
-        Objects.equals(chargeTypes, phoneServiceChannel.chargeTypes) &&
-        Objects.equals(supportEmails, phoneServiceChannel.supportEmails) &&
         Objects.equals(phoneNumbers, phoneServiceChannel.phoneNumbers) &&
+        Objects.equals(supportEmails, phoneServiceChannel.supportEmails) &&
         Objects.equals(languages, phoneServiceChannel.languages) &&
-        Objects.equals(phoneChargeDescriptions, phoneServiceChannel.phoneChargeDescriptions) &&
         Objects.equals(webPages, phoneServiceChannel.webPages) &&
         Objects.equals(serviceHours, phoneServiceChannel.serviceHours) &&
         Objects.equals(publishingStatus, phoneServiceChannel.publishingStatus);
@@ -283,7 +240,7 @@ public class PhoneServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, phoneType, chargeTypes, supportEmails, phoneNumbers, languages, phoneChargeDescriptions, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, phoneNumbers, supportEmails, languages, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -296,12 +253,9 @@ public class PhoneServiceChannel   {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
-    sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
-    sb.append("    chargeTypes: ").append(toIndentedString(chargeTypes)).append("\n");
-    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
-    sb.append("    phoneChargeDescriptions: ").append(toIndentedString(phoneChargeDescriptions)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    serviceHours: ").append(toIndentedString(serviceHours)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");

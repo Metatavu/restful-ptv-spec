@@ -36,6 +36,7 @@ public class ElectronicServiceChannel   {
   private String publishingStatus = null;
 
   /**
+   * PTV identifier for the service channel.
    **/
   public ElectronicServiceChannel id(String id) {
     this.id = id;
@@ -43,7 +44,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV identifier for the service channel.")
   public String getId() {
     return id;
   }
@@ -52,6 +53,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.
    **/
   public ElectronicServiceChannel type(String type) {
     this.type = type;
@@ -59,7 +61,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.")
   public String getType() {
     return type;
   }
@@ -68,6 +70,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * PTV organization identifier responsible for the channel.
    **/
   public ElectronicServiceChannel organizationId(String organizationId) {
     this.organizationId = organizationId;
@@ -75,7 +78,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV organization identifier responsible for the channel.")
   public String getOrganizationId() {
     return organizationId;
   }
@@ -84,6 +87,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * Localized list of service channel names.
    **/
   public ElectronicServiceChannel names(List<LocalizedListItem> names) {
     this.names = names;
@@ -91,7 +95,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of service channel names.")
   public List<LocalizedListItem> getNames() {
     return names;
   }
@@ -100,6 +104,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * List of localized service channel descriptions.
    **/
   public ElectronicServiceChannel descriptions(List<LocalizedListItem> descriptions) {
     this.descriptions = descriptions;
@@ -107,7 +112,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized service channel descriptions.")
   public List<LocalizedListItem> getDescriptions() {
     return descriptions;
   }
@@ -116,6 +121,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * How many signatures are required.
    **/
   public ElectronicServiceChannel signatureQuantity(Integer signatureQuantity) {
     this.signatureQuantity = signatureQuantity;
@@ -123,7 +129,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "How many signatures are required.")
   public Integer getSignatureQuantity() {
     return signatureQuantity;
   }
@@ -132,6 +138,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * Is signature required.
    **/
   public ElectronicServiceChannel requiresSignature(Boolean requiresSignature) {
     this.requiresSignature = requiresSignature;
@@ -139,7 +146,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Is signature required.")
   public Boolean getRequiresSignature() {
     return requiresSignature;
   }
@@ -148,6 +155,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * List of support phone numbers for the service channel.
    **/
   public ElectronicServiceChannel supportPhones(List<Phone> supportPhones) {
     this.supportPhones = supportPhones;
@@ -155,7 +163,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of support phone numbers for the service channel.")
   public List<Phone> getSupportPhones() {
     return supportPhones;
   }
@@ -164,6 +172,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * List of support email addresses for the service channel.
    **/
   public ElectronicServiceChannel supportEmails(List<Email> supportEmails) {
     this.supportEmails = supportEmails;
@@ -171,7 +180,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of support email addresses for the service channel.")
   public List<Email> getSupportEmails() {
     return supportEmails;
   }
@@ -180,6 +189,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * Does the electronic channel require authentication.
    **/
   public ElectronicServiceChannel requiresAuthentication(Boolean requiresAuthentication) {
     this.requiresAuthentication = requiresAuthentication;
@@ -187,7 +197,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Does the electronic channel require authentication.")
   public Boolean getRequiresAuthentication() {
     return requiresAuthentication;
   }
@@ -196,6 +206,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * Localized list of channel urls.
    **/
   public ElectronicServiceChannel urls(List<LanguageItem> urls) {
     this.urls = urls;
@@ -203,7 +214,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of channel urls.")
   public List<LanguageItem> getUrls() {
     return urls;
   }
@@ -212,6 +223,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * List of languages the service channel is available in (two letter language code).
    **/
   public ElectronicServiceChannel languages(List<String> languages) {
     this.languages = languages;
@@ -219,7 +231,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of languages the service channel is available in (two letter language code).")
   public List<String> getLanguages() {
     return languages;
   }
@@ -228,6 +240,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * List of attachments.
    **/
   public ElectronicServiceChannel attachments(List<Attachment> attachments) {
     this.attachments = attachments;
@@ -235,7 +248,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of attachments.")
   public List<Attachment> getAttachments() {
     return attachments;
   }
@@ -244,6 +257,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * List of service channel web pages.
    **/
   public ElectronicServiceChannel webPages(List<WebPage> webPages) {
     this.webPages = webPages;
@@ -251,7 +265,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel web pages.")
   public List<WebPage> getWebPages() {
     return webPages;
   }
@@ -260,6 +274,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * List of service channel service hours.
    **/
   public ElectronicServiceChannel serviceHours(List<ServiceHour> serviceHours) {
     this.serviceHours = serviceHours;
@@ -267,7 +282,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel service hours.")
   public List<ServiceHour> getServiceHours() {
     return serviceHours;
   }
@@ -276,6 +291,7 @@ public class ElectronicServiceChannel   {
   }
 
   /**
+   * Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.
    **/
   public ElectronicServiceChannel publishingStatus(String publishingStatus) {
     this.publishingStatus = publishingStatus;
@@ -283,7 +299,7 @@ public class ElectronicServiceChannel   {
   }
 
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.")
   public String getPublishingStatus() {
     return publishingStatus;
   }

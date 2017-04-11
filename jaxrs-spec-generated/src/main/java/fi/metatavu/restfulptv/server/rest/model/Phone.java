@@ -16,6 +16,7 @@ public class Phone   {
   private Boolean isFinnishServiceNumber = null;
   private String number = null;
   private String language = null;
+  private String type = null;
 
   /**
    **/
@@ -129,6 +130,22 @@ public class Phone   {
     this.language = language;
   }
 
+  /**
+   **/
+  public Phone type(String type) {
+    this.type = type;
+    return this;
+  }
+
+  
+  @ApiModelProperty(example = "null", value = "")
+  public String getType() {
+    return type;
+  }
+  public void setType(String type) {
+    this.type = type;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -145,12 +162,13 @@ public class Phone   {
         Objects.equals(prefixNumber, phone.prefixNumber) &&
         Objects.equals(isFinnishServiceNumber, phone.isFinnishServiceNumber) &&
         Objects.equals(number, phone.number) &&
-        Objects.equals(language, phone.language);
+        Objects.equals(language, phone.language) &&
+        Objects.equals(type, phone.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalInformation, serviceChargeType, chargeDescription, prefixNumber, isFinnishServiceNumber, number, language);
+    return Objects.hash(additionalInformation, serviceChargeType, chargeDescription, prefixNumber, isFinnishServiceNumber, number, language, type);
   }
 
   @Override
@@ -165,6 +183,7 @@ public class Phone   {
     sb.append("    isFinnishServiceNumber: ").append(toIndentedString(isFinnishServiceNumber)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

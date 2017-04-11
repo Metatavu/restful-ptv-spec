@@ -1437,10 +1437,6 @@
       "type" : "object",
       "required" : [ "language", "url", "value" ],
       "properties" : {
-        "description" : {
-          "type" : "string",
-          "description" : "Web page description."
-        },
         "url" : {
           "type" : "string",
           "description" : "Web page url.",
@@ -1520,6 +1516,9 @@
           "type" : "string"
         },
         "language" : {
+          "type" : "string"
+        },
+        "type" : {
           "type" : "string"
         }
       }
@@ -1612,12 +1611,6 @@
             "$ref" : "#/definitions/Municipality"
           }
         },
-        "webPages" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/WebPage"
-          }
-        },
         "requirements" : {
           "type" : "array",
           "items" : {
@@ -1630,12 +1623,6 @@
         },
         "chargeType" : {
           "type" : "string"
-        },
-        "additionalInformations" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/LocalizedListItem"
-          }
         },
         "organizations" : {
           "type" : "array",
@@ -1848,81 +1835,97 @@
       "properties" : {
         "id" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "PTV identifier for the service channel."
         },
         "type" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation."
         },
         "organizationId" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "PTV organization identifier responsible for the channel."
         },
         "names" : {
           "type" : "array",
+          "description" : "Localized list of service channel names.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "descriptions" : {
           "type" : "array",
+          "description" : "List of localized service channel descriptions.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "signatureQuantity" : {
           "type" : "integer",
-          "format" : "int32"
+          "format" : "int32",
+          "description" : "How many signatures are required."
         },
         "requiresSignature" : {
-          "type" : "boolean"
+          "type" : "boolean",
+          "description" : "Is signature required."
         },
         "supportPhones" : {
           "type" : "array",
+          "description" : "List of support phone numbers for the service channel.",
           "items" : {
             "$ref" : "#/definitions/Phone"
           }
         },
         "supportEmails" : {
           "type" : "array",
+          "description" : "List of support email addresses for the service channel.",
           "items" : {
             "$ref" : "#/definitions/Email"
           }
         },
         "requiresAuthentication" : {
-          "type" : "boolean"
+          "type" : "boolean",
+          "description" : "Does the electronic channel require authentication."
         },
         "urls" : {
           "type" : "array",
+          "description" : "Localized list of channel urls.",
           "items" : {
             "$ref" : "#/definitions/LanguageItem"
           }
         },
         "languages" : {
           "type" : "array",
+          "description" : "List of languages the service channel is available in (two letter language code).",
           "items" : {
             "type" : "string"
           }
         },
         "attachments" : {
           "type" : "array",
+          "description" : "List of attachments.",
           "items" : {
             "$ref" : "#/definitions/Attachment"
           }
         },
         "webPages" : {
           "type" : "array",
+          "description" : "List of service channel web pages.",
           "items" : {
             "$ref" : "#/definitions/WebPage"
           }
         },
         "serviceHours" : {
           "type" : "array",
+          "description" : "List of service channel service hours.",
           "items" : {
             "$ref" : "#/definitions/ServiceHour"
           }
         },
         "publishingStatus" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished."
         }
       }
     },
@@ -1931,74 +1934,70 @@
       "properties" : {
         "id" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "PTV identifier for the service channel."
         },
         "type" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation."
         },
         "organizationId" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "PTV organization identifier responsible for the channel."
         },
         "names" : {
           "type" : "array",
+          "description" : "Localized list of service channel names.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "descriptions" : {
           "type" : "array",
+          "description" : "List of localized service channel descriptions.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
-        "phoneType" : {
-          "type" : "string"
-        },
-        "chargeTypes" : {
+        "phoneNumbers" : {
           "type" : "array",
+          "description" : "List of phone numbers for the service channel.",
           "items" : {
-            "type" : "string"
+            "$ref" : "#/definitions/Phone"
           }
         },
         "supportEmails" : {
           "type" : "array",
+          "description" : "List of support email addresses for the service channel.",
           "items" : {
             "$ref" : "#/definitions/Email"
           }
         },
-        "phoneNumbers" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/LanguageItem"
-          }
-        },
         "languages" : {
           "type" : "array",
+          "description" : "List of languages the service channel is available in (two letter language code).",
           "items" : {
             "type" : "string"
           }
         },
-        "phoneChargeDescriptions" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/LanguageItem"
-          }
-        },
         "webPages" : {
           "type" : "array",
+          "description" : "List of service channel web pages.",
           "items" : {
             "$ref" : "#/definitions/WebPage"
           }
         },
         "serviceHours" : {
           "type" : "array",
+          "description" : "List of service channel service hours.",
           "items" : {
             "$ref" : "#/definitions/ServiceHour"
           }
         },
         "publishingStatus" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished."
         }
       }
     },
@@ -2007,86 +2006,102 @@
       "properties" : {
         "id" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "PTV identifier for the service channel."
         },
         "type" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation."
         },
         "organizationId" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "PTV organization identifier responsible for the channel."
         },
         "names" : {
           "type" : "array",
+          "description" : "Localized list of service channel names.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "descriptions" : {
           "type" : "array",
+          "description" : "List of localized service channel descriptions.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "formIdentifier" : {
-          "type" : "string"
+          "type" : "array",
+          "description" : "List of localized form identifier. One per language.",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
         },
         "formReceiver" : {
-          "type" : "string"
+          "type" : "array",
+          "description" : "List of localized form receiver. One per language.",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "deliveryAddress" : {
+          "description" : "Form delivery address.",
+          "$ref" : "#/definitions/Address"
+        },
+        "channelUrls" : {
+          "type" : "array",
+          "description" : "List of localized channel urls.",
+          "items" : {
+            "$ref" : "#/definitions/LocalizedListItem"
+          }
+        },
+        "attachments" : {
+          "type" : "array",
+          "description" : "List of attachments.",
+          "items" : {
+            "$ref" : "#/definitions/Attachment"
+          }
         },
         "supportPhones" : {
           "type" : "array",
+          "description" : "List of support phone numbers for the service channel.",
           "items" : {
             "$ref" : "#/definitions/Phone"
           }
         },
         "supportEmails" : {
           "type" : "array",
+          "description" : "List of support email addresses for the service channel.",
           "items" : {
             "$ref" : "#/definitions/Email"
           }
         },
-        "deliveryAddress" : {
-          "$ref" : "#/definitions/Address"
-        },
-        "channelUrls" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/LocalizedListItem"
-          }
-        },
         "languages" : {
           "type" : "array",
+          "description" : "List of languages the service channel is available in (two letter language code).",
           "items" : {
             "type" : "string"
           }
         },
-        "deliveryAddressDescriptions" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/LanguageItem"
-          }
-        },
-        "attachments" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/Attachment"
-          }
-        },
         "webPages" : {
           "type" : "array",
+          "description" : "List of service channel web pages.",
           "items" : {
             "$ref" : "#/definitions/WebPage"
           }
         },
         "serviceHours" : {
           "type" : "array",
+          "description" : "List of service channel service hours.",
           "items" : {
             "$ref" : "#/definitions/ServiceHour"
           }
         },
         "publishingStatus" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished."
         }
       }
     },
@@ -2095,110 +2110,92 @@
       "properties" : {
         "id" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "PTV identifier for the service channel."
         },
         "type" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation."
         },
         "organizationId" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "PTV organization identifier responsible for the channel."
         },
         "names" : {
           "type" : "array",
+          "description" : "Localized list of service channel names.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "descriptions" : {
           "type" : "array",
+          "description" : "List of localized service channel descriptions.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "serviceAreaRestricted" : {
-          "type" : "boolean"
+          "type" : "boolean",
+          "description" : "Is the service location channel restricted by service area."
         },
-        "supportPhones" : {
+        "phoneNumbers" : {
           "type" : "array",
+          "description" : "List of phone numbers for the service channel. Includes also fax numbers.",
           "items" : {
             "$ref" : "#/definitions/Phone"
           }
         },
-        "supportEmails" : {
+        "emails" : {
           "type" : "array",
+          "description" : "List email addresses for the service channel.",
           "items" : {
-            "$ref" : "#/definitions/Email"
+            "$ref" : "#/definitions/LanguageItem"
           }
-        },
-        "email" : {
-          "type" : "string"
-        },
-        "phone" : {
-          "type" : "string"
         },
         "languages" : {
           "type" : "array",
+          "description" : "List of languages the service channel is available in (two letter language code).",
           "items" : {
             "type" : "string"
           }
         },
-        "fax" : {
-          "type" : "string"
-        },
-        "latitude" : {
-          "type" : "string"
-        },
-        "longitude" : {
-          "type" : "string"
-        },
-        "coordinateSystem" : {
-          "type" : "string"
-        },
-        "coordinatesSetManually" : {
-          "type" : "boolean"
-        },
         "phoneServiceCharge" : {
-          "type" : "boolean"
+          "type" : "boolean",
+          "description" : "Is the phone service charged for."
         },
         "webPages" : {
           "type" : "array",
+          "description" : "List of service channel web pages.",
           "items" : {
             "$ref" : "#/definitions/WebPage"
           }
         },
         "serviceAreas" : {
           "type" : "array",
+          "description" : "List of serviceareas. Used when location service channel is restricted by service area (ServiceAreaRestricted=true).",
           "items" : {
-            "type" : "string"
-          }
-        },
-        "phoneChargeDescriptions" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/LanguageItem"
+            "$ref" : "#/definitions/Municipality"
           }
         },
         "addresses" : {
           "type" : "array",
+          "description" : "List of service location addresses.",
           "items" : {
             "$ref" : "#/definitions/Address"
           }
         },
-        "chargeTypes" : {
-          "type" : "array",
-          "items" : {
-            "type" : "string"
-          }
-        },
         "serviceHours" : {
           "type" : "array",
+          "description" : "List of service channel service hours.",
           "items" : {
             "$ref" : "#/definitions/ServiceHour"
           }
         },
         "publishingStatus" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished."
         }
       }
     },
@@ -2207,71 +2204,77 @@
       "properties" : {
         "id" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "PTV identifier for the service channel."
         },
         "type" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation."
         },
         "organizationId" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "PTV organization identifier responsible for the channel."
         },
         "names" : {
           "type" : "array",
+          "description" : "Localized list of service channel names.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "descriptions" : {
           "type" : "array",
+          "description" : "List of localized service channel descriptions.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "urls" : {
           "type" : "array",
+          "description" : "List of localized urls.",
           "items" : {
             "$ref" : "#/definitions/LanguageItem"
           }
         },
-        "attachments" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/Attachment"
-          }
-        },
         "supportPhones" : {
           "type" : "array",
+          "description" : "List of support phone numbers for the service channel.",
           "items" : {
             "$ref" : "#/definitions/Phone"
           }
         },
         "supportEmails" : {
           "type" : "array",
+          "description" : "List of support email addresses for the service channel.",
           "items" : {
             "$ref" : "#/definitions/Email"
           }
         },
         "languages" : {
           "type" : "array",
+          "description" : "List of languages the service channel is available in (two letter language code).",
           "items" : {
             "type" : "string"
           }
         },
         "webPages" : {
           "type" : "array",
+          "description" : "List of service channel web pages.",
           "items" : {
             "$ref" : "#/definitions/WebPage"
           }
         },
         "serviceHours" : {
           "type" : "array",
+          "description" : "List of service channel service hours.",
           "items" : {
             "$ref" : "#/definitions/ServiceHour"
           }
         },
         "publishingStatus" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished."
         }
       }
     },
