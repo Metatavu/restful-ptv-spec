@@ -1138,6 +1138,8 @@ definitions:
         type: string
       language:
         type: string
+      type:
+        type: string
   Service:
     type: object
     properties:
@@ -1436,59 +1438,64 @@ definitions:
         description: >-
           Service channel publishing status. Values: Draft, Published, Deleted,
           Modified or OldPublished.
-        type: string                  
+        type: string
   PhoneServiceChannel:
     type: object
     properties:
       id:
         format: uuid
+        description: PTV identifier for the service channel.
         type: string
       type:
+        description: >-
+          Type of the service channel. Channel types: EChannel, WebPage,
+          PrintableForm, Phone or ServiceLocation.
         type: string
       organizationId:
         format: uuid
+        description: PTV organization identifier responsible for the channel.
         type: string
       names:
+        description: Localized list of service channel names.
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
       descriptions:
-        maxLength: 4000
+        description: List of localized service channel descriptions.
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
-      phoneType:
-        type: string
-      chargeTypes:
+      phoneNumbers:
+        description: List of phone numbers for the service channel.
         type: array
         items:
-          type: string
+          $ref: '#/definitions/Phone'
       supportEmails:
         type: array
+        description: List of support email addresses for the service channel.
         items:
           $ref: '#/definitions/Email'
-      phoneNumbers:
-        type: array
-        items:
-          $ref: '#/definitions/LanguageItem'
       languages:
-        pattern: '^[a-z]{2}$'
+        description: >-
+          List of languages the service channel is available in (two letter
+          language code).
         type: array
         items:
           type: string
-      phoneChargeDescriptions:
-        type: array
-        items:
-          $ref: '#/definitions/LanguageItem'
       webPages:
+        description: List of service channel web pages.
         type: array
         items:
           $ref: '#/definitions/WebPage'
       serviceHours:
+        description: List of service channel service hours.
         type: array
         items:
           $ref: '#/definitions/ServiceHour'
       publishingStatus:
+        description: >-
+          Service channel publishing status. Values: Draft, Published, Deleted,
+          Modified or OldPublished.
         type: string
   PrintableFormServiceChannel:
     type: object
