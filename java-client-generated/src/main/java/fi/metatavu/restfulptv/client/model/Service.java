@@ -35,7 +35,6 @@ import fi.metatavu.restfulptv.client.model.LocalizedListItem;
 import fi.metatavu.restfulptv.client.model.Municipality;
 import fi.metatavu.restfulptv.client.model.ServiceOrganization;
 import fi.metatavu.restfulptv.client.model.ServiceServiceChannel;
-import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -46,7 +45,7 @@ import java.util.List;
 /**
  * Service
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T06:15:07.772+03:00")
 public class Service   {
   @JsonProperty("id")
   private String id = null;
@@ -93,9 +92,6 @@ public class Service   {
   @JsonProperty("municipalities")
   private List<Municipality> municipalities = new ArrayList<Municipality>();
 
-  @JsonProperty("webPages")
-  private List<WebPage> webPages = new ArrayList<WebPage>();
-
   @JsonProperty("requirements")
   private List<LanguageItem> requirements = new ArrayList<LanguageItem>();
 
@@ -104,9 +100,6 @@ public class Service   {
 
   @JsonProperty("chargeType")
   private String chargeType = null;
-
-  @JsonProperty("additionalInformations")
-  private List<LocalizedListItem> additionalInformations = new ArrayList<LocalizedListItem>();
 
   @JsonProperty("organizations")
   private List<ServiceOrganization> organizations = new ArrayList<ServiceOrganization>();
@@ -451,29 +444,6 @@ public class Service   {
     this.municipalities = municipalities;
   }
 
-  public Service webPages(List<WebPage> webPages) {
-    this.webPages = webPages;
-    return this;
-  }
-
-  public Service addWebPagesItem(WebPage webPagesItem) {
-    this.webPages.add(webPagesItem);
-    return this;
-  }
-
-   /**
-   * Get webPages
-   * @return webPages
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<WebPage> getWebPages() {
-    return webPages;
-  }
-
-  public void setWebPages(List<WebPage> webPages) {
-    this.webPages = webPages;
-  }
-
   public Service requirements(List<LanguageItem> requirements) {
     this.requirements = requirements;
     return this;
@@ -531,29 +501,6 @@ public class Service   {
 
   public void setChargeType(String chargeType) {
     this.chargeType = chargeType;
-  }
-
-  public Service additionalInformations(List<LocalizedListItem> additionalInformations) {
-    this.additionalInformations = additionalInformations;
-    return this;
-  }
-
-  public Service addAdditionalInformationsItem(LocalizedListItem additionalInformationsItem) {
-    this.additionalInformations.add(additionalInformationsItem);
-    return this;
-  }
-
-   /**
-   * Get additionalInformations
-   * @return additionalInformations
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<LocalizedListItem> getAdditionalInformations() {
-    return additionalInformations;
-  }
-
-  public void setAdditionalInformations(List<LocalizedListItem> additionalInformations) {
-    this.additionalInformations = additionalInformations;
   }
 
   public Service organizations(List<ServiceOrganization> organizations) {
@@ -719,11 +666,9 @@ public class Service   {
         Objects.equals(this.legislation, service.legislation) &&
         Objects.equals(this.coverageType, service.coverageType) &&
         Objects.equals(this.municipalities, service.municipalities) &&
-        Objects.equals(this.webPages, service.webPages) &&
         Objects.equals(this.requirements, service.requirements) &&
         Objects.equals(this.publishingStatus, service.publishingStatus) &&
         Objects.equals(this.chargeType, service.chargeType) &&
-        Objects.equals(this.additionalInformations, service.additionalInformations) &&
         Objects.equals(this.organizations, service.organizations) &&
         Objects.equals(this.electronicServiceChannels, service.electronicServiceChannels) &&
         Objects.equals(this.phoneServiceChannels, service.phoneServiceChannels) &&
@@ -734,7 +679,7 @@ public class Service   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, legislation, coverageType, municipalities, webPages, requirements, publishingStatus, chargeType, additionalInformations, organizations, electronicServiceChannels, phoneServiceChannels, printableFormServiceChannels, serviceLocationServiceChannels, webPageServiceChannels);
+    return Objects.hash(id, type, statutoryDescriptionId, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, names, descriptions, languages, keywords, legislation, coverageType, municipalities, requirements, publishingStatus, chargeType, organizations, electronicServiceChannels, phoneServiceChannels, printableFormServiceChannels, serviceLocationServiceChannels, webPageServiceChannels);
   }
 
   @Override
@@ -757,11 +702,9 @@ public class Service   {
     sb.append("    legislation: ").append(toIndentedString(legislation)).append("\n");
     sb.append("    coverageType: ").append(toIndentedString(coverageType)).append("\n");
     sb.append("    municipalities: ").append(toIndentedString(municipalities)).append("\n");
-    sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    requirements: ").append(toIndentedString(requirements)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");
     sb.append("    chargeType: ").append(toIndentedString(chargeType)).append("\n");
-    sb.append("    additionalInformations: ").append(toIndentedString(additionalInformations)).append("\n");
     sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
     sb.append("    electronicServiceChannels: ").append(toIndentedString(electronicServiceChannels)).append("\n");
     sb.append("    phoneServiceChannels: ").append(toIndentedString(phoneServiceChannels)).append("\n");

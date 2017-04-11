@@ -45,7 +45,7 @@ import java.util.List;
 /**
  * ElectronicServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T06:15:07.772+03:00")
 public class ElectronicServiceChannel   {
   @JsonProperty("id")
   private String id = null;
@@ -101,10 +101,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get id
+   * PTV identifier for the service channel.
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV identifier for the service channel.")
   public String getId() {
     return id;
   }
@@ -119,10 +119,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get type
+   * Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.
    * @return type
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.")
   public String getType() {
     return type;
   }
@@ -137,10 +137,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get organizationId
+   * PTV organization identifier responsible for the channel.
    * @return organizationId
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV organization identifier responsible for the channel.")
   public String getOrganizationId() {
     return organizationId;
   }
@@ -160,10 +160,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get names
+   * Localized list of service channel names.
    * @return names
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of service channel names.")
   public List<LocalizedListItem> getNames() {
     return names;
   }
@@ -183,10 +183,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get descriptions
+   * List of localized service channel descriptions.
    * @return descriptions
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized service channel descriptions.")
   public List<LocalizedListItem> getDescriptions() {
     return descriptions;
   }
@@ -201,10 +201,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get signatureQuantity
+   * How many signatures are required.
    * @return signatureQuantity
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "How many signatures are required.")
   public Integer getSignatureQuantity() {
     return signatureQuantity;
   }
@@ -219,10 +219,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get requiresSignature
+   * Is signature required.
    * @return requiresSignature
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Is signature required.")
   public Boolean getRequiresSignature() {
     return requiresSignature;
   }
@@ -242,10 +242,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get supportPhones
+   * List of support phone numbers for the service channel.
    * @return supportPhones
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of support phone numbers for the service channel.")
   public List<Phone> getSupportPhones() {
     return supportPhones;
   }
@@ -265,10 +265,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get supportEmails
+   * List of support email addresses for the service channel.
    * @return supportEmails
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of support email addresses for the service channel.")
   public List<Email> getSupportEmails() {
     return supportEmails;
   }
@@ -283,10 +283,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get requiresAuthentication
+   * Does the electronic channel require authentication.
    * @return requiresAuthentication
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Does the electronic channel require authentication.")
   public Boolean getRequiresAuthentication() {
     return requiresAuthentication;
   }
@@ -306,10 +306,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get urls
+   * Localized list of channel urls.
    * @return urls
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of channel urls.")
   public List<LanguageItem> getUrls() {
     return urls;
   }
@@ -329,10 +329,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get languages
+   * List of languages the service channel is available in (two letter language code).
    * @return languages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of languages the service channel is available in (two letter language code).")
   public List<String> getLanguages() {
     return languages;
   }
@@ -352,10 +352,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get attachments
+   * List of attachments.
    * @return attachments
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of attachments.")
   public List<Attachment> getAttachments() {
     return attachments;
   }
@@ -375,10 +375,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get webPages
+   * List of service channel web pages.
    * @return webPages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel web pages.")
   public List<WebPage> getWebPages() {
     return webPages;
   }
@@ -398,10 +398,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get serviceHours
+   * List of service channel service hours.
    * @return serviceHours
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel service hours.")
   public List<ServiceHour> getServiceHours() {
     return serviceHours;
   }
@@ -416,10 +416,10 @@ public class ElectronicServiceChannel   {
   }
 
    /**
-   * Get publishingStatus
+   * Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.
    * @return publishingStatus
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.")
   public String getPublishingStatus() {
     return publishingStatus;
   }

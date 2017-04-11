@@ -37,11 +37,8 @@ import io.swagger.annotations.ApiModelProperty;
  * Open API web page model.
  */
 @ApiModel(description = "Open API web page model.")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T06:15:07.772+03:00")
 public class WebPage   {
-  @JsonProperty("description")
-  private String description = null;
-
   @JsonProperty("url")
   private String url = null;
 
@@ -50,24 +47,6 @@ public class WebPage   {
 
   @JsonProperty("value")
   private String value = null;
-
-  public WebPage description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Web page description.
-   * @return description
-  **/
-  @ApiModelProperty(example = "null", value = "Web page description.")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
 
   public WebPage url(String url) {
     this.url = url;
@@ -133,15 +112,14 @@ public class WebPage   {
       return false;
     }
     WebPage webPage = (WebPage) o;
-    return Objects.equals(this.description, webPage.description) &&
-        Objects.equals(this.url, webPage.url) &&
+    return Objects.equals(this.url, webPage.url) &&
         Objects.equals(this.language, webPage.language) &&
         Objects.equals(this.value, webPage.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, url, language, value);
+    return Objects.hash(url, language, value);
   }
 
   @Override
@@ -149,7 +127,6 @@ public class WebPage   {
     StringBuilder sb = new StringBuilder();
     sb.append("class WebPage {\n");
     
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");

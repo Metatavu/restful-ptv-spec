@@ -46,7 +46,7 @@ import java.util.List;
 /**
  * PrintableFormServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T06:15:07.772+03:00")
 public class PrintableFormServiceChannel   {
   @JsonProperty("id")
   private String id = null;
@@ -64,16 +64,10 @@ public class PrintableFormServiceChannel   {
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
 
   @JsonProperty("formIdentifier")
-  private String formIdentifier = null;
+  private List<LanguageItem> formIdentifier = new ArrayList<LanguageItem>();
 
   @JsonProperty("formReceiver")
-  private String formReceiver = null;
-
-  @JsonProperty("supportPhones")
-  private List<Phone> supportPhones = new ArrayList<Phone>();
-
-  @JsonProperty("supportEmails")
-  private List<Email> supportEmails = new ArrayList<Email>();
+  private List<LanguageItem> formReceiver = new ArrayList<LanguageItem>();
 
   @JsonProperty("deliveryAddress")
   private Address deliveryAddress = null;
@@ -81,14 +75,17 @@ public class PrintableFormServiceChannel   {
   @JsonProperty("channelUrls")
   private List<LocalizedListItem> channelUrls = new ArrayList<LocalizedListItem>();
 
-  @JsonProperty("languages")
-  private List<String> languages = new ArrayList<String>();
-
-  @JsonProperty("deliveryAddressDescriptions")
-  private List<LanguageItem> deliveryAddressDescriptions = new ArrayList<LanguageItem>();
-
   @JsonProperty("attachments")
   private List<Attachment> attachments = new ArrayList<Attachment>();
+
+  @JsonProperty("supportPhones")
+  private List<Phone> supportPhones = new ArrayList<Phone>();
+
+  @JsonProperty("supportEmails")
+  private List<Email> supportEmails = new ArrayList<Email>();
+
+  @JsonProperty("languages")
+  private List<String> languages = new ArrayList<String>();
 
   @JsonProperty("webPages")
   private List<WebPage> webPages = new ArrayList<WebPage>();
@@ -105,10 +102,10 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get id
+   * PTV identifier for the service channel.
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV identifier for the service channel.")
   public String getId() {
     return id;
   }
@@ -123,10 +120,10 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get type
+   * Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.
    * @return type
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.")
   public String getType() {
     return type;
   }
@@ -141,10 +138,10 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get organizationId
+   * PTV organization identifier responsible for the channel.
    * @return organizationId
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV organization identifier responsible for the channel.")
   public String getOrganizationId() {
     return organizationId;
   }
@@ -164,10 +161,10 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get names
+   * Localized list of service channel names.
    * @return names
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of service channel names.")
   public List<LocalizedListItem> getNames() {
     return names;
   }
@@ -187,10 +184,10 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get descriptions
+   * List of localized service channel descriptions.
    * @return descriptions
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized service channel descriptions.")
   public List<LocalizedListItem> getDescriptions() {
     return descriptions;
   }
@@ -199,86 +196,50 @@ public class PrintableFormServiceChannel   {
     this.descriptions = descriptions;
   }
 
-  public PrintableFormServiceChannel formIdentifier(String formIdentifier) {
+  public PrintableFormServiceChannel formIdentifier(List<LanguageItem> formIdentifier) {
     this.formIdentifier = formIdentifier;
     return this;
   }
 
+  public PrintableFormServiceChannel addFormIdentifierItem(LanguageItem formIdentifierItem) {
+    this.formIdentifier.add(formIdentifierItem);
+    return this;
+  }
+
    /**
-   * Get formIdentifier
+   * List of localized form identifier. One per language.
    * @return formIdentifier
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getFormIdentifier() {
+  @ApiModelProperty(example = "null", value = "List of localized form identifier. One per language.")
+  public List<LanguageItem> getFormIdentifier() {
     return formIdentifier;
   }
 
-  public void setFormIdentifier(String formIdentifier) {
+  public void setFormIdentifier(List<LanguageItem> formIdentifier) {
     this.formIdentifier = formIdentifier;
   }
 
-  public PrintableFormServiceChannel formReceiver(String formReceiver) {
+  public PrintableFormServiceChannel formReceiver(List<LanguageItem> formReceiver) {
     this.formReceiver = formReceiver;
     return this;
   }
 
+  public PrintableFormServiceChannel addFormReceiverItem(LanguageItem formReceiverItem) {
+    this.formReceiver.add(formReceiverItem);
+    return this;
+  }
+
    /**
-   * Get formReceiver
+   * List of localized form receiver. One per language.
    * @return formReceiver
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getFormReceiver() {
+  @ApiModelProperty(example = "null", value = "List of localized form receiver. One per language.")
+  public List<LanguageItem> getFormReceiver() {
     return formReceiver;
   }
 
-  public void setFormReceiver(String formReceiver) {
+  public void setFormReceiver(List<LanguageItem> formReceiver) {
     this.formReceiver = formReceiver;
-  }
-
-  public PrintableFormServiceChannel supportPhones(List<Phone> supportPhones) {
-    this.supportPhones = supportPhones;
-    return this;
-  }
-
-  public PrintableFormServiceChannel addSupportPhonesItem(Phone supportPhonesItem) {
-    this.supportPhones.add(supportPhonesItem);
-    return this;
-  }
-
-   /**
-   * Get supportPhones
-   * @return supportPhones
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<Phone> getSupportPhones() {
-    return supportPhones;
-  }
-
-  public void setSupportPhones(List<Phone> supportPhones) {
-    this.supportPhones = supportPhones;
-  }
-
-  public PrintableFormServiceChannel supportEmails(List<Email> supportEmails) {
-    this.supportEmails = supportEmails;
-    return this;
-  }
-
-  public PrintableFormServiceChannel addSupportEmailsItem(Email supportEmailsItem) {
-    this.supportEmails.add(supportEmailsItem);
-    return this;
-  }
-
-   /**
-   * Get supportEmails
-   * @return supportEmails
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<Email> getSupportEmails() {
-    return supportEmails;
-  }
-
-  public void setSupportEmails(List<Email> supportEmails) {
-    this.supportEmails = supportEmails;
   }
 
   public PrintableFormServiceChannel deliveryAddress(Address deliveryAddress) {
@@ -287,10 +248,10 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get deliveryAddress
+   * Form delivery address.
    * @return deliveryAddress
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Form delivery address.")
   public Address getDeliveryAddress() {
     return deliveryAddress;
   }
@@ -310,62 +271,16 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get channelUrls
+   * List of localized channel urls.
    * @return channelUrls
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized channel urls.")
   public List<LocalizedListItem> getChannelUrls() {
     return channelUrls;
   }
 
   public void setChannelUrls(List<LocalizedListItem> channelUrls) {
     this.channelUrls = channelUrls;
-  }
-
-  public PrintableFormServiceChannel languages(List<String> languages) {
-    this.languages = languages;
-    return this;
-  }
-
-  public PrintableFormServiceChannel addLanguagesItem(String languagesItem) {
-    this.languages.add(languagesItem);
-    return this;
-  }
-
-   /**
-   * Get languages
-   * @return languages
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<String> getLanguages() {
-    return languages;
-  }
-
-  public void setLanguages(List<String> languages) {
-    this.languages = languages;
-  }
-
-  public PrintableFormServiceChannel deliveryAddressDescriptions(List<LanguageItem> deliveryAddressDescriptions) {
-    this.deliveryAddressDescriptions = deliveryAddressDescriptions;
-    return this;
-  }
-
-  public PrintableFormServiceChannel addDeliveryAddressDescriptionsItem(LanguageItem deliveryAddressDescriptionsItem) {
-    this.deliveryAddressDescriptions.add(deliveryAddressDescriptionsItem);
-    return this;
-  }
-
-   /**
-   * Get deliveryAddressDescriptions
-   * @return deliveryAddressDescriptions
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getDeliveryAddressDescriptions() {
-    return deliveryAddressDescriptions;
-  }
-
-  public void setDeliveryAddressDescriptions(List<LanguageItem> deliveryAddressDescriptions) {
-    this.deliveryAddressDescriptions = deliveryAddressDescriptions;
   }
 
   public PrintableFormServiceChannel attachments(List<Attachment> attachments) {
@@ -379,16 +294,85 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get attachments
+   * List of attachments.
    * @return attachments
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of attachments.")
   public List<Attachment> getAttachments() {
     return attachments;
   }
 
   public void setAttachments(List<Attachment> attachments) {
     this.attachments = attachments;
+  }
+
+  public PrintableFormServiceChannel supportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
+    return this;
+  }
+
+  public PrintableFormServiceChannel addSupportPhonesItem(Phone supportPhonesItem) {
+    this.supportPhones.add(supportPhonesItem);
+    return this;
+  }
+
+   /**
+   * List of support phone numbers for the service channel.
+   * @return supportPhones
+  **/
+  @ApiModelProperty(example = "null", value = "List of support phone numbers for the service channel.")
+  public List<Phone> getSupportPhones() {
+    return supportPhones;
+  }
+
+  public void setSupportPhones(List<Phone> supportPhones) {
+    this.supportPhones = supportPhones;
+  }
+
+  public PrintableFormServiceChannel supportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
+    return this;
+  }
+
+  public PrintableFormServiceChannel addSupportEmailsItem(Email supportEmailsItem) {
+    this.supportEmails.add(supportEmailsItem);
+    return this;
+  }
+
+   /**
+   * List of support email addresses for the service channel.
+   * @return supportEmails
+  **/
+  @ApiModelProperty(example = "null", value = "List of support email addresses for the service channel.")
+  public List<Email> getSupportEmails() {
+    return supportEmails;
+  }
+
+  public void setSupportEmails(List<Email> supportEmails) {
+    this.supportEmails = supportEmails;
+  }
+
+  public PrintableFormServiceChannel languages(List<String> languages) {
+    this.languages = languages;
+    return this;
+  }
+
+  public PrintableFormServiceChannel addLanguagesItem(String languagesItem) {
+    this.languages.add(languagesItem);
+    return this;
+  }
+
+   /**
+   * List of languages the service channel is available in (two letter language code).
+   * @return languages
+  **/
+  @ApiModelProperty(example = "null", value = "List of languages the service channel is available in (two letter language code).")
+  public List<String> getLanguages() {
+    return languages;
+  }
+
+  public void setLanguages(List<String> languages) {
+    this.languages = languages;
   }
 
   public PrintableFormServiceChannel webPages(List<WebPage> webPages) {
@@ -402,10 +386,10 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get webPages
+   * List of service channel web pages.
    * @return webPages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel web pages.")
   public List<WebPage> getWebPages() {
     return webPages;
   }
@@ -425,10 +409,10 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get serviceHours
+   * List of service channel service hours.
    * @return serviceHours
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel service hours.")
   public List<ServiceHour> getServiceHours() {
     return serviceHours;
   }
@@ -443,10 +427,10 @@ public class PrintableFormServiceChannel   {
   }
 
    /**
-   * Get publishingStatus
+   * Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.
    * @return publishingStatus
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.")
   public String getPublishingStatus() {
     return publishingStatus;
   }
@@ -472,13 +456,12 @@ public class PrintableFormServiceChannel   {
         Objects.equals(this.descriptions, printableFormServiceChannel.descriptions) &&
         Objects.equals(this.formIdentifier, printableFormServiceChannel.formIdentifier) &&
         Objects.equals(this.formReceiver, printableFormServiceChannel.formReceiver) &&
-        Objects.equals(this.supportPhones, printableFormServiceChannel.supportPhones) &&
-        Objects.equals(this.supportEmails, printableFormServiceChannel.supportEmails) &&
         Objects.equals(this.deliveryAddress, printableFormServiceChannel.deliveryAddress) &&
         Objects.equals(this.channelUrls, printableFormServiceChannel.channelUrls) &&
-        Objects.equals(this.languages, printableFormServiceChannel.languages) &&
-        Objects.equals(this.deliveryAddressDescriptions, printableFormServiceChannel.deliveryAddressDescriptions) &&
         Objects.equals(this.attachments, printableFormServiceChannel.attachments) &&
+        Objects.equals(this.supportPhones, printableFormServiceChannel.supportPhones) &&
+        Objects.equals(this.supportEmails, printableFormServiceChannel.supportEmails) &&
+        Objects.equals(this.languages, printableFormServiceChannel.languages) &&
         Objects.equals(this.webPages, printableFormServiceChannel.webPages) &&
         Objects.equals(this.serviceHours, printableFormServiceChannel.serviceHours) &&
         Objects.equals(this.publishingStatus, printableFormServiceChannel.publishingStatus);
@@ -486,7 +469,7 @@ public class PrintableFormServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, formIdentifier, formReceiver, supportPhones, supportEmails, deliveryAddress, channelUrls, languages, deliveryAddressDescriptions, attachments, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, formIdentifier, formReceiver, deliveryAddress, channelUrls, attachments, supportPhones, supportEmails, languages, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -501,13 +484,12 @@ public class PrintableFormServiceChannel   {
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    formIdentifier: ").append(toIndentedString(formIdentifier)).append("\n");
     sb.append("    formReceiver: ").append(toIndentedString(formReceiver)).append("\n");
-    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
-    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    deliveryAddress: ").append(toIndentedString(deliveryAddress)).append("\n");
     sb.append("    channelUrls: ").append(toIndentedString(channelUrls)).append("\n");
-    sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
-    sb.append("    deliveryAddressDescriptions: ").append(toIndentedString(deliveryAddressDescriptions)).append("\n");
     sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
+    sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
+    sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    serviceHours: ").append(toIndentedString(serviceHours)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");

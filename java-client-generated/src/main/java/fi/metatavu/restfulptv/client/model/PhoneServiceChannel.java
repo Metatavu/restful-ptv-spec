@@ -29,8 +29,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.metatavu.restfulptv.client.model.Email;
-import fi.metatavu.restfulptv.client.model.LanguageItem;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
+import fi.metatavu.restfulptv.client.model.Phone;
 import fi.metatavu.restfulptv.client.model.ServiceHour;
 import fi.metatavu.restfulptv.client.model.WebPage;
 import io.swagger.annotations.ApiModel;
@@ -43,7 +43,7 @@ import java.util.List;
 /**
  * PhoneServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T06:15:07.772+03:00")
 public class PhoneServiceChannel   {
   @JsonProperty("id")
   private String id = null;
@@ -60,23 +60,14 @@ public class PhoneServiceChannel   {
   @JsonProperty("descriptions")
   private List<LocalizedListItem> descriptions = new ArrayList<LocalizedListItem>();
 
-  @JsonProperty("phoneType")
-  private String phoneType = null;
-
-  @JsonProperty("chargeTypes")
-  private List<String> chargeTypes = new ArrayList<String>();
+  @JsonProperty("phoneNumbers")
+  private List<Phone> phoneNumbers = new ArrayList<Phone>();
 
   @JsonProperty("supportEmails")
   private List<Email> supportEmails = new ArrayList<Email>();
 
-  @JsonProperty("phoneNumbers")
-  private List<LanguageItem> phoneNumbers = new ArrayList<LanguageItem>();
-
   @JsonProperty("languages")
   private List<String> languages = new ArrayList<String>();
-
-  @JsonProperty("phoneChargeDescriptions")
-  private List<LanguageItem> phoneChargeDescriptions = new ArrayList<LanguageItem>();
 
   @JsonProperty("webPages")
   private List<WebPage> webPages = new ArrayList<WebPage>();
@@ -93,10 +84,10 @@ public class PhoneServiceChannel   {
   }
 
    /**
-   * Get id
+   * PTV identifier for the service channel.
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV identifier for the service channel.")
   public String getId() {
     return id;
   }
@@ -111,10 +102,10 @@ public class PhoneServiceChannel   {
   }
 
    /**
-   * Get type
+   * Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.
    * @return type
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.")
   public String getType() {
     return type;
   }
@@ -129,10 +120,10 @@ public class PhoneServiceChannel   {
   }
 
    /**
-   * Get organizationId
+   * PTV organization identifier responsible for the channel.
    * @return organizationId
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV organization identifier responsible for the channel.")
   public String getOrganizationId() {
     return organizationId;
   }
@@ -152,10 +143,10 @@ public class PhoneServiceChannel   {
   }
 
    /**
-   * Get names
+   * Localized list of service channel names.
    * @return names
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of service channel names.")
   public List<LocalizedListItem> getNames() {
     return names;
   }
@@ -175,10 +166,10 @@ public class PhoneServiceChannel   {
   }
 
    /**
-   * Get descriptions
+   * List of localized service channel descriptions.
    * @return descriptions
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized service channel descriptions.")
   public List<LocalizedListItem> getDescriptions() {
     return descriptions;
   }
@@ -187,45 +178,27 @@ public class PhoneServiceChannel   {
     this.descriptions = descriptions;
   }
 
-  public PhoneServiceChannel phoneType(String phoneType) {
-    this.phoneType = phoneType;
+  public PhoneServiceChannel phoneNumbers(List<Phone> phoneNumbers) {
+    this.phoneNumbers = phoneNumbers;
+    return this;
+  }
+
+  public PhoneServiceChannel addPhoneNumbersItem(Phone phoneNumbersItem) {
+    this.phoneNumbers.add(phoneNumbersItem);
     return this;
   }
 
    /**
-   * Get phoneType
-   * @return phoneType
+   * List of phone numbers for the service channel.
+   * @return phoneNumbers
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getPhoneType() {
-    return phoneType;
+  @ApiModelProperty(example = "null", value = "List of phone numbers for the service channel.")
+  public List<Phone> getPhoneNumbers() {
+    return phoneNumbers;
   }
 
-  public void setPhoneType(String phoneType) {
-    this.phoneType = phoneType;
-  }
-
-  public PhoneServiceChannel chargeTypes(List<String> chargeTypes) {
-    this.chargeTypes = chargeTypes;
-    return this;
-  }
-
-  public PhoneServiceChannel addChargeTypesItem(String chargeTypesItem) {
-    this.chargeTypes.add(chargeTypesItem);
-    return this;
-  }
-
-   /**
-   * Get chargeTypes
-   * @return chargeTypes
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<String> getChargeTypes() {
-    return chargeTypes;
-  }
-
-  public void setChargeTypes(List<String> chargeTypes) {
-    this.chargeTypes = chargeTypes;
+  public void setPhoneNumbers(List<Phone> phoneNumbers) {
+    this.phoneNumbers = phoneNumbers;
   }
 
   public PhoneServiceChannel supportEmails(List<Email> supportEmails) {
@@ -239,39 +212,16 @@ public class PhoneServiceChannel   {
   }
 
    /**
-   * Get supportEmails
+   * List of support email addresses for the service channel.
    * @return supportEmails
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of support email addresses for the service channel.")
   public List<Email> getSupportEmails() {
     return supportEmails;
   }
 
   public void setSupportEmails(List<Email> supportEmails) {
     this.supportEmails = supportEmails;
-  }
-
-  public PhoneServiceChannel phoneNumbers(List<LanguageItem> phoneNumbers) {
-    this.phoneNumbers = phoneNumbers;
-    return this;
-  }
-
-  public PhoneServiceChannel addPhoneNumbersItem(LanguageItem phoneNumbersItem) {
-    this.phoneNumbers.add(phoneNumbersItem);
-    return this;
-  }
-
-   /**
-   * Get phoneNumbers
-   * @return phoneNumbers
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getPhoneNumbers() {
-    return phoneNumbers;
-  }
-
-  public void setPhoneNumbers(List<LanguageItem> phoneNumbers) {
-    this.phoneNumbers = phoneNumbers;
   }
 
   public PhoneServiceChannel languages(List<String> languages) {
@@ -285,39 +235,16 @@ public class PhoneServiceChannel   {
   }
 
    /**
-   * Get languages
+   * List of languages the service channel is available in (two letter language code).
    * @return languages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of languages the service channel is available in (two letter language code).")
   public List<String> getLanguages() {
     return languages;
   }
 
   public void setLanguages(List<String> languages) {
     this.languages = languages;
-  }
-
-  public PhoneServiceChannel phoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
-    this.phoneChargeDescriptions = phoneChargeDescriptions;
-    return this;
-  }
-
-  public PhoneServiceChannel addPhoneChargeDescriptionsItem(LanguageItem phoneChargeDescriptionsItem) {
-    this.phoneChargeDescriptions.add(phoneChargeDescriptionsItem);
-    return this;
-  }
-
-   /**
-   * Get phoneChargeDescriptions
-   * @return phoneChargeDescriptions
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<LanguageItem> getPhoneChargeDescriptions() {
-    return phoneChargeDescriptions;
-  }
-
-  public void setPhoneChargeDescriptions(List<LanguageItem> phoneChargeDescriptions) {
-    this.phoneChargeDescriptions = phoneChargeDescriptions;
   }
 
   public PhoneServiceChannel webPages(List<WebPage> webPages) {
@@ -331,10 +258,10 @@ public class PhoneServiceChannel   {
   }
 
    /**
-   * Get webPages
+   * List of service channel web pages.
    * @return webPages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel web pages.")
   public List<WebPage> getWebPages() {
     return webPages;
   }
@@ -354,10 +281,10 @@ public class PhoneServiceChannel   {
   }
 
    /**
-   * Get serviceHours
+   * List of service channel service hours.
    * @return serviceHours
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel service hours.")
   public List<ServiceHour> getServiceHours() {
     return serviceHours;
   }
@@ -372,10 +299,10 @@ public class PhoneServiceChannel   {
   }
 
    /**
-   * Get publishingStatus
+   * Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.
    * @return publishingStatus
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.")
   public String getPublishingStatus() {
     return publishingStatus;
   }
@@ -399,12 +326,9 @@ public class PhoneServiceChannel   {
         Objects.equals(this.organizationId, phoneServiceChannel.organizationId) &&
         Objects.equals(this.names, phoneServiceChannel.names) &&
         Objects.equals(this.descriptions, phoneServiceChannel.descriptions) &&
-        Objects.equals(this.phoneType, phoneServiceChannel.phoneType) &&
-        Objects.equals(this.chargeTypes, phoneServiceChannel.chargeTypes) &&
-        Objects.equals(this.supportEmails, phoneServiceChannel.supportEmails) &&
         Objects.equals(this.phoneNumbers, phoneServiceChannel.phoneNumbers) &&
+        Objects.equals(this.supportEmails, phoneServiceChannel.supportEmails) &&
         Objects.equals(this.languages, phoneServiceChannel.languages) &&
-        Objects.equals(this.phoneChargeDescriptions, phoneServiceChannel.phoneChargeDescriptions) &&
         Objects.equals(this.webPages, phoneServiceChannel.webPages) &&
         Objects.equals(this.serviceHours, phoneServiceChannel.serviceHours) &&
         Objects.equals(this.publishingStatus, phoneServiceChannel.publishingStatus);
@@ -412,7 +336,7 @@ public class PhoneServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, phoneType, chargeTypes, supportEmails, phoneNumbers, languages, phoneChargeDescriptions, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, phoneNumbers, supportEmails, languages, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -425,12 +349,9 @@ public class PhoneServiceChannel   {
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
-    sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
-    sb.append("    chargeTypes: ").append(toIndentedString(chargeTypes)).append("\n");
-    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    phoneNumbers: ").append(toIndentedString(phoneNumbers)).append("\n");
+    sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
-    sb.append("    phoneChargeDescriptions: ").append(toIndentedString(phoneChargeDescriptions)).append("\n");
     sb.append("    webPages: ").append(toIndentedString(webPages)).append("\n");
     sb.append("    serviceHours: ").append(toIndentedString(serviceHours)).append("\n");
     sb.append("    publishingStatus: ").append(toIndentedString(publishingStatus)).append("\n");

@@ -36,7 +36,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Phone
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T06:15:07.772+03:00")
 public class Phone   {
   @JsonProperty("additionalInformation")
   private String additionalInformation = null;
@@ -58,6 +58,9 @@ public class Phone   {
 
   @JsonProperty("language")
   private String language = null;
+
+  @JsonProperty("type")
+  private String type = null;
 
   public Phone additionalInformation(String additionalInformation) {
     this.additionalInformation = additionalInformation;
@@ -185,6 +188,24 @@ public class Phone   {
     this.language = language;
   }
 
+  public Phone type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -201,12 +222,13 @@ public class Phone   {
         Objects.equals(this.prefixNumber, phone.prefixNumber) &&
         Objects.equals(this.isFinnishServiceNumber, phone.isFinnishServiceNumber) &&
         Objects.equals(this.number, phone.number) &&
-        Objects.equals(this.language, phone.language);
+        Objects.equals(this.language, phone.language) &&
+        Objects.equals(this.type, phone.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalInformation, serviceChargeType, chargeDescription, prefixNumber, isFinnishServiceNumber, number, language);
+    return Objects.hash(additionalInformation, serviceChargeType, chargeDescription, prefixNumber, isFinnishServiceNumber, number, language, type);
   }
 
   @Override
@@ -221,6 +243,7 @@ public class Phone   {
     sb.append("    isFinnishServiceNumber: ").append(toIndentedString(isFinnishServiceNumber)).append("\n");
     sb.append("    number: ").append(toIndentedString(number)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

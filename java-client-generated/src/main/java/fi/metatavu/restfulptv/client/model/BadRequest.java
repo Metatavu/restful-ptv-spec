@@ -36,7 +36,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BadRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T06:15:07.772+03:00")
 public class BadRequest   {
   @JsonProperty("code")
   private Integer code = null;

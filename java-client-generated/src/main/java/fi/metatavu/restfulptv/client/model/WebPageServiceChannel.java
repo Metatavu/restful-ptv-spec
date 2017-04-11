@@ -28,7 +28,6 @@ package fi.metatavu.restfulptv.client.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import fi.metatavu.restfulptv.client.model.Attachment;
 import fi.metatavu.restfulptv.client.model.Email;
 import fi.metatavu.restfulptv.client.model.LanguageItem;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
@@ -45,7 +44,7 @@ import java.util.List;
 /**
  * WebPageServiceChannel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-10T22:00:56.420+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T06:15:07.772+03:00")
 public class WebPageServiceChannel   {
   @JsonProperty("id")
   private String id = null;
@@ -64,9 +63,6 @@ public class WebPageServiceChannel   {
 
   @JsonProperty("urls")
   private List<LanguageItem> urls = new ArrayList<LanguageItem>();
-
-  @JsonProperty("attachments")
-  private List<Attachment> attachments = new ArrayList<Attachment>();
 
   @JsonProperty("supportPhones")
   private List<Phone> supportPhones = new ArrayList<Phone>();
@@ -92,10 +88,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get id
+   * PTV identifier for the service channel.
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV identifier for the service channel.")
   public String getId() {
     return id;
   }
@@ -110,10 +106,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get type
+   * Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.
    * @return type
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Type of the service channel. Channel types: EChannel, WebPage, PrintableForm, Phone or ServiceLocation.")
   public String getType() {
     return type;
   }
@@ -128,10 +124,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get organizationId
+   * PTV organization identifier responsible for the channel.
    * @return organizationId
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "PTV organization identifier responsible for the channel.")
   public String getOrganizationId() {
     return organizationId;
   }
@@ -151,10 +147,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get names
+   * Localized list of service channel names.
    * @return names
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Localized list of service channel names.")
   public List<LocalizedListItem> getNames() {
     return names;
   }
@@ -174,10 +170,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get descriptions
+   * List of localized service channel descriptions.
    * @return descriptions
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized service channel descriptions.")
   public List<LocalizedListItem> getDescriptions() {
     return descriptions;
   }
@@ -197,39 +193,16 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get urls
+   * List of localized urls.
    * @return urls
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized urls.")
   public List<LanguageItem> getUrls() {
     return urls;
   }
 
   public void setUrls(List<LanguageItem> urls) {
     this.urls = urls;
-  }
-
-  public WebPageServiceChannel attachments(List<Attachment> attachments) {
-    this.attachments = attachments;
-    return this;
-  }
-
-  public WebPageServiceChannel addAttachmentsItem(Attachment attachmentsItem) {
-    this.attachments.add(attachmentsItem);
-    return this;
-  }
-
-   /**
-   * Get attachments
-   * @return attachments
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public List<Attachment> getAttachments() {
-    return attachments;
-  }
-
-  public void setAttachments(List<Attachment> attachments) {
-    this.attachments = attachments;
   }
 
   public WebPageServiceChannel supportPhones(List<Phone> supportPhones) {
@@ -243,10 +216,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get supportPhones
+   * List of support phone numbers for the service channel.
    * @return supportPhones
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of support phone numbers for the service channel.")
   public List<Phone> getSupportPhones() {
     return supportPhones;
   }
@@ -266,10 +239,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get supportEmails
+   * List of support email addresses for the service channel.
    * @return supportEmails
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of support email addresses for the service channel.")
   public List<Email> getSupportEmails() {
     return supportEmails;
   }
@@ -289,10 +262,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get languages
+   * List of languages the service channel is available in (two letter language code).
    * @return languages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of languages the service channel is available in (two letter language code).")
   public List<String> getLanguages() {
     return languages;
   }
@@ -312,10 +285,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get webPages
+   * List of service channel web pages.
    * @return webPages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel web pages.")
   public List<WebPage> getWebPages() {
     return webPages;
   }
@@ -335,10 +308,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get serviceHours
+   * List of service channel service hours.
    * @return serviceHours
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service channel service hours.")
   public List<ServiceHour> getServiceHours() {
     return serviceHours;
   }
@@ -353,10 +326,10 @@ public class WebPageServiceChannel   {
   }
 
    /**
-   * Get publishingStatus
+   * Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.
    * @return publishingStatus
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Service channel publishing status. Values: Draft, Published, Deleted, Modified or OldPublished.")
   public String getPublishingStatus() {
     return publishingStatus;
   }
@@ -381,7 +354,6 @@ public class WebPageServiceChannel   {
         Objects.equals(this.names, webPageServiceChannel.names) &&
         Objects.equals(this.descriptions, webPageServiceChannel.descriptions) &&
         Objects.equals(this.urls, webPageServiceChannel.urls) &&
-        Objects.equals(this.attachments, webPageServiceChannel.attachments) &&
         Objects.equals(this.supportPhones, webPageServiceChannel.supportPhones) &&
         Objects.equals(this.supportEmails, webPageServiceChannel.supportEmails) &&
         Objects.equals(this.languages, webPageServiceChannel.languages) &&
@@ -392,7 +364,7 @@ public class WebPageServiceChannel   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, organizationId, names, descriptions, urls, attachments, supportPhones, supportEmails, languages, webPages, serviceHours, publishingStatus);
+    return Objects.hash(id, type, organizationId, names, descriptions, urls, supportPhones, supportEmails, languages, webPages, serviceHours, publishingStatus);
   }
 
   @Override
@@ -406,7 +378,6 @@ public class WebPageServiceChannel   {
     sb.append("    names: ").append(toIndentedString(names)).append("\n");
     sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
     sb.append("    urls: ").append(toIndentedString(urls)).append("\n");
-    sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
     sb.append("    supportPhones: ").append(toIndentedString(supportPhones)).append("\n");
     sb.append("    supportEmails: ").append(toIndentedString(supportEmails)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
