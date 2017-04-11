@@ -1278,48 +1278,85 @@
       "properties" : {
         "id" : {
           "type" : "string",
-          "format" : "uuid"
+          "format" : "uuid",
+          "description" : "Entity Guid identifier."
         },
         "names" : {
           "type" : "array",
+          "description" : "List of localized names.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "descriptions" : {
           "type" : "array",
+          "description" : "List of localized descriptions.",
           "items" : {
             "$ref" : "#/definitions/LocalizedListItem"
           }
         },
         "languages" : {
           "type" : "array",
+          "description" : "List of statutory service general description languages.",
           "items" : {
             "type" : "string"
           }
         },
         "serviceClasses" : {
           "type" : "array",
+          "description" : "List of service classes.",
           "items" : {
             "$ref" : "#/definitions/FintoItem"
           }
         },
         "ontologyTerms" : {
           "type" : "array",
+          "description" : "List of ontology terms.",
           "items" : {
             "$ref" : "#/definitions/FintoItem"
           }
         },
         "targetGroups" : {
           "type" : "array",
+          "description" : "List of target groups.",
           "items" : {
             "$ref" : "#/definitions/FintoItem"
           }
         },
         "lifeEvents" : {
           "type" : "array",
+          "description" : "List of life events.",
           "items" : {
             "$ref" : "#/definitions/FintoItem"
+          }
+        },
+        "industrialClasses" : {
+          "type" : "array",
+          "description" : "List of industrial classes.",
+          "items" : {
+            "$ref" : "#/definitions/FintoItem"
+          }
+        },
+        "requirements" : {
+          "type" : "array",
+          "description" : "Localized service usage requirements (description of requirement).",
+          "items" : {
+            "$ref" : "#/definitions/LanguageItem"
+          }
+        },
+        "type" : {
+          "type" : "string",
+          "description" : "Service type. Possible values are: Service, Notice, Registration or Permission."
+        },
+        "serviceChargeType" : {
+          "type" : "string",
+          "description" : "Service charge type. Possible values are: Charged, Free or Other"
+        },
+        "legislation" : {
+          "type" : "array",
+          "description" : "Laws that a general description is based on.",
+          "items" : {
+            "$ref" : "#/definitions/Law"
           }
         }
       }
@@ -1399,34 +1436,33 @@
     },
     "OrganizationService" : {
       "type" : "object",
-      "required" : [ "roleType" ],
       "properties" : {
-        "id" : {
-          "type" : "string",
-          "format" : "uuid"
-        },
-        "serviceId" : {
-          "type" : "string",
-          "format" : "uuid"
-        },
-        "organizationId" : {
-          "type" : "string",
-          "format" : "uuid"
-        },
-        "roleType" : {
-          "type" : "string"
-        },
-        "provisionType" : {
-          "type" : "string"
-        },
         "additionalInformation" : {
           "type" : "array",
+          "description" : "Localized list of additional information.",
           "items" : {
             "$ref" : "#/definitions/LanguageItem"
           }
         },
+        "serviceId" : {
+          "type" : "string",
+          "description" : "PTV service identifier."
+        },
+        "organizationId" : {
+          "type" : "string",
+          "description" : "PTV organization identifier (organization related to the service). Required if role type is Responsible or if ProvisionType is SelfProduced."
+        },
+        "roleType" : {
+          "type" : "string",
+          "description" : "Role type, valid values Responsible or Producer."
+        },
+        "provisionType" : {
+          "type" : "string",
+          "description" : "Provision type, valid values SelfProduced, VoucherServices, PurchaseServices or Other. Required if RoleType value is Producer."
+        },
         "webPages" : {
           "type" : "array",
+          "description" : "List of web pages.",
           "items" : {
             "$ref" : "#/definitions/WebPage"
           }
