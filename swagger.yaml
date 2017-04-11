@@ -1502,61 +1502,81 @@ definitions:
     properties:
       id:
         format: uuid
+        description: PTV identifier for the service channel.
         type: string
       type:
+        description: >-
+          Type of the service channel. Channel types: EChannel, WebPage,
+          PrintableForm, Phone or ServiceLocation.
         type: string
       organizationId:
         format: uuid
+        description: PTV organization identifier responsible for the channel.
         type: string
       names:
+        description: Localized list of service channel names.
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
       descriptions:
-        maxLength: 4000
+        description: List of localized service channel descriptions.
         type: array
         items:
           $ref: '#/definitions/LocalizedListItem'
       formIdentifier:
-        type: string
+        description: List of localized form identifier. One per language.
+        type: array
+        items:
+          $ref: '#/definitions/LanguageItem'
       formReceiver:
-        type: string
+        description: List of localized form receiver. One per language.
+        type: array
+        items:
+          $ref: '#/definitions/LanguageItem'
+      deliveryAddress:
+        description: Form delivery address.
+        $ref: '#/definitions/Address'
+      channelUrls:
+        description: List of localized channel urls.
+        type: array
+        items:
+          $ref: '#/definitions/LocalizedListItem'
+      attachments:
+        description: List of attachments.
+        type: array
+        items:
+          $ref: '#/definitions/Attachment'
       supportPhones:
+        description: List of support phone numbers for the service channel.
         type: array
         items:
           $ref: '#/definitions/Phone'
       supportEmails:
+        description: List of support email addresses for the service channel.
         type: array
         items:
           $ref: '#/definitions/Email'
-      deliveryAddress:
-        $ref: '#/definitions/Address'
-      channelUrls:
-        type: array
-        items:
-          $ref: '#/definitions/LocalizedListItem'
       languages:
-        pattern: '^[a-z]{2}$'
+        description: >-
+          List of languages the service channel is available in (two letter
+          language code).
         type: array
         items:
           type: string
-      deliveryAddressDescriptions:
-        type: array
-        items:
-          $ref: '#/definitions/LanguageItem'
-      attachments:
-        type: array
-        items:
-          $ref: '#/definitions/Attachment'
       webPages:
+        description: List of service channel web pages.
         type: array
         items:
           $ref: '#/definitions/WebPage'
       serviceHours:
+        description: List of service channel service hours.
         type: array
         items:
           $ref: '#/definitions/ServiceHour'
       publishingStatus:
+        description: >-
+          Service channel publishing status. Values: Draft, Published, Deleted,
+          Modified or OldPublished.
         type: string
   ServiceLocationServiceChannel:
     type: object
