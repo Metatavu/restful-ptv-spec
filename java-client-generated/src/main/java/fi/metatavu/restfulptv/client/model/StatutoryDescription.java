@@ -29,6 +29,8 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import fi.metatavu.restfulptv.client.model.FintoItem;
+import fi.metatavu.restfulptv.client.model.LanguageItem;
+import fi.metatavu.restfulptv.client.model.Law;
 import fi.metatavu.restfulptv.client.model.LocalizedListItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -40,7 +42,7 @@ import java.util.List;
 /**
  * StatutoryDescription
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T06:15:07.772+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T07:17:18.637+03:00")
 public class StatutoryDescription   {
   @JsonProperty("id")
   private String id = null;
@@ -66,16 +68,31 @@ public class StatutoryDescription   {
   @JsonProperty("lifeEvents")
   private List<FintoItem> lifeEvents = new ArrayList<FintoItem>();
 
+  @JsonProperty("industrialClasses")
+  private List<FintoItem> industrialClasses = new ArrayList<FintoItem>();
+
+  @JsonProperty("requirements")
+  private List<LanguageItem> requirements = new ArrayList<LanguageItem>();
+
+  @JsonProperty("type")
+  private String type = null;
+
+  @JsonProperty("serviceChargeType")
+  private String serviceChargeType = null;
+
+  @JsonProperty("legislation")
+  private List<Law> legislation = new ArrayList<Law>();
+
   public StatutoryDescription id(String id) {
     this.id = id;
     return this;
   }
 
    /**
-   * Get id
+   * Entity Guid identifier.
    * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Entity Guid identifier.")
   public String getId() {
     return id;
   }
@@ -95,10 +112,10 @@ public class StatutoryDescription   {
   }
 
    /**
-   * Get names
+   * List of localized names.
    * @return names
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized names.")
   public List<LocalizedListItem> getNames() {
     return names;
   }
@@ -118,10 +135,10 @@ public class StatutoryDescription   {
   }
 
    /**
-   * Get descriptions
+   * List of localized descriptions.
    * @return descriptions
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of localized descriptions.")
   public List<LocalizedListItem> getDescriptions() {
     return descriptions;
   }
@@ -141,10 +158,10 @@ public class StatutoryDescription   {
   }
 
    /**
-   * Get languages
+   * List of statutory service general description languages.
    * @return languages
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of statutory service general description languages.")
   public List<String> getLanguages() {
     return languages;
   }
@@ -164,10 +181,10 @@ public class StatutoryDescription   {
   }
 
    /**
-   * Get serviceClasses
+   * List of service classes.
    * @return serviceClasses
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of service classes.")
   public List<FintoItem> getServiceClasses() {
     return serviceClasses;
   }
@@ -187,10 +204,10 @@ public class StatutoryDescription   {
   }
 
    /**
-   * Get ontologyTerms
+   * List of ontology terms.
    * @return ontologyTerms
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of ontology terms.")
   public List<FintoItem> getOntologyTerms() {
     return ontologyTerms;
   }
@@ -210,10 +227,10 @@ public class StatutoryDescription   {
   }
 
    /**
-   * Get targetGroups
+   * List of target groups.
    * @return targetGroups
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of target groups.")
   public List<FintoItem> getTargetGroups() {
     return targetGroups;
   }
@@ -233,16 +250,121 @@ public class StatutoryDescription   {
   }
 
    /**
-   * Get lifeEvents
+   * List of life events.
    * @return lifeEvents
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "List of life events.")
   public List<FintoItem> getLifeEvents() {
     return lifeEvents;
   }
 
   public void setLifeEvents(List<FintoItem> lifeEvents) {
     this.lifeEvents = lifeEvents;
+  }
+
+  public StatutoryDescription industrialClasses(List<FintoItem> industrialClasses) {
+    this.industrialClasses = industrialClasses;
+    return this;
+  }
+
+  public StatutoryDescription addIndustrialClassesItem(FintoItem industrialClassesItem) {
+    this.industrialClasses.add(industrialClassesItem);
+    return this;
+  }
+
+   /**
+   * List of industrial classes.
+   * @return industrialClasses
+  **/
+  @ApiModelProperty(example = "null", value = "List of industrial classes.")
+  public List<FintoItem> getIndustrialClasses() {
+    return industrialClasses;
+  }
+
+  public void setIndustrialClasses(List<FintoItem> industrialClasses) {
+    this.industrialClasses = industrialClasses;
+  }
+
+  public StatutoryDescription requirements(List<LanguageItem> requirements) {
+    this.requirements = requirements;
+    return this;
+  }
+
+  public StatutoryDescription addRequirementsItem(LanguageItem requirementsItem) {
+    this.requirements.add(requirementsItem);
+    return this;
+  }
+
+   /**
+   * Localized service usage requirements (description of requirement).
+   * @return requirements
+  **/
+  @ApiModelProperty(example = "null", value = "Localized service usage requirements (description of requirement).")
+  public List<LanguageItem> getRequirements() {
+    return requirements;
+  }
+
+  public void setRequirements(List<LanguageItem> requirements) {
+    this.requirements = requirements;
+  }
+
+  public StatutoryDescription type(String type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Service type. Possible values are: Service, Notice, Registration or Permission.
+   * @return type
+  **/
+  @ApiModelProperty(example = "null", value = "Service type. Possible values are: Service, Notice, Registration or Permission.")
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public StatutoryDescription serviceChargeType(String serviceChargeType) {
+    this.serviceChargeType = serviceChargeType;
+    return this;
+  }
+
+   /**
+   * Service charge type. Possible values are: Charged, Free or Other
+   * @return serviceChargeType
+  **/
+  @ApiModelProperty(example = "null", value = "Service charge type. Possible values are: Charged, Free or Other")
+  public String getServiceChargeType() {
+    return serviceChargeType;
+  }
+
+  public void setServiceChargeType(String serviceChargeType) {
+    this.serviceChargeType = serviceChargeType;
+  }
+
+  public StatutoryDescription legislation(List<Law> legislation) {
+    this.legislation = legislation;
+    return this;
+  }
+
+  public StatutoryDescription addLegislationItem(Law legislationItem) {
+    this.legislation.add(legislationItem);
+    return this;
+  }
+
+   /**
+   * Laws that a general description is based on.
+   * @return legislation
+  **/
+  @ApiModelProperty(example = "null", value = "Laws that a general description is based on.")
+  public List<Law> getLegislation() {
+    return legislation;
+  }
+
+  public void setLegislation(List<Law> legislation) {
+    this.legislation = legislation;
   }
 
 
@@ -262,12 +384,17 @@ public class StatutoryDescription   {
         Objects.equals(this.serviceClasses, statutoryDescription.serviceClasses) &&
         Objects.equals(this.ontologyTerms, statutoryDescription.ontologyTerms) &&
         Objects.equals(this.targetGroups, statutoryDescription.targetGroups) &&
-        Objects.equals(this.lifeEvents, statutoryDescription.lifeEvents);
+        Objects.equals(this.lifeEvents, statutoryDescription.lifeEvents) &&
+        Objects.equals(this.industrialClasses, statutoryDescription.industrialClasses) &&
+        Objects.equals(this.requirements, statutoryDescription.requirements) &&
+        Objects.equals(this.type, statutoryDescription.type) &&
+        Objects.equals(this.serviceChargeType, statutoryDescription.serviceChargeType) &&
+        Objects.equals(this.legislation, statutoryDescription.legislation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, names, descriptions, languages, serviceClasses, ontologyTerms, targetGroups, lifeEvents);
+    return Objects.hash(id, names, descriptions, languages, serviceClasses, ontologyTerms, targetGroups, lifeEvents, industrialClasses, requirements, type, serviceChargeType, legislation);
   }
 
   @Override
@@ -283,6 +410,11 @@ public class StatutoryDescription   {
     sb.append("    ontologyTerms: ").append(toIndentedString(ontologyTerms)).append("\n");
     sb.append("    targetGroups: ").append(toIndentedString(targetGroups)).append("\n");
     sb.append("    lifeEvents: ").append(toIndentedString(lifeEvents)).append("\n");
+    sb.append("    industrialClasses: ").append(toIndentedString(industrialClasses)).append("\n");
+    sb.append("    requirements: ").append(toIndentedString(requirements)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    serviceChargeType: ").append(toIndentedString(serviceChargeType)).append("\n");
+    sb.append("    legislation: ").append(toIndentedString(legislation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

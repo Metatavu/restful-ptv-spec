@@ -45,7 +45,7 @@ import java.util.List;
 /**
  * Service
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T06:15:07.772+03:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-11T07:17:18.637+03:00")
 public class Service   {
   @JsonProperty("id")
   private String id = null;
